@@ -1,6 +1,7 @@
 <template>
     <footer class="main-footer">
-        &copy; {{currentYear}} <a href="https://modenero.com" target="_blank">Modenero</a>. All rights reserved.
+        &copy; {{curYear}} <a href="https://bchplease.org" target="_blank">Bitcoin Cash Please</a>.
+        All rights reserved.
     </footer>
 </template>
 
@@ -10,7 +11,7 @@ import moment from 'moment'
 
 export default {
     computed: {
-        currentYear: function () {
+        curYear: function () {
             return moment().format('YYYY')
         },
     },
