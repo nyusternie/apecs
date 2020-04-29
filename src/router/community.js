@@ -3,6 +3,7 @@ import Blockchain from '@/views/Community/Blockchain'
 import Discussions from '@/views/Community/Discussions'
 import Events from '@/views/Community/Events'
 import Markets from '@/views/Community/Markets'
+import Privacy from '@/views/Community/Privacy'
 import News from '@/views/Community/News'
 
 /* Initialize routes. */
@@ -22,6 +23,10 @@ const routes = [
     {
         path: '/markets',
         component: Markets
+    },
+    {
+        path: '/privacy',
+        component: Privacy
     },
     {
         path: '/news',

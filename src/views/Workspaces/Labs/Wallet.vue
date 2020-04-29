@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="lab" />
+        <Header pageId="labs" />
 
         <!-- Page Section -->
         <section class="content">
@@ -9,97 +9,12 @@
 
                 <div class="row">
                     <div class="col-md-6">
-
-                        <nav class="navbar navbar-expand navbar-primary navbar-dark">
-                            <ul class="navbar-nav">
-                                <li class="nav-item d-none d-sm-inline-block">
-                                    <a href="javascript://" class="nav-link">Home</a>
-                                </li>
-
-                                <li class="nav-item d-none d-sm-inline-block">
-                                    <a href="javascript://" class="nav-link">Contact</a>
-                                </li>
-                            </ul>
-
-                            <form class="form-inline ml-3">
-                                <div class="input-group input-group-sm">
-                                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-
-                                    <div class="input-group-append">
-                                        <button class="btn btn-navbar" type="submit">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </nav>
+                        <Navbar />
 
                         <div class="card">
                             <div class="card-body">
 
-                                <div class="form-group">
-                                    <label>Decode Raw Transaction</label>
-                                    <textarea
-                                        class="form-control"
-                                        rows="3"
-                                        placeholder="Past the raw hex code here"
-                                        v-model="rawTxHex"
-                                    ></textarea>
-                                </div>
-
-                                <dl class="row">
-                                    <dt v-if="txVersion" class="col-sm-4">Version</dt>
-                                    <dd v-if="txVersion" class="col-sm-8">{{txVersion}}</dd>
-                                    <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                                        <small class="text-muted">
-                                            Version numbers can be ...
-                                        </small>
-                                    </dd>
-
-                                    <dt v-if="txInputCount" class="col-sm-4">Input Count</dt>
-                                    <dd v-if="txInputCount" class="col-sm-8">{{txInputCount}}</dd>
-
-                                    <dt v-if="txId" class="col-sm-4">Transaction Id</dt>
-                                    <dd v-if="txId" class="col-sm-8"><a :href="'https://explorer.bitcoin.com/bch/tx/' + txId" target="_blank">{{txId}}</a></dd>
-                                    <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                                        <small class="text-muted">
-                                            NOTE: Endianness has been reversed.
-                                        </small>
-                                    </dd>
-
-                                    <dt v-if="txOutpointIndex" class="col-sm-4">Outpoint Index</dt>
-                                    <dd v-if="txOutpointIndex" class="col-sm-8">{{txOutpointIndex}}</dd>
-
-                                    <dt v-if="txInputScriptBytes" class="col-sm-4">Script Bytes</dt>
-                                    <dd v-if="txInputScriptBytes" class="col-sm-8">{{txInputScriptBytes}}</dd>
-
-                                    <dt v-if="txSignature" class="col-sm-4">Signature</dt>
-                                    <dd v-if="txSignature" class="col-sm-8">{{txSignature}}</dd>
-
-                                    <dt v-if="txSequence" class="col-sm-4">Sequence</dt>
-                                    <dd v-if="txSequence" class="col-sm-8">{{txSequence}}</dd>
-
-                                    <dt v-if="txOutputCount" class="col-sm-4">Output Count</dt>
-                                    <dd v-if="txOutputCount" class="col-sm-8">{{txOutputCount}}</dd>
-
-                                    <dt v-if="txValue" class="col-sm-4">Value</dt>
-                                    <dd v-if="txValue" class="col-sm-8">{{txValue}}</dd>
-                                    <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                                        <small class="text-muted">
-                                            NOTE: Endianness has been reversed.
-                                        </small>
-                                    </dd>
-
-                                    <dt v-if="txOutputScriptBytes" class="col-sm-4">Script Bytes</dt>
-                                    <dd v-if="txOutputScriptBytes" class="col-sm-8">{{txOutputScriptBytes}}</dd>
-
-                                    <dt v-if="txPubKeyScript" class="col-sm-4">PubKey Script</dt>
-                                    <dd v-if="txPubKeyScript" class="col-sm-8">{{txPubKeyScript}}</dd>
-
-                                    <dt v-if="txLockTime" class="col-sm-4">Lock Time</dt>
-                                    <dd v-if="txLockTime" class="col-sm-8">{{txLockTime}}</dd>
-
-                                </dl>
+                                TODO...
 
                             </div>
                         </div>
@@ -111,7 +26,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    Lab Rules &amp; Guide
+                                    Wallet Guide
                                 </h3>
                             </div>
 
@@ -142,10 +57,12 @@
 <script>
 /* Import components. */
 import Header from '@/components/Header.vue'
+import Navbar from './Navbar.vue'
 
 export default {
     components: {
         Header,
+        Navbar,
     },
     data: () => {
         return {

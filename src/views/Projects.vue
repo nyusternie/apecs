@@ -50,7 +50,7 @@
                                     </td>
                                     <td>
                                         <a>
-                                            DevOps.cash
+                                            Cash DevOps
                                         </a>
                                         <br/>
                                         <small>

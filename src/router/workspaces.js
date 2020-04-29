@@ -1,7 +1,16 @@
 /* Import views. */
 import CodeEditor from '@/views/Workspaces/CodeEditor'
 import GraphicsStudio from '@/views/Workspaces/GraphicsStudio'
-import Lab from '@/views/Workspaces/Lab'
+
+/* Labs */
+import Labs from '@/views/Workspaces/Labs'
+import LabsAuth from '@/views/Workspaces/Labs/Auth'
+import LabsCashFusion from '@/views/Workspaces/Labs/CashFusion'
+import LabsCashScript from '@/views/Workspaces/Labs/CashScript'
+import LabsCashShuffle from '@/views/Workspaces/Labs/CashShuffle'
+import LabsMessaging from '@/views/Workspaces/Labs/Messaging'
+import LabsTransaction from '@/views/Workspaces/Labs/Transaction'
+import LabsWallet from '@/views/Workspaces/Labs/Wallet'
 
 /* Initialize routes. */
 const routes = [
@@ -13,9 +22,39 @@ const routes = [
         path: '/graphics-studio',
         component: GraphicsStudio
     },
+
+    /* Labs */
     {
-        path: '/lab',
-        component: Lab
+        path: '/labs',
+        component: Labs
+    },
+    {
+        path: '/labs/auth',
+        component: LabsAuth
+    },
+    {
+        path: '/labs/cashfusion',
+        component: LabsCashFusion
+    },
+    {
+        path: '/labs/cashscript',
+        component: LabsCashScript
+    },
+    {
+        path: '/labs/cashshuffle',
+        component: LabsCashShuffle
+    },
+    {
+        path: '/labs/msg',
+        component: LabsMessaging
+    },
+    {
+        path: '/labs/tx',
+        component: LabsTransaction
+    },
+    {
+        path: '/labs/wallet',
+        component: LabsWallet
     },
 ]
 

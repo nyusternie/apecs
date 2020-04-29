@@ -20,10 +20,16 @@
                         </small>
                     </div>
                 </div>
+
                 <div v-else class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="javascript://" @click="goTo('/')">Dashboard</a></li>
-                        <li class="breadcrumb-item active">{{title}}</li>
+                        <li class="breadcrumb-item">
+                            <a href="javascript://" @click="goTo('/')">Dashboard</a>
+                        </li>
+
+                        <li class="breadcrumb-item active">
+                            {{title}}
+                        </li>
                     </ol>
                 </div>
             </div>
@@ -45,7 +51,7 @@ export default {
             case 'dashboard':
                 return 'Dashboard'
 
-            /* COMMUNITY */
+            /* Community */
             case 'blockchain':
                 return 'Blockchain Insights'
             case 'discussions':
@@ -54,35 +60,37 @@ export default {
                 return 'Event Calendar'
             case 'markets':
                 return 'Market Insights'
+            case 'privacy':
+                return 'Privacy Insights'
             case 'news':
                 return 'Headline News'
 
-            /* DESKTOP */
+            /* Desktop */
             case 'file-mgr':
                 return 'File Manager'
             case 'notebook':
                 return 'Notebook'
 
-            /* PROFILES */
+            /* Profiles */
             case 'contributors':
                 return 'Contributors'
             case 'profile':
                 return 'Profile'
 
-            /* PROJECTS */
+            /* Projects */
             case 'projects':
             case 'project-detail':
                 return 'Projects'
 
-            /* PROJECTS */
+            /* Workspaces */
             case 'code-editor':
                 return 'Code Editor'
             case 'graphics-studio':
                 return 'Graphics Studio'
-            case 'lab':
+            case 'labs':
                 return 'Lab Experiments'
 
-            /* SUPPORT */
+            /* Support */
             case 'babel':
                 return 'Babel'
             case 'buidling':

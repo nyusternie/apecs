@@ -7,7 +7,7 @@
                 class="brand-image img-rounded elevation-3"
                 style="opacity: .8"
             >
-            <span class="brand-text font-weight-light">DevOps.cash</span>
+            <span class="brand-text font-weight-light">Cash DevOps</span>
         </a>
 
         <div class="sidebar">
@@ -112,7 +112,7 @@
                                 </router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/lab" class="nav-link">
+                                <router-link to="/labs" class="nav-link">
                                     <i class="fas fa-flask nav-icon"></i>
                                     <p>Lab Experiments</p>
                                 </router-link>
@@ -180,6 +180,12 @@
                                 <router-link to="/blockchain" class="nav-link">
                                     <i class="fas fa-link nav-icon"></i>
                                     <p>Blockchain</p>
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/privacy" class="nav-link">
+                                    <i class="fas fa-user-secret nav-icon"></i>
+                                    <p>Privacy</p>
                                 </router-link>
                             </li>
                             <li class="nav-item">
@@ -285,7 +291,7 @@
 
                     <!-- Build Info -->
                     <li class="nav-header">
-                        <div class="build-info">DevOps.cash v{{version}}</div>
+                        <div class="build-info">Cash DevOps v{{version}}</div>
                         <div class="build-info">&copy; {{currentYear}} <a href="https://modenero.com" target="_blank"><strong>Modenero</strong></a>. All rights reserved.</div>
                     </li>
                 </ul>
