@@ -1,9 +1,9 @@
 # Summary
 
-* [Welcome](README.md)
+* [Welcome]()
 
-    * [0.1. Foreword](welcome/foreword.md)
-    * [0.2. BCH.StackExchange](welcome/se.md)
+    * [0.1. Readme](README.md)
+    * [0.2. Foreword](FOREWORD.md)
 
 * [1. User Accounts]()
 
