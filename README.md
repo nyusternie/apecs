@@ -1,6 +1,6 @@
-# DevOps.cash
+# Cash DevOps
 
-![DevOps.cash Poster](https://devops.cash/poster.jpg?1581239745)
+![Cash DevOps Poster](https://devops.cash/poster.jpg?1581239745)
 
 [![Build Status](https://travis-ci.com/modenero/devops.cash.svg?branch=master)](https://travis-ci.com/modenero/devops.cash)
 [![Greenkeeper badge](https://badges.greenkeeper.io/modenero/devops.cash.svg)](https://greenkeeper.io/)
@@ -10,7 +10,7 @@ DevOps provides the Bitcoin Cash community with its own platform to support deve
 
 __It's time we ALL come together to BU!DL BCH! and #MakeBitcoinCashAgain__
 
-> DevOps.cash will __always be 100% FREE__ for use by the Bitcoin Cash community;  
+> Cash DevOps will __always be 100% FREE__ for use by the Bitcoin Cash community;  
 as well as any others that wishes to BUIDL on top of BCH.
 
 # Publishing your project(s) on DevOps
