@@ -275,7 +275,7 @@ export default {
 
         /* Add goal. */
         this.goals.push({
-            title: 'BCH.StackExchange Commitments',
+            title: 'Infrastructure Funding Goal',
             completed: 31,
             target: 100,
             bg: 'bg-warning',

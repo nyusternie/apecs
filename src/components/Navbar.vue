@@ -265,15 +265,6 @@
 
                     <li class="nav-header">STAFF LINKS</li>
 
-                    <!-- StackExchange -->
-                    <li class="nav-item">
-                        <a href="https://area51.stackexchange.com/proposals/123786/bitcoin-cash" target="_blank" class="nav-link">
-                            <i class="nav-icon fab fa-stack-overflow text-warning"></i>
-                            <p>BCH.StackExchange</p>
-                            <i class="nav-icon fas fa-external-link-alt"></i>
-                        </a>
-                    </li>
-
                     <!-- Reddit -->
                     <li class="nav-item">
                         <a href="https://www.reddit.com/r/DevOpsCash/" target="_blank" class="nav-link">
