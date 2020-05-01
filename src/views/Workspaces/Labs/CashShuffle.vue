@@ -159,6 +159,7 @@
 
 <script>
 /* Import modules. */
+import { BITBOX } from 'bitbox-sdk'
 import numeral from 'numeral'
 import superagent from 'superagent'
 
@@ -193,7 +194,7 @@ export default {
 
             try {
                 /* Initialize BITBOX. */
-                this.bitbox = new window.BITBOX()
+                this.bitbox = new BITBOX()
             } catch (err) {
                 console.error(err)
             }
@@ -219,6 +220,10 @@ export default {
          * Filters the available pools (based on network type).
          */
         pools(_network) {
+            if (!this.stats || !this.stats.pools) {
+                return []
+            }
+
             if (_network === 'mainnet') {
                 /* Filter pools. */
                 const filtered = this.stats.pools.filter(pool => pool.version === 300)

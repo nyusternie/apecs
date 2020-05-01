@@ -1,9 +1,12 @@
+/* Import modules. */
+import { BITBOX } from 'bitbox-sdk'
+
 /* Import libraries. */
 import CashID from 'cashid'
 import moment from 'moment'
 
 /* Initialize BITBOX. */
-const bitbox = new window.BITBOX()
+const bitbox = new BITBOX()
 
 /* Import modules. */
 import installBadger from '@/libs/installBadger'

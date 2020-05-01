@@ -2314,13 +2314,13 @@ bip-schnorr@^0.3.0:
     random-bytes "^1.0.0"
     safe-buffer "^5.0.1"
 
-bip21@Bitcoin-com/bip21:
+bip21@Bitcoin-com/bip21, "bip21@github:Bitcoin-com/bip21":
   version "2.0.1"
   resolved "https://codeload.github.com/Bitcoin-com/bip21/tar.gz/28f8d03a3a16ed11eb5b963248ed1be8c46c6d6f"
   dependencies:
     qs "^6.3.0"
 
-bip32-utils@Bitcoin-com/bip32-utils#0.13.1:
+bip32-utils@Bitcoin-com/bip32-utils#0.13.1, "bip32-utils@github:Bitcoin-com/bip32-utils#0.13.1":
   version "0.13.1"
   resolved "https://codeload.github.com/Bitcoin-com/bip32-utils/tar.gz/b8a33ebd0a0ac39de7cd987e5c3f77a8c5d84e58"
   dependencies:
@@ -2360,7 +2360,7 @@ bip66@^1.1.0, bip66@^1.1.5:
   dependencies:
     safe-buffer "^5.0.1"
 
-bitbox-sdk@^8.10.1:
+bitbox-sdk@^8.10.1, bitbox-sdk@^8.11.2:
   version "8.11.2"
   resolved "https://registry.yarnpkg.com/bitbox-sdk/-/bitbox-sdk-8.11.2.tgz#8a844be393e61f25cb3f947d3a60e4b5fdb90563"
   integrity sha512-F/b5FSQd+PVRfRyFwwFZxPkjqd3TMO/YccxjbkC9CV9KgE4A8dqmPJq3oBHIClXJ6PwkXAz88Yh52cb1Po1p5g==
@@ -2411,7 +2411,7 @@ bitcoinjs-message@^2.0.0:
     secp256k1 "^3.0.1"
     varuint-bitcoin "^1.0.1"
 
-bitcore-lib-cash@^8.19.0:
+bitcore-lib-cash@8.19.0:
   version "8.19.0"
   resolved "https://registry.yarnpkg.com/bitcore-lib-cash/-/bitcore-lib-cash-8.19.0.tgz#e1148e0d56255323ae1b77478128323bf13f74eb"
   integrity sha512-ua6cnyamRufuUsME77XR8PV5+ldGG8pnXQx4veL28McYmcbEqGjPXWcYRgDQ7xqE7J0zDcUj4btJvIyB7sLTdw==
@@ -3104,7 +3104,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-coininfo@Bitcoin-com/coininfo:
+coininfo@Bitcoin-com/coininfo, "coininfo@github:Bitcoin-com/coininfo":
   version "4.0.0"
   resolved "https://codeload.github.com/Bitcoin-com/coininfo/tar.gz/eece2c6141d08c3e7783929f2a1e1e681aa1a82c"
   dependencies:

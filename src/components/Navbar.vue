@@ -304,6 +304,9 @@
 </template>
 
 <script>
+/* Import modules. */
+import { BITBOX } from 'bitbox-sdk'
+
 /* Initialize vuex. */
 import { mapActions, mapState } from 'vuex'
 
@@ -408,7 +411,7 @@ export default {
 
             try {
                 /* Initialize BITBOX. */
-                this.bitbox = new window.BITBOX()
+                this.bitbox = new BITBOX()
             } catch (err) {
                 console.error(err)
             }

@@ -92,7 +92,8 @@
 </template>
 
 <script>
-/* Import libraries. */
+/* Import modules. */
+import { BITBOX } from 'bitbox-sdk'
 import numeral from 'numeral'
 
 export default {
@@ -116,7 +117,7 @@ export default {
 
             try {
                 /* Initialize BITBOX. */
-                this.bitbox = new window.BITBOX()
+                this.bitbox = new BITBOX()
             } catch (err) {
                 console.error(err)
             }
