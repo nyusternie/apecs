@@ -36,7 +36,7 @@
                                         Perform coin anonymity experiments using the CashFusion protocol.
                                     </dd>
                                     <dd class="col-sm-8 offset-sm-4">
-                                        <small class="text-danger">* Please be curtious of others when testing on Mainnet.</small>
+                                        <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
                                     </dd>
 
                                     <!-- CashScript -->
@@ -59,7 +59,27 @@
                                         Perform coin anonymity experiments using the CashShuffle protocol.
                                     </dd>
                                     <dd class="col-sm-8 offset-sm-4">
-                                        <small class="text-danger">* Please be curtious of others when testing on Mainnet.</small>
+                                        <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
+                                    </dd>
+
+                                    <!-- Cryptography -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/crypto">
+                                            Cryptography
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Perform various cryptographic functions.
+                                    </dd>
+
+                                    <!-- Hashing -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/hash">
+                                            Hashing
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Calculate a hash (aka message digest) of data.
                                     </dd>
 
                                     <!-- Messaging -->
@@ -114,7 +134,7 @@
                                 </div>
 
                                 <div class="mt-0 mb-3">
-                                    <small class="text-danger">* <strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!</small>
+                                    <small class="text-danger"><strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!</small>
                                 </div>
 
                                 <dl class="row">

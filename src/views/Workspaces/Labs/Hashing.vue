@@ -26,39 +26,19 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    CashFusion Guide
+                                    Hashing Guide
                                 </h3>
                             </div>
 
                             <div class="card-body">
-                                <div class="mb-0">
-                                    CashFusion is an anonymity protocol designed to allow multiple coin inputs <em>(of varying amounts)</em> and multiple coin outputs <em>(of varying amounts)</em> per participant.
-                                </div>
-
-                                <div class="mt-0 mb-3">
-                                    <small class="text-danger"><strong>NOTE:</strong> TOR is used for additional privacy protection against malicious servers.</small>
-                                </div>
-
                                 <dl class="row">
-                                    <dt class="col-sm-4"># of Participants</dt>
-                                    <dd class="col-sm-8">
-                                        Minimum: <strong class="text-info">8</strong> <em>(can be as low as 6)</em>
-                                        <br />Maximum: <strong class="text-info">25</strong> <em>(100 KiB tx limit)</em>
-                                    </dd>
-
-                                    <dt class="col-sm-4">12 Tiers</dt>
-                                    <dd class="col-sm-8">
-                                        Lowest: <strong class="text-info">100.00 bits</strong> <em>(~$0.025 USD)</em>
-                                        <br />Highest: <strong class="text-info">0.82 BCH</strong> <em>(~$205 USD)</em>
-                                    </dd>
-                                    <!-- <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd> -->
-
-                                    <dt class="col-sm-4">Avg Completion</dt>
-                                    <dd class="col-sm-8">
-                                        Minimum: <strong class="text-info">7min</strong> <em>(lower if tier is full)</em>
-                                        <br />Maximum: <strong class="text-info">20+</strong>
-                                    </dd>
-
+                                    <dt class="col-sm-4">Description lists</dt>
+                                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
+                                    <dt class="col-sm-4">Euismod</dt>
+                                    <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                    <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
+                                    <dt class="col-sm-4">Malesuada porta</dt>
+                                    <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
                                     <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
                                     <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
                                         sit amet risus.

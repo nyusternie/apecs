@@ -114,7 +114,10 @@
                             <li class="nav-item">
                                 <router-link to="/labs" class="nav-link">
                                     <i class="fas fa-flask nav-icon"></i>
-                                    <p>Lab Experiments</p>
+                                    <p>
+                                        Lab Experiments
+                                        <span class="right badge badge-danger">New</span>
+                                    </p>
                                 </router-link>
                             </li>
                             <li class="nav-item">

@@ -1,6 +1,6 @@
 {
   "name": "devops.cash",
-  "version": "20.2.23",
+  "version": "20.2.30",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,6 +10,7 @@
     "generate-icons": "vsvg -s ./svg-icons -t ./src/compiled-icons"
   },
   "dependencies": {
+    "bitcore-lib-cash": "8.19.0",
     "cashid": "0.3.3",
     "core-js": "3.6.4",
     "ethereum-blockies-base64": "1.0.2",
