@@ -14,7 +14,87 @@
                         <div class="card">
                             <div class="card-body">
 
-                                TODO...
+                                <dl class="row" v-if="stats">
+                                    <dt class="col-sm-4 text-right">Server</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{serverUri}}</strong>
+                                    </dd>
+                                    <dd class="col-sm-8 offset-sm-4">
+                                        <small class="text-danger">
+                                            <strong>
+                                            This is a public server operated by ...
+                                            </strong>
+                                        </small>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Shuffle Port</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{stats.shufflePort}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Websocket Port</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{stats.shuffleWebSocketPort}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Ban Score</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{stats.banScore}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Banned</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{stats.banned}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Connections</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{stats.connections}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Pool Size</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{stats.poolSize}}</strong>
+                                    </dd>
+                                </dl>
+
+                                <hr />
+
+                                <dl class="row" v-for="pool of pools(network)" :key="pool.version + '.' + pool.amount">
+                                    <dt class="col-sm-4 text-right">Members</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{pool.members}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Amount</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{satoshis(pool.amount)}}</strong> satoshis
+                                        <br />
+                                        <small><strong class="text-danger">{{bch(pool.amount)}}</strong> BCH</small> |
+                                        <small><strong class="text-danger">{{fiat(pool.amount)}}</strong> USD</small>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Type</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{pool.type}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Full</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{pool.full}}</strong>
+                                    </dd>
+
+                                    <dt class="col-sm-4 text-right">Version</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">{{pool.version}}</strong>
+                                    </dd>
+                                </dl>
+
+                                <!-- <pre v-if="stats">
+                                    <code>
+                                        {{stats}}
+                                    </code>
+                                </pre> -->
 
                             </div>
                         </div>
@@ -31,14 +111,34 @@
                             </div>
 
                             <div class="card-body">
+                                <div class="mb-0">
+                                    CashShuffle is an anonymity protocol designed to shuffle <em>(using the CoinJoin spec)</em> a coin input with 4 other random participants, each with an equal output.
+                                </div>
+
+                                <div class="mt-0 mb-3">
+                                    <small class="text-danger"><strong>NOTE:</strong> Shuffled outputs <strong>MUST</strong> be handled with care to prevent privacy leaks.</small>
+                                </div>
+
                                 <dl class="row">
-                                    <dt class="col-sm-4">Description lists</dt>
-                                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
-                                    <dt class="col-sm-4">Euismod</dt>
-                                    <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                    <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
-                                    <dt class="col-sm-4">Malesuada porta</dt>
-                                    <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
+                                    <dt class="col-sm-4"># of Participants</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">5</strong> per pool
+                                    </dd>
+
+                                    <dt class="col-sm-4"># of Shuffle Pools</dt>
+                                    <dd class="col-sm-8">
+                                        <strong class="text-info">7</strong> per server
+                                        <br />Lowest: <strong class="text-info">100.00 bits</strong> <em>(~$0.025 USD)</em>
+                                        <br />Highest: <strong class="text-info">100.00 BCH</strong> <em>(~$25k USD)</em>
+                                    </dd>
+                                    <!-- <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd> -->
+
+                                    <dt class="col-sm-4">Avg Completion</dt>
+                                    <dd class="col-sm-8">
+                                        Minimum: <strong class="text-info">less than 1min</strong>
+                                        <br />Maximum: <strong class="text-info">n/a</strong>
+                                    </dd>
+
                                     <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
                                     <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
                                         sit amet risus.
@@ -55,6 +155,10 @@
 </template>
 
 <script>
+/* Import modules. */
+import numeral from 'numeral'
+import superagent from 'superagent'
+
 /* Import components. */
 import Header from '@/components/Header.vue'
 import Navbar from './Navbar.vue'
@@ -66,186 +170,151 @@ export default {
     },
     data: () => {
         return {
-            rawTxHex: '020000000141f7f072c1cba4a6b50266f1c574b391166590da4d7fb10c2e61e80e69bf9d15000000006441c374bfb607aef669ebad0ecdc13c0cdb71e5e0cd97b40631a5f11dcedf428634a486ab3aefdfc651dc3ee040307d7fabe4a70c9586efab9348828f48624c2adcc12102130221d09ef7d2fdba9db903246a8e69bed0125ab4e44dc5a6dac66b87d13b2affffffff019e1d0000000000001976a91430a8161ef13bb7fccea6283159e47553f8a576e888ac00000000',
+            bitbox: null,
+            network: null,
+            usd: 0,
+
+            serverUri: null,
+            stats: null,
         }
     },
     computed: {
-        txVersion() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx version. */
-                const txVersion = this.rawTxHex.slice(0, 8)
-
-                /* Return tx version. */
-                return txVersion
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txInputCount() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx input count. */
-                const txInputCount = this.rawTxHex.slice(8, 10)
-
-                /* Return tx input count. */
-                return txInputCount
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txId() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx id. */
-                const txId = this.rawTxHex.slice(10, 74)
-
-                /* Reverse endianness. */
-                const reversed = this.reverseBytes(txId)
-
-                /* Return (reversed) tx id. */
-                return reversed
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txOutpointIndex() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txOutpointIndex = this.rawTxHex.slice(74, 82)
-
-                /* Return tx input count. */
-                return txOutpointIndex
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txInputScriptBytes() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txInputScriptBytes = this.rawTxHex.slice(82, 84)
-
-                /* Return tx input count. */
-                return txInputScriptBytes
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txSignature() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                // FIXME: Calculate the txInputScriptBytes (length).
-                const txSignature = this.rawTxHex.slice(84, 284)
-
-                /* Return tx input count. */
-                return txSignature
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txSequence() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txSequence = this.rawTxHex.slice(284, 292)
-
-                /* Return tx input count. */
-                return txSequence
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txOutputCount() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txOutputCount = this.rawTxHex.slice(292, 294)
-
-                /* Return tx input count. */
-                return txOutputCount
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txValue() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txValue = this.rawTxHex.slice(294, 310)
-
-                /* Reverse endianness. */
-                const reversed = this.reverseBytes(txValue)
-
-                /* Return tx input count. */
-                return reversed
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txOutputScriptBytes() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txOutputScriptBytes = this.rawTxHex.slice(310, 312)
-
-                /* Return tx input count. */
-                return txOutputScriptBytes
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txPubKeyScript() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txPubKeyScript = this.rawTxHex.slice(312, 362)
-
-                /* Return tx input count. */
-                return txPubKeyScript
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txLockTime() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txLockTime = this.rawTxHex.slice(362, 370)
-
-                /* Return tx input count. */
-                return txLockTime
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
+        //
     },
     methods: {
-        reverseBytes(_bytes) {
-            /* Reverse bytes. */
-            // source: https://stackoverflow.com/a/29017642/514914
-            return _bytes.match(/[a-fA-F0-9]{2}/g).reverse().join('')
+        /**
+         * Initialize BITBOX
+         */
+        initBitbox() {
+            console.info('Initializing BITBOX..')
+
+            try {
+                /* Initialize BITBOX. */
+                this.bitbox = new window.BITBOX()
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        /**
+         * Update Price
+         */
+        async updatePrice() {
+            try {
+                const current = await this.bitbox.Price.current('usd')
+                console.log('CURRENT PRICE', current)
+
+                this.usd = current
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        /**
+         * Pools
+         *
+         * Filters the available pools (based on network type).
+         */
+        pools(_network) {
+            if (_network === 'mainnet') {
+                /* Filter pools. */
+                const filtered = this.stats.pools.filter(pool => pool.version === 300)
+
+                /* Sort pools. */
+                const sorted = filtered.sort((a, b) => {
+                    return a.amount - b.amount
+                })
+
+                /* Return pools. */
+                return sorted
+            } else {
+                /* Filter pools. */
+                const filtered = this.stats.pools.filter(pool => pool.version === 301)
+
+                /* Sort pools. */
+                const sorted = filtered.sort((a, b) => {
+                    return a.amount - b.amount
+                })
+
+                /* Return pools. */
+                return sorted
+            }
+        },
+
+        /**
+         * Satoshis
+         *
+         * Formated with commas.
+         */
+        satoshis(_satoshis) {
+            return numeral(_satoshis).format('0,0')
+        },
+
+        /**
+         * Bitcoin Cash (BCH)
+         *
+         * Calculated from satoshis to BCH value.
+         */
+        bch(_satoshis) {
+            /* Calculate BCH value. */
+            const bchVal = parseFloat(_satoshis / 100000000.0)
+
+            return numeral(bchVal).format('0,0.[0000]')
+        },
+
+        /**
+         * Fiat
+         *
+         * Calculated from satoshis to fiat (USD) value.
+         */
+        fiat(_satoshis) {
+            /* Calculate BCH value. */
+            const bchVal = parseFloat(_satoshis / 100000000.0)
+
+            /* Calculate fiat value. */
+            const fiat = bchVal * parseFloat(this.usd / 100.0)
+
+            /* Return value. */
+            return numeral(fiat).format('$0,0.00[00]')
         },
     },
     created: async function () {
-        //
+        /* Initialize BITBOX. */
+        this.initBitbox()
+
+        /* Set network. */
+        this.network = 'mainnet'
+
+        /* Update USD. */
+        this.updatePrice()
+
+        /* Set server URI. */
+        this.serverUri = 'https://shuffle.servo.cash:8080/stats'
+
+        superagent
+            .get(this.serverUri)
+            .set('accept', 'json')
+            .end((err, res) => {
+                if (err) {
+                    return console.error('API ERROR:', err)
+                }
+
+                console.log('API RESPONSE', res)
+
+                /* Set statistics. */
+                const stats = res.body
+                console.log('STATISTICS', stats)
+
+                /* Set statistics. */
+                this.stats = stats
+            })
+
     },
     mounted: function () {
-
+        //
+    },
+    beforeDestroy: function () {
+        //
     },
 }
 </script>

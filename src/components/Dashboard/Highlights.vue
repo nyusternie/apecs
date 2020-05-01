@@ -99,12 +99,12 @@ export default {
     data: () => {
         return {
             bitbox: null,
-            price: 0,
+            usd: 0,
         }
     },
     computed: {
         displayPrice: function () {
-            return numeral(this.price / 100).format('$0.00[00]')
+            return numeral(this.usd / 100).format('$0.00[00]')
         }
     },
     methods: {
@@ -130,7 +130,7 @@ export default {
                 const current = await this.bitbox.Price.current('usd')
                 console.log('CURRENT PRICE', current)
 
-                this.price = current
+                this.usd = current
             } catch (err) {
                 console.error(err)
             }
@@ -146,10 +146,12 @@ export default {
     created: function () {
         /* Initialize BITBOX. */
         this.initBitbox()
+
+        /* Update USD. */
+        this.updatePrice()
     },
     mounted: function () {
-        /* Update price. */
-        this.updatePrice()
+        //
     },
 }
 </script>
