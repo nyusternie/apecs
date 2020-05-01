@@ -16,10 +16,12 @@
 
                                 <dl class="row" v-if="stats">
                                     <dt class="col-sm-4 text-right">Server</dt>
-                                    <dd class="col-sm-8">
-                                        <strong class="text-info">{{serverUri}}</strong>
+                                    <dd class="col-sm-8 mb-0">
+                                        <a :href="serverUri" target="_blank">
+                                            <strong class="text-info">{{serverUri}}</strong>
+                                        </a>
                                     </dd>
-                                    <dd class="col-sm-8 offset-sm-4">
+                                    <dd class="col-sm-8 offset-sm-4 mt-0">
                                         <small class="text-danger">
                                             <strong>
                                             This is a public server operated by ...
@@ -67,9 +69,10 @@
                                     </dd>
 
                                     <dt class="col-sm-4 text-right">Amount</dt>
-                                    <dd class="col-sm-8">
+                                    <dd class="col-sm-8 mb-0">
                                         <strong class="text-info">{{satoshis(pool.amount)}}</strong> satoshis
-                                        <br />
+                                    </dd>
+                                    <dd class="col-sm-8 offset-sm-4 mt-0">
                                         <small><strong class="text-danger">{{bch(pool.amount)}}</strong> BCH</small> |
                                         <small><strong class="text-danger">{{fiat(pool.amount)}}</strong> USD</small>
                                     </dd>
@@ -127,9 +130,9 @@
 
                                     <dt class="col-sm-4"># of Shuffle Pools</dt>
                                     <dd class="col-sm-8">
-                                        <strong class="text-info">7</strong> per server
-                                        <br />Lowest: <strong class="text-info">100.00 bits</strong> <em>(~$0.025 USD)</em>
-                                        <br />Highest: <strong class="text-info">100.00 BCH</strong> <em>(~$25k USD)</em>
+                                        Up to <strong class="text-info">8</strong> per server
+                                        <br />Lowest: <strong class="text-info">100 bits</strong> <small><strong class="text-danger">{{fiat(10000)}}</strong> USD</small>
+                                        <br />Highest: <strong class="text-info">1,000 BCH</strong> <small><strong class="text-danger">{{fiat(100000000000)}}</strong> USD</small>
                                     </dd>
                                     <!-- <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd> -->
 
@@ -268,6 +271,11 @@ export default {
          * Calculated from satoshis to fiat (USD) value.
          */
         fiat(_satoshis) {
+            /* Validate USD price. */
+            if (!this.usd) {
+                return 0.00
+            }
+
             /* Calculate BCH value. */
             const bchVal = parseFloat(_satoshis / 100000000.0)
 
@@ -277,6 +285,7 @@ export default {
             /* Return value. */
             return numeral(fiat).format('$0,0.00[00]')
         },
+
     },
     created: async function () {
         /* Initialize BITBOX. */

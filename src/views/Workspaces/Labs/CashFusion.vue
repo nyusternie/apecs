@@ -48,9 +48,9 @@
 
                                     <dt class="col-sm-4"># of Fusion Pools</dt>
                                     <dd class="col-sm-8">
-                                        <strong class="text-info">12</strong> per server
-                                        <br />Lowest: <strong class="text-info">100.00 bits</strong> <em>(~$0.025 USD)</em>
-                                        <br />Highest: <strong class="text-info">0.82 BCH</strong> <em>(~$205 USD)</em>
+                                        Up to <strong class="text-info">12</strong> per server
+                                        <br />Lowest: <strong class="text-info">100.00 bits</strong> <small><strong class="text-danger">{{fiat(10000)}}</strong> USD</small>
+                                        <br />Highest: <strong class="text-info">0.82 BCH</strong> <small><strong class="text-danger">{{fiat(82000000)}}</strong> USD</small>
                                     </dd>
                                     <!-- <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd> -->
 
@@ -76,6 +76,9 @@
 </template>
 
 <script>
+/* Import modules. */
+import numeral from 'numeral'
+
 /* Import components. */
 import Header from '@/components/Header.vue'
 import Navbar from './Navbar.vue'
@@ -87,17 +90,96 @@ export default {
     },
     data: () => {
         return {
-            //
+            bitbox: null,
+            network: null,
+            usd: 0,
         }
     },
     computed: {
         //
     },
     methods: {
-        // 
+        /**
+         * Initialize BITBOX
+         */
+        initBitbox() {
+            console.info('Initializing BITBOX..')
+
+            try {
+                /* Initialize BITBOX. */
+                this.bitbox = new window.BITBOX()
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        /**
+         * Update Price
+         */
+        async updatePrice() {
+            try {
+                const current = await this.bitbox.Price.current('usd')
+                console.log('CURRENT PRICE', current)
+
+                this.usd = current
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        /**
+         * Satoshis
+         *
+         * Formated with commas.
+         */
+        satoshis(_satoshis) {
+            return numeral(_satoshis).format('0,0')
+        },
+
+        /**
+         * Bitcoin Cash (BCH)
+         *
+         * Calculated from satoshis to BCH value.
+         */
+        bch(_satoshis) {
+            /* Calculate BCH value. */
+            const bchVal = parseFloat(_satoshis / 100000000.0)
+
+            return numeral(bchVal).format('0,0.[0000]')
+        },
+
+        /**
+         * Fiat
+         *
+         * Calculated from satoshis to fiat (USD) value.
+         */
+        fiat(_satoshis) {
+            /* Validate USD price. */
+            if (!this.usd) {
+                return 0.00
+            }
+
+            /* Calculate BCH value. */
+            const bchVal = parseFloat(_satoshis / 100000000.0)
+
+            /* Calculate fiat value. */
+            const fiat = bchVal * parseFloat(this.usd / 100.0)
+
+            /* Return value. */
+            return numeral(fiat).format('$0,0.00[00]')
+        },
+
     },
     created: async function () {
-        //
+        /* Initialize BITBOX. */
+        this.initBitbox()
+
+        /* Set network. */
+        this.network = 'mainnet'
+
+        /* Update USD. */
+        this.updatePrice()
+
     },
     mounted: function () {
         //
