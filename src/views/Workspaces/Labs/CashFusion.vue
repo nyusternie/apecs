@@ -92,7 +92,6 @@ export default {
     data: () => {
         return {
             bitbox: null,
-            network: null,
             usd: 0,
         }
     },
@@ -174,9 +173,6 @@ export default {
     created: async function () {
         /* Initialize BITBOX. */
         this.initBitbox()
-
-        /* Set network. */
-        this.network = 'mainnet'
 
         /* Update USD. */
         this.updatePrice()

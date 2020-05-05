@@ -11,73 +11,43 @@
                     <div class="col-md-6">
                         <Navbar />
 
-                        <div class="card">
-                            <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header d-flex p-0">
+                                        <h3 class="card-title p-3">Transaction Menu</h3>
 
-                                <div class="form-group">
-                                    <label>Decode Raw Transaction</label>
-                                    <textarea
-                                        class="form-control"
-                                        rows="3"
-                                        placeholder="Past the raw hex code here"
-                                        v-model="rawTxHex"
-                                    ></textarea>
-                                </div>
+                                        <ul class="nav nav-pills ml-auto p-2">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="#txIdDetails" data-toggle="tab">ID</a>
+                                            </li>
 
-                                <dl class="row">
-                                    <dt v-if="txVersion" class="col-sm-4">Version</dt>
-                                    <dd v-if="txVersion" class="col-sm-8">{{txVersion}}</dd>
-                                    <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                                        <small class="text-muted">
-                                            Version numbers can be ...
-                                        </small>
-                                    </dd>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#decodeRawTx" data-toggle="tab">Raw</a>
+                                            </li>
 
-                                    <dt v-if="txInputCount" class="col-sm-4">Input Count</dt>
-                                    <dd v-if="txInputCount" class="col-sm-8">{{txInputCount}}</dd>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#advanced" data-toggle="tab">Advanced</a>
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                    <dt v-if="txId" class="col-sm-4">Transaction Id</dt>
-                                    <dd v-if="txId" class="col-sm-8"><a :href="'https://explorer.bitcoin.com/bch/tx/' + txId" target="_blank">{{txId}}</a></dd>
-                                    <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                                        <small class="text-muted">
-                                            NOTE: Endianness has been reversed.
-                                        </small>
-                                    </dd>
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="txIdDetails">
+                                                <TxIdDetails />
+                                            </div>
 
-                                    <dt v-if="txOutpointIndex" class="col-sm-4">Outpoint Index</dt>
-                                    <dd v-if="txOutpointIndex" class="col-sm-8">{{txOutpointIndex}}</dd>
+                                            <div class="tab-pane" id="decodeRawTx">
+                                                <DecodeRawTx />
+                                            </div>
 
-                                    <dt v-if="txInputScriptBytes" class="col-sm-4">Script Bytes</dt>
-                                    <dd v-if="txInputScriptBytes" class="col-sm-8">{{txInputScriptBytes}}</dd>
-
-                                    <dt v-if="txSignature" class="col-sm-4">Signature</dt>
-                                    <dd v-if="txSignature" class="col-sm-8">{{txSignature}}</dd>
-
-                                    <dt v-if="txSequence" class="col-sm-4">Sequence</dt>
-                                    <dd v-if="txSequence" class="col-sm-8">{{txSequence}}</dd>
-
-                                    <dt v-if="txOutputCount" class="col-sm-4">Output Count</dt>
-                                    <dd v-if="txOutputCount" class="col-sm-8">{{txOutputCount}}</dd>
-
-                                    <dt v-if="txValue" class="col-sm-4">Value</dt>
-                                    <dd v-if="txValue" class="col-sm-8">{{txValue}}</dd>
-                                    <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                                        <small class="text-muted">
-                                            NOTE: Endianness has been reversed.
-                                        </small>
-                                    </dd>
-
-                                    <dt v-if="txOutputScriptBytes" class="col-sm-4">Script Bytes</dt>
-                                    <dd v-if="txOutputScriptBytes" class="col-sm-8">{{txOutputScriptBytes}}</dd>
-
-                                    <dt v-if="txPubKeyScript" class="col-sm-4">PubKey Script</dt>
-                                    <dd v-if="txPubKeyScript" class="col-sm-8">{{txPubKeyScript}}</dd>
-
-                                    <dt v-if="txLockTime" class="col-sm-4">Lock Time</dt>
-                                    <dd v-if="txLockTime" class="col-sm-8">{{txLockTime}}</dd>
-
-                                </dl>
-
+                                            <div class="tab-pane" id="advanced">
+                                                <em>coming soonish'</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
                             </div>
                         </div>
                     </div>
@@ -119,195 +89,37 @@
 <script>
 /* Import components. */
 import Header from '@/components/Header.vue'
+
 import Navbar from './Navbar.vue'
+
+import DecodeRawTx from './Transaction/DecodeRawTx.vue'
+import TxIdDetails from './Transaction/TxIdDetails.vue'
 
 export default {
     components: {
         Header,
+
         Navbar,
+
+        DecodeRawTx,
+        TxIdDetails,
     },
     data: () => {
         return {
-            rawTxHex: '020000000141f7f072c1cba4a6b50266f1c574b391166590da4d7fb10c2e61e80e69bf9d15000000006441c374bfb607aef669ebad0ecdc13c0cdb71e5e0cd97b40631a5f11dcedf428634a486ab3aefdfc651dc3ee040307d7fabe4a70c9586efab9348828f48624c2adcc12102130221d09ef7d2fdba9db903246a8e69bed0125ab4e44dc5a6dac66b87d13b2affffffff019e1d0000000000001976a91430a8161ef13bb7fccea6283159e47553f8a576e888ac00000000',
+            //
         }
     },
     computed: {
-        txVersion() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx version. */
-                const txVersion = this.rawTxHex.slice(0, 8)
-
-                /* Return tx version. */
-                return txVersion
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txInputCount() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx input count. */
-                const txInputCount = this.rawTxHex.slice(8, 10)
-
-                /* Return tx input count. */
-                return txInputCount
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txId() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx id. */
-                const txId = this.rawTxHex.slice(10, 74)
-
-                /* Reverse endianness. */
-                const reversed = this.reverseBytes(txId)
-
-                /* Return (reversed) tx id. */
-                return reversed
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txOutpointIndex() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txOutpointIndex = this.rawTxHex.slice(74, 82)
-
-                /* Return tx input count. */
-                return txOutpointIndex
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txInputScriptBytes() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txInputScriptBytes = this.rawTxHex.slice(82, 84)
-
-                /* Return tx input count. */
-                return txInputScriptBytes
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txSignature() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                // FIXME: Calculate the txInputScriptBytes (length).
-                const txSignature = this.rawTxHex.slice(84, 284)
-
-                /* Return tx input count. */
-                return txSignature
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txSequence() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txSequence = this.rawTxHex.slice(284, 292)
-
-                /* Return tx input count. */
-                return txSequence
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txOutputCount() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txOutputCount = this.rawTxHex.slice(292, 294)
-
-                /* Return tx input count. */
-                return txOutputCount
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txValue() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txValue = this.rawTxHex.slice(294, 310)
-
-                /* Reverse endianness. */
-                const reversed = this.reverseBytes(txValue)
-
-                /* Return tx input count. */
-                return reversed
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txOutputScriptBytes() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txOutputScriptBytes = this.rawTxHex.slice(310, 312)
-
-                /* Return tx input count. */
-                return txOutputScriptBytes
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txPubKeyScript() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txPubKeyScript = this.rawTxHex.slice(312, 362)
-
-                /* Return tx input count. */
-                return txPubKeyScript
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
-        txLockTime() {
-            if (this.rawTxHex !== '') {
-                /* Parse tx outpoint index. */
-                const txLockTime = this.rawTxHex.slice(362, 370)
-
-                /* Return tx input count. */
-                return txLockTime
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
-
+        //
     },
     methods: {
-        reverseBytes(_bytes) {
-            /* Reverse bytes. */
-            // source: https://stackoverflow.com/a/29017642/514914
-            return _bytes.match(/[a-fA-F0-9]{2}/g).reverse().join('')
-        },
+        //
     },
     created: async function () {
         //
     },
     mounted: function () {
-        // 
+        //
     },
 }
 </script>

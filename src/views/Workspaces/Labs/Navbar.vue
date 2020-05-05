@@ -1,12 +1,16 @@
 <template>
     <nav class="navbar navbar-expand navbar-primary navbar-dark">
         <ul class="navbar-nav">
-            <li>
-                <div class="nav-item d-none d-sm-inline-block mt-1">
-                    <select class="form-control-sm">
-                        <option value="mainnet" selected>Mainnet</option>
-                        <option value="testnet">Testnet</option>
-                    </select>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript://">
+                    {{networkDisplay}} <span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" tabindex="-1" href="javascript://">Mainnet</a>
+                    <a class="dropdown-item" tabindex="-1" href="javascript://">Testnet</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" tabindex="-1" href="javascript://">Custom</a>
                 </div>
             </li>
 
@@ -38,7 +42,21 @@ export default {
     },
     data: () => {
         return {
-            //
+            network: 'mainnet', // FIXME: Move this to a store.
+        }
+    },
+    computed: {
+        networkDisplay() {
+            switch(this.network) {
+            case 'mainnet':
+                return 'Mainnet'
+            case 'testnet':
+                return 'Testnet'
+            case 'custom':
+                return 'Custom'
+            default:
+                return 'Mainnet'
+            }
         }
     },
     created: async function () {
