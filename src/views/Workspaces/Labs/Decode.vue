@@ -12,38 +12,26 @@
                         <Navbar />
 
                         <div class="card">
-                            <div class="card-header d-flex p-0">
-                                <h3 class="card-title p-3">Transaction Menu</h3>
-
-                                <ul class="nav nav-pills ml-auto p-2">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#txIdDetails" data-toggle="tab">ID</a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#decodeRawTx" data-toggle="tab">Raw</a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#advanced" data-toggle="tab">Advanced</a>
-                                    </li>
-                                </ul>
-                            </div>
-
                             <div class="card-body">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="txIdDetails">
-                                        <TxIdDetails />
-                                    </div>
 
-                                    <div class="tab-pane" id="decodeRawTx">
-                                        <DecodeRawTx />
-                                    </div>
+                                <div class="form-group">
+                                    <label>Base64</label>
+                                    <textarea
+                                        class="form-control"
+                                        rows="3"
+                                        placeholder="Paste encoded text here"
+                                        v-model="base64"
+                                    ></textarea>
 
-                                    <div class="tab-pane" id="advanced">
-                                        <em>coming soonish'</em>
-                                    </div>
+                                    <textarea
+                                        v-if="base64Decoded"
+                                        class="form-control mt-3"
+                                        rows="3"
+                                        disabled
+                                        :value="base64Decoded"
+                                    ></textarea>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -54,19 +42,24 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    Transaction Guide
+                                    Decoding Tools
                                 </h3>
                             </div>
 
                             <div class="card-body">
                                 <dl class="row">
-                                    <dt class="col-sm-4">Description lists</dt>
-                                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
+                                    <dt class="col-sm-4">Base64</dt>
+                                    <dd class="col-sm-8">
+                                        Designed to carry data stored in <strong>binary formats</strong> across channels that only reliably support <strong>text (eg. UTF-8) content.</strong>
+                                    </dd>
+
                                     <dt class="col-sm-4">Euismod</dt>
                                     <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
                                     <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
+
                                     <dt class="col-sm-4">Malesuada porta</dt>
                                     <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
+
                                     <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
                                     <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
                                         sit amet risus.
@@ -85,28 +78,26 @@
 <script>
 /* Import components. */
 import Header from '@/components/Header.vue'
-
 import Navbar from './Navbar.vue'
-
-import DecodeRawTx from './Transaction/DecodeRawTx.vue'
-import TxIdDetails from './Transaction/TxIdDetails.vue'
 
 export default {
     components: {
         Header,
-
         Navbar,
-
-        DecodeRawTx,
-        TxIdDetails,
     },
     data: () => {
         return {
-            //
+            base64: null,
         }
     },
     computed: {
-        //
+        base64Decoded() {
+            if (this.base64) {
+                return Buffer.from(this.base64, 'base64').toString()
+            } else {
+                return null
+            }
+        },
     },
     methods: {
         //

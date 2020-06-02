@@ -6,10 +6,11 @@ import GraphicsStudio from '@/views/Workspaces/GraphicsStudio'
 import Labs from '@/views/Workspaces/Labs'
 import LabsAuth from '@/views/Workspaces/Labs/Auth'
 import LabsCashFusion from '@/views/Workspaces/Labs/CashFusion'
-import LabsCrypto from '@/views/Workspaces/Labs/Crypto'
-import LabsHashing from '@/views/Workspaces/Labs/Hashing'
 import LabsCashScript from '@/views/Workspaces/Labs/CashScript'
 import LabsCashShuffle from '@/views/Workspaces/Labs/CashShuffle'
+import LabsCrypto from '@/views/Workspaces/Labs/Crypto'
+import LabsDecode from '@/views/Workspaces/Labs/Decode'
+import LabsHashing from '@/views/Workspaces/Labs/Hashing'
 import LabsMessaging from '@/views/Workspaces/Labs/Messaging'
 import LabsTransaction from '@/views/Workspaces/Labs/Transaction'
 import LabsWallet from '@/views/Workspaces/Labs/Wallet'
@@ -35,14 +36,6 @@ const routes = [
         component: LabsAuth
     },
     {
-        path: '/labs/crypto',
-        component: LabsCrypto
-    },
-    {
-        path: '/labs/hash',
-        component: LabsHashing
-    },
-    {
         path: '/labs/cashfusion',
         component: LabsCashFusion
     },
@@ -53,6 +46,18 @@ const routes = [
     {
         path: '/labs/cashshuffle',
         component: LabsCashShuffle
+    },
+    {
+        path: '/labs/crypto',
+        component: LabsCrypto
+    },
+    {
+        path: '/labs/decode',
+        component: LabsDecode
+    },
+    {
+        path: '/labs/hash',
+        component: LabsHashing
     },
     {
         path: '/labs/msg',

@@ -72,6 +72,16 @@
                                         Perform various cryptographic functions.
                                     </dd>
 
+                                    <!-- Decoders -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/decode">
+                                            Decoders
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Perform various decoding functions.
+                                    </dd>
+
                                     <!-- Hashing -->
                                     <dt class="col-sm-4">
                                         <router-link to="/labs/hash">

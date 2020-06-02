@@ -175,6 +175,7 @@ export default {
     data: () => {
         return {
             bitbox: null,
+            network: 'mainnet',
             usd: 0,
 
             serverUri: null,

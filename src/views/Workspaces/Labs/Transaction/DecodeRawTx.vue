@@ -5,7 +5,7 @@
             <textarea
                 class="form-control"
                 rows="3"
-                placeholder="Past the raw hex code here"
+                placeholder="Paste raw hex code here"
                 v-model="rawTxHex"
             ></textarea>
         </div>
