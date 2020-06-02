@@ -29,7 +29,8 @@ const routes = [
     //   // route level code-splitting
     //   // this generates a separate chunk (about.[hash].js) for this route
     //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
+    //   component: () => import(/* webpackChunkName: "about" */ '@/views/Dashboard.vue')
+    //   component: () => import('@/views/Dashboard'), <-- this is less efficient
     // },
     ...community,
     ...desktop,
@@ -43,6 +44,7 @@ const routes = [
 // NOTE: We're using "hash" mode in development due to problems
 //       resolving "dynamic" routes.
 export default new VueRouter({
+    // TODO: Make this dynamic using `VUE_APP_BASE_URL`??
     mode: 'hash', // NOTE: Use 'hash' when running locally.
     // mode: 'history', // NOTE: Use 'hash' when deploying to server.
     // mode: process.env.NODE_ENV === 'production' ? 'history' : 'hash',

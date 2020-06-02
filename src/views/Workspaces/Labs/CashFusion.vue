@@ -48,7 +48,7 @@
 
                                     <dt class="col-sm-4"># of Fusion Pools</dt>
                                     <dd class="col-sm-8">
-                                        Up to <strong class="text-info">12</strong> per server
+                                        Up to <strong class="text-info">48</strong> per server
                                         <br />Lowest: <strong class="text-info">100.00 bits</strong> <small><strong class="text-danger">{{fiat(10000)}}</strong> USD</small>
                                         <br />Highest: <strong class="text-info">0.82 BCH</strong> <small><strong class="text-danger">{{fiat(82000000)}}</strong> USD</small>
                                     </dd>

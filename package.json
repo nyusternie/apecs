@@ -1,6 +1,6 @@
 {
-  "name": "devops.cash",
-  "version": "20.5.1",
+  "name": "cash-devops",
+  "version": "20.5.5",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",

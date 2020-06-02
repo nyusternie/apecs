@@ -96,7 +96,6 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -138,7 +137,6 @@ temp/
 
 # End of https://www.gitignore.io/api/node,macos
 
-/api
 /build
 _book
 _failedFusion*
