@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 
 /* Import views. */
 import Dashboard from '@/views/Dashboard'
+import Stats from '@/views/Stats'
+import Status from '@/views/Status'
 
 /* Import views. */
 import community from './community'
@@ -22,6 +24,14 @@ const routes = [
     {
         path: '/',
         component: Dashboard
+    },
+    {
+        path: '/stats',
+        component: Stats
+    },
+    {
+        path: '/status',
+        component: Status
     },
     // {
     //   path: '/dashboard',
@@ -44,10 +54,17 @@ const routes = [
 // NOTE: We're using "hash" mode in development due to problems
 //       resolving "dynamic" routes.
 export default new VueRouter({
-    // TODO: Make this dynamic using `VUE_APP_BASE_URL`??
-    mode: 'hash', // NOTE: Use 'hash' when running locally.
-    // mode: 'history', // NOTE: Use 'hash' when deploying to server.
-    // mode: process.env.NODE_ENV === 'production' ? 'history' : 'hash',
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return { x: 0, y: 0 }
+        }
+    },
+    mode: process.env.BASE_URL === '/' ? 'history': 'hash',
+    // mode: 'hash',
+    // mode: 'history',
+    base: process.env.BASE_URL,
     linkActiveClass: 'active', // TODO: We should localize this to Navbar.vue's scope.
-    routes
+    routes,
 })

@@ -82,6 +82,16 @@
                                         Perform various decoding functions.
                                     </dd>
 
+                                    <!-- Hardware -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/hardware">
+                                            Hardware
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Experiment with blockchain hardware devices.
+                                    </dd>
+
                                     <!-- Hashing -->
                                     <dt class="col-sm-4">
                                         <router-link to="/labs/hash">

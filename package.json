@@ -1,6 +1,6 @@
 {
   "name": "cash-devops",
-  "version": "20.5.5",
+  "version": "20.10.3",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,12 +11,16 @@
     "generate-icons": "vsvg -s ./svg-icons -t ./src/compiled-icons"
   },
   "dependencies": {
+    "@ledgerhq/hw-app-btc": "5.13.1",
+    "@ledgerhq/hw-app-eth": "5.13.1",
+    "@ledgerhq/hw-transport-webusb": "5.13.1",
     "bitbox-sdk": "8.11.2",
     "bitcore-lib-cash": "8.19.0",
     "cashid": "0.3.3",
     "core-js": "3.6.4",
     "ethereum-blockies-base64": "1.0.2",
     "moment": "2.24.0",
+    "nitojs": "gitlab:bchplease/nitojs",
     "numeral": "2.0.6",
     "superagent": "5.2.2",
     "vue": "2.6.11",

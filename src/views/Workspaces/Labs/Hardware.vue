@@ -14,17 +14,13 @@
                         <div class="card">
                             <div class="card-body">
 
-                                TODO...
+                                Connect your Ledger Nano S/X
 
-                                <ol>
-                                    <li>Convert Pubkey To Address</li>
-                                    <li>Convert Address To Pubkey</li>
-                                    <li>Convert Hash To Address</li>
-                                    <li>Convert Address To Hash</li>
-                                    <li>Convert Pubkey To Hash</li>
-                                </ol>
+                                <button type="button" class="btn btn-block btn-primary" @click="connectLedger">Connect Ledger</button>
 
-                                source: https://bitcointools.site/
+                                <div v-if="ledgerAddress" class="p-3">
+                                    Ledger Address: {{ledgerAddress}}
+                                </div>
 
                             </div>
                         </div>
@@ -36,7 +32,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    Hashing Guide
+                                    Hardware Guide
                                 </h3>
                             </div>
 
@@ -69,6 +65,10 @@
 import Header from '@/components/Header.vue'
 import Navbar from './Navbar.vue'
 
+// FOR DEVELOPMENT PURPOSES ONLY
+import LedgerTransport from '@ledgerhq/hw-transport-webusb'
+import LedgerBtc from '@ledgerhq/hw-app-btc'
+
 export default {
     components: {
         Header,
@@ -76,14 +76,31 @@ export default {
     },
     data: () => {
         return {
-            //
+            ledgerAddress: null,
         }
     },
     computed: {
         //
     },
     methods: {
-        //
+        connectLedger() {
+            const getBtcAddress = async () => {
+                const transport = await LedgerTransport.create()
+                const btc = new LedgerBtc(transport)
+
+                const result = await btc.getWalletPublicKey(`44'/145'/0'/0/0`)
+                // const result = await btc.getWalletPublicKey(`44'/145'/0'/0/1`)
+
+                return result.bitcoinAddress
+            }
+
+            getBtcAddress().then(_address => {
+                console.log('ADDRESS', _address)
+                this.ledgerAddress = _address
+            })
+
+        },
+
     },
     created: async function () {
         //

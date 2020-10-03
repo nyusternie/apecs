@@ -10,6 +10,7 @@ import LabsCashScript from '@/views/Workspaces/Labs/CashScript'
 import LabsCashShuffle from '@/views/Workspaces/Labs/CashShuffle'
 import LabsCrypto from '@/views/Workspaces/Labs/Crypto'
 import LabsDecode from '@/views/Workspaces/Labs/Decode'
+import LabsHardware from '@/views/Workspaces/Labs/Hardware'
 import LabsHashing from '@/views/Workspaces/Labs/Hashing'
 import LabsMessaging from '@/views/Workspaces/Labs/Messaging'
 import LabsTransaction from '@/views/Workspaces/Labs/Transaction'
@@ -54,6 +55,10 @@ const routes = [
     {
         path: '/labs/decode',
         component: LabsDecode
+    },
+    {
+        path: '/labs/hardware',
+        component: LabsHardware
     },
     {
         path: '/labs/hash',

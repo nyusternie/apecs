@@ -26,23 +26,50 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    CashScript Guide
+                                    CashScript Glossary / Guide
+                                    <br />
+                                    <small>
+                                        source: <a href="https://developer.bitcoin.com/cashscript/docs/language" target="_blank">
+                                        https://developer.bitcoin.com/cashscript/docs/language</a>
+                                    </small>
                                 </h3>
                             </div>
 
                             <div class="card-body">
                                 <dl class="row">
-                                    <dt class="col-sm-4">Description lists</dt>
-                                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
-                                    <dt class="col-sm-4">Euismod</dt>
-                                    <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                    <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
-                                    <dt class="col-sm-4">Malesuada porta</dt>
-                                    <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
-                                    <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
-                                    <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-                                        sit amet risus.
+                                    <dt class="col-sm-4">tx.age</dt>
+                                    <dd class="col-sm-8">
+                                        Represents the block depth of the utxo that is being spent by the current transaction.
                                     </dd>
+
+                                    <dt class="col-sm-4">tx.bytecode</dt>
+                                    <dd class="col-sm-8">
+                                        Represents the Bitcoin Script bytecode of the current contract.
+                                    </dd>
+
+                                    <dt class="col-sm-4">tx.hashOutputs</dt>
+                                    <dd class="col-sm-8">
+                                        Represents the double sha256 of the serialisation of all outputs (bytes8 amount + bytes locking script).
+                                    </dd>
+
+                                    <dt class="col-sm-4">tx.time</dt>
+                                    <dd class="col-sm-8">
+                                        Represents the block number that the transaction is included in.
+                                    </dd>
+                                    <dd class="col-sm-8 offset-sm-4">
+                                        <small>(eg. <code>478559</code>)</small>
+                                    </dd>
+
+                                    <dt class="col-sm-4">tx.value (bytes8)</dt>
+                                    <dd class="col-sm-8">
+                                        Represents the value of current input being spent.
+                                    </dd>
+                                    <dd class="col-sm-8 offset-sm-4">
+                                        <small>
+                                            Due to technical limitations, this can only work if tx.value fits within a 32-bit signed integer (max ~21 BCH).
+                                        </small>
+                                    </dd>
+
                                 </dl>
                             </div>
                         </div>

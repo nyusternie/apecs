@@ -2,11 +2,11 @@
 import installBadger from '@/libs/installBadger'
 
 /* Initialize donation address. */
-// NOTE: EatBCH VE
-const donationAddress = 'bitcoincash:pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g'
+// const donationAddress = 'bitcoincash:pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g' // EatBCH VE
+const donationAddress = 'bitcoincash:qrz4zlgjsqu0gu9xaayrrrlrttyv85xxzslp43veu6' // Causes Cash
 
 /* Initialize donation amount. */
-const donationAmount = 2000
+const donationAmount = 5000 // FIXME: Auto-calculate to $0.01
 
 /**
  * Send Donation
@@ -31,7 +31,7 @@ const sendDonation = () => {
 
         /* Validate account. */
         if (web4bch.bch && web4bch.bch.defaultAccount === undefined) {
-            alert('please unlock your badgerwallet');
+            alert('please unlock your Badger wallet');
         }
 
         /* Set transaction parameters. */

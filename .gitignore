@@ -139,9 +139,6 @@ temp/
 
 /build
 _book
-_failedFusion*
-_failedShuffle*
-test_json_wallet.js
 
 NOTES
 REF

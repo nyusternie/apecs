@@ -294,8 +294,14 @@
 
                     <!-- Build Info -->
                     <li class="nav-header">
-                        <div class="build-info">Cash DevOps v{{version}}</div>
-                        <div class="build-info">&copy; {{currentYear}} <a href="https://modenero.com" target="_blank"><strong>Modenero</strong></a>. All rights reserved.</div>
+                        <!-- <div class="build-info">Cash DevOps is 100% open source</div> -->
+                        <div class="build-info">Cash DevOps is 100% FREE as in beer</div>
+                        <div class="build-info">
+                            Latest: <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="ext-link">v{{version}}</a>
+                            &nbsp; &bullet; &nbsp;
+                            (<a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="ext-link">other versions</a>)
+                        </div>
+                        <!-- <div class="build-info">&copy; {{currentYear}} <a href="https://bchplease.org" target="_blank"><strong>Bitcoin Cash Please</strong></a>. All rights reserved.</div> -->
                     </li>
                 </ul>
             </nav>
@@ -323,7 +329,6 @@ export default {
     data: () => {
         return {
             bitbox: null,
-            version: '20.2.12',
         }
     },
     computed: {
@@ -337,14 +342,18 @@ export default {
             apiUrl: state => state.system.apiUrl,
         }),
 
-        currentYear: function () {
+        version() {
+            return require('../../package.json').version
+        },
+
+        currentYear () {
             return moment().format('YYYY')
         },
 
         /**
          * Selects a PRIMARY account for use during the session.
          */
-        account: function () {
+        account() {
             /* Initialize account. */
             let account = null
 
@@ -526,5 +535,10 @@ div .build-info a {
 }
 .donate {
     color: rgba(255, 180, 180, 0.8);
+}
+
+.ext-link {
+    color: rgba(255, 120, 120, 0.8) !important;
+    text-decoration: underline;
 }
 </style>
