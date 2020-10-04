@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Dashboard from '@/views/Dashboard'
 import Stats from '@/views/Stats'
 import Status from '@/views/Status'
+import Ver from '@/views/Ver'
 
 /* Import views. */
 import community from './community'
@@ -32,6 +33,10 @@ const routes = [
     {
         path: '/status',
         component: Status
+    },
+    {
+        path: '/ver',
+        component: Ver
     },
     // {
     //   path: '/dashboard',

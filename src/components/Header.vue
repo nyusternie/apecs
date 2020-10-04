@@ -44,6 +44,8 @@ export default {
                 return 'Bitcoin Statistics'
             case 'status':
                 return 'Community & Network Status'
+            case 'ver':
+                return 'Ver: Node Virtual Assistant'
 
             /* Community */
             case 'blockchain':
