@@ -9,6 +9,7 @@ import LabsCashFusion from '@/views/Workspaces/Labs/CashFusion'
 import LabsCashScript from '@/views/Workspaces/Labs/CashScript'
 import LabsCashShuffle from '@/views/Workspaces/Labs/CashShuffle'
 import LabsCrypto from '@/views/Workspaces/Labs/Crypto'
+import LabsEvents from '@/views/Workspaces/Labs/Events'
 import LabsDecode from '@/views/Workspaces/Labs/Decode'
 import LabsHardware from '@/views/Workspaces/Labs/Hardware'
 import LabsHashing from '@/views/Workspaces/Labs/Hashing'
@@ -55,6 +56,10 @@ const routes = [
     {
         path: '/labs/decode',
         component: LabsDecode
+    },
+    {
+        path: '/labs/events',
+        component: LabsEvents
     },
     {
         path: '/labs/hardware',

@@ -143,10 +143,10 @@
 
                     <!-- Source Feeds -->
                     <li class="nav-item">
-                        <router-link to="/discussions" class="nav-link">
+                        <router-link to="/discuss" class="nav-link">
                             <i class="nav-icon fas fa-comments"></i>
                             <p>
-                                Discussions
+                                Discuss
                                 <span class="badge badge-info right">{{newDiscussions}}</span>
                             </p>
                         </router-link>
@@ -173,22 +173,34 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <router-link to="/markets" class="nav-link">
                                     <i class="fas fa-chart-bar nav-icon"></i>
                                     <p>Markets</p>
                                 </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link to="/blockchain" class="nav-link">
+                            </li> -->
+                            <!-- <li class="nav-item">
+                                <router-link to="/blockchains" class="nav-link">
                                     <i class="fas fa-link nav-icon"></i>
-                                    <p>Blockchain</p>
+                                    <p>Blockchains</p>
                                 </router-link>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <router-link to="/privacy" class="nav-link">
                                     <i class="fas fa-user-secret nav-icon"></i>
                                     <p>Privacy</p>
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/stats" class="nav-link">
+                                    <i class="fas fa-chart-bar nav-icon"></i>
+                                    <p>Stats</p>
+                                </router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/status" class="nav-link">
+                                    <i class="fas fa-chart-bar nav-icon"></i>
+                                    <p>Status</p>
                                 </router-link>
                             </li>
                             <li class="nav-item">
@@ -213,7 +225,7 @@
 
                     <!-- Tutorials -->
                     <li class="nav-item">
-                        <router-link to="/tutorials" class="nav-link">
+                        <router-link to="/guides" class="nav-link">
                             <i class="nav-icon fas fa-book-open"></i>
                             <p>
                                 Guides &amp; Tutorials

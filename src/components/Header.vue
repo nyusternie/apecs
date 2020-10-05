@@ -47,11 +47,10 @@ export default {
             case 'ver':
                 return 'Ver: Node Virtual Assistant'
 
-            /* Community */
-            case 'blockchain':
+            case 'blockchains':
                 return 'Blockchain Insights'
-            case 'discussions':
-                return 'Discussions'
+            case 'discuss':
+                return 'Discuss'
             case 'events':
                 return 'Event Calendar'
             case 'markets':

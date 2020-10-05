@@ -82,6 +82,16 @@
                                         Perform various decoding functions.
                                     </dd>
 
+                                    <!-- Events -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/events">
+                                            Events
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Connect with various events, from server-side to ???.
+                                    </dd>
+
                                     <!-- Hardware -->
                                     <dt class="col-sm-4">
                                         <router-link to="/labs/hardware">

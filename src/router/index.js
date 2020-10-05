@@ -7,8 +7,14 @@ import Stats from '@/views/Stats'
 import Status from '@/views/Status'
 import Ver from '@/views/Ver'
 
+import Blockchains from '@/views/Blockchains'
+import Discus from '@/views/Discus'
+import Events from '@/views/Events'
+import Markets from '@/views/Markets'
+import Privacy from '@/views/Privacy'
+import News from '@/views/News'
+
 /* Import views. */
-import community from './community'
 import desktop from './desktop'
 import profiles from './profiles'
 import projects from './projects'
@@ -38,6 +44,32 @@ const routes = [
         path: '/ver',
         component: Ver
     },
+
+    {
+        path: '/blockchains',
+        component: Blockchains
+    },
+    {
+        path: '/discuss',
+        component: Discus
+    },
+    {
+        path: '/events',
+        component: Events
+    },
+    {
+        path: '/markets',
+        component: Markets
+    },
+    {
+        path: '/privacy',
+        component: Privacy
+    },
+    {
+        path: '/news',
+        component: News
+    },
+
     // {
     //   path: '/dashboard',
     //   name: 'Dashboard',
@@ -47,7 +79,7 @@ const routes = [
     //   component: () => import(/* webpackChunkName: "about" */ '@/views/Dashboard.vue')
     //   component: () => import('@/views/Dashboard'), <-- this is less efficient
     // },
-    ...community,
+
     ...desktop,
     ...profiles,
     ...projects,
