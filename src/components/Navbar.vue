@@ -29,7 +29,7 @@
                 </div>
                 <div class="info">
                     <a href="javascript://" class="d-block" @click="signIn">Incognito <small>[ Sign in ]</small></a>
-                    <a href="javascript://" class="d-block" @click="donate"><small class="donate">[ donate $0.01 to causes ]</small></a>
+                    <a href="javascript://" class="d-block" @click="donate"><small class="donate">[ donate $0.01 to devops ]</small></a>
                 </div>
             </div>
 
@@ -276,18 +276,18 @@
 
                     <!-- Reddit -->
                     <li class="nav-item">
-                        <a href="https://www.reddit.com/r/DevOpsCash/" target="_blank" class="nav-link">
+                        <a href="https://www.reddit.com/r/CashDevOps/" target="_blank" class="nav-link">
                             <i class="nav-icon fab fa-reddit text-danger"></i>
-                            <p>r/DevOpsCash</p>
+                            <p>r/CashDevOps</p>
                             <i class="nav-icon fas fa-external-link-alt"></i>
                         </a>
                     </li>
 
                     <!-- GitHub -->
                     <li class="nav-item">
-                        <a href="https://github.com/modenero/devops.cash" target="_blank" class="nav-link">
+                        <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="nav-link">
                             <i class="nav-icon fab fa-github text-primary"></i>
-                            <p>Fork us on GitHub</p>
+                            <p>Fork us on GitLab</p>
                             <i class="nav-icon fas fa-external-link-alt"></i>
                         </a>
                     </li>
