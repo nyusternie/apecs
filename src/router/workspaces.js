@@ -14,6 +14,7 @@ import LabsDecode from '@/views/Workspaces/Labs/Decode'
 import LabsHardware from '@/views/Workspaces/Labs/Hardware'
 import LabsHashing from '@/views/Workspaces/Labs/Hashing'
 import LabsMessaging from '@/views/Workspaces/Labs/Messaging'
+import LabsQuery from '@/views/Workspaces/Labs/Query'
 import LabsTransaction from '@/views/Workspaces/Labs/Transaction'
 import LabsWallet from '@/views/Workspaces/Labs/Wallet'
 
@@ -72,6 +73,10 @@ const routes = [
     {
         path: '/labs/msg',
         component: LabsMessaging
+    },
+    {
+        path: '/labs/query',
+        component: LabsQuery
     },
     {
         path: '/labs/tx',

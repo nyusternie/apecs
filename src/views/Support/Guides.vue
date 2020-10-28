@@ -52,6 +52,8 @@
                                     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
                                     apt update
                                     apt install docker-ce docker-compose
+
+                                    * docker-compose pull && docker-compose up -d
                                 </code>
 
                                 <h3>Matrix (Synapse) over Docker</h3>

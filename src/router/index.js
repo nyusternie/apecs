@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import Dashboard from '@/views/Dashboard'
 import Stats from '@/views/Stats'
 import Status from '@/views/Status'
-import Ver from '@/views/Ver'
+import Vin from '@/views/Vin'
 
 import Blockchains from '@/views/Blockchains'
 import Discus from '@/views/Discus'
@@ -41,8 +41,8 @@ const routes = [
         component: Status
     },
     {
-        path: '/ver',
-        component: Ver
+        path: '/vin',
+        component: Vin
     },
 
     {

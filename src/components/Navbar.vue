@@ -313,7 +313,7 @@
                             &nbsp; &bullet; &nbsp;
                             (<a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="ext-link">other versions</a>)
                         </div>
-                        <!-- <div class="build-info">&copy; {{currentYear}} <a href="https://bchplease.org" target="_blank"><strong>Bitcoin Cash Please</strong></a>. All rights reserved.</div> -->
+                        <!-- <div class="build-info">&copy; {{currentYear}} <a href="https://bchplease.org" target="_blank"><strong>Bitcoin Please</strong></a>. All rights reserved.</div> -->
                     </li>
                 </ul>
             </nav>

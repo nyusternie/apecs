@@ -122,6 +122,16 @@
                                         Send and receive messages from one or more on-chain protocols.
                                     </dd>
 
+                                    <!-- Query -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/query">
+                                            Query
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Perform queries to the Bitcoin blockchain.
+                                    </dd>
+
                                     <!-- Transaction -->
                                     <dt class="col-sm-4">
                                         <router-link to="/labs/tx">

@@ -4,6 +4,7 @@
 
     * [0.1. Readme](README.md)
     * [0.2. Foreword](FOREWORD.md)
+    * [0.3. Infrastructure Development Plan](IDP.md)
 
 * [1. User Accounts]()
 

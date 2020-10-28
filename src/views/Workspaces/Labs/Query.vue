@@ -11,6 +11,16 @@
                     <div class="col-md-6">
                         <Navbar />
 
+                        <div class="form-group">
+                            <label>Enter a Query</label>
+                            <textarea
+                                class="form-control"
+                                rows="3"
+                                placeholder="Paste your query statement here"
+                                v-model="query"
+                            ></textarea>
+                        </div>
+
                         <div class="card">
                             <div class="card-body">
 
@@ -19,7 +29,7 @@
                                 <pre>
                                     <code>
                                         {{output}}
-                                    </code>                                    
+                                    </code>
                                 </pre>
 
                             </div>
@@ -91,28 +101,28 @@ export default {
         this.output = 'Initializing output area...'
     },
     mounted: function () {
-        this.query = {
+        this.query = `{
             v: 3,
             q: {
                 find: {
                     //
                 }
             }
-        }
+        }`
 
-        // this.query = {
+        // this.query = `{
         //     v: 3,
         //     q: {
         //         find: {
         //             'out.e.a': 'qqy0l8y249dr4suvalvqunzxmp6kgslxd5uve0j4y2'
         //         }
         //     }
-        // }
+        // }`
 
         // Turn the query into base64 encoded string.
         // This is required for accessing a public bitdb node
         this.b64query = Buffer
-            .from(JSON.stringify(this.query))
+            .from(this.query)
             .toString('base64')
         console.log('Base64 query:', this.b64query)
 
@@ -141,6 +151,7 @@ export default {
             try {
                 /* Parse JSON data. */
                 const data = JSON.parse(e.data)
+                console.log('DATA', data)
 
                 /* Update output/display. */
                 this.output = JSON.stringify(data, null, 2)
