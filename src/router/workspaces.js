@@ -13,6 +13,7 @@ import LabsEvents from '@/views/Workspaces/Labs/Events'
 import LabsDecode from '@/views/Workspaces/Labs/Decode'
 import LabsHardware from '@/views/Workspaces/Labs/Hardware'
 import LabsHashing from '@/views/Workspaces/Labs/Hashing'
+import LabsLibp2p from '@/views/Workspaces/Labs/Libp2p'
 import LabsMessaging from '@/views/Workspaces/Labs/Messaging'
 import LabsQuery from '@/views/Workspaces/Labs/Query'
 import LabsTransaction from '@/views/Workspaces/Labs/Transaction'
@@ -69,6 +70,10 @@ const routes = [
     {
         path: '/labs/hash',
         component: LabsHashing
+    },
+    {
+        path: '/labs/libp2p',
+        component: LabsLibp2p
     },
     {
         path: '/labs/msg',

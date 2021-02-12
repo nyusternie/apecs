@@ -1,7 +1,10 @@
 {
   "name": "cash-devops",
-  "version": "20.10.3",
+  "version": "21.2.12",
   "license": "MIT",
+  "author": "Shomari Prince <s.prince@bchplease.org>",
+  "description": "Cash DevOps is the premier platform for first-time Bitcoin coders to advanced Decentralized Finance (DeFi) developers.",
+  "repository": "git@gitlab.com:bchplease/devops.cash.git",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build-for-local": "vue-cli-service build",
@@ -11,22 +14,23 @@
     "generate-icons": "vsvg -s ./svg-icons -t ./src/compiled-icons"
   },
   "dependencies": {
-    "@ledgerhq/hw-app-btc": "5.13.1",
-    "@ledgerhq/hw-app-eth": "5.13.1",
-    "@ledgerhq/hw-transport-webusb": "5.13.1",
+    "@ledgerhq/hw-app-btc": "5.43.0",
+    "@ledgerhq/hw-app-eth": "5.44.0",
+    "@ledgerhq/hw-transport-webusb": "5.43.0",
     "bitbox-sdk": "8.11.2",
-    "bitcore-lib-cash": "8.19.0",
+    "bitcore-lib-cash": "8.24.2",
     "cashid": "0.3.3",
-    "core-js": "3.6.4",
+    "core-js": "3.8.3",
     "ethereum-blockies-base64": "1.0.2",
-    "moment": "2.24.0",
+    "ipfs": "0.54.2",
+    "moment": "2.29.1",
     "nitojs": "gitlab:bchplease/nitojs",
     "numeral": "2.0.6",
-    "superagent": "5.2.2",
-    "vue": "2.6.11",
-    "vue-router": "3.1.6",
-    "vuex": "3.1.3",
-    "vuex-persistedstate": "2.7.1"
+    "superagent": "6.1.0",
+    "vue": "2.6.12",
+    "vue-router": "3.5.1",
+    "vuex": "3.6.2",
+    "vuex-persistedstate": "3.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.2.3",
@@ -39,6 +43,6 @@
     "eslint": "6.8.0",
     "eslint-plugin-vue": "6.2.2",
     "vue-svgicon": "3.2.6",
-    "vue-template-compiler": "2.6.11"
+    "vue-template-compiler": "2.6.12"
   }
 }

@@ -112,6 +112,16 @@
                                         Calculate a hash (aka message digest) of data.
                                     </dd>
 
+                                    <!-- Libp2p -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/libp2p">
+                                            Libp2p
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        libp2p is an open source project from the IPFS community.
+                                    </dd>
+
                                     <!-- Messaging -->
                                     <dt class="col-sm-4">
                                         <router-link to="/labs/msg">
