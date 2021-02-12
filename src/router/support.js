@@ -1,17 +1,21 @@
 /* Import views. */
-import Babel from '@/views/Support/Babel'
 import BUIDLing from '@/views/Support/BUIDLing'
 import FAQ from '@/views/Support/FAQ'
-import Guides from '@/views/Support/Guides'
+import Matrix from '@/views/Support/Matrix'
 import Slack from '@/views/Support/Slack'
 import Tickets from '@/views/Support/Tickets'
 
+/* Labs */
+import Guides from '@/views/Support/Guides'
+import GuidesDocker from '@/views/Support/Guides/Docker'
+import GuidesKeyGeneration from '@/views/Support/Guides/KeyGeneration'
+import GuidesNVM from '@/views/Support/Guides/NVM'
+import GuidesVeraCrypt from '@/views/Support/Guides/VeraCrypt'
+import GuidesVpsSecureSetup from '@/views/Support/Guides/VpsSecureSetup'
+import GuidesYarn from '@/views/Support/Guides/Yarn'
+
 /* Initialize routes. */
 const routes = [
-    {
-        path: '/babel',
-        component: Babel
-    },
     {
         path: '/buidling',
         component: BUIDLing
@@ -21,8 +25,8 @@ const routes = [
         component: FAQ
     },
     {
-        path: '/guides',
-        component: Guides
+        path: '/matrix',
+        component: Matrix
     },
     {
         path: '/slack',
@@ -32,6 +36,37 @@ const routes = [
         path: '/tickets',
         component: Tickets
     },
+
+    /* Guides */
+    {
+        path: '/guides',
+        component: Guides
+    },
+    {
+        path: '/guides/docker',
+        component: GuidesDocker
+    },
+    {
+        path: '/guides/key-generation',
+        component: GuidesKeyGeneration
+    },
+    {
+        path: '/guides/nvm',
+        component: GuidesNVM
+    },
+    {
+        path: '/guides/veracrypt',
+        component: GuidesVeraCrypt
+    },
+    {
+        path: '/guides/vps-secure-setup',
+        component: GuidesVpsSecureSetup
+    },
+    {
+        path: '/guides/yarn',
+        component: GuidesYarn
+    },
+
 ]
 
 /* Export routes. */

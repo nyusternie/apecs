@@ -270,9 +270,9 @@
                                 </router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/babel" class="nav-link">
+                                <router-link to="/matrix" class="nav-link">
                                     <i class="fas fa-comment-dots nav-icon"></i>
-                                    <p>Babel</p>
+                                    <p>Matrix</p>
                                 </router-link>
                             </li>
                             <li class="nav-item">

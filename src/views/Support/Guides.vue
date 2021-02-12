@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="tutorials" />
+        <Header pageId="guides" />
 
         <!-- Page Section -->
         <section class="content">
@@ -14,63 +14,72 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h3>VPS Quick Setup</h3>
+                                <dl class="row">
 
-                                <code>
-                                    apt update && apt upgrade -y && apt-get autoremove -y
-                                </code>
+                                    <!-- Docker -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/guides/docker">
+                                            Docker
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Easy setup for Docker
+                                    </dd>
 
-                                <code>
-                                    apt install -y apt-transport-https autoconf build-essential ca-certificates curl git gnupg2 libtool make software-properties-common vim
-                                </code>
+                                    <!-- Key Generation -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/guides/key-generation">
+                                            Key Generation
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Create SSH for secure access controls between your nodes.
+                                    </dd>
+                                    <dd class="col-sm-8 offset-sm-4">
+                                        <small class="text-danger"><strong>NOTE:</strong> Secure your key(s) with a strong password.</small>
+                                    </dd>
 
-                                <h3>Key Generation</h3>
+                                    <!-- Node Version Manager (NVM) -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/guides/nvm">
+                                            Node Version Manager (NVM)
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        NVM makes manager your node versions quick and easy.
+                                    </dd>
 
-                                <code>
-                                    ssh-keygen
-                                </code>
+                                    <!-- VeraCrypt -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/guides/veracrypt">
+                                            VeraCrypt
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Setup a secure container to store secure data on a non-secure hardware device (eg. DigitalOcean droplet).
+                                    </dd>
 
-                                <h3>VeraCrypt</h3>
+                                    <!-- VPS Secure Setup -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/guides/vps-secure-setup">
+                                            VPS Secure Setup
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        A complete step-by-setup walkthrough for setting up a new "Secure" Debian v9/10 virtual private server.
+                                    </dd>
 
-                                <code>
-                                    https://www.veracrypt.fr/en/Downloads.html
-                                    https://ipfs.io/ipfs/QmSoTesXuTFi55wuHXQoY9Nwm5eVhGoxFxAquMZidLnR43
-                                </code>
+                                    <!-- Yarn -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/guides/yarn">
+                                            Yarn
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Setup Yarn package manager.
+                                    </dd>
 
-                                <h3>Install NVM</h3>
-
-                                <code>
-                                    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-                                </code>
-
-                                <h3>Install Yarn</h3>
-
-                                <code>
-                                    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-                                    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-                                    apt update
-                                    apt install yarn
-                                </code>
-
-                                <h3>Install Docker (Debian 10)</h3>
-
-                                <code>
-                                    apt update
-                                    apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-                                    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-                                    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-                                    apt update
-                                    apt install docker-ce docker-compose
-
-                                    * docker-compose pull && docker-compose up -d
-                                    ** /var/lib/docker/volumes
-                                </code>
-
-                                <h3>Matrix (Synapse) over Docker</h3>
-
-                                <code>
-                                    https://linuxhandbook.com/install-matrix-synapse-docker/
-                                </code>
+                                </dl>
 
                             </div>
                         </div>
@@ -82,51 +91,21 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    Developer Tutorials &amp; Guides
-                                    <br />
-                                    <!-- <small>
-                                        source: <a href="https://developer.bitcoin.com/cashscript/docs/language" target="_blank">
-                                        https://developer.bitcoin.com/cashscript/docs/language</a>
-                                    </small> -->
+                                    Guides &amp; Tutorials
                                 </h3>
                             </div>
 
                             <div class="card-body">
-                                <dl class="row">
-                                    <dt class="col-sm-4">VPS Setup</dt>
-                                    <dd class="col-sm-8">
-                                        Useful commands to get up and running quickly.
-                                    </dd>
+                                <div class="mb-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
 
-                                    <!-- <dt class="col-sm-4">tx.bytecode</dt>
-                                    <dd class="col-sm-8">
-                                        Represents the Bitcoin Script bytecode of the current contract.
-                                    </dd> -->
+                                <div class="mt-0 mb-3">
+                                    <small class="text-danger"><strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!</small>
+                                </div>
 
-                                    <!-- <dt class="col-sm-4">tx.hashOutputs</dt>
-                                    <dd class="col-sm-8">
-                                        Represents the double sha256 of the serialisation of all outputs (bytes8 amount + bytes locking script).
-                                    </dd> -->
+                                [ CONTACT FORM HERE ]
 
-                                    <!-- <dt class="col-sm-4">tx.time</dt>
-                                    <dd class="col-sm-8">
-                                        Represents the block number that the transaction is included in.
-                                    </dd>
-                                    <dd class="col-sm-8 offset-sm-4">
-                                        <small>(eg. <code>478559</code>)</small>
-                                    </dd> -->
-
-                                    <!-- <dt class="col-sm-4">tx.value (bytes8)</dt>
-                                    <dd class="col-sm-8">
-                                        Represents the value of current input being spent.
-                                    </dd>
-                                    <dd class="col-sm-8 offset-sm-4">
-                                        <small>
-                                            Due to technical limitations, this can only work if tx.value fits within a 32-bit signed integer (max ~21 BCH).
-                                        </small>
-                                    </dd> -->
-
-                                </dl>
                             </div>
                         </div>
                     </div>
@@ -140,21 +119,29 @@
 <script>
 /* Import components. */
 import Header from '@/components/Header.vue'
+import Navbar from './Guides/Navbar.vue'
 
 export default {
     components: {
         Header,
+        Navbar,
     },
     data: () => {
         return {
             //
         }
     },
+    computed: {
+        //
+    },
+    methods: {
+        //
+    },
     created: async function () {
         //
     },
     mounted: function () {
-        //
+
     },
 }
 </script>
