@@ -19,7 +19,7 @@
                                 <pre>
                                     <code>
                                         {{output}}
-                                    </code>                                    
+                                    </code>
                                 </pre>
 
                             </div>

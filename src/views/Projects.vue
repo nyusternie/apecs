@@ -50,7 +50,7 @@
                                     </td>
                                     <td>
                                         <a>
-                                            Cash DevOps
+                                            GeoDrop
                                         </a>
                                         <br/>
                                         <small>
@@ -101,7 +101,7 @@
                                     </td>
                                     <td>
                                         <a>
-                                            Nito.cash
+                                            Unstoppable Web
                                         </a>
                                         <br/>
                                         <small>
@@ -140,7 +140,7 @@
                                     </td>
                                     <td>
                                         <a>
-                                            Be.cash
+                                            Tommygun's Coin Slot
                                         </a>
                                         <br/>
                                         <small>
@@ -177,7 +177,7 @@
                                     </td>
                                     <td>
                                         <a>
-                                            Causes.cash
+                                            Paytaca
                                         </a>
                                         <br/>
                                         <small>
@@ -188,6 +188,12 @@
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <img alt="Avatar" class="table-avatar" src="@/assets/img/avatar.png">
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <img alt="Avatar" class="table-avatar" src="@/assets/img/avatar4.png">
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <img alt="Avatar" class="table-avatar" src="@/assets/img/avatar3.png">
                                             </li>
                                         </ul>
                                     </td>

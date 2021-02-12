@@ -43,6 +43,15 @@
                                     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
                                 </code>
 
+                                <h3>Install Yarn</h3>
+
+                                <code>
+                                    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+                                    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+                                    apt update
+                                    apt install yarn
+                                </code>
+
                                 <h3>Install Docker (Debian 10)</h3>
 
                                 <code>
@@ -54,6 +63,7 @@
                                     apt install docker-ce docker-compose
 
                                     * docker-compose pull && docker-compose up -d
+                                    ** /var/lib/docker/volumes
                                 </code>
 
                                 <h3>Matrix (Synapse) over Docker</h3>
