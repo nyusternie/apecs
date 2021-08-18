@@ -25,7 +25,7 @@
                                 <h3>Recommended modules</h3>
 
                                 <code>
-                                    apt install -y apt-transport-https autoconf build-essential ca-certificates curl git gnupg2 libtool make software-properties-common vim
+                                    apt install -y apt-transport-https autoconf build-essential ca-certificates curl git gnupg2 libtool make net-tools software-properties-common vim
                                 </code>
 
                             </div>
