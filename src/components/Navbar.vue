@@ -1,16 +1,17 @@
 <template>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="/" class="brand-link">
-            <img
-                src="@/assets/img/icon.png"
-                alt="DevOps Icon"
-                class="brand-image img-rounded elevation-3"
-                style="opacity: .8"
-            >
-            <span class="brand-text font-weight-light">Cash DevOps</span>
-        </a>
+        <!-- This example requires Tailwind CSS v2.0+ -->
+        <div class="flex flex-col flex-grow border-r border-gray-200 pt-1 pb-4 bg-gray-700 overflow-y-auto">
+            <router-link to="/" class="brand-link">
+                <img
+                    src="@/assets/img/icon.png"
+                    alt="DevOps Icon"
+                    class="brand-image img-rounded elevation-3"
+                    style="opacity: .8"
+                >
+                <span class="font-light text-white">Cash DevOps</span>
+            </router-link>
 
-        <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex" v-if="account">
                 <div class="avatar" v-if="account.emoji">
                     {{account.emoji}}
@@ -19,151 +20,183 @@
                     <img :src="account.blockie" class="img-circle" elevation-3 />
                 </div>
                 <div>
-                    <a href="javascript://" class="d-block nickname">{{account.nickname}}</a>
-                    <a href="javascript://" class="d-block signout" @click="signOut"><small>[ Sign Out ]</small></a>
+                    <a href="javascript://" class="d-block text-white">{{account.nickname}}</a>
+                    <a href="javascript://" class="d-block text-white" @click="signOut"><small>[ Sign Out ]</small></a>
                 </div>
             </div>
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex" v-else>
+
+            <div class="user-panel mt-3 pb-3 mb-0 d-flex" v-else>
                 <div class="image">
                     <img src="@/assets/img/cyber-hacker-icon.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="javascript://" class="d-block" @click="signIn">Incognito <small>[ Sign in ]</small></a>
-                    <a href="javascript://" class="d-block" @click="donate"><small class="donate">[ donate $0.01 to devops ]</small></a>
+                    <a href="javascript://" class="d-block text-white" @click="signIn">Incognito <small>[ Sign in ]</small></a>
+                    <a href="javascript://" class="d-block text-white" @click="donate"><small class="donate">[ donate $0.01 to devops ]</small></a>
                 </div>
             </div>
 
+            <div class="mt-0 flex-grow flex flex-col">
+                <nav class="flex-1 px-2 space-y-8 bg-white" aria-label="Sidebar">
+                    <div class="space-y-1">
+                        <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                        <router-link to="/" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <!--
+                    Heroicon name: outline/home
+
+                    Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
+                  -->
+                            <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                                />
+                            </svg>
+                            Dashboard
+                        </router-link>
+
+                        <router-link to="/projects" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                            </svg>
+                            Projects
+                        </router-link>
+
+                        <div class="space-y-1">
+                            <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                            <button
+                                type="button"
+                                class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                aria-controls="sub-menu-1"
+                                aria-expanded="false"
+                            >
+                                <!-- Heroicon name: outline/users -->
+                                <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                                <span class="flex-1" @click="showDesktopMenu = !showDesktopMenu">
+                                    My Desktop
+                                </span>
+                                <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                </svg>
+                            </button>
+
+                            <div v-if="showDesktopMenu" class="space-y-1" id="sub-menu-1">
+                                <router-link to="/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    Notebook
+                                </router-link>
+
+                                <router-link to="/file-mgr" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    File Manager
+                                </router-link>
+
+                                <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    open my desktop..
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                            <button
+                                type="button"
+                                class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                aria-controls="sub-menu-1"
+                                aria-expanded="false"
+                            >
+                                <!-- Heroicon name: outline/users -->
+                                <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                                <span class="flex-1" @click="showWorkspacesMenu = !showWorkspacesMenu">
+                                    Workspaces
+                                </span>
+                                <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                </svg>
+                            </button>
+
+                            <div v-if="showWorkspacesMenu" class="space-y-1" id="sub-menu-1">
+                                <router-link to="/editor" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    Code Editor
+                                </router-link>
+
+                                <router-link to="/studio" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    Graphics Studio
+                                </router-link>
+
+                                <router-link to="/labs" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <div>Lab Experiments</div>
+                                    <div class="float-right badge badge-danger">New</div>
+                                </router-link>
+
+                                <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    more workspaces..
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <!-- Heroicon name: outline/chart-bar -->
+                            <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                                />
+                            </svg>
+                            Reports
+                        </a>
+                    </div>
+
+                    <div class="space-y-1">
+                        <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="projects-headline">
+                            SUPPORT CENTER
+                        </h3>
+
+                        <div class="space-y-1" role="group" aria-labelledby="projects-headline">
+                            <router-link to="/buidling" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                <span class="truncate">
+                                    BUIDLing 101
+                                </span>
+                            </router-link>
+
+                            <router-link to="/guides" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                <span class="truncate">
+                                    Guides &amp; Tutorials
+                                </span>
+                            </router-link>
+
+                            <router-link to="/faq" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                <span class="truncate">
+                                    FAQ
+                                </span>
+                            </router-link>
+
+                            <a href="https://docs.devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                <span class="truncate">
+                                    Docs
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </nav>
+            </div>
+        </div>
+
+        <!-- <div class="sidebar">
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                    <!-- Dashboard -->
-                    <li class="nav-item">
-                        <router-link to="/" class="nav-link" exact>
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p>
-                                Dashboard
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- My Desktop -->
-                    <li class="nav-item has-treeview">
-                        <a href="javascript://" class="nav-link">
-                            <i class="nav-icon fas fa-desktop"></i>
-                            <p>
-                                My Desktop
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <router-link to="/notebook" class="nav-link">
-                                    <i class="fas fa-pencil-alt nav-icon"></i>
-                                    <p>Notebook</p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link to="/file-mgr" class="nav-link">
-                                    <i class="fas fa-folder-open nav-icon"></i>
-                                    <p>File Manager</p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript://" class="nav-link">
-                                    <p>open my desktop...</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
                     <li class="nav-header">PRO BUIDLERS</li>
 
-                    <!-- Projects -->
-                    <li class="nav-item">
-                        <router-link to="/projects" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p>
-                                Projects
-                                <span class="right badge badge-danger">New</span>
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- Workspaces -->
-                    <li class="nav-item has-treeview">
-                        <a href="javascript://" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
-                                Workspaces
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <router-link to="/code-editor" class="nav-link">
-                                    <i class="fas fa-keyboard nav-icon"></i>
-                                    <p>Code Editor</p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link to="/graphics-studio" class="nav-link">
-                                    <i class="fas fa-magic nav-icon"></i>
-                                    <p>Graphics Studio</p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link to="/labs" class="nav-link">
-                                    <i class="fas fa-flask nav-icon"></i>
-                                    <p>
-                                        Lab Experiments
-                                        <span class="right badge badge-danger">New</span>
-                                    </p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript://" class="nav-link">
-                                    <p>more workspaces...</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-header">COMMUNITY CENTER</li>
-
-                    <!-- Latest News -->
-                    <li class="nav-item">
-                        <router-link to="/news" class="nav-link">
-                            <i class="nav-icon fas fa-newspaper"></i>
-                            <p>
-                                Headline News
-                                <span class="badge badge-info right">{{newHeadlines}}</span>
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- Source Feeds -->
-                    <li class="nav-item">
-                        <router-link to="/discuss" class="nav-link">
-                            <i class="nav-icon fas fa-comments"></i>
-                            <p>
-                                Discuss
-                                <span class="badge badge-info right">{{newDiscussions}}</span>
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- Event Calendar -->
-                    <li class="nav-item">
-                        <router-link to="/events" class="nav-link">
-                            <i class="nav-icon fas fa-calendar-alt"></i>
-                            <p>
-                                Event Calendar
-                                <span class="badge badge-info right">{{numEvents}}</span>
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- Charts & Data -->
                     <li class="nav-item has-treeview">
                         <a href="javascript://" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
@@ -173,18 +206,6 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <!-- <li class="nav-item">
-                                <router-link to="/markets" class="nav-link">
-                                    <i class="fas fa-chart-bar nav-icon"></i>
-                                    <p>Markets</p>
-                                </router-link>
-                            </li> -->
-                            <!-- <li class="nav-item">
-                                <router-link to="/blockchains" class="nav-link">
-                                    <i class="fas fa-link nav-icon"></i>
-                                    <p>Blockchains</p>
-                                </router-link>
-                            </li> -->
                             <li class="nav-item">
                                 <router-link to="/privacy" class="nav-link">
                                     <i class="fas fa-user-secret nav-icon"></i>
@@ -211,49 +232,8 @@
                         </ul>
                     </li>
 
-                    <li class="nav-header">SUPPORT CENTER</li>
+                    <li class="nav-header"></li>
 
-                    <!-- Getting Started -->
-                    <li class="nav-item">
-                        <router-link to="/buidling" class="nav-link">
-                            <i class="nav-icon fas fa-tools"></i>
-                            <p>
-                                BUIDLing 101
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- Tutorials -->
-                    <li class="nav-item">
-                        <router-link to="/guides" class="nav-link">
-                            <i class="nav-icon fas fa-book-open"></i>
-                            <p>
-                                Guides &amp; Tutorials
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- FAQ -->
-                    <li class="nav-item">
-                        <router-link to="/faq" class="nav-link">
-                            <i class="nav-icon fas fa-info-circle"></i>
-                            <p>
-                                FAQ
-                            </p>
-                        </router-link>
-                    </li>
-
-                    <!-- Documenation -->
-                    <li class="nav-item">
-                        <a href="https://docs.devops.cash" target="_blank" class="nav-link">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Documenation
-                            </p>
-                        </a>
-                    </li>
-
-                    <!-- Contact Us -->
                     <li class="nav-item has-treeview">
                         <a href="javascript://" class="nav-link">
                             <i class="nav-icon fas fa-headset"></i>
@@ -284,46 +264,15 @@
                         </ul>
                     </li>
 
-                    <li class="nav-header">STAFF LINKS</li>
-
-                    <!-- Reddit -->
-                    <li class="nav-item">
-                        <a href="https://www.reddit.com/r/CashDevOps/" target="_blank" class="nav-link">
-                            <i class="nav-icon fab fa-reddit text-danger"></i>
-                            <p>r/CashDevOps</p>
-                            <i class="nav-icon fas fa-external-link-alt"></i>
-                        </a>
-                    </li>
-
-                    <!-- GitHub -->
-                    <li class="nav-item">
-                        <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="nav-link">
-                            <i class="nav-icon fab fa-github text-primary"></i>
-                            <p>Fork us on GitLab</p>
-                            <i class="nav-icon fas fa-external-link-alt"></i>
-                        </a>
-                    </li>
-
-                    <!-- Build Info -->
-                    <li class="nav-header">
-                        <!-- <div class="build-info">Cash DevOps is 100% open source</div> -->
-                        <div class="build-info">Cash DevOps is 100% FREE as in beer</div>
-                        <div class="build-info">
-                            Latest: <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="ext-link">v{{version}}</a>
-                            &nbsp; &bullet; &nbsp;
-                            (<a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="ext-link">other versions</a>)
-                        </div>
-                        <!-- <div class="build-info">&copy; {{currentYear}} <a href="https://bchplease.org" target="_blank"><strong>Bitcoin Please</strong></a>. All rights reserved.</div> -->
-                    </li>
                 </ul>
             </nav>
-        </div>
+        </div> -->
     </aside>
 </template>
 
 <script>
 /* Import modules. */
-import { BITBOX } from 'bitbox-sdk'
+// import { BITBOX } from 'bitbox-sdk'
 
 /* Initialize vuex. */
 import { mapActions, mapState } from 'vuex'
@@ -341,6 +290,8 @@ export default {
     data: () => {
         return {
             bitbox: null,
+            showDesktopMenu: null,
+            showWorkspacesMenu: null,
         }
     },
     computed: {
@@ -427,16 +378,16 @@ export default {
         /**
          * Initialize BITBOX
          */
-        initBitbox() {
-            console.info('Initializing BITBOX..')
-
-            try {
-                /* Initialize BITBOX. */
-                this.bitbox = new BITBOX()
-            } catch (err) {
-                console.error(err)
-            }
-        },
+        // initBitbox() {
+        //     console.info('Initializing BITBOX..')
+        //
+        //     try {
+        //         /* Initialize BITBOX. */
+        //         this.bitbox = new BITBOX()
+        //     } catch (err) {
+        //         console.error(err)
+        //     }
+        // },
 
         /**
          * Donate to Charity
@@ -511,7 +462,10 @@ export default {
     },
     created: function () {
         /* Initialize BITBOX. */
-        this.initBitbox()
+        // this.initBitbox()
+
+        this.showDesktopMenu = false
+        this.showWorkspacesMenu = false
 
         console.log('SESSION ID', this.sessionId)
         console.log('CASH ACCOUNTS', this.cashAccounts)
@@ -520,7 +474,7 @@ export default {
 </script>
 
 <style scoped>
-div .build-info,
+/* div .build-info,
 div .build-info a {
     font-size: 12px;
     color: rgba(220, 220, 220, 0.5);
@@ -552,5 +506,5 @@ div .build-info a {
 .ext-link {
     color: rgba(255, 120, 120, 0.8) !important;
     text-decoration: underline;
-}
+} */
 </style>

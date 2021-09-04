@@ -1,6 +1,6 @@
 {
   "name": "cash-devops",
-  "version": "21.2.12",
+  "version": "21.9.4",
   "license": "MIT",
   "author": "Shomari Prince <s.prince@bchplease.org>",
   "description": "Cash DevOps is the premier platform for first-time Bitcoin coders to advanced Decentralized Finance (DeFi) developers.",
@@ -14,9 +14,6 @@
     "generate-icons": "vsvg -s ./svg-icons -t ./src/compiled-icons"
   },
   "dependencies": {
-    "@ledgerhq/hw-app-btc": "5.43.0",
-    "@ledgerhq/hw-app-eth": "5.44.0",
-    "@ledgerhq/hw-transport-webusb": "5.43.0",
     "bitbox-sdk": "8.11.2",
     "bitcore-lib-cash": "8.24.2",
     "cashid": "0.3.3",
@@ -28,13 +25,21 @@
     "nitojs": "gitlab:bchplease/nitojs",
     "numeral": "2.0.6",
     "superagent": "6.1.0",
-    "uuid": "^8.3.2",
+    "uuid": "8.3.2",
     "vue": "2.6.12",
     "vue-router": "3.5.1",
     "vuex": "3.6.2",
     "vuex-persistedstate": "3.2.0"
   },
   "devDependencies": {
+    "@ledgerhq/hw-app-btc": "5.43.0",
+    "@ledgerhq/hw-app-eth": "5.44.0",
+    "@ledgerhq/hw-transport-webusb": "5.43.0",
+    "@tailwindcss/aspect-ratio": "0.2.1",
+    "@tailwindcss/forms": "0.3.3",
+    "@tailwindcss/line-clamp": "0.2.1",
+    "@tailwindcss/postcss7-compat": "2.2.7",
+    "@tailwindcss/typography": "0.4.1",
     "@vue/cli-plugin-babel": "4.2.3",
     "@vue/cli-plugin-eslint": "4.2.3",
     "@vue/cli-plugin-unit-jest": "4.2.3",
@@ -44,6 +49,7 @@
     "coveralls": "3.0.9",
     "eslint": "6.8.0",
     "eslint-plugin-vue": "6.2.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-svgicon": "3.2.6",
     "vue-template-compiler": "2.6.12"
   }

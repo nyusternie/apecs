@@ -142,6 +142,16 @@
                                         Perform queries to the Bitcoin blockchain.
                                     </dd>
 
+                                    <!-- SmartBCH -->
+                                    <dt class="col-sm-4">
+                                        <router-link to="/labs/smartbch">
+                                            SmartBCH
+                                        </router-link>
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        Perform experiments on the Smart Bitcoin Cash chain.
+                                    </dd>
+
                                     <!-- Transaction -->
                                     <dt class="col-sm-4">
                                         <router-link to="/labs/tx">

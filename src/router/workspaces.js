@@ -1,6 +1,7 @@
 /* Import views. */
-import CodeEditor from '@/views/Workspaces/CodeEditor'
-import GraphicsStudio from '@/views/Workspaces/GraphicsStudio'
+import Editor from '@/views/Workspaces/Editor'
+import SmartBCH from '@/views/Workspaces/SmartBCH'
+import Studio from '@/views/Workspaces/Studio'
 
 /* Labs */
 import Labs from '@/views/Workspaces/Labs'
@@ -22,12 +23,16 @@ import LabsWallet from '@/views/Workspaces/Labs/Wallet'
 /* Initialize routes. */
 const routes = [
     {
-        path: '/code-editor',
-        component: CodeEditor
+        path: '/editor',
+        component: Editor
     },
     {
-        path: '/graphics-studio',
-        component: GraphicsStudio
+        path: '/smartbch',
+        component: SmartBCH
+    },
+    {
+        path: '/studio',
+        component: Studio
     },
 
     /* Labs */
