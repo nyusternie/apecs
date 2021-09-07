@@ -94,12 +94,18 @@
             <div class="flex flex-col border-r border-gray-200 pt-0 pb-0 bg-gray-100">
 
                 <router-link to="/" class="brand-link">
-                    <img
-                        src="@/assets/img/icon.png"
-                        alt="DevOps Icon"
-                        class="w-16 m-5"
-                    >
-                    <span class="font-light text-black">Cash DevOps</span>
+                    <div class="flex flex-row justify-between pr-3">
+                        <img
+                            src="@/assets/img/icon.png"
+                            alt="DevOps Icon"
+                            class="w-16 m-5"
+                        >
+
+                        <div class="flex flex-col text-center flex-grow justify-center">
+                            <span class="block text-4xl font-base text-gray-400">CA<span class="text-green-500">$</span>H</span>
+                            <span class="block text-4xl font-bold text-gray-500">DevOps</span>
+                        </div>
+                    </div>
                 </router-link>
 
                 <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex" v-if="account">
