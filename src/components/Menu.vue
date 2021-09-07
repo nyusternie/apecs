@@ -1,40 +1,10 @@
 <template>
-    <main class="overflow-x-hidden overflow-y-scroll">
+    <main class="w-80 overflow-x-hidden overflow-y-scroll">
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-        <div class="hidden fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
-            <!--
-          Off-canvas menu overlay, show/hide based on off-canvas menu state.
-
-          Entering: "transition-opacity ease-linear duration-300"
-            From: "opacity-0"
-            To: "opacity-100"
-          Leaving: "transition-opacity ease-linear duration-300"
-            From: "opacity-100"
-            To: "opacity-0"
-        -->
+        <div v-if="showMobileMenu" class="fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
 
-            <!--
-          Off-canvas menu, show/hide based on off-canvas menu state.
-
-          Entering: "transition ease-in-out duration-300 transform"
-            From: "-translate-x-full"
-            To: "translate-x-0"
-          Leaving: "transition ease-in-out duration-300 transform"
-            From: "translate-x-0"
-            To: "-translate-x-full"
-        -->
             <div class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white">
-                <!--
-            Close button, show/hide based on off-canvas menu state.
-
-            Entering: "ease-in-out duration-300"
-              From: "opacity-0"
-              To: "opacity-100"
-            Leaving: "ease-in-out duration-300"
-              From: "opacity-100"
-              To: "opacity-0"
-          -->
                 <div class="absolute top-0 right-0 -mr-12 pt-2">
                     <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                         <span class="sr-only">Close sidebar</span>
@@ -48,16 +18,12 @@
                 <div class="flex-shrink-0 flex items-center px-4">
                     <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-purple-500-mark-gray-700-text.svg" alt="Workflow" />
                 </div>
+
                 <div class="mt-5 flex-1 h-0 overflow-y-auto">
                     <nav class="px-2">
                         <div class="space-y-1">
                             <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:text-gray-900 hover:bg-gray-50" -->
-                            <a href="#" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md" aria-current="page">
-                                <!--
-                    Heroicon name: outline/home
-
-                    Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
-                  -->
+                            <a href="javascript://" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md" aria-current="page">
                                 <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                     <path
                                         stroke-linecap="round"
@@ -69,7 +35,7 @@
                                 Home
                             </a>
 
-                            <a href="#" class="text-gray-600 hover:text-gray-900 hover:bg-gray-50 group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md">
+                            <a href="javascript://" class="text-gray-600 hover:text-gray-900 hover:bg-gray-50 group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md">
                                 <!-- Heroicon name: outline/view-list -->
                                 <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
@@ -77,7 +43,7 @@
                                 My tasks
                             </a>
 
-                            <a href="#" class="text-gray-600 hover:text-gray-900 hover:bg-gray-50 group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md">
+                            <a href="javascript://" class="text-gray-600 hover:text-gray-900 hover:bg-gray-50 group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md">
                                 <!-- Heroicon name: outline/clock -->
                                 <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -85,29 +51,31 @@
                                 Recent
                             </a>
                         </div>
+
                         <div class="mt-8">
                             <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="mobile-teams-headline">
-                                Teams
+                                Recommended Guides
                             </h3>
+
                             <div class="mt-1 space-y-1" role="group" aria-labelledby="mobile-teams-headline">
-                                <a href="#" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                <a href="javascript://" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                     <span class="w-2.5 h-2.5 mr-4 bg-indigo-500 rounded-full" aria-hidden="true"></span>
                                     <span class="truncate">
-                                        Engineering
+                                        First-time DApp Developer
                                     </span>
                                 </a>
 
-                                <a href="#" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                <a href="javascript://" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                     <span class="w-2.5 h-2.5 mr-4 bg-green-500 rounded-full" aria-hidden="true"></span>
                                     <span class="truncate">
-                                        Human Resources
+                                        Ethereum Developer
                                     </span>
                                 </a>
 
-                                <a href="#" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                <a href="javascript://" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                     <span class="w-2.5 h-2.5 mr-4 bg-yellow-500 rounded-full" aria-hidden="true"></span>
                                     <span class="truncate">
-                                        Customer Success
+                                        (Unstoppable) Bitcoin Apps
                                     </span>
                                 </a>
                             </div>
@@ -123,14 +91,13 @@
 
         <!-- Static sidebar for desktop -->
         <div class="hidden lg:flex lg:flex-shrink-0">
-            <div class="flex flex-col w-64 border-r border-gray-200 pt-0 pb-0 bg-gray-100">
+            <div class="flex flex-col border-r border-gray-200 pt-0 pb-0 bg-gray-100">
 
                 <router-link to="/" class="brand-link">
                     <img
                         src="@/assets/img/icon.png"
                         alt="DevOps Icon"
-                        class="brand-image img-rounded elevation-3"
-                        style="opacity: .8"
+                        class="w-16 m-5"
                     >
                     <span class="font-light text-black">Cash DevOps</span>
                 </router-link>
@@ -202,16 +169,16 @@
                         >
                             <div class="py-1" role="none">
                                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-0">View profile</a>
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-1">Settings</a>
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-2">Notifications</a>
+                                <a href="javascript://" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-0">View profile</a>
+                                <a href="javascript://" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-1">Settings</a>
+                                <a href="javascript://" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-2">Notifications</a>
                             </div>
                             <div class="py-1" role="none">
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-3">Get desktop app</a>
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-4">Support</a>
+                                <a href="javascript://" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-3">Get desktop app</a>
+                                <a href="javascript://" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-4">Support</a>
                             </div>
                             <div class="py-1" role="none">
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-5">Logout</a>
+                                <a href="javascript://" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-5">Logout</a>
                             </div>
                         </div>
                     </div>
@@ -233,193 +200,204 @@
                     <!-- Navigation -->
                     <!-- <nav class="px-3 mt-6"> -->
 
-                        <div class="mt-0 flex-grow flex flex-col">
+                    <div class="mt-0 flex-grow flex flex-col">
 
-                            <nav class="flex-1 px-2 pt-2 space-y-8 bg-white" aria-label="Sidebar">
+                        <nav class="flex-1 px-2 pt-2 space-y-8 bg-white" aria-label="Sidebar">
+                            <div class="space-y-1">
+                                <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                                <router-link to="/" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    <!--
+                            Heroicon name: outline/home
+
+                            Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
+                          -->
+                                    <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                                        />
+                                    </svg>
+                                    Dashboard
+                                </router-link>
+
+                                <router-link to="/projects" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                    </svg>
+                                    Projects
+                                </router-link>
+
                                 <div class="space-y-1">
-                                    <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                                    <router-link to="/" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                        <!--
-                                Heroicon name: outline/home
-
-                                Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
-                              -->
-                                        <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                                            />
+                                    <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                                    <button
+                                        type="button"
+                                        class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                        aria-controls="sub-menu-1"
+                                        aria-expanded="false"
+                                    >
+                                        <!-- Heroicon name: outline/users -->
+                                        <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                         </svg>
-                                        Dashboard
+                                        <span class="flex-1" @click="showDesktopMenu = !showDesktopMenu">
+                                            My Desktop
+                                        </span>
+                                        <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                        <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
+                                            <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                        </svg>
+                                    </button>
+
+                                    <div v-if="showDesktopMenu" class="space-y-1" id="sub-menu-1">
+                                        <router-link to="/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            Notebook
+                                        </router-link>
+
+                                        <router-link to="/file-mgr" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            File Manager
+                                        </router-link>
+
+                                        <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            open my desktop..
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                                    <button
+                                        type="button"
+                                        class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                        aria-controls="sub-menu-1"
+                                        aria-expanded="false"
+                                    >
+                                        <!-- Heroicon name: outline/users -->
+                                        <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                        </svg>
+                                        <span class="flex-1" @click="showWorkspacesMenu = !showWorkspacesMenu">
+                                            Workspaces
+                                        </span>
+                                        <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                        <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
+                                            <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                        </svg>
+                                    </button>
+
+                                    <div v-if="showWorkspacesMenu" class="space-y-1" id="sub-menu-1">
+                                        <router-link to="/editor" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            Code Editor
+                                        </router-link>
+
+                                        <router-link to="/studio" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            Graphics Studio
+                                        </router-link>
+
+                                        <router-link to="/labs" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            <div>Lab Experiments</div>
+                                            <div class="float-right badge badge-danger">New</div>
+                                        </router-link>
+
+                                        <router-link to="/smartbch" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            Smart BCH
+                                            <div class="float-right badge badge-danger">New</div>
+                                        </router-link>
+
+                                        <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            more workspaces..
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <a href="javascript://" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    <!-- Heroicon name: outline/chart-bar -->
+                                    <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                                        />
+                                    </svg>
+                                    Reports
+                                </a>
+
+                                <router-link to="/faucets" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                    <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                                    Faucets
+                                </router-link>
+
+                            </div>
+
+                            <div class="space-y-1">
+                                <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="projects-headline">
+                                    SUPPORT CENTER
+                                </h3>
+
+                                <div class="space-y-1" role="group" aria-labelledby="projects-headline">
+                                    <router-link to="/buidling" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <span class="truncate">
+                                            BUIDLing 101
+                                        </span>
                                     </router-link>
 
-                                    <router-link to="/projects" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                        <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                                        </svg>
-                                        Projects
+                                    <router-link to="/guides" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <span class="truncate">
+                                            Guides &amp; Tutorials
+                                        </span>
                                     </router-link>
 
-                                    <div class="space-y-1">
-                                        <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                                        <button
-                                            type="button"
-                                            class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                            aria-controls="sub-menu-1"
-                                            aria-expanded="false"
-                                        >
-                                            <!-- Heroicon name: outline/users -->
-                                            <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                            </svg>
-                                            <span class="flex-1" @click="showDesktopMenu = !showDesktopMenu">
-                                                My Desktop
-                                            </span>
-                                            <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
-                                            <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
-                                                <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
-                                            </svg>
-                                        </button>
+                                    <router-link to="/faq" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <span class="truncate">
+                                            FAQ
+                                        </span>
+                                    </router-link>
 
-                                        <div v-if="showDesktopMenu" class="space-y-1" id="sub-menu-1">
-                                            <router-link to="/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                Notebook
-                                            </router-link>
-
-                                            <router-link to="/file-mgr" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                File Manager
-                                            </router-link>
-
-                                            <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                open my desktop..
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="space-y-1">
-                                        <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                                        <button
-                                            type="button"
-                                            class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                            aria-controls="sub-menu-1"
-                                            aria-expanded="false"
-                                        >
-                                            <!-- Heroicon name: outline/users -->
-                                            <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                            </svg>
-                                            <span class="flex-1" @click="showWorkspacesMenu = !showWorkspacesMenu">
-                                                Workspaces
-                                            </span>
-                                            <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
-                                            <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
-                                                <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
-                                            </svg>
-                                        </button>
-
-                                        <div v-if="showWorkspacesMenu" class="space-y-1" id="sub-menu-1">
-                                            <router-link to="/editor" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                Code Editor
-                                            </router-link>
-
-                                            <router-link to="/studio" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                Graphics Studio
-                                            </router-link>
-
-                                            <router-link to="/labs" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                <div>Lab Experiments</div>
-                                                <div class="float-right badge badge-danger">New</div>
-                                            </router-link>
-
-                                            <router-link to="/smartbch" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                Smart BCH
-                                                <div class="float-right badge badge-danger">New</div>
-                                            </router-link>
-
-                                            <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                                more workspaces..
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
-                                        <!-- Heroicon name: outline/chart-bar -->
-                                        <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                                            />
-                                        </svg>
-                                        Reports
+                                    <a href="https://docs.devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <span class="truncate">
+                                            Docs
+                                        </span>
                                     </a>
                                 </div>
+                            </div>
 
-                                <div class="space-y-1">
-                                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="projects-headline">
-                                        SUPPORT CENTER
-                                    </h3>
+                            <div class="space-y-1">
+                                <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="projects-headline">
+                                    STAFF LINKS
+                                </h3>
 
-                                    <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                        <router-link to="/buidling" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            <span class="truncate">
-                                                BUIDLing 101
-                                            </span>
-                                        </router-link>
+                                <div class="space-y-1" role="group" aria-labelledby="projects-headline">
+                                    <a href="https://www.reddit.com/r/CashDevOps/" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <span class="truncate">
+                                            r/CashDevOps
+                                        </span>
+                                    </a>
 
-                                        <router-link to="/guides" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            <span class="truncate">
-                                                Guides &amp; Tutorials
-                                            </span>
-                                        </router-link>
+                                    <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <span class="truncate">
+                                            Fork us on GitLab
+                                        </span>
+                                    </a>
 
-                                        <router-link to="/faq" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            <span class="truncate">
-                                                FAQ
-                                            </span>
-                                        </router-link>
-
-                                        <a href="https://docs.devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            <span class="truncate">
-                                                Docs
-                                            </span>
-                                        </a>
-                                    </div>
                                 </div>
+                            </div>
 
-                                <div class="space-y-1">
-                                    <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="projects-headline">
-                                        STAFF LINKS
-                                    </h3>
-
-                                    <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                        <a href="https://www.reddit.com/r/CashDevOps/" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            <span class="truncate">
-                                                r/CashDevOps
-                                            </span>
-                                        </a>
-
-                                        <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            <span class="truncate">
-                                                Fork us on GitLab
-                                            </span>
-                                        </a>
-
-                                        <div class="build-info">Cash DevOps is 100% FREE as in beer</div>
-                                        <div class="build-info">
-                                            Latest: <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="ext-link">v{{version}}</a>
-                                            &nbsp; &bullet; &nbsp;
-                                            (<a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="ext-link">other versions</a>)
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </nav>
-                        </div>
+                        </nav>
+                    </div>
                 </div>
+
+                <footer class='py-3 text-sm bg-indigo-50 text-center border-t-2 border-indigo-100'>
+                    <span class="block">Cash DevOps is <span class="font-bold">100% FREE</span> as in beer</span>
+
+                    <span class="block mt-2">
+                        Latest: <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
+                        &nbsp; &bullet; &nbsp;
+                        (<a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="text-red-500 font-bold">other versions</a>)
+                    </span>
+                </footer>
+
             </div>
         </div>
     </main>
@@ -431,15 +409,29 @@ export default {
         return {
             bitbox: null,
             showDesktopMenu: null,
+            showMobileMenu: null,
             showWorkspacesMenu: null,
             version: null,
         }
     },
     created: function () {
         this.showDesktopMenu = false
+        this.showMobileMenu = false
         this.showWorkspacesMenu = false
 
         this.version = require('../../package.json').version
     },
 }
 </script>
+
+<style scoped>
+main::-webkit-scrollbar {
+    /* display: none; */
+    width: 3.5px;
+    height: 8px;
+    background-color: #00A774; /* or add it to the track */
+}
+main::-webkit-scrollbar-thumb {
+    background: #8dc351;
+}
+</style>

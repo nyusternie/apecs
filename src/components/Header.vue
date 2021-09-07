@@ -1,33 +1,29 @@
 <template>
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{title}}</h1>
-                </div>
+    <main class="flex justify-between bg-red-500">
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">{{title}}</h1>
+        </div>
 
-                <div v-if="pageId === 'dashboard'" class="col-sm-6">
-                    <div class="float-sm-right text-right">
-                        <strong class="text-info">BU!LD BCH!</strong>
-                        <span class="text-secondary">&nbsp;and&nbsp;</span>
-                        <strong><a href="https://twitter.com/search?q=%23MakeBitcoinCashAgain" target="_blank">#MakeBitcoinCashAgain</a></strong>
-                    </div>
-                </div>
-
-                <div v-else class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item">
-                            <a href="javascript://" @click="goTo('/')">Dashboard</a>
-                        </li>
-
-                        <li class="breadcrumb-item active">
-                            {{title}}
-                        </li>
-                    </ol>
-                </div>
+        <div v-if="pageId === 'dashboard'" class="col-sm-6">
+            <div class="float-sm-right text-right">
+                <strong class="text-info">BU!LD BCH!</strong>
+                <span class="text-secondary">&nbsp;and&nbsp;</span>
+                <strong><a href="https://twitter.com/search?q=%23MakeBitcoinCashAgain" target="_blank">#MakeBitcoinCashAgain</a></strong>
             </div>
         </div>
-    </div>
+
+        <div v-else class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item">
+                    <a href="javascript://" @click="goTo('/')">Dashboard</a>
+                </li>
+
+                <li class="breadcrumb-item active">
+                    {{title}}
+                </li>
+            </ol>
+        </div>
+    </main>
 </template>
 
 <script>

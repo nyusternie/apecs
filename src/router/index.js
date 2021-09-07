@@ -10,6 +10,7 @@ import Vin from '@/views/Vin'
 import Blockchains from '@/views/Blockchains'
 import Discus from '@/views/Discus'
 import Events from '@/views/Events'
+import Faucets from '@/views/Faucets'
 import Markets from '@/views/Markets'
 import Privacy from '@/views/Privacy'
 import News from '@/views/News'
@@ -30,44 +31,48 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        component: Dashboard
+        component: Dashboard,
     },
     {
         path: '/stats',
-        component: Stats
+        component: Stats,
     },
     {
         path: '/status',
-        component: Status
+        component: Status,
     },
     {
         path: '/vin',
-        component: Vin
+        component: Vin,
     },
 
     {
         path: '/blockchains',
-        component: Blockchains
+        component: Blockchains,
     },
     {
         path: '/discuss',
-        component: Discus
+        component: Discus,
     },
     {
         path: '/events',
-        component: Events
+        component: Events,
+    },
+    {
+        path: '/faucets',
+        component: Faucets,
     },
     {
         path: '/markets',
-        component: Markets
+        component: Markets,
     },
     {
         path: '/privacy',
-        component: Privacy
+        component: Privacy,
     },
     {
         path: '/news',
-        component: News
+        component: News,
     },
 
     // {
