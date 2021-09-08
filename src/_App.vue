@@ -1,8 +1,8 @@
 <template>
     <main class="relative h-screen flex overflow-hidden bg-white">
-        <Menu />
+        <Menu class="w-80" />
 
-        <router-view />
+        <router-view class="w-screen" />
     </main>
 </template>
 

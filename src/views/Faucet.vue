@@ -1,16 +1,24 @@
 <template>
-    <main>
+    <main class="">
         <!-- Header -->
         <Header pageId="" />
 
+        <header class="px-10 mt-5">
+            <h1 class="text-4xl font-bold text-purple-700">Testnet Faucet</h1>
+        </header>
+
         <!-- Page Section -->
-        <section class="content">
-            <div class="container-fluid">
-                <UnderConstruction />
+        <section class="px-10 mt-10">
+            <div class="grid grid-cols-3">
+                <button>Bitcoin Cash (tBCH)</button>
+
+                <button>SmartBCH (sBCH)</button>
+
+                <button>Ethereum (tETH)</button>
             </div>
         </section>
 
-        <section>
+        <section class="px-10 mt-10">
             <div>
                 BCH Testnet Address:
             </div>
@@ -36,12 +44,10 @@
 <script>
 /* Import components. */
 import Header from '@/components/Header.vue'
-import UnderConstruction from '@/components/UnderConstruction.vue'
 
 export default {
     components: {
         Header,
-        UnderConstruction,
     },
     data: () => {
         return {

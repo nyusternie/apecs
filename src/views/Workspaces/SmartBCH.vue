@@ -34,10 +34,11 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="border-t border-gray-200 bg-gray-50 grid grid-cols-1 divide-y divide-gray-200 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
                                 <div class="px-6 py-5 text-sm font-medium text-center">
-                                    <span class="text-gray-900">12</span>
-                                    <span class="text-gray-600">Vacation days left</span>
+                                    <span class="block text-gray-600">Latest Block Height</span>
+                                    <span class="block text-gray-900">{{displayBlockHeight}}</span>
                                 </div>
 
                                 <div class="px-6 py-5 text-sm font-medium text-center">
@@ -50,6 +51,7 @@
                                     <span class="text-gray-600">Personal days left</span>
                                 </div>
                             </div>
+
                         </div>
                     </section>
 
@@ -72,7 +74,7 @@
                                         <a href="#" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Request time off
+                                            Getting Started
                                         </a>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
@@ -107,7 +109,7 @@
                                         <a href="#" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Benefits
+                                            Mainnet Explorer
                                         </a>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
@@ -137,7 +139,7 @@
                                         <a href="#" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Schedule a one-on-one
+                                            Testnet Faucet
                                         </a>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
@@ -172,7 +174,7 @@
                                         <a href="#" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Payroll
+                                            Exchange
                                         </a>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
@@ -202,7 +204,7 @@
                                         <a href="#" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Submit an expense
+                                            Reports
                                         </a>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
@@ -239,7 +241,7 @@
                                         <a href="#" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Training
+                                            Hire A Developer
                                         </a>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
@@ -260,11 +262,13 @@
 
                 <!-- Right column -->
                 <div class="grid grid-cols-1 gap-4">
+
                     <!-- Announcements -->
                     <section aria-labelledby="announcements-title">
                         <div class="rounded-lg bg-white overflow-hidden shadow">
                             <div class="p-6">
-                                <h2 class="text-base font-medium text-gray-900" id="announcements-title">Announcements</h2>
+                                <h2 class="text-base font-medium text-gray-900" id="announcements-title">Latest Announcements</h2>
+
                                 <div class="flow-root mt-6">
                                     <ul role="list" class="-my-5 divide-y divide-gray-200">
                                         <li class="py-5">
@@ -328,7 +332,7 @@
                     <section aria-labelledby="recent-hires-title">
                         <div class="rounded-lg bg-white overflow-hidden shadow">
                             <div class="p-6">
-                                <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Recent Hires</h2>
+                                <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Recent Transactions</h2>
                                 <div class="flow-root mt-6">
                                     <ul role="list" class="-my-5 divide-y divide-gray-200">
                                         <li class="py-4">
@@ -440,6 +444,7 @@
                             </div>
                         </div>
                     </section>
+
                 </div>
             </div>
         </div>
@@ -447,6 +452,10 @@
 </template>
 
 <script>
+/* Import modules. */
+import numeral from 'numeral'
+import superagent from 'superagent'
+
 /* Import components. */
 // import Header from '@/components/Header.vue'
 // import Navbar from './Navbar.vue'
@@ -458,17 +467,38 @@ export default {
     },
     data: () => {
         return {
-            //
+            blockHeight: null,
         }
     },
     computed: {
-        //
+        displayBlockHeight() {
+            if (!this.blockHeight) {
+                return 0
+            }
+
+            return numeral(this.blockHeight).format('0,0')
+        }
     },
     methods: {
-        //
+        async init() {
+            const response = await superagent.get('https://smartbch.devops.cash/status')
+            // console.log('STATUS RESPONSE', response)
+
+            const body = response.body
+            console.log('BODY', body)
+
+            if (body.result && body.result.sync_info) {
+                const syncInfo = body.result.sync_info
+
+                this.blockHeight = syncInfo.latest_block_height
+            }
+
+        }
     },
     created: async function () {
-        //
+        this.blockHeight = 0
+
+        this.init()
     },
     mounted: function () {
         //

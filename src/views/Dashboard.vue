@@ -38,6 +38,9 @@
                     </button>
                 </div>
             </div>
+
+            <Highlights />
+
             <!-- Pinned projects -->
             <div class="px-4 mt-6 sm:px-6 lg:px-8">
                 <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Pinned Projects</h2>
@@ -79,7 +82,7 @@
                     To: "transform opacity-0 scale-95"
                 -->
                                 <div
-                                    class="z-10 mx-3 origin-top-right absolute right-10 top-3 w-48 mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
+                                    class="hidden z-10 mx-3 origin-top-right absolute right-10 top-3 w-48 mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
                                     role="menu"
                                     aria-orientation="vertical"
                                     aria-labelledby="pinned-project-options-menu-0-button"

@@ -1,5 +1,5 @@
 <template>
-    <main class="w-80 overflow-x-hidden overflow-y-scroll">
+    <main class="overflow-x-hidden overflow-y-scroll">
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
         <div v-if="showMobileMenu" class="fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
@@ -330,9 +330,9 @@
                                     Reports
                                 </a>
 
-                                <router-link to="/faucets" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <router-link to="/faucet" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
-                                    Faucets
+                                    Faucet
                                 </router-link>
 
                             </div>
@@ -400,7 +400,7 @@
                     <span class="block mt-2">
                         Latest: <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
                         &nbsp; &bullet; &nbsp;
-                        (<a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="text-red-500 font-bold">other versions</a>)
+                        (<a href="https://gitlab.com/bchplease/devops.cash/-/releases" target="_blank" class="text-red-500 font-bold">other releases</a>)
                     </span>
                 </footer>
 
