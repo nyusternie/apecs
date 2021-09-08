@@ -190,11 +190,10 @@
                     </div>
 
                     <!-- Sidebar Search -->
-                    <div class="px-3 mt-1 mb-2">
+                    <!-- <div class="px-3 mt-1 mb-2">
                         <label for="search" class="sr-only">What are you looking for?</label>
                         <div class="mt-1 relative rounded-md shadow-sm">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" aria-hidden="true">
-                                <!-- Heroicon name: solid/search -->
                                 <svg class="mr-3 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                                 </svg>
@@ -202,11 +201,9 @@
 
                             <input type="text" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-9 sm:text-sm border-gray-300 rounded-md" placeholder="What are you looking for?" />
                         </div>
-                    </div>
-                    <!-- Navigation -->
-                    <!-- <nav class="px-3 mt-6"> -->
+                    </div> -->
 
-                    <div class="mt-0 flex-grow flex flex-col">
+                    <div class="mt-0 flex-grow flex flex-col w-72">
 
                         <nav class="flex-1 px-2 pt-2 space-y-8 bg-white" aria-label="Sidebar">
                             <div class="space-y-1">

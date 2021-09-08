@@ -1,15 +1,20 @@
 <template>
     <main class="relative h-screen flex overflow-hidden bg-white">
-        <Menu class="w-80" />
+        <Menu class="hidden lg:flex w-80" v-if="showMenu" />
 
-        <router-view class="w-screen overflow-y-scroll" />
+        <div class="relative min-h-screen bg-gray-100">
+            <Header @toggleMenu="toggleMenu" />
+
+            <!-- <router-view class="w-screen overflow-y-scroll" /> -->
+            <router-view class="" />
+        </div>
     </main>
 </template>
 
 <script>
 /* Import components. */
 import Menu from '@/components/Menu.vue'
-// import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
 // import Navbar from '@/components/Navbar.vue'
 // import Sidebar from '@/components/Sidebar.vue'
 // import Topbar from '@/components/Topbar.vue'
@@ -17,10 +22,23 @@ import Menu from '@/components/Menu.vue'
 export default {
     components: {
         Menu,
-        // Footer,
+        Header,
         // Navbar,
         // Sidebar,
         // Topbar,
+    },
+    data: () => {
+        return {
+            showMenu: null,
+        }
+    },
+    methods: {
+        toggleMenu() {
+            this.showMenu = !this.showMenu
+        },
+    },
+    created: function () {
+        this.showMenu = true
     },
 }
 </script>
