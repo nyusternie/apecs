@@ -1,25 +1,234 @@
 <template>
-    <div class="row">
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box">
-                <span class="info-box-icon bg-danger elevation-1">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                </span>
+    <main class="grid grid-cols-4 gap-4 p-4">
 
-                <div class="info-box-content">
-                    <span class="info-box-text">Financial Health</span>
-                    <span class="info-box-number">
-                        {{displayPrice}} <small>USD</small>
-                        <div class="text-success">
-                            <small>
-                                <i class="fas fa-arrow-up"></i>
-                                4.37% • last 30 days
-                            </small>
+        <div class="relative col-span-1 flex shadow-sm rounded-md">
+            <div class="flex-shrink-0 flex flex-col items-center justify-center w-24 h-20 bg-pink-600 text-white text-sm font-medium rounded-l-md">
+                <span class="text-xl">{{displayPrice}}</span>
+            </div>
+            <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#" class="text-gray-900 font-medium hover:text-gray-600">
+                        Financial Health
+                    </a>
+                    <p class="text-gray-500">
+                        <i class="fas fa-arrow-up"></i>
+                        4.37% • last 30 days
+                    </p>
+                </div>
+                <div class="flex-shrink-0 pr-2">
+                    <button
+                        type="button"
+                        class="w-8 h-8 bg-white inline-flex items-center justify-center text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+                        id="pinned-project-options-menu-0-button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <span class="sr-only">Open options</span>
+                        <!-- Heroicon name: solid/dots-vertical -->
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                        </svg>
+                    </button>
+
+                    <!--
+      Dropdown menu, show/hide based on menu state.
+
+      Entering: "transition ease-out duration-100"
+        From: "transform opacity-0 scale-95"
+        To: "transform opacity-100 scale-100"
+      Leaving: "transition ease-in duration-75"
+        From: "transform opacity-100 scale-100"
+        To: "transform opacity-0 scale-95"
+    -->
+                    <div
+                        class="hidden z-10 mx-3 origin-top-right absolute right-10 top-3 w-48 mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="pinned-project-options-menu-0-button"
+                        tabindex="-1"
+                    >
+                        <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-0">View</a>
                         </div>
-                    </span>
+                        <div class="py-1" role="none">
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-1">Removed from pinned</a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-2">Share</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="relative col-span-1 flex shadow-sm rounded-md">
+            <div class="flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md">
+                4.26TH/s
+            </div>
+            <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#" class="text-gray-900 font-medium hover:text-gray-600">
+                        Mining Power
+                    </a>
+                    <p class="text-gray-500"><small>~3.82%</small></p>
+                </div>
+                <div class="flex-shrink-0 pr-2">
+                    <button
+                        type="button"
+                        class="w-8 h-8 bg-white inline-flex items-center justify-center text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+                        id="pinned-project-options-menu-0-button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <span class="sr-only">Open options</span>
+                        <!-- Heroicon name: solid/dots-vertical -->
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                        </svg>
+                    </button>
+
+                    <!--
+      Dropdown menu, show/hide based on menu state.
+
+      Entering: "transition ease-out duration-100"
+        From: "transform opacity-0 scale-95"
+        To: "transform opacity-100 scale-100"
+      Leaving: "transition ease-in duration-75"
+        From: "transform opacity-100 scale-100"
+        To: "transform opacity-0 scale-95"
+    -->
+                    <div
+                        class="hidden z-10 mx-3 origin-top-right absolute right-10 top-3 w-48 mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="pinned-project-options-menu-0-button"
+                        tabindex="-1"
+                    >
+                        <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-0">View</a>
+                        </div>
+                        <div class="py-1" role="none">
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-1">Removed from pinned</a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-2">Share</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative col-span-1 flex shadow-sm rounded-md">
+            <div class="flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md">
+                $388.8K
+            </div>
+            <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#" class="text-gray-900 font-medium hover:text-gray-600">
+                        Spending
+                    </a>
+                    <p class="text-gray-500"><small>USD</small></p>
+                </div>
+                <div class="flex-shrink-0 pr-2">
+                    <button
+                        type="button"
+                        class="w-8 h-8 bg-white inline-flex items-center justify-center text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+                        id="pinned-project-options-menu-0-button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <span class="sr-only">Open options</span>
+                        <!-- Heroicon name: solid/dots-vertical -->
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                        </svg>
+                    </button>
+
+                    <!--
+      Dropdown menu, show/hide based on menu state.
+
+      Entering: "transition ease-out duration-100"
+        From: "transform opacity-0 scale-95"
+        To: "transform opacity-100 scale-100"
+      Leaving: "transition ease-in duration-75"
+        From: "transform opacity-100 scale-100"
+        To: "transform opacity-0 scale-95"
+    -->
+                    <div
+                        class="hidden z-10 mx-3 origin-top-right absolute right-10 top-3 w-48 mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="pinned-project-options-menu-0-button"
+                        tabindex="-1"
+                    >
+                        <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-0">View</a>
+                        </div>
+                        <div class="py-1" role="none">
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-1">Removed from pinned</a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-2">Share</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative col-span-1 flex shadow-sm rounded-md">
+            <div class="flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md">
+                9 / 4
+            </div>
+            <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#" class="text-gray-900 font-medium hover:text-gray-600">
+                        Building
+                    </a>
+                    <p class="text-gray-500">12 Members</p>
+                </div>
+                <div class="flex-shrink-0 pr-2">
+                    <button
+                        type="button"
+                        class="w-8 h-8 bg-white inline-flex items-center justify-center text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+                        id="pinned-project-options-menu-0-button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <span class="sr-only">Open options</span>
+                        <!-- Heroicon name: solid/dots-vertical -->
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                        </svg>
+                    </button>
+
+                    <!--
+      Dropdown menu, show/hide based on menu state.
+
+      Entering: "transition ease-out duration-100"
+        From: "transform opacity-0 scale-95"
+        To: "transform opacity-100 scale-100"
+      Leaving: "transition ease-in duration-75"
+        From: "transform opacity-100 scale-100"
+        To: "transform opacity-0 scale-95"
+    -->
+                    <div
+                        class="hidden z-10 mx-3 origin-top-right absolute right-10 top-3 w-48 mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="pinned-project-options-menu-0-button"
+                        tabindex="-1"
+                    >
+                        <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-0">View</a>
+                        </div>
+                        <div class="py-1" role="none">
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-1">Removed from pinned</a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="pinned-project-options-menu-0-item-2">Share</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--
 
         <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
@@ -30,7 +239,7 @@
                 <div class="info-box-content">
                     <span class="info-box-text">Mining Power</span>
                     <span class="info-box-number">
-                        4.26TH/s <small>~3.82%</small>
+
                         <div class="text-success">
                             <small>
                                 <i class="fas fa-arrow-up"></i>
@@ -42,7 +251,6 @@
             </div>
         </div>
 
-        <!-- fix for small devices only -->
         <div class="clearfix hidden-md-up"></div>
 
         <div class="col-12 col-sm-6 col-md-3">
@@ -54,7 +262,7 @@
                 <div class="info-box-content">
                     <span class="info-box-text">Buyers SPEDNing</span>
                     <span class="info-box-number">
-                        $388.8K <small>USD</small>
+
                         <div class="text-success">
                             <small>
                                 <i class="fas fa-arrow-up"></i>
@@ -87,8 +295,8 @@
                 </div>
             </div>
         </div>
-
-    </div>
+ -->
+    </main>
 </template>
 
 <script>

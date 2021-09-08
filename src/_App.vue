@@ -2,7 +2,7 @@
     <main class="relative h-screen flex overflow-hidden bg-white">
         <Menu class="w-80" />
 
-        <router-view class="w-screen" />
+        <router-view class="w-screen overflow-y-scroll" />
     </main>
 </template>
 
@@ -24,3 +24,15 @@ export default {
     },
 }
 </script>
+
+<style>
+main::-webkit-scrollbar {
+    /* display: none; */
+    width: 4px;
+    height: 8px;
+    background-color: #00A774; /* or add it to the track */
+}
+main::-webkit-scrollbar-thumb {
+    background: #8dc351;
+}
+</style>

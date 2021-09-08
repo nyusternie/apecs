@@ -429,15 +429,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-main::-webkit-scrollbar {
-    /* display: none; */
-    width: 3.5px;
-    height: 8px;
-    background-color: #00A774; /* or add it to the track */
-}
-main::-webkit-scrollbar-thumb {
-    background: #8dc351;
-}
-</style>
