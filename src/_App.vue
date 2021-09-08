@@ -1,6 +1,6 @@
 <template>
     <main class="relative h-screen flex overflow-hidden bg-white">
-        <Menu class="hidden lg:flex w-80" v-if="showMenu" />
+        <Menu class="hidden lg:block w-72" v-if="showMenu" />
 
         <div class="relative min-h-screen bg-gray-100">
             <Header @toggleMenu="toggleMenu" />

@@ -90,7 +90,7 @@
         </div>
 
         <!-- Static sidebar for desktop -->
-        <div class="hidden lg:flex lg:flex-shrink-0">
+        <main class="hidden lg:block lg:flex-shrink-0 w-full">
             <div class="flex flex-col border-r border-gray-200 pt-0 pb-0 bg-gray-100">
 
                 <router-link to="/" class="brand-link">
@@ -121,7 +121,7 @@
                     </div>
                 </div> -->
 
-                <div class="h-0 flex-1 flex flex-col overflow-y-auto">
+                <!-- <div class="h-0 flex-1 flex flex-col overflow-y-auto"> -->
                     <!-- User account dropdown -->
                     <div class="px-0 mt-1 relative inline-block text-left">
                         <!-- <div> -->
@@ -203,7 +203,7 @@
                         </div>
                     </div> -->
 
-                    <div class="mt-0 flex-grow flex flex-col w-72">
+                    <div class="mt-0 flex-grow flex flex-col">
 
                         <nav class="flex-1 px-2 pt-2 space-y-8 bg-white" aria-label="Sidebar">
                             <div class="space-y-1">
@@ -389,7 +389,7 @@
 
                         </nav>
                     </div>
-                </div>
+                <!-- </div> -->
 
                 <footer class='py-3 text-sm bg-indigo-50 text-center border-t-2 border-indigo-100'>
                     <span class="block">Cash DevOps is <span class="font-bold">100% FREE</span> as in beer</span>
@@ -402,7 +402,7 @@
                 </footer>
 
             </div>
-        </div>
+        </main>
     </main>
 </template>
 
