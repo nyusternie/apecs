@@ -90,7 +90,7 @@
         </div>
 
         <!-- Static sidebar for desktop -->
-        <main class="hidden lg:block lg:flex-shrink-0 w-full">
+        <main class="hidden lg:block lg:flex-shrink-0">
             <div class="flex flex-col border-r border-gray-200 pt-0 pb-0 bg-gray-100">
 
                 <router-link to="/" class="brand-link">
@@ -132,7 +132,7 @@
                                 aria-expanded="false"
                                 aria-haspopup="true"
                             >
-                                <span class="flex w-full justify-between items-center">
+                                <span class="flex justify-between items-center">
                                     <span class="flex min-w-0 items-center justify-between space-x-3">
                                         <img
                                             class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"
@@ -342,7 +342,7 @@
                                 <div class="space-y-1" role="group" aria-labelledby="projects-headline">
                                     <router-link to="/buidling" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            BUIDLing 101
+                                            Build a DApp in 15 mins
                                         </span>
                                     </router-link>
 
@@ -391,7 +391,7 @@
                     </div>
                 <!-- </div> -->
 
-                <footer class='py-3 text-sm bg-indigo-50 text-center border-t-2 border-indigo-100'>
+                <footer class='py-3 text-sm bg-gray-100 text-center border-t-2 border-gray-200'>
                     <span class="block">Cash DevOps is <span class="font-bold">100% FREE</span> as in beer</span>
 
                     <span class="block mt-2">

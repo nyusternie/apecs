@@ -1,12 +1,12 @@
 <template>
-    <main class="relative h-screen flex overflow-hidden bg-white">
-        <Menu class="hidden lg:block w-72" v-if="showMenu" />
+    <main class="relative h-screen flex bg-white overflow-y-hidden">
+        <Menu class="hidden lg:block w-80" v-if="showMenu" />
 
-        <div class="relative min-h-screen bg-gray-100">
+        <div class="bg-gray-100 w-full">
             <Header @toggleMenu="toggleMenu" />
 
             <!-- <router-view class="w-screen overflow-y-scroll" /> -->
-            <router-view class="" />
+            <router-view class="overflow-x-hidden overflow-y-scroll h-full" />
         </div>
     </main>
 </template>

@@ -1,25 +1,18 @@
 <template>
-    <main>
-        <!-- Header -->
-        <Header pageId="graphics-studio" />
-
+    <main class="bg-white h-full">
         <!-- Page Section -->
-        <section class="content">
-            <div class="container-fluid">
-                <UnderConstruction />
-            </div>
+        <section class="p-20">
+            <UnderConstruction />
         </section>
     </main>
 </template>
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
 import UnderConstruction from '@/components/UnderConstruction.vue'
 
 export default {
     components: {
-        Header,
         UnderConstruction,
     },
     data: () => {
@@ -35,7 +28,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-/*  */
-</style>

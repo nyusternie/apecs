@@ -482,7 +482,7 @@
             </main>
 
             <aside class="hidden xl:block xl:col-span-4">
-                <div class="mt-16">
+                <div class="sticky top-4 space-y-4">
                     <section aria-labelledby="who-to-follow-heading">
                         <div class="bg-white rounded-lg shadow">
                             <div class="p-6">
@@ -531,8 +531,7 @@
                             </div>
                         </div>
                     </section>
-
-                    <section class="mt-5" aria-labelledby="trending-heading">
+                    <section aria-labelledby="trending-heading">
                         <div class="bg-white rounded-lg shadow">
                             <div class="p-6">
                                 <h2 id="trending-heading" class="text-base font-medium text-gray-900">

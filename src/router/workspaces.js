@@ -1,6 +1,5 @@
 /* Import views. */
 import Editor from '@/views/Workspaces/Editor'
-import SmartBCH from '@/views/Workspaces/SmartBCH'
 import Studio from '@/views/Workspaces/Studio'
 
 /* Labs */
@@ -19,6 +18,9 @@ import LabsMessaging from '@/views/Workspaces/Labs/Messaging'
 import LabsQuery from '@/views/Workspaces/Labs/Query'
 import LabsTransaction from '@/views/Workspaces/Labs/Transaction'
 import LabsWallet from '@/views/Workspaces/Labs/Wallet'
+
+/* SmartBCH */
+import SmartBCH from '@/views/Workspaces/SmartBCH'
 
 /* Initialize routes. */
 const routes = [

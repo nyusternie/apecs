@@ -1,8 +1,5 @@
 <template>
     <main>
-        <!-- Header -->
-        <Header pageId="projects" />
-
         <!-- Page Section -->
         <section class="content">
             <div class="container-fluid">
@@ -233,14 +230,14 @@ import { mapState } from 'vuex'
 import superagent from 'superagent'
 
 /* Import components. */
-import Header from '@/components/Header.vue'
+// import Header from '@/components/Header.vue'
 
 /* Import (local) components. */
 import { Links } from '@/components/Projects'
 
 export default {
     components: {
-        Header,
+        // Header,
 
         Links,
     },
