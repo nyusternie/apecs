@@ -1,5 +1,5 @@
 /* Import views. */
-import BUIDLing from '@/views/Support/BUIDLing'
+import DApps from '@/views/Support/DApps'
 import FAQ from '@/views/Support/FAQ'
 import Matrix from '@/views/Support/Matrix'
 import Slack from '@/views/Support/Slack'
@@ -17,8 +17,8 @@ import GuidesYarn from '@/views/Support/Guides/Yarn'
 /* Initialize routes. */
 const routes = [
     {
-        path: '/buidling',
-        component: BUIDLing
+        path: '/dapps',
+        component: DApps
     },
     {
         path: '/faq',

@@ -1,5 +1,5 @@
 <template>
-    <main class="pt-5 pb-24">
+    <main class="pt-3 pb-24 mt-2">
     <!-- <div class="py-10 overflow-y-scroll"> -->
         <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
             <main class="lg:col-span-12 xl:col-span-8">

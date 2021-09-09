@@ -254,6 +254,10 @@
                                     </button>
 
                                     <div v-if="showDesktopMenu" class="space-y-1" id="sub-menu-1">
+                                        <router-link to="/feed" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            LIVE Feed
+                                        </router-link>
+
                                         <router-link to="/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             Notebook
                                         </router-link>
@@ -340,9 +344,9 @@
                                 </h3>
 
                                 <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                    <router-link to="/buidling" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <router-link to="/dapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            Build a DApp in 15 mins
+                                            15 Min DApps
                                         </span>
                                     </router-link>
 
