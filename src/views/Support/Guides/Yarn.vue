@@ -1,15 +1,13 @@
 <template>
     <main>
-        <!-- Header -->
-        <Header pageId="guides" />
+        <Navbar class="hidden" />
 
         <!-- Page Section -->
-        <section class="content">
+        <section class="p-10">
             <div class="container-fluid">
 
                 <div class="row">
                     <div class="col-md-6">
-                        <Navbar />
 
                         <div class="card">
                             <div class="card-body">
@@ -76,12 +74,10 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
 import Navbar from './Navbar.vue'
 
 export default {
     components: {
-        Header,
         Navbar,
     },
     data: () => {

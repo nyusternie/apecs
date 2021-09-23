@@ -44,13 +44,13 @@ export default {
 </script>
 
 <style>
-main::-webkit-scrollbar {
+main::-webkit-scrollbar, section::-webkit-scrollbar {
     /* display: none; */
     width: 4px;
     height: 8px;
     background-color: #00A774; /* or add it to the track */
 }
-main::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb, section::-webkit-scrollbar-thumb {
     background: #8dc351;
 }
 </style>

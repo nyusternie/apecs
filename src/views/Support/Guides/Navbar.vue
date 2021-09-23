@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand navbar-primary navbar-dark">
+    <main class="p-3 bg-red-400">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript://">
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </form>
-    </nav>
+    </main>
 </template>
 
 <script>
