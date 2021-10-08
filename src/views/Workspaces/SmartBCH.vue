@@ -1,7 +1,6 @@
 <template>
     <!-- <main class="relative min-h-screen bg-gray-100"> -->
     <main class="py-8 overflow-x-hidden overflow-y-hidden bg-green-400">
-        hi there!
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <h1 class="sr-only">Profile</h1>
             <!-- Main 3 column grid -->
@@ -25,12 +24,12 @@
                                         <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
                                             <p class="text-sm font-medium text-gray-600">Welcome back,</p>
                                             <p class="text-xl font-bold text-gray-900 sm:text-2xl">Chelsea Hagon</p>
-                                            <p class="text-sm font-medium text-gray-600">Human Resources Manager</p>
+                                            <p class="text-sm font-medium text-gray-600">{{account}}</p>
                                         </div>
                                     </div>
                                     <div class="mt-5 flex justify-center sm:mt-0">
-                                        <a href="#" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                                            View profile
+                                        <a @click="testMetaMask" href="javascript://" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            Test MetaMask
                                         </a>
                                     </div>
                                 </div>
@@ -72,7 +71,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="#" class="focus:outline-none">
+                                        <a href="javascript://" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Getting Started
@@ -107,7 +106,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="#" class="focus:outline-none">
+                                        <a href="javascript://" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Mainnet Explorer
@@ -137,7 +136,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="#" class="focus:outline-none">
+                                        <a href="javascript://" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Testnet Faucet
@@ -172,7 +171,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="#" class="focus:outline-none">
+                                        <a href="javascript://" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Exchange
@@ -202,7 +201,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="#" class="focus:outline-none">
+                                        <a href="javascript://" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Reports
@@ -239,7 +238,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="#" class="focus:outline-none">
+                                        <a href="javascript://" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Hire A Developer
@@ -274,6 +273,7 @@
 
 <script>
 /* Import modules. */
+import { ethers } from 'ethers'
 import numeral from 'numeral'
 import superagent from 'superagent'
 
@@ -289,6 +289,7 @@ export default {
     data: () => {
         return {
             blockHeight: null,
+            account: null,
         }
     },
     computed: {
@@ -314,10 +315,44 @@ export default {
                 this.blockHeight = syncInfo.latest_block_height
             }
 
-        }
+        },
+
+        async testMetaMask() {
+            console.log('STARTING METAMASK TEST..')
+
+            /* Validate embedded Web3 objects. */
+            if (!window.ethereum && !window.bitcoin) {
+                /* Validate embedded ethereum object. */
+                if (window.bitcoin) {
+                    console.info('Found Bitcoin provider.')
+                } else if (window.ethereum) {
+                    console.info('Found Ethereum provider.')
+                } else {
+                    return console.error('No Web3 provider found.')
+                }
+            }
+
+            /* Initialize provider. */
+            const provider = new ethers
+                .providers
+                .Web3Provider(window.ethereum, 'any')
+
+            /* Prompt user for account connections. */
+            await provider.send("eth_requestAccounts", [])
+
+            /* Set signer. */
+            const signer = provider.getSigner()
+
+            /* Request account. */
+            this.account = await signer.getAddress()
+            console.log('Account:', this.account)
+        },
+
     },
     created: async function () {
         this.blockHeight = 0
+
+        this.account = 'n/a'
 
         this.init()
     },

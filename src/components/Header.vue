@@ -132,7 +132,7 @@
         </div>
 
         <!-- Mobile menu, show/hide based on menu state. -->
-        <nav class="lg:hidden" aria-label="Global">
+        <nav v-if="showMobileMenu" class="lg:hidden" aria-label="Global">
             <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
                 <!-- Current: "bg-gray-100 text-gray-900", Default: "hover:bg-gray-50" -->
                 <a href="javascript://" aria-current="page" class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Home</a>
@@ -231,6 +231,8 @@ export default {
     data: () => {
         return {
             usd: null,
+
+            showMobileMenu: null,
         }
     },
     computed: {
@@ -341,6 +343,8 @@ export default {
     },
     created: function () {
         this.usd = 0
+
+        this.showMobileMenu = false
 
         /* Update USD. */
         this.init()
