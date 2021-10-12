@@ -104,11 +104,11 @@
 
 <script>
 /* Import components. */
-import Menu from '@/components/Menu.vue'
-// import Footer from '@/components/Footer.vue'
-// import Navbar from '@/components/Navbar.vue'
-// import Sidebar from '@/components/Sidebar.vue'
-// import Topbar from '@/components/Topbar.vue'
+import Menu from '@/components/Menu'
+// import Footer from '@/components/Footer'
+// import Navbar from '@/components/Navbar'
+// import Sidebar from '@/components/Sidebar'
+// import Topbar from '@/components/Topbar'
 
 export default {
     components: {

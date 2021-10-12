@@ -13,11 +13,11 @@
 
 <script>
 /* Import components. */
-import Menu from '@/components/Menu.vue'
-import Header from '@/components/Header.vue'
-// import Navbar from '@/components/Navbar.vue'
-// import Sidebar from '@/components/Sidebar.vue'
-// import Topbar from '@/components/Topbar.vue'
+import Menu from '@/components/Menu'
+import Header from '@/components/Header'
+// import Navbar from '@/components/Navbar'
+// import Sidebar from '@/components/Sidebar'
+// import Topbar from '@/components/Topbar'
 
 export default {
     components: {

@@ -83,8 +83,8 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
-import Navbar from './Navbar.vue'
+import Header from '@/components/Header'
+import Navbar from './Navbar'
 
 export default {
     components: {

@@ -118,8 +118,8 @@
 
 <script>
 /* Import components. */
-// import Header from '@/components/Header.vue'
-// import UnderConstruction from '@/components/UnderConstruction.vue'
+// import Header from '@/components/Header'
+// import UnderConstruction from '@/components/UnderConstruction'
 
 export default {
     components: {

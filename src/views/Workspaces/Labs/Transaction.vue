@@ -84,12 +84,12 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
+import Header from '@/components/Header'
 
-import Navbar from './Navbar.vue'
+import Navbar from './Navbar'
 
-import DecodeRawTx from './Transaction/DecodeRawTx.vue'
-import TxIdDetails from './Transaction/TxIdDetails.vue'
+import DecodeRawTx from './Transaction/DecodeRawTx'
+import TxIdDetails from './Transaction/TxIdDetails'
 
 export default {
     components: {

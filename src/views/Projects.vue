@@ -406,7 +406,7 @@ import { mapState } from 'vuex'
 import superagent from 'superagent'
 
 /* Import components. */
-// import Header from '@/components/Header.vue'
+// import Header from '@/components/Header'
 
 /* Import (local) components. */
 import { Links } from '@/components/Projects'

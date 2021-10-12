@@ -129,7 +129,7 @@
 
 <script>
 /* Import components. */
-import Navbar from './Guides/Navbar.vue'
+import Navbar from './Guides/Navbar'
 
 export default {
     components: {

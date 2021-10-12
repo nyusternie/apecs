@@ -9,7 +9,7 @@
 
 <script>
 /* Import components. */
-import UnderConstruction from '@/components/UnderConstruction.vue'
+import UnderConstruction from '@/components/UnderConstruction'
 
 export default {
     components: {

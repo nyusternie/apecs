@@ -64,7 +64,7 @@
 
 <script>
 /* Import components. */
-import Navbar from './Navbar.vue'
+import Navbar from './Navbar'
 
 export default {
     components: {

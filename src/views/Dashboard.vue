@@ -165,7 +165,7 @@
 
 <script>
 /* Import components. */
-import Card from '@/components/Dashboard/Card.vue'
+import Card from '@/components/Dashboard/Card'
 
 /* Import (local) components. */
 // import { Calendar } from '@/components/Dashboard'

@@ -227,8 +227,8 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
-import Navbar from './Labs/Navbar.vue'
+import Header from '@/components/Header'
+import Navbar from './Labs/Navbar'
 
 export default {
     components: {

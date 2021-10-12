@@ -11,7 +11,7 @@ import store from './store'
 // require('./plugins/bugsnag')
 
 /* Import main application. */
-import App from './_App.vue'
+import App from './_App'
 
 /* Import tailwind. */
 import 'tailwindcss/tailwind.css'

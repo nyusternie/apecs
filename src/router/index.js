@@ -81,7 +81,7 @@ const routes = [
     //   // route level code-splitting
     //   // this generates a separate chunk (about.[hash].js) for this route
     //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ '@/views/Dashboard.vue')
+    //   component: () => import(/* webpackChunkName: "about" */ '@/views/Dashboard')
     //   component: () => import('@/views/Dashboard'), <-- this is less efficient
     // },
 
@@ -107,6 +107,6 @@ export default new VueRouter({
     // mode: 'hash',
     // mode: 'history',
     base: process.env.BASE_URL,
-    linkActiveClass: 'active', // TODO: We should localize this to Navbar.vue's scope.
+    linkActiveClass: 'active', // TODO: We should localize this to Navbar's scope.
     routes,
 })

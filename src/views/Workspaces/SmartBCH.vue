@@ -348,6 +348,50 @@ export default {
             console.log('Account:', this.account)
         },
 
+        smartBCHProvider: function () {
+            return {
+                chainId: "0x2710",
+                rpcUrls: [
+                    "https://smartbch.greyh.at",
+                    "https://smartbch.fountainhead.cash/mainnet",
+                ],
+                chainName: "smartBCH",
+                nativeCurrency: {
+                    name: "Bitcoin Cash",
+                    symbol: "BCH",
+                    decimals: 18,
+                },
+                blockExplorerUrls: ["https://smartscan.cash"],
+                iconUrls: ["https://smartmask.cash/img/smartbch_logo.png"],
+            }
+        },
+
+        attemptMetaMaskProviderRegistration: async function () {
+            try {
+                await window.ethereum.request({
+                    method: "wallet_switchEthereumChain",
+                    params: [{ chainId: "0x2710" }],
+                })
+                return true
+            } catch (switchError) {
+                // This error code indicates that the chain has not been added to MetaMask.
+                if (switchError.code === 4902) {
+                    try {
+                        await window.ethereum.request({
+                            method: "wallet_addEthereumChain",
+                            params: [this.smartBCHProvider()],
+                        });
+
+                        return true;
+                    } catch (addError) {
+                        return false;
+                    }
+                }
+
+                return false
+            }
+        },
+
     },
     created: async function () {
         this.blockHeight = 0

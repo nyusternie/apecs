@@ -62,8 +62,8 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
-import Navbar from './Navbar.vue'
+import Header from '@/components/Header'
+import Navbar from './Navbar'
 
 // FOR DEVELOPMENT PURPOSES ONLY
 import LedgerTransport from '@ledgerhq/hw-transport-webusb'

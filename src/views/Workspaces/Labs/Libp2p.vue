@@ -207,8 +207,8 @@ import IPFS from 'ipfs-core'
 import { v4 as uuidv4 } from 'uuid'
 
 /* Import components. */
-import Header from '@/components/Header.vue'
-import Navbar from './Navbar.vue'
+import Header from '@/components/Header'
+import Navbar from './Navbar'
 
 
 export default {

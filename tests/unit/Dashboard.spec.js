@@ -5,10 +5,10 @@ import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
 
 /* Import view. */
-import Dashboard from '@/views/Dashboard.vue'
+import Dashboard from '@/views/Dashboard'
 
 /* Describe test. */
-describe('Dashboard.vue', () => {
+describe('Dashboard', () => {
     /* Initialize wrapper. */
     const wrapper = shallowMount(Dashboard)
 

@@ -142,7 +142,7 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
+import Header from '@/components/Header'
 
 export default {
     components: {

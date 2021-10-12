@@ -524,7 +524,7 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header.vue'
+import Header from '@/components/Header'
 
 /* Import (local) components. */
 import { Calendar } from '@/components/Dashboard'
