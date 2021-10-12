@@ -1,8 +1,5 @@
 <template>
     <main>
-        <!-- Header -->
-        <Header pageId="" />
-
         <!-- Page Section -->
         <section class="content">
             <div class="container-fluid">
@@ -14,12 +11,10 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header'
 import UnderConstruction from '@/components/UnderConstruction'
 
 export default {
     components: {
-        Header,
         UnderConstruction,
     },
     data: () => {

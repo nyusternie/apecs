@@ -1,6 +1,6 @@
 /* Import views. */
-import Editor from '@/views/Workspaces/Editor'
-import Studio from '@/views/Workspaces/Studio'
+import Editors from '@/views/Workspaces/Editors'
+import Studios from '@/views/Workspaces/Studios'
 
 /* Labs */
 import Labs from '@/views/Workspaces/Labs'
@@ -25,16 +25,16 @@ import SmartBCH from '@/views/Workspaces/SmartBCH'
 /* Initialize routes. */
 const routes = [
     {
-        path: '/editor',
-        component: Editor
+        path: '/editors',
+        component: Editors
     },
     {
         path: '/smartbch',
         component: SmartBCH
     },
     {
-        path: '/studio',
-        component: Studio
+        path: '/studios',
+        component: Studios
     },
 
     /* Labs */
