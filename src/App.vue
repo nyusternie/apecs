@@ -40,6 +40,22 @@ export default {
     created: function () {
         this.showMenu = true
     },
+    mounted: function () {
+        /* Handle keyboard shortcuts. */
+        window.addEventListener('keydown', function (_event) {
+            // console.log('EVENT', _event)
+
+            /* Handle Ctrl-K (search shortcut). */
+            if (_event.ctrlKey && _event.keyCode === 75) {
+                /* Stop propagating. */
+                _event.preventDefault()
+
+                /* Set focus to "global" search bar. */
+                document.getElementById('global-search').focus()
+            }
+        })
+
+    },
 }
 </script>
 
