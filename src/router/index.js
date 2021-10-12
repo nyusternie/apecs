@@ -10,7 +10,7 @@ import Vin from '@/views/Vin'
 import Blockchains from '@/views/Blockchains'
 import Discus from '@/views/Discus'
 import Events from '@/views/Events'
-import Faucet from '@/views/Faucet'
+import Faucets from '@/views/Faucets'
 import Markets from '@/views/Markets'
 import Privacy from '@/views/Privacy'
 import News from '@/views/News'
@@ -59,8 +59,8 @@ const routes = [
         component: Events,
     },
     {
-        path: '/faucet',
-        component: Faucet,
+        path: '/faucets',
+        component: Faucets,
     },
     {
         path: '/markets',
