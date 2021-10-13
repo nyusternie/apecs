@@ -1,8 +1,8 @@
 <template>
-    <main>
+    <main class="flex justify-center">
         <!-- Page Section -->
-        <section class="content">
-            <div class="container-fluid">
+        <section class="max-w-5xl grid grid-cols-5 gap-5 py-10">
+            <div class="col-span-3">
 
                 <div class="row">
                     <div class="col-md-6">
@@ -39,30 +39,57 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    Server-side Event Guide
+
                                 </h3>
                             </div>
 
-                            <div class="card-body">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Description lists</dt>
-                                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
-                                    <dt class="col-sm-4">Euismod</dt>
-                                    <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                    <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
-                                    <dt class="col-sm-4">Malesuada porta</dt>
-                                    <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
-                                    <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
-                                    <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-                                        sit amet risus.
-                                    </dd>
-                                </dl>
-                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <aside class="block col-span-2">
+                <div class="sticky p-5 top-10 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-widivh="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h1 class="text-2xl ml-2">Server-side Event Guide</h1>
+                    </div>
+
+
+                    <div class="">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <div class="card">
+                                    <div class="card-header">
+                                    </div>
+
+                                    <div class="card-body">
+                                        <dl class="row">
+                                            <dt class="col-sm-4">Description lists</dt>
+                                            <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
+                                            <dt class="col-sm-4">Euismod</dt>
+                                            <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                            <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
+                                            <dt class="col-sm-4">Malesuada porta</dt>
+                                            <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
+                                            <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
+                                            <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
+                                                sit amet risus.
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+
         </section>
     </main>
 </template>

@@ -1,68 +1,46 @@
 <template>
-    <main>
-        <!-- Header -->
-        <Header pageId="status" />
-
+    <main class="flex justify-center">
         <!-- Page Section -->
-        <section class="content">
-            <div class="container-fluid">
+        <section class="max-w-5xl grid grid-cols-5 gap-5 py-10">
 
-                <div class="row">
-                    <div class="col-3 text-right">
-                        <h4>Uptime</h4>
-                    </div>
-                    <div class="col-9">
-                        <a href="https://uptime.devops.cash" target="_blank">
-                            https://uptime.devops.cash
-                        </a>
-                    </div>
+            <div class="col-span-5 w-1/2 bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
+                <h1 class="text-2xl text-gray-200">CHECK OUR API STATUS &amp; HISTORY</h1>
+
+                <a class="text-2xl text-gray-200 font-bold" href="https://status.devops.cash" target="_blank">
+                    https://status.devops.cash
+                </a>
+            </div>
+
+            <div class="col-span-5 w-1/2 bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
+                <h1 class="text-3xl font-bold text-center text-gray-200">FULCRUM<small>.devops.cash</small></h1>
+
+                <div class="color-palette-set">
+                    <span class="block">#6610f2</span>
+                    <span class="block">Disabled</span>
                 </div>
+            </div>
+
+            <div class="col-span-5 w-1/2 bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
+                <h1 class="text-3xl font-bold text-center text-gray-200">BITDB<small>.devops.cash</small></h1>
+
+                <div class="color-palette-set">
+                    <span class="block">#e83e8c</span>
+                    <span class="block">Synching</span>
+                </div>
+            </div>
+
+            <div class="col-span-5 w-1/2 bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
+
+            </div>
+
+            <div class="container-fluid">
 
                 <hr />
 
-                <!--
-                Colors: olive, orange, indigo
-                -->
-
                 <div class="row">
                     <div class="col-6">
-                        <h3>DevOps</h3>
-
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="text-center bg-olive">FULCRUM<small>.devops.cash</small></h5>
-
-                                <div class="color-palette-set">
-                                    <div class="bg-olive color-palette"><span>#6610f2</span></div>
-                                    <div class="bg-olive disabled color-palette"><span>Disabled</span></div>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <h5 class="text-center bg-orange">BITDB<small>.devops.cash</small></h5>
-
-                                <div class="color-palette-set">
-                                    <div class="bg-orange color-palette"><span>#e83e8c</span></div>
-                                    <div class="bg-orange disabled color-palette"><span>Synching</span></div>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <h5 class="text-center bg-indigo">SLPDB<small>.devops.cash</small></h5>
-
-                                <div class="color-palette-set">
-                                    <div class="bg-indigo color-palette"><span>#6610f2</span></div>
-                                    <div class="bg-indigo disabled color-palette"><span>Disabled</span></div>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <h5 class="text-center bg-orange">BITSOCKET<small>.devops.cash</small></h5>
-
-                                <div class="color-palette-set">
-                                    <div class="bg-orange color-palette"><span>#e83e8c</span></div>
-                                    <div class="bg-orange disabled color-palette"><span>Synching</span></div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,23 +48,25 @@
                     <div class="col-6">
                         <h3>Fountainhead</h3>
 
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="text-center bg-olive">SLPDB<small>.fountainhead.cash</small></h5>
+                        <div class="col-6">
+                            <h1 class="text-center bg-olive">SLPDB<small>.fountainhead.cash</small></h1>
 
-                                <div class="color-palette-set">
-                                    <div class="bg-olive color-palette"><span>#3d9970</span></div>
-                                    <div class="bg-olive disabled color-palette"><span>Disabled</span></div>
-                                </div>
+                            <div class="color-palette-set">
+                                <div class="bg-olive color-palette"><span>#3d9970</span></div>
+                                <div class="bg-olive disabled color-palette"><span>Disabled</span></div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="col-6">
-                                <h5 class="text-center bg-maroon">BCHD<small>.fountainhead.cash</small></h5>
+                    <div class="col-6">
+                        <h3>Fullstack.cash</h3>
 
-                                <div class="color-palette-set">
-                                    <div class="bg-maroon color-palette"><span>#d81b60</span></div>
-                                    <div class="bg-maroon disabled color-palette"><span>Offline</span></div>
-                                </div>
+                        <div class="col-sm-6">
+                            <h4 class="text-center bg-lightblue">Lightblue</h4>
+
+                            <div class="color-palette-set">
+                                <div class="bg-lightblue color-palette"><span>#3c8dbc</span></div>
+                                <div class="bg-lightblue disabled color-palette"><span>Disabled</span></div>
                             </div>
                         </div>
 
@@ -97,7 +77,7 @@
 
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="text-center bg-teal">REST<small>.bitcoin.com</small></h5>
+                                <h4 class="text-center bg-teal">REST.bitcoin.com</h4>
 
                                 <div class="color-palette-set">
                                     <div class="bg-teal color-palette"><span>#ff851b</span></div>
@@ -106,7 +86,7 @@
                             </div>
 
                             <div class="col-6">
-                                <h5 class="text-center bg-maroon">BITDB<small>.bitcoin.com</small></h5>
+                                <h4 class="text-center bg-maroon">BitDB</h4>
 
                                 <div class="color-palette-set">
                                     <div class="bg-maroon color-palette"><span>#d81b60</span></div>
@@ -116,24 +96,39 @@
 
                         </div>
                     </div>
-
-                    <div class="col-6">
-                        <h3>Fullstack.cash</h3>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h5 class="text-center bg-lightblue">REST<small>.fullstack.cash</small></h5>
-
-                                <div class="color-palette-set">
-                                    <div class="bg-lightblue color-palette"><span>#3c8dbc</span></div>
-                                    <div class="bg-lightblue disabled color-palette"><span>Disabled</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
+
+                <div class="col-12">
+                  <h1 class="mt-3">Colors</h1>
+                </div>
+                <!-- /.col-12 -->
+                <div class="row">
+                  <!-- /.col -->
+                  <!-- /.col -->
+                  <!-- /.col -->
+                  <!-- /.col -->
+                  <!-- /.col -->
+                  <div class="col-sm-4 col-md-2">
+                    <h4 class="text-center bg-lime">Lime</h4>
+
+                    <div class="color-palette-set">
+                      <div class="bg-lime color-palette"><span>#01ff70</span></div>
+                      <div class="bg-lime disabled color-palette"><span>Disabled</span></div>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-4 col-md-2">
+                    <h4 class="text-center bg-teal">Teal</h4>
+
+                    <div class="color-palette-set">
+                      <div class="bg-teal color-palette"><span>#39cccc</span></div>
+                      <div class="bg-teal disabled color-palette"><span>Disabled</span></div>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                  <!-- /.col -->
+                </div>
+
 
             </div>
         </section>
@@ -142,11 +137,11 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header'
+// import Header from '@/components/Header'
 
 export default {
     components: {
-        Header,
+        // Header,
     },
     data: () => {
         return {
@@ -168,49 +163,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-
-.color-palette {
-  height: 35px;
-  line-height: 35px;
-  text-align: right;
-  padding-right: .75rem;
-}
-
-.color-palette.disabled {
-  text-align: center;
-  padding-right: 0;
-  display: block;
-}
-
-.color-palette-set {
-  margin-bottom: 15px;
-}
-
-.color-palette span {
-  display: none;
-  font-size: 12px;
-}
-
-.color-palette:hover span {
-  display: block;
-}
-
-.color-palette.disabled span {
-  display: block;
-  text-align: left;
-  padding-left: .75rem;
-}
-
-.color-palette-box h4 {
-  position: absolute;
-  left: 1.25rem;
-  margin-top: .75rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 12px;
-  display: block;
-  z-index: 7;
-}
-
-</style>

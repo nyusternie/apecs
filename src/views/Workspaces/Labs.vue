@@ -172,45 +172,44 @@
 
             <aside class="block col-span-2">
                 <div class="sticky p-5 top-10 bg-pink-300 border-4 border-pink-500 rounded-xl">
-                <div class="flex items-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-widivh="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h1 class="text-2xl ml-2">Lab Experiments Guide</h1>
-                </div>
-
-                <div class="mt-3">
-                    <div class="mb-0">
-                        Lab Experiments is a workspace for developers to safely build and test their latest blockchain ideas.
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-widivh="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h1 class="text-2xl ml-2">Lab Experiments Guide</h1>
                     </div>
 
-                    <div class="mt-0 mb-3">
-                        <small class="text-red-500">
-                            <strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!
-                        </small>
+                    <div class="mt-3">
+                        <div class="mb-0">
+                            Lab Experiments is a workspace for developers to safely build and test their latest blockchain ideas.
+                        </div>
+
+                        <div class="mt-0 mb-3">
+                            <small class="text-red-500">
+                                <strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!
+                            </small>
+                        </div>
+
+                        <div class="grid grid-cols-3">
+                            <div class="col-span-1">Prototype</div>
+                            <div class="col-span-2">
+                                Build new functions and test your ideas.
+                            </div>
+
+                            <div class="col-span-1">Collaborate</div>
+                            <div class="col-span-2">
+                                Send your experiments to other developers to critique and comment.
+                            </div>
+
+                            <div class="col-span-1">Deploy</div>
+                            <div class="col-span-2">
+                                When you're ready to deploy your experiemnt.
+                                Integration with GitHub and GitLab makes it a sinch.
+                            </div>
+
+                        </div>
                     </div>
-
-                    <div class="grid grid-cols-3">
-                        <div class="col-span-1">Prototype</div>
-                        <div class="col-span-2">
-                            Build new functions and test your ideas.
-                        </div>
-
-                        <div class="col-span-1">Collaborate</div>
-                        <div class="col-span-2">
-                            Send your experiments to other developers to critique and comment.
-                        </div>
-
-                        <div class="col-span-1">Deploy</div>
-                        <div class="col-span-2">
-                            When you're ready to deploy your experiemnt.
-                            Integration with GitHub and GitLab makes it a sinch.
-                        </div>
-
-                    </div>
-                </div>
                 </div>
             </aside>
 
-            <!-- <br><br><br> -->
         </section>
 
     </main>
