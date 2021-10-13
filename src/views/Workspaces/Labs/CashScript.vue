@@ -1,15 +1,12 @@
 <template>
     <main>
-        <!-- Header -->
-        <Header pageId="labs" />
-
         <!-- Page Section -->
         <section class="content">
             <div class="container-fluid">
 
                 <div class="row">
                     <div class="col-md-6">
-                        <Navbar />
+                        <!-- <Navbar /> -->
 
                         <div class="card">
                             <div class="card-body">
@@ -83,13 +80,13 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header'
-import Navbar from './Navbar'
+// import Header from '@/components/Header'
+// import Navbar from './Navbar'
 
 export default {
     components: {
-        Header,
-        Navbar,
+        // Header,
+        // Navbar,
     },
     data: () => {
         return {

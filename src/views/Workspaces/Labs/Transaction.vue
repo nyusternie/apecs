@@ -1,15 +1,12 @@
 <template>
     <main>
-        <!-- Header -->
-        <Header pageId="labs" />
-
         <!-- Page Section -->
         <section class="content">
             <div class="container-fluid">
 
                 <div class="row">
                     <div class="col-md-6">
-                        <Navbar />
+                        <!-- <Navbar /> -->
 
                         <div class="card">
                             <div class="card-header d-flex p-0">
@@ -84,18 +81,18 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header'
+// import Header from '@/components/Header'
 
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 import DecodeRawTx from './Transaction/DecodeRawTx'
 import TxIdDetails from './Transaction/TxIdDetails'
 
 export default {
     components: {
-        Header,
+        // Header,
 
-        Navbar,
+        // Navbar,
 
         DecodeRawTx,
         TxIdDetails,

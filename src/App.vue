@@ -6,7 +6,8 @@
             <Header @toggleMenu="toggleMenu" />
 
             <!-- <router-view class="w-screen overflow-y-scroll" /> -->
-            <router-view class="overflow-x-hidden overflow-y-scroll h-full" />
+            <!-- <router-view class="overflow-x-hidden overflow-y-scroll h-full" /> -->
+            <router-view id="content-win" class="overflow-x-hidden overflow-y-scroll h-full" />
         </div>
     </main>
 </template>
@@ -68,5 +69,9 @@ main::-webkit-scrollbar, section::-webkit-scrollbar {
 }
 main::-webkit-scrollbar-thumb, section::-webkit-scrollbar-thumb {
     background: #8dc351;
+}
+
+#content-win {
+    height: calc(100% - 70px);
 }
 </style>

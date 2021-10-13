@@ -1,8 +1,5 @@
 <template>
     <main>
-        <!-- Header -->
-        <Header pageId="labs" />
-
         <!-- Page Section -->
         <section class="content">
             <div class="container-fluid">
@@ -62,8 +59,8 @@
 
 <script>
 /* Import components. */
-import Header from '@/components/Header'
-import Navbar from './Navbar'
+// import Header from '@/components/Header'
+// import Navbar from './Navbar'
 
 // FOR DEVELOPMENT PURPOSES ONLY
 import LedgerTransport from '@ledgerhq/hw-transport-webusb'
@@ -71,8 +68,8 @@ import LedgerBtc from '@ledgerhq/hw-app-btc'
 
 export default {
     components: {
-        Header,
-        Navbar,
+        // Header,
+        // Navbar,
     },
     data: () => {
         return {

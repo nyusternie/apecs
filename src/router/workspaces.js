@@ -75,7 +75,7 @@ const routes = [
         component: LabsHardware
     },
     {
-        path: '/labs/hash',
+        path: '/labs/hashing',
         component: LabsHashing
     },
     {
@@ -83,7 +83,7 @@ const routes = [
         component: LabsLibp2p
     },
     {
-        path: '/labs/msg',
+        path: '/labs/messaging',
         component: LabsMessaging
     },
     {

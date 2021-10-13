@@ -1,11 +1,11 @@
 <template>
-    <main>
-        <div class="content-main">
-            <img src="https://i.imgur.com/v3eeqdE.png" class="img-fluid img-rounded" />
+    <main class="flex w-full h-full justify-center items-center">
+        <div class="w-1/2">
+            <img src="@/assets/under-construction.png" class="rounded-xl ring-4 ring-offset-4 ring-gray-500" />
 
-            <p class="text-center mt-3">
+            <p class="text-center mt-5 text-lg">
                 <strong>BUIDLers</strong> are working very hard to get the page online <strong>ASAP</strong>
-                <br /><strong class="text-danger">Please stand by...</strong>
+                <br /><strong class="text-red-500">Please stand by...</strong>
             </p>
         </div>
 
@@ -17,16 +17,3 @@ export default {
     //
 }
 </script>
-
-<style scoped>
-/* main {
-    border: 1pt solid #330000;
-    width: 100%;
-} */
-
-.content-main {
-    width: 450px;
-    margin: 10px auto;
-    vertical-align: middle;
-}
-</style>
