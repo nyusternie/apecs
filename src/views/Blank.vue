@@ -1,10 +1,8 @@
 <template>
-    <main>
+    <main class="flex justify-center">
         <!-- Page Section -->
-        <section class="content">
-            <div class="container-fluid">
-                <UnderConstruction />
-            </div>
+        <section class="max-w-5xl grid grid-cols-3 gap-5 py-10">
+            <UnderConstruction />
         </section>
     </main>
 </template>

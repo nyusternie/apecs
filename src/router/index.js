@@ -4,7 +4,6 @@ import VueRouter from 'vue-router'
 /* Import views. */
 import Dashboard from '@/views/Dashboard'
 import Stats from '@/views/Stats'
-import Status from '@/views/Status'
 import Ver from '@/views/Ver'
 import Workspaces from '@/views/Workspaces'
 
@@ -20,6 +19,7 @@ import News from '@/views/News'
 import desktop from './desktop'
 import profiles from './profiles'
 import projects from './projects'
+import status from './status'
 import support from './support'
 import workspaces from './workspaces'
 
@@ -37,10 +37,6 @@ const routes = [
     {
         path: '/stats',
         component: Stats,
-    },
-    {
-        path: '/status',
-        component: Status,
     },
     {
         path: '/ver',
@@ -93,6 +89,7 @@ const routes = [
     ...desktop,
     ...profiles,
     ...projects,
+    ...status,
     ...support,
     ...workspaces,
 ]

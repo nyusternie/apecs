@@ -318,7 +318,7 @@ export default {
             // console.log('STATUS RESPONSE', response)
 
             const body = response.body
-            console.log('BODY', body)
+            // console.log('BODY', body)
 
             if (body.price) {
                 this.usd = body.price
