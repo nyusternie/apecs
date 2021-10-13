@@ -1,238 +1,218 @@
 <template>
-    <main>
-        <!-- Header -->
-        <Header pageId="labs" />
-
+    <main class="flex justify-center">
         <!-- Page Section -->
-        <section class="content">
-            <div class="container-fluid">
+        <section class="max-w-5xl grid grid-cols-5 gap-5">
+            <Navbar class="col-span-5 mt-5" />
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <Navbar />
+            <div class="col-span-3 grid grid-cols-3">
 
-                        <div class="card">
-                            <div class="card-body">
+                <router-link to="/labs/auth" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Authentication
+                    </h1>
 
-                                <dl class="row">
+                    <div class="">
+                        Perform user / identity verification using one or more protocols.
+                    </div>
+                </router-link>
 
-                                    <!-- Authentication -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/auth">
-                                            Authentication
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform user / identity verification using one or more protocols.
-                                    </dd>
+                <router-link to="/labs/cashfusion" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        CashFusion
+                    </h1>
 
-                                    <!-- CashFusion -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/cashfusion">
-                                            CashFusion
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform coin anonymity experiments using the CashFusion protocol.
-                                    </dd>
-                                    <dd class="col-sm-8 offset-sm-4">
-                                        <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
-                                    </dd>
-
-                                    <!-- CashScript -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/cashscript">
-                                            CashScript
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Experiment with Bitcoin Cash smart contracts.
-                                    </dd>
-
-                                    <!-- CashShuffle -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/cashshuffle">
-                                            CashShuffle
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform coin anonymity experiments using the CashShuffle protocol.
-                                    </dd>
-                                    <dd class="col-sm-8 offset-sm-4">
-                                        <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
-                                    </dd>
-
-                                    <!-- Cryptography -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/crypto">
-                                            Cryptography
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform various cryptographic functions.
-                                    </dd>
-
-                                    <!-- Decoders -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/decode">
-                                            Decoders
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform various decoding functions.
-                                    </dd>
-
-                                    <!-- Events -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/events">
-                                            Events
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Connect with various events, from server-side to ???.
-                                    </dd>
-
-                                    <!-- Hardware -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/hardware">
-                                            Hardware
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Experiment with blockchain hardware devices.
-                                    </dd>
-
-                                    <!-- Hashing -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/hash">
-                                            Hashing
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Calculate a hash (aka message digest) of data.
-                                    </dd>
-
-                                    <!-- Libp2p -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/libp2p">
-                                            Libp2p
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        libp2p is an open source project from the IPFS community.
-                                    </dd>
-
-                                    <!-- Messaging -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/msg">
-                                            Messaging
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Send and receive messages from one or more on-chain protocols.
-                                    </dd>
-
-                                    <!-- Query -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/query">
-                                            Query
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform queries to the Bitcoin blockchain.
-                                    </dd>
-
-                                    <!-- SmartBCH -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/smartbch">
-                                            SmartBCH
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform experiments on the Smart Bitcoin Cash chain.
-                                    </dd>
-
-                                    <!-- Transaction -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/tx">
-                                            Transaction
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Perform experiments on Bitcoin Cash transactions.
-                                    </dd>
-
-                                    <!-- Wallet -->
-                                    <dt class="col-sm-4">
-                                        <router-link to="/labs/wallet">
-                                            Wallet
-                                        </router-link>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        Build and experiment with Bitcoin Cash wallets.
-                                    </dd>
-
-                                </dl>
-
-                            </div>
-                        </div>
+                    <div class="">
+                        Perform coin anonymity experiments using the CashFusion protocol.
                     </div>
 
-                    <div class="col-md-6">
-
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fas fa-info-circle mr-1"></i>
-                                    Lab Experiments Guide
-                                </h3>
-                            </div>
-
-                            <div class="card-body">
-                                <div class="mb-0">
-                                    Lab Experiments is a workspace for developers to safely build and test their latest blockchain ideas.
-                                </div>
-
-                                <div class="mt-0 mb-3">
-                                    <small class="text-danger"><strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!</small>
-                                </div>
-
-                                <dl class="row">
-                                    <dt class="col-sm-4">Prototype</dt>
-                                    <dd class="col-sm-8">
-                                        Build new functions and test your ideas.
-                                    </dd>
-
-                                    <dt class="col-sm-4">Collaborate</dt>
-                                    <dd class="col-sm-8">
-                                        Send your experiments to other developers to critique and comment.
-                                    </dd>
-
-                                    <dt class="col-sm-4">Deploy</dt>
-                                    <dd class="col-sm-8">
-                                        When you're ready to deploy your experiemnt.
-                                        Integration with GitHub and GitLab makes it a sinch.
-                                    </dd>
-
-                                </dl>
-                            </div>
-                        </div>
+                    <div class="">
+                        <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
                     </div>
+                </router-link>
+
+                <!-- CashScript -->
+                <div class="col-span-1">
+                    <router-link to="/labs/cashscript">
+                        CashScript
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Experiment with Bitcoin Cash smart contracts.
+                </div>
+
+                <!-- CashShuffle -->
+                <div class="col-span-1">
+                    <router-link to="/labs/cashshuffle">
+                        CashShuffle
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Perform coin anonymity experiments using the CashShuffle protocol.
+                </div>
+                <div class="col-span-3">
+                    <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
+                </div>
+
+                <!-- Cryptography -->
+                <div class="col-span-1">
+                    <router-link to="/labs/crypto">
+                        Cryptography
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Perform various cryptographic functions.
+                </div>
+
+                <!-- Decoders -->
+                <div class="col-span-1">
+                    <router-link to="/labs/decode">
+                        Decoders
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Perform various decoding functions.
+                </div>
+
+                <!-- Events -->
+                <div class="col-span-1">
+                    <router-link to="/labs/events">
+                        Events
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Connect with various events, from server-side to ???.
+                </div>
+
+                <!-- Hardware -->
+                <div class="col-span-1">
+                    <router-link to="/labs/hardware">
+                        Hardware
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Experiment with blockchain hardware devices.
+                </div>
+
+                <!-- Hashing -->
+                <div class="col-span-1">
+                    <router-link to="/labs/hash">
+                        Hashing
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Calculate a hash (aka message digest) of data.
+                </div>
+
+                <!-- Libp2p -->
+                <div class="col-span-1">
+                    <router-link to="/labs/libp2p">
+                        Libp2p
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    libp2p is an open source project from the IPFS community.
+                </div>
+
+                <!-- Messaging -->
+                <div class="col-span-1">
+                    <router-link to="/labs/msg">
+                        Messaging
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Send and receive messages from one or more on-chain protocols.
+                </div>
+
+                <!-- Query -->
+                <div class="col-span-1">
+                    <router-link to="/labs/query">
+                        Query
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Perform queries to the Bitcoin blockchain.
+                </div>
+
+                <!-- SmartBCH -->
+                <div class="col-span-1">
+                    <router-link to="/labs/smartbch">
+                        SmartBCH
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Perform experiments on the Smart Bitcoin Cash chain.
+                </div>
+
+                <!-- Transaction -->
+                <div class="col-span-1">
+                    <router-link to="/labs/tx">
+                        Transaction
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Perform experiments on Bitcoin Cash transactions.
+                </div>
+
+                <!-- Wallet -->
+                <div class="col-span-1">
+                    <router-link to="/labs/wallet">
+                        Wallet
+                    </router-link>
+                </div>
+                <div class="col-span-2">
+                    Build and experiment with Bitcoin Cash wallets.
                 </div>
 
             </div>
+
+            <aside class="col-span-2 p-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-widivh="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h1 class="text-2xl ml-2">Lab Experiments Guide</h1>
+                </div>
+
+                <div class="mt-3">
+                    <div class="mb-0">
+                        Lab Experiments is a workspace for developers to safely build and test their latest blockchain ideas.
+                    </div>
+
+                    <div class="mt-0 mb-3">
+                        <small class="text-red-500">
+                            <strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!
+                        </small>
+                    </div>
+
+                    <div class="grid grid-cols-3">
+                        <div class="col-span-1">Prototype</div>
+                        <div class="col-span-2">
+                            Build new functions and test your ideas.
+                        </div>
+
+                        <div class="col-span-1">Collaborate</div>
+                        <div class="col-span-2">
+                            Send your experiments to other developers to critique and comment.
+                        </div>
+
+                        <div class="col-span-1">Deploy</div>
+                        <div class="col-span-2">
+                            When you're ready to deploy your experiemnt.
+                            Integration with GitHub and GitLab makes it a sinch.
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+
         </section>
     </main>
 </template>
 
 <script>
 /* Import components. */
-import Header from '@/components/Header'
 import Navbar from './Labs/Navbar'
 
 export default {
     components: {
-        Header,
         Navbar,
     },
     data: () => {

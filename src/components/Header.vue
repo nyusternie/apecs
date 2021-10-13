@@ -29,7 +29,7 @@
                                 <input
                                     id="global-search"
                                     class="block w-full bg-white border border-gray-300 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:outline-none focus:text-gray-900 focus:placeholder-gray-400 focus:ring-1 focus:ring-rose-500 focus:border-rose-500 sm:text-sm"
-                                    placeholder="What can I find for you?"
+                                    placeholder="What can I find for you Dev?    ( use shortcut: Ctrl + K )"
                                     type="text"
                                 />
                             </div>
@@ -92,7 +92,7 @@
                         <div>
                             <button type="button" class="bg-white rounded-full flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                <img class="h-8 w-8 rounded-full" src="@/assets/img/cyber-hacker-icon.jpg" alt="" />
                             </button>
                         </div>
 
@@ -124,9 +124,9 @@
 
                     <a
                         href="javascript://"
-                        class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500"
+                        class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
-                        New Post
+                        GET CONNECTED
                     </a>
                 </div>
             </div>

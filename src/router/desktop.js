@@ -10,7 +10,7 @@ const routes = [
         component: FileManager
     },
     {
-        path: '/feed',
+        path: '/newsfeed',
         component: Newsfeed
     },
     {
