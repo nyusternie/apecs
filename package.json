@@ -1,6 +1,6 @@
 {
   "name": "cash-devops",
-  "version": "21.10.8",
+  "version": "21.10.13",
   "license": "MIT",
   "author": "Shomari Prince <s.prince@bchplease.org>",
   "description": "Cash DevOps is the premier platform for first-time Bitcoin coders to advanced Decentralized Finance (DeFi) developers.",
@@ -49,6 +49,7 @@
     "babel-eslint": "10.1.0",
     "coveralls": "3.0.9",
     "eslint": "6.8.0",
+    "eslint-plugin-jest": "25.0.5",
     "eslint-plugin-vue": "6.2.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-svgicon": "3.2.6",

@@ -5,15 +5,11 @@ import VueRouter from 'vue-router'
 import Dashboard from '@/views/Dashboard'
 import Stats from '@/views/Stats'
 import Ver from '@/views/Ver'
-import Workspaces from '@/views/Workspaces'
 
 import Blockchains from '@/views/Blockchains'
 import Discus from '@/views/Discus'
 import Events from '@/views/Events'
 import Faucets from '@/views/Faucets'
-import Markets from '@/views/Markets'
-import Privacy from '@/views/Privacy'
-import News from '@/views/News'
 
 /* Import views. */
 import desktop from './desktop'
@@ -61,19 +57,19 @@ const routes = [
     },
     {
         path: '/markets',
-        component: Markets,
+        component: () => import(/* webpackChunkName: "markets" */ '@/views/Markets'),
     },
     {
         path: '/privacy',
-        component: Privacy,
+        component: () => import(/* webpackChunkName: "privacy" */ '@/views/Privacy'),
     },
     {
         path: '/news',
-        component: News,
+        component: () => import(/* webpackChunkName: "news" */ '@/views/News'),
     },
     {
         path: '/workspaces',
-        component: Workspaces,
+        component: () => import(/* webpackChunkName: "workspaces" */ '@/views/Workspaces'),
     },
 
     // {

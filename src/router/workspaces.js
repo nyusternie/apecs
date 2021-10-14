@@ -47,6 +47,10 @@ const routes = [
         component: LabsAuth
     },
     {
+        path: '/labs/bitdb',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/BitDB'),
+    },
+    {
         path: '/labs/cashfusion',
         component: LabsCashFusion
     },
