@@ -338,7 +338,7 @@ export default {
                 .Web3Provider(window.ethereum, 'any')
 
             /* Prompt user for account connections. */
-            await provider.send("eth_requestAccounts", [])
+            await provider.send('eth_requestAccounts', [])
 
             /* Set signer. */
             const signer = provider.getSigner()

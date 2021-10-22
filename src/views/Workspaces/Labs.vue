@@ -17,6 +17,18 @@
                     </div>
                 </router-link>
 
+                <!-- BitDB -->
+                <router-link to="/labs/bitdb" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        BitDB
+                    </h1>
+
+                    <div class="">
+                        Bitcoin is the most secure hard disk that will ever exist.
+                        BitDB is the memory that lets you make the most out of it.
+                    </div>
+                </router-link>
+
                 <!-- CashFusion -->
                 <router-link to="/labs/cashfusion" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
@@ -143,6 +155,18 @@
 
                     <div class="">
                         Perform queries to the Bitcoin blockchain.
+                    </div>
+                </router-link>
+
+                <!-- SLPDB -->
+                <router-link to="/labs/slpdb" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        SLPDB
+                    </h1>
+
+                    <div class="">
+                        The simplest, fastest, and most liberating token system in existence.
+                        SLP tokens can easily be created, traded, and managed on the Bitcoin Cash blockchain within seconds; costing the user only fractions of a penny for each transaction.
                     </div>
                 </router-link>
 

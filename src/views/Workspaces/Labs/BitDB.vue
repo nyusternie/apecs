@@ -20,6 +20,9 @@
                     <option value="bet">Bet</option>
                     <option value="sender">Sender</option>
                     <option value="response">Response</option>
+                    <option value="addressesTxs">Addresses Txs</option>
+                    <option value="bfp">Bitcoin Files Protocol (BFP)</option>
+                    <option value="bml">Bitcoin Markup Language (BML)</option>
                 </select>
 
                 <textarea class="w-full h-96" v-model="userQuery" />
@@ -118,6 +121,12 @@ export default {
                 return this.loadSender()
             case 'response':
                 return this.loadResponse()
+            case 'addressesTxs':
+                return this.loadAddressesTxs()
+            case 'bfp':
+                return this.loadBFP()
+            case 'bml':
+                return this.loadBML()
             default:
                 return this.loadDefault()
             }
@@ -213,6 +222,50 @@ adv
   },
   "r": {
     "f": "[ { block: .blk.i?, timestamp: .blk.t?, content: .out[1].s2 } ]"
+  }
+}
+            `
+        },
+
+        loadAddressesTxs() {
+            this.userQuery = `/* Customize your query below. */
+{
+    "v": 3,
+    "q": {
+        "find": {
+            "$or": [
+                { "in.e.a": "qzpwncftddx7f59z93w4qv4hnj4as335vvz8gftqvr" },
+                { "out.e.a": "qzpwncftddx7f59z93w4qv4hnj4as335vvz8gftqvr" }
+            ]
+        }
+    }
+}
+            `
+        },
+
+        loadBFP() {
+            this.userQuery = `/* Customize your query below. */
+{
+  "v": 3,
+  "q": {
+    "find": {
+      "out.h1": "42465000"
+    },
+    "limit": 10
+  }
+}
+            `
+        },
+
+        loadBML() {
+            this.userQuery = `/* Customize your query below. */
+{
+  "v": 3,
+  "q": {
+    "find": {
+      "out.h1": "424D4C00"
+    },
+    "limit": 10
   }
 }
             `

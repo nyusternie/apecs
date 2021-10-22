@@ -95,6 +95,10 @@ const routes = [
         component: LabsQuery
     },
     {
+        path: '/labs/slpdb',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/SLPDB'),
+    },
+    {
         path: '/labs/tx',
         component: LabsTransaction
     },
