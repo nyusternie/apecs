@@ -63,12 +63,20 @@ const routes = [
         component: LabsCashShuffle
     },
     {
+        path: '/labs/couchdb',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CouchDB'),
+    },
+    {
         path: '/labs/crypto',
         component: LabsCrypto
     },
     {
         path: '/labs/decode',
         component: LabsDecode
+    },
+    {
+        path: '/labs/elasticsearch',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Elasticsearch'),
     },
     {
         path: '/labs/events',

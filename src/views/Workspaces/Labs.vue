@@ -70,6 +70,17 @@
                     </div>
                 </router-link>
 
+                <!-- CouchDB -->
+                <router-link to="/labs/couchdb" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        CouchDB
+                    </h1>
+
+                    <div class="">
+                        Perform various CouchDB functions.
+                    </div>
+                </router-link>
+
                 <!-- Cryptography -->
                 <router-link to="/labs/crypto" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
@@ -89,6 +100,17 @@
 
                     <div class="">
                         Perform various decoding functions.
+                    </div>
+                </router-link>
+
+                <!-- Elasticsearch -->
+                <router-link to="/labs/elasticsearch" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Elasticsearch
+                    </h1>
+
+                    <div class="">
+                        Perform various Elasticsearch functions.
                     </div>
                 </router-link>
 
