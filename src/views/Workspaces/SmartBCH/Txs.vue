@@ -3,7 +3,10 @@
         <div class="rounded-lg bg-white overflow-hidden shadow">
             <div class="p-6">
                 <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Latest Transactions</h2>
-                <div class="flow-root mt-6">
+
+                ///
+
+                <div class="flow-root mt-6 hidden">
                     <ul role="list" class="-my-5 divide-y divide-gray-200">
                         <li class="py-4">
                             <div class="flex items-center space-x-4">

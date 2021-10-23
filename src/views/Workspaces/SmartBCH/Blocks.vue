@@ -2,60 +2,37 @@
     <main aria-labelledby="announcements-title">
         <div class="rounded-lg bg-white overflow-hidden shadow">
             <div class="p-6">
-                <h2 class="text-base font-medium text-gray-900" id="announcements-title">Latest Blocks</h2>
+                <h2 class="text-xl font-bold text-gray-800">
+                    Latest Blocks
+                </h2>
 
-                <div class="flow-root mt-6">
-                    <ul role="list" class="-my-5 divide-y divide-gray-200">
-                        <li class="py-5">
-                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
-                                <h3 class="text-sm font-semibold text-gray-800">
-                                    <a href="#" class="hover:underline focus:outline-none">
-                                        <!-- Extend touch target to entire panel -->
-                                        <span class="absolute inset-0" aria-hidden="true"></span>
-                                        Office closed on July 2nd
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                                    Cum qui rem deleniti. Suscipit in dolor veritatis sequi aut. Vero ut earum quis deleniti. Ut a sunt eum cum ut repudiandae possimus. Nihil ex tempora neque cum consectetur dolores.
-                                </p>
-                            </div>
-                        </li>
+                <h3>
+                    Current height is <span class="font-bold text-lg text-blue-500">{{displayBlockHeight}}</span>
+                </h3>
 
-                        <li class="py-5">
-                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
-                                <h3 class="text-sm font-semibold text-gray-800">
-                                    <a href="#" class="hover:underline focus:outline-none">
-                                        <!-- Extend touch target to entire panel -->
-                                        <span class="absolute inset-0" aria-hidden="true"></span>
-                                        New password policy
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                                    Alias inventore ut autem optio voluptas et repellendus. Facere totam quaerat quam quo laudantium cumque eaque excepturi vel. Accusamus maxime ipsam reprehenderit rerum id repellendus
-                                    rerum. Culpa cum vel natus. Est sit autem mollitia.
-                                </p>
-                            </div>
-                        </li>
+                <div class="py-0" v-for="block of displayBlocks" :key="block.hash">
+                    <div class="flex justify-end relative top-5 right-5 z-10">
+                        <div class="p-2 text-gray-200 text-base font-bold rounded-full bg-pink-500">
+                            #{{block.index}}
+                        </div>
+                    </div>
 
-                        <li class="py-5">
-                            <div class="relative focus-within:ring-2 focus-within:ring-cyan-500">
-                                <h3 class="text-sm font-semibold text-gray-800">
-                                    <a href="#" class="hover:underline focus:outline-none">
-                                        <!-- Extend touch target to entire panel -->
-                                        <span class="absolute inset-0" aria-hidden="true"></span>
-                                        Office closed on July 2nd
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                                    Tenetur libero voluptatem rerum occaecati qui est molestiae exercitationem. Voluptate quisquam iure assumenda consequatur ex et recusandae. Alias consectetur voluptatibus. Accusamus a ab
-                                    dicta et. Consequatur quis dignissimos voluptatem nisi.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="relative p-3 border-2 border-gray-500 bg-gray-300 rounded-xl focus-within:ring-2 focus-within:ring-cyan-500">
+                        <h3 class="text-sm font-semibold text-gray-800">
+                            <a href="javascript://" class="hover:underline focus:outline-none">
+                                <span class="absolute inset-0" aria-hidden="true"></span>
+                                {{shorten(block.hash)}}
+                            </a>
+                        </h3>
+
+                        <p class="mt-1 text-sm text-gray-600 line-clamp-2">
+                            # Txs: {{block.transactions.length}}
+                        </p>
+                    </div>
                 </div>
+
                 <div class="mt-6">
-                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    <a href="javascript://" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
                         View all
                     </a>
                 </div>
@@ -65,29 +42,95 @@
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-// import UnderConstruction from '@/components/UnderConstruction'
+/* Import modules. */
+import numeral from 'numeral'
+import superagent from 'superagent'
+
+/* Set constants. */
+const NUM_BLOCKS_DISPLAYED = 5
 
 export default {
-    components: {
-        // Header,
-        // UnderConstruction,
+    props: {
+        blockHeight: String,
     },
     data: () => {
         return {
-            //
+            blocks: null,
+            numTxsProcessed: null,
         }
     },
-    created: async function () {
-        /* Retrieve session. */
-        // const session = await this.hasSession()
-        //     .catch(err => console.error('Session Error:', err))
+    watch: {
+        blockHeight: function (_blockNum) {
+            if (!_blockNum) return
 
-        /* Validate session. */
-        // if (!session) {
-        //     return
-        // }
+            this.addBlock(_blockNum)
+        },
+    },
+    computed: {
+        displayBlocks() {
+            if (!this.blocks) return []
+
+            const blocks = this.blocks
+
+            return blocks.reverse().slice(0, NUM_BLOCKS_DISPLAYED)
+        },
+
+        displayBlockHeight() {
+            if (!this.blockHeight) {
+                return 0
+            }
+
+            return numeral(Number(this.blockHeight)).format('0,0')
+        }
+    },
+    methods: {
+        async addBlock(_blockNum) {
+            /* Build request. */
+            const request = {
+                id: 0,
+                jsonrpc: '2.0',
+                method: 'eth_getBlockByNumber',
+                params: [ _blockNum, false ],
+            }
+
+            /* Make RPC request. */
+            const response = await superagent
+                .post('https://smartbch.devops.cash/mainnet')
+                .set('Content-Type', 'application/json')
+                .send(request)
+                .catch(err => console.error(err))
+            // console.log('STATUS RESPONSE', response)
+
+            /* Validate response. */
+            if (!response) {
+                throw new Error('Request failed to SmartBCH node.')
+            }
+
+            /* Set body. */
+            const body = response.body
+            console.log('BODY (getBlock)', body)
+
+            /* Validate body result. */
+            if (body && body.result) {
+                /* Add new block. */
+                this.blocks.push({
+                    index: ++this.numTxsProcessed,
+                    ...body.result,
+                })
+            }
+
+        },
+
+        shorten(_value) {
+            return _value.slice(0, 12) + ' ... ' + _value.slice(-12)
+        },
+
+    },
+    created: async function () {
+        /* Initialize blocks. */
+        this.blocks = []
+
+        this.numTxsProcessed = 0
     },
     mounted: function () {
         //
