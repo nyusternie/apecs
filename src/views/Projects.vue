@@ -177,7 +177,7 @@
         </div>
 
         <!-- Page Section -->
-        <section class="content">
+        <section class="content hidden">
             <div class="container-fluid">
 
                 <!-- Default box -->

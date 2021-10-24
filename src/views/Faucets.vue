@@ -1,7 +1,7 @@
 <template>
     <main class="py-8 overflow-x-hidden">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <header class="px-10 mt-5 w-full">
+            <header class="px-2 lg:px-10 mt-5 w-full">
                 <h1 class="text-4xl font-bold text-gray-500">Testnet Faucets</h1>
 
                 <p class="max-w-lg text-gray-500 p-2 mt-5">
@@ -14,7 +14,7 @@
             </header>
 
             <!-- Page Section -->
-            <section class="px-10 mt-10 grid grid-cols-3 gap-5">
+            <section class="px-2 lg:px-10 mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <button
                     class="p-5 bg-green-700 rounded-xl border-4 border-green-500 text-xl text-gray-100 font-bold"
                     @click="loadBitcoinCash"
@@ -69,7 +69,7 @@
                 </button>
             </section>
 
-            <section class="p-10">
+            <section class="p-3 lg:p-10">
                 Our faucets drip every 10 seconds.
                 You can register your account in our queue.
                 Max queue size is currently 50.

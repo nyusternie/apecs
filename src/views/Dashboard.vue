@@ -73,18 +73,18 @@
                                             <div class="flex-shrink-0">
                                                 <img
                                                     class="h-8 w-8 rounded-full"
-                                                    src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                    src="https://i.imgur.com/TEZi1ru.png"
                                                     alt=""
                                                 />
                                             </div>
 
                                             <div class="min-w-0 flex-1">
                                                 <p class="text-sm font-medium text-gray-900">
-                                                    <a href="javascript://">Leonard Krasner</a>
+                                                    <a href="javascript://">Anonymous</a>
                                                 </p>
 
                                                 <p class="text-sm text-gray-500">
-                                                    <a href="javascript://">@leonardkrasner</a>
+                                                    <a href="javascript://">@libertarian0x0</a>
                                                 </p>
                                             </div>
 
@@ -120,18 +120,22 @@
                                 <h2 id="trending-heading" class="text-base font-medium text-gray-900">
                                     Trending
                                 </h2>
-                                <div class="mt-6 flow-root">
+
+                                <img
+                                    @click="openTrending"
+                                    class="w-full mt-3 rounded-xl border-2 border-gray-500 p-1 cursor-pointer"
+                                    src="https://i.imgur.com/PyHMIrZ.png"
+                                    alt="What's Next for Bitcoin Cash?"
+                                />
+
+                                <div class="mt-3 flow-root">
                                     <ul role="list" class="-my-4 divide-y divide-gray-200">
                                         <li class="flex py-4 space-x-3">
-                                            <div class="flex-shrink-0">
-                                                <img
-                                                    class="h-8 w-8 rounded-full"
-                                                    src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                                    alt="Floyd Miles"
-                                                />
-                                            </div>
                                             <div class="min-w-0 flex-1">
-                                                <p class="text-sm text-gray-800">What books do you have on your bookshelf just to look smarter than you actually are?</p>
+                                                <p class="text-sm text-gray-800">
+                                                    Here is yesterday's "What's next for BCH" Twitter Spaces convo that 50+ people attended
+                                                </p>
+
                                                 <div class="mt-2 flex">
                                                     <span class="inline-flex items-center text-sm">
                                                         <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
@@ -199,7 +203,10 @@ export default {
         }
     },
     methods: {
-        //
+        openTrending() {
+            window.open('https://www.reddit.com/r/btc/comments/qdqa9a/here_is_yesterdays_whats_next_for_bch_twitter/')
+        },
+
     },
     created: function () {
         this.feed = []

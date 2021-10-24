@@ -1,25 +1,15 @@
 <template>
     <main>
-        <!-- Header -->
-        <Header pageId="notebook" />
-
-        <!-- Page Section -->
-        <section class="content">
-            <div class="container-fluid">
-                <UnderConstruction />
-            </div>
-        </section>
+        <UnderConstruction />
     </main>
 </template>
 
 <script>
 /* Import components. */
-import Header from '@/components/Header'
 import UnderConstruction from '@/components/UnderConstruction'
 
 export default {
     components: {
-        Header,
         UnderConstruction,
     },
     data: () => {
@@ -29,13 +19,13 @@ export default {
     },
     created: async function () {
         /* Retrieve session. */
-        const session = await this.hasSession()
-            .catch(err => console.error('Session Error:', err))
+        // const session = await this.hasSession()
+        //     .catch(err => console.error('Session Error:', err))
 
         /* Validate session. */
-        if (!session) {
-            return
-        }
+        // if (!session) {
+        //     return
+        // }
     },
     mounted: function () {
         //
