@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 /* Import views. */
+import Admin from '@/views/Admin'
 import Dashboard from '@/views/Dashboard'
 import Stats from '@/views/Stats'
 import Ver from '@/views/Ver'
@@ -29,6 +30,10 @@ const routes = [
     {
         path: '/',
         component: Dashboard,
+    },
+    {
+        path: '/admin',
+        component: Admin,
     },
     {
         path: '/stats',

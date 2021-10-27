@@ -99,7 +99,6 @@ export default {
             // const response = await superagent.get()
             const response = await Nito.SLP.Query.request(request)
                 .catch(err => console.error(err))
-
             console.log('RESPONSE (body):', response)
 
             this.output = JSON.stringify(response, null, 2)
