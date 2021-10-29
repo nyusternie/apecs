@@ -23,6 +23,7 @@ import LabsWallet from '@/views/Workspaces/Labs/Wallet'
 import SmartBCH from '@/views/Workspaces/SmartBCH'
 import SmartBCHAddress from '@/views/Workspaces/SmartBCH/Address'
 import SmartBCHContracts from '@/views/Workspaces/SmartBCH/Contracts'
+import SmartBCHTransaction from '@/views/Workspaces/SmartBCH/Transaction'
 
 /* Initialize routes. */
 const routes = [
@@ -39,8 +40,8 @@ const routes = [
         component: SmartBCHAddress
     },
     {
-        path: '/smartbch/address/:address',
-        component: SmartBCHAddress
+        path: '/sbch/transaction/:txid',
+        component: SmartBCHTransaction
     },
     {
         path: '/smartbch/contracts',

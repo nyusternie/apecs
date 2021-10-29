@@ -59,6 +59,9 @@ export default {
         async query() {
             console.log('SEND QUERY')
 
+            /* Clear output. */
+            this.output = ''
+
             let request
 
             if (this.userQuery) {
