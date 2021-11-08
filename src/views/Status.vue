@@ -11,6 +11,12 @@
                 </a>
             </div>
 
+            <div class="col-span-3 text-sm text-gray-600 px-10">
+                <span class="block text-base font-bold">IMPORTANT NOTE: </span>
+                <span class="block">Every DevOps RPC &amp; REST endpoint is rate-limited. </span>
+                Plan accordingly when developing your apps and releasing to production.
+            </div>
+
             <div class="bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
                 <h1 class="text-3xl font-bold text-center text-gray-200">
                     FULCRUM

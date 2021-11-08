@@ -40,6 +40,10 @@
                                         <a @click="testMetaMask" href="javascript://" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
                                             Test MetaMask
                                         </a>
+
+                                        <a @click="testSigning" href="javascript://" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            Test Signing
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -340,7 +344,16 @@ export default {
                 .Web3Provider(window.ethereum, 'any')
 
             /* Prompt user for account connections. */
-            await provider.send('eth_requestAccounts', [])
+            // await provider.send('eth_requestAccounts', [])
+            // await provider.send('wallet_watchAsset', {
+            //     type: 'ERC20',
+            //     options: {
+            //         address: '0x0',
+            //         symbol: 'NAME',
+            //         decimals: 18,
+            //         image: 'https://url.here',
+            //     },
+            // })
 
             /* Set signer. */
             const signer = provider.getSigner()
@@ -348,6 +361,96 @@ export default {
             /* Request account. */
             this.account = await signer.getAddress()
             console.log('Account:', this.account)
+
+            // const encryptedMessage = '0x94dac27aa0a733b6561bcf39ca05299595f3eba5f47c93b733c0b4f4674d022f3de31d024c0d427cac86465a565929f340cde5693547ad560000845787ba86be1b'
+            const encryptedMessage = '0x8996f12a91473c48f0c1df0534d7319def26f0fe756428ec2af08794125477ba6703242c211d858241c47a3c7ba1925dbb2baf9fdb42c71f08cd738139a86f211b'
+
+            const msg = await provider
+                .send('eth_decrypt', [ encryptedMessage, this.account ])
+                .catch(err => console.error(err))
+            console.log('DECRYPTED MESSAGE', msg)
+
+            // const encryptionKey = await provider
+            //     .send('eth_getEncryptionPublicKey', [ this.account ])
+            //     .catch(err => console.error(err))
+            // console.log('ENCRYPTION KEY', encryptionKey)
+
+        },
+
+        async testSigning() {
+            console.log('STARTING SIGNING TEST..')
+
+            /* Validate embedded Web3 objects. */
+            if (!window.ethereum && !window.bitcoin) {
+                /* Validate embedded ethereum object. */
+                if (window.bitcoin) {
+                    console.info('Found Bitcoin provider.')
+                } else if (window.ethereum) {
+                    console.info('Found Ethereum provider.')
+                } else {
+                    return console.error('No Web3 provider found.')
+                }
+            }
+
+            /* Initialize provider. */
+            const provider = new ethers
+                .providers
+                .Web3Provider(window.ethereum, 'any')
+
+            /* Set signer. */
+            const signer = provider.getSigner()
+
+            /* Request account. */
+            this.account = await signer.getAddress()
+            console.log('Account:', this.account)
+
+            // All properties on a domain are optional
+            // const domain = {
+            //     name: 'Cash DevOps',
+            //     version: '1',
+            //     chainId: 0x2711,
+            //     // verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC'
+            // }
+
+            // The named list of all type definitions
+            // const types = {
+            //     Person: [
+            //         { name: 'name', type: 'string' },
+            //         { name: 'wallet', type: 'address' }
+            //     ],
+            //     Mail: [
+            //         { name: 'from', type: 'Person' },
+            //         { name: 'to', type: 'Person' },
+            //         { name: 'contents', type: 'string' }
+            //     ],
+            // }
+
+            // The data to sign
+            // const value = {
+            //     from: {
+            //         name: 'Cow',
+            //         wallet: '0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826'
+            //     },
+            //     to: {
+            //         name: 'Bob',
+            //         wallet: '0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB'
+            //     },
+            //     contents: 'Hello, Bob!'
+            // }
+
+            // const signature = await signer
+            //     ._signTypedData(domain, types, value)
+            //     .catch(err => console.error(err))
+            // console.log('SIGNATURE', signature)
+
+            const plaintext = 'hi there everyone!'
+
+            const signature = await signer
+                .signMessage(plaintext)
+                .catch(err => console.error(err))
+            console.log('SIGNATURE', signature)
+
+
         },
 
         smartBCHProvider: function () {

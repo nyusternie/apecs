@@ -30,6 +30,7 @@ export default {
     },
     data: () => {
         return {
+            endpoint: null,
             balance: null,
             usd: null,
         }
@@ -90,14 +91,13 @@ export default {
                 id: 0,
                 jsonrpc: '2.0',
                 method: 'eth_getBalance',
-                // method: 'eth_getTransactionCount',
                 params: [ _address, 'latest' ],
             }
             console.log('REQUEST', request);
 
             /* Make RPC request. */
             const response = await superagent
-                .post('https://smartbch.devops.cash/mainnet')
+                .post(this.endpoint)
                 .set('Content-Type', 'application/json')
                 .send(request)
                 .catch(err => console.error(err))
@@ -124,6 +124,12 @@ export default {
     created: async function () {
         if (!this.$route.params || !this.$route.params.address) {
             throw new Error('No address provided')
+        }
+
+        if (this.$route.path.slice(0, 6) === '/tsbch') {
+            this.endpoint = 'https://smartbch.devops.cash/testnet'
+        } else {
+            this.endpoint = 'https://smartbch.devops.cash/mainnet'
         }
 
         /* Set transaction id. */

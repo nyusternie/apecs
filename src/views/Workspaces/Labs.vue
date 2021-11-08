@@ -204,6 +204,17 @@
                 </router-link>
 
                 <!-- Wallet -->
+                <router-link to="/labs/u2f" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Universal 2-Factor Authentication
+                    </h1>
+
+                    <div class="">
+                        Build and experiment with U2F.
+                    </div>
+                </router-link>
+
+                <!-- Wallet -->
                 <router-link to="/labs/wallet" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Wallet

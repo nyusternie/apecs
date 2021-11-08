@@ -2,17 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 /* Import views. */
-import Admin from '@/views/Admin'
-import Dashboard from '@/views/Dashboard'
-import Stats from '@/views/Stats'
-import Ver from '@/views/Ver'
-
-import Blockchains from '@/views/Blockchains'
-import Discus from '@/views/Discus'
-import Events from '@/views/Events'
-import Faucets from '@/views/Faucets'
-
-/* Import views. */
 import desktop from './desktop'
 import profiles from './profiles'
 import projects from './projects'
@@ -29,63 +18,68 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        component: Dashboard,
+        component: () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard'),
     },
+
     {
         path: '/admin',
-        component: Admin,
+        component: () => import(/* webpackChunkName: "admin" */ '@/views/Admin'),
     },
+
     {
         path: '/stats',
-        component: Stats,
+        component: () => import(/* webpackChunkName: "stats" */ '@/views/Stats'),
     },
+
     {
         path: '/ver',
-        component: Ver,
+        component: () => import(/* webpackChunkName: "ver" */ '@/views/Ver'),
     },
 
     {
         path: '/blockchains',
-        component: Blockchains,
+        component: () => import(/* webpackChunkName: "blockchains" */ '@/views/Blockchains'),
     },
+
+    {
+        path: '/bridges',
+        component: () => import(/* webpackChunkName: "bridges" */ '@/views/Bridges'),
+    },
+
     {
         path: '/discuss',
-        component: Discus,
+        component: () => import(/* webpackChunkName: "discuss" */ '@/views/Discus'),
     },
+
     {
         path: '/events',
-        component: Events,
+        component: () => import(/* webpackChunkName: "events" */ '@/views/Events'),
     },
+
     {
         path: '/faucets',
-        component: Faucets,
+        component: () => import(/* webpackChunkName: "faucets" */ '@/views/Faucets'),
     },
+
     {
         path: '/markets',
         component: () => import(/* webpackChunkName: "markets" */ '@/views/Markets'),
     },
+
     {
         path: '/privacy',
         component: () => import(/* webpackChunkName: "privacy" */ '@/views/Privacy'),
     },
+
     {
         path: '/news',
         component: () => import(/* webpackChunkName: "news" */ '@/views/News'),
     },
+
     {
         path: '/workspaces',
         component: () => import(/* webpackChunkName: "workspaces" */ '@/views/Workspaces'),
     },
-
-    // {
-    //   path: '/dashboard',
-    //   name: 'Dashboard',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ '@/views/Dashboard')
-    //   component: () => import('@/views/Dashboard'), <-- this is less efficient
-    // },
 
     ...desktop,
     ...profiles,

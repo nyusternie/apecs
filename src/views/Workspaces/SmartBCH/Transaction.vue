@@ -75,7 +75,9 @@
 
         <div v-if="contractAddress" class="w-max mt-5 p-3 border-2 bg-pink-100 border-pink-300 rounded-xl">
             <span class="block text-gray-500 font-bold text-sm">CONTRACT ADDRESS</span>
-            <span class="text-2xl text-gray-600 font-medium">{{contractAddress}}</span>
+            <router-link :to="'/sbch/address/' + contractAddress" class="text-2xl text-blue-500 font-medium hover:underline">
+                {{contractAddress}}
+            </router-link>
         </div>
 
         <div class="w-max mt-5 p-3 border-2 bg-pink-100 border-pink-300 rounded-xl">
@@ -100,6 +102,13 @@
                 <span class="block text-xl text-gray-400 font-medium">
                     data <span class="text-gray-600">{{evt.data}}</span>
                 </span>
+
+<!--
+Approval (owneraddress, spenderaddress, valueuint256)
+0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925
+
+
+ -->
 
                 <div class="p-3">
                     <span class="block text-gray-500 font-bold text-sm">

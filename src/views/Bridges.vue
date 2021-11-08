@@ -2,7 +2,7 @@
     <main class="py-8 overflow-x-hidden">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <header class="px-2 lg:px-10 mt-5 w-full">
-                <h1 class="text-4xl font-bold text-gray-500">Testnet Faucets</h1>
+                <h1 class="text-4xl font-bold text-gray-500">Testnet Bridges</h1>
 
                 <p class="max-w-lg text-gray-500 p-2 mt-5">
                     Simply select your preferred crypto from the available faucets below, enter your <strong>"Testnet" Account / Address</strong> and click send.
@@ -19,7 +19,7 @@
                     class="p-5 bg-green-700 rounded-xl border-4 border-green-500 text-xl text-gray-100 font-bold"
                     @click="loadBitcoinCash"
                 >
-                    <h1 class="text-4xl">Bitcoin Cash</h1>
+                    <h1 class="text-4xl">SBCH &lt;=&gt; ETH</h1>
 
                     <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
                         <span class="text-right text-green-300 text-xs mt-1 mr-2">NAME</span>
@@ -37,7 +37,7 @@
                     class="p-5 bg-yellow-600 rounded-xl border-4 border-yellow-400 text-xl text-gray-100 font-bold"
                     @click="loadSmartBCH"
                 >
-                    <h1 class="text-4xl">Smart Bitcoin</h1>
+                    <h1 class="text-4xl">SBCH &lt;=&gt; BSC</h1>
 
                     <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
                         <span class="text-right text-yellow-200 text-xs mt-1 mr-2">NAME</span>
@@ -51,8 +51,8 @@
                 </button>
 
                 <button
-                    class="p-5 bg-gray-500 rounded-xl border-4 border-gray-300 text-xl text-gray-100 font-bold"
-                    @click="loadRopsten"
+                    class="hidden p-5 bg-gray-500 rounded-xl border-4 border-gray-300 text-xl text-gray-100 font-bold"
+                    @click="loadEthereum"
                 >
                     <h1 class="text-4xl">Ethereum</h1>
 
@@ -69,7 +69,7 @@
                 </button>
 
                 <button
-                    class="p-5 bg-yellow-500 rounded-xl border-4 border-yellow-300 text-xl text-yellow-100 font-bold"
+                    class="hidden p-5 bg-yellow-500 rounded-xl border-4 border-yellow-300 text-xl text-yellow-100 font-bold"
                     @click="loadBinance"
                 >
                     <h1 class="text-4xl">Binance</h1>
@@ -84,24 +84,6 @@
                         <span class="text-left mt-1 ml-2 text-base">tBSC</span>
                     </div>
                 </button>
-
-                <button
-                    class="p-5 bg-yellow-500 rounded-xl border-4 border-yellow-300 text-xl text-yellow-100 font-bold"
-                    @click="loadKovan"
-                >
-                    <h1 class="text-4xl">Ethereum</h1>
-
-                    <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
-                        <span class="text-right text-purple-200 text-xs mt-1 mr-2">NAME</span>
-                        <span class="text-left mt-1 ml-2 text-base">
-                            Kovan
-                        </span>
-
-                        <span class="text-right text-purple-200 text-xs mt-1 mr-2">SYMBOL</span>
-                        <span class="text-left mt-1 ml-2 text-base">tETH</span>
-                    </div>
-                </button>
-
             </section>
 
             <section class="p-3 lg:p-10">
@@ -137,12 +119,10 @@ export default {
             window.open('http://34.92.246.27:8080/faucet')
         },
 
-        loadRopsten() {
-            window.open('https://faucet.dimensions.network/')
-        },
+        loadEthereum() {
+            window.open('https://faucet.dimensions.network/') // Ropsten
 
-        loadKovan() {
-            window.open('https://ethdrop.dev/')
+            // window.open('https://ethdrop.dev/') // Kovan
         },
 
         loadBinance() {

@@ -1,65 +1,54 @@
-/* Import views. */
-import Editors from '@/views/Workspaces/Editors'
-import Studios from '@/views/Workspaces/Studios'
-
-/* Labs */
-import Labs from '@/views/Workspaces/Labs'
-import LabsAuth from '@/views/Workspaces/Labs/Auth'
-import LabsCashFusion from '@/views/Workspaces/Labs/CashFusion'
-import LabsCashScript from '@/views/Workspaces/Labs/CashScript'
-import LabsCashShuffle from '@/views/Workspaces/Labs/CashShuffle'
-import LabsCrypto from '@/views/Workspaces/Labs/Crypto'
-import LabsEvents from '@/views/Workspaces/Labs/Events'
-import LabsDecode from '@/views/Workspaces/Labs/Decode'
-import LabsHardware from '@/views/Workspaces/Labs/Hardware'
-import LabsHashing from '@/views/Workspaces/Labs/Hashing'
-import LabsLibp2p from '@/views/Workspaces/Labs/Libp2p'
-import LabsMessaging from '@/views/Workspaces/Labs/Messaging'
-import LabsQuery from '@/views/Workspaces/Labs/Query'
-import LabsTransaction from '@/views/Workspaces/Labs/Transaction'
-import LabsWallet from '@/views/Workspaces/Labs/Wallet'
-
-/* SmartBCH */
-import SmartBCH from '@/views/Workspaces/SmartBCH'
-import SmartBCHAddress from '@/views/Workspaces/SmartBCH/Address'
-import SmartBCHContracts from '@/views/Workspaces/SmartBCH/Contracts'
-import SmartBCHTransaction from '@/views/Workspaces/SmartBCH/Transaction'
-
 /* Initialize routes. */
 const routes = [
     {
         path: '/editors',
-        component: Editors
+        component: () => import(/* webpackChunkName: "editors" */ '@/views/Workspaces/Editors'),
     },
     {
         path: '/smartbch',
-        component: SmartBCH
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH'),
     },
     {
         path: '/sbch/address/:address',
-        component: SmartBCHAddress
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Address'),
+    },
+    {
+        path: '/tsbch/address/:address',
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Address'),
     },
     {
         path: '/sbch/transaction/:txid',
-        component: SmartBCHTransaction
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Transaction'),
+    },
+    {
+        path: '/sbch/tx/:txid',
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Transaction'),
+    },
+    {
+        path: '/tsbch/transaction/:txid',
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Transaction'),
+    },
+    {
+        path: '/tsbch/tx/:txid',
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Transaction'),
     },
     {
         path: '/smartbch/contracts',
-        component: SmartBCHContracts
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Contracts'),
     },
     {
         path: '/studios',
-        component: Studios
+        component: () => import(/* webpackChunkName: "studios" */ '@/views/Workspaces/Studios'),
     },
 
     /* Labs */
     {
         path: '/labs',
-        component: Labs
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs'),
     },
     {
         path: '/labs/auth',
-        component: LabsAuth
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Auth'),
     },
     {
         path: '/labs/bitdb',
@@ -67,15 +56,15 @@ const routes = [
     },
     {
         path: '/labs/cashfusion',
-        component: LabsCashFusion
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CashFusion'),
     },
     {
         path: '/labs/cashscript',
-        component: LabsCashScript
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CashScript'),
     },
     {
         path: '/labs/cashshuffle',
-        component: LabsCashShuffle
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CashShuffle'),
     },
     {
         path: '/labs/couchdb',
@@ -83,11 +72,11 @@ const routes = [
     },
     {
         path: '/labs/crypto',
-        component: LabsCrypto
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Crypto'),
     },
     {
         path: '/labs/decode',
-        component: LabsDecode
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Decode'),
     },
     {
         path: '/labs/elasticsearch',
@@ -95,27 +84,27 @@ const routes = [
     },
     {
         path: '/labs/events',
-        component: LabsEvents
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Events'),
     },
     {
         path: '/labs/hardware',
-        component: LabsHardware
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Hardware'),
     },
     {
         path: '/labs/hashing',
-        component: LabsHashing
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Hashing'),
     },
     {
         path: '/labs/libp2p',
-        component: LabsLibp2p
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Libp2p'),
     },
     {
         path: '/labs/messaging',
-        component: LabsMessaging
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Messaging'),
     },
     {
         path: '/labs/query',
-        component: LabsQuery
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Query'),
     },
     {
         path: '/labs/slpdb',
@@ -123,11 +112,15 @@ const routes = [
     },
     {
         path: '/labs/tx',
-        component: LabsTransaction
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Transaction'),
+    },
+    {
+        path: '/labs/u2f',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/U2F'),
     },
     {
         path: '/labs/wallet',
-        component: LabsWallet
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Wallet'),
     },
 ]
 
