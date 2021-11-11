@@ -1,6 +1,6 @@
 <template>
     <main class="bg-white">
-        <div class="bg-indigo-900">
+        <header class="bg-indigo-900">
             <!-- Header section with select menu -->
             <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl">
                 <div class="px-0 sm:px-4 lg:px-0 lg:flex lg:justify-between lg:items-center">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
 
         <!-- Comparison table -->
         <div class="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -1101,57 +1101,44 @@
                     <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 lg:grid-cols-3">
                         <div class="space-y-2">
                             <dt class="text-lg leading-6 font-medium text-gray-900">
-                                What&#039;s the best thing about Switzerland?
+                                What is the cost for auditing a project?
                             </dt>
+
                             <dd class="text-base text-gray-500">
-                                I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
+                                Costs vary based upon the length and complexity of the contracts to be audited.
                             </dd>
                         </div>
 
                         <div class="space-y-2">
                             <dt class="text-lg leading-6 font-medium text-gray-900">
-                                How do you make holy water?
+                                How long does it take to produce an audit report?
                             </dt>
+
                             <dd class="text-base text-gray-500">
-                                You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
+                                We aim for a turnaround time of 2-10 days for most audits, though the length and complexity of the contracts can lead to longer turnaround times.
                             </dd>
                         </div>
 
                         <div class="space-y-2">
                             <dt class="text-lg leading-6 font-medium text-gray-900">
-                                Why do you never see elephants hiding in trees?
+                                Do you create custom Smart Contracts?
                             </dt>
+
                             <dd class="text-base text-gray-500">
-                                Because they&#039;re so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
+                                We no longer perform custom development work.
                             </dd>
                         </div>
 
                         <div class="space-y-2">
                             <dt class="text-lg leading-6 font-medium text-gray-900">
-                                What do you call someone with no body and no nose?
+                                Do you require KYC?
                             </dt>
+
                             <dd class="text-base text-gray-500">
-                                Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
+                                Generally, we do not require KYC. We do offer KYC services, however, through our partner KYC Capital.
                             </dd>
                         </div>
 
-                        <div class="space-y-2">
-                            <dt class="text-lg leading-6 font-medium text-gray-900">
-                                Why can&#039;t you hear a pterodactyl go to the bathroom?
-                            </dt>
-                            <dd class="text-base text-gray-500">
-                                Because the pee is silent. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
-                            </dd>
-                        </div>
-
-                        <div class="space-y-2">
-                            <dt class="text-lg leading-6 font-medium text-gray-900">
-                                Why did the invisible man turn down the job offer?
-                            </dt>
-                            <dd class="text-base text-gray-500">
-                                He couldn&#039;t see himself doing it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
-                            </dd>
-                        </div>
                     </dl>
                 </div>
             </div>
@@ -1163,16 +1150,27 @@
                 <div class="flex-1 bg-gray-50"></div>
                 <div class="flex-1"></div>
             </div>
+
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-gradient-to-r from-orange-400 to-pink-500 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
                     <div class="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
                         <div class="lg:self-center">
                             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                                <span class="block">Ready to dive in?</span>
-                                <span class="block text-red-900">Start your free trial today.</span>
+                                <span class="block">Ready to test the security of your Smart Bitcoin DApp?</span>
+                                <span class="mt-5 block text-red-900">It takes less than 5 minutes, and it's FREE!</span>
                             </h2>
-                            <p class="mt-4 text-lg leading-6 text-orange-50">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.</p>
-                            <a href="javascript://" class="mt-8 bg-orange-100 border border-transparent rounded-md shadow py-3 px-6 inline-flex items-center text-base font-medium text-red-600 hover:text-red-500">Sign up for free</a>
+
+                            <p class="mt-5 text-lg font-medium leading-6 text-orange-50">
+                                An advanced suite of security tools and services are available in our <router-link to="/smartbch" class="text-blue-100 font-bold hover:underline">Smart Bitcoin Center</router-link>.
+                            </p>
+
+                            <p class="mt-5 text-sm font-medium leading-6 text-orange-50">
+                                Rest a bit easier knowing that your application is adhearing to the "best-practices" set from over a decade of hard work performed by thousands of developers.
+                            </p>
+
+                            <router-link to="/smartbch" class="mt-8 bg-orange-100 border border-transparent rounded-md shadow py-3 px-6 inline-flex items-center text-2xl font-bold text-red-600 hover:text-red-500">
+                                GO TO SMARTBCH CENTER
+                            </router-link>
                         </div>
                     </div>
                     <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">

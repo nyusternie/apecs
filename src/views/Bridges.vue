@@ -1,15 +1,8 @@
 <template>
-    <main class="py-8 overflow-x-hidden">
+    <main class="">
+        <Header :title="title" :description="description" />
+
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <header class="px-2 lg:px-10 mt-5 w-full">
-                <h1 class="text-4xl font-bold text-gray-500">Testnet Bridges</h1>
-
-                <p class="max-w-lg text-gray-500 p-2 mt-5">
-                    Our bridge interface will allow you to quickly and easily move your tokens back and forth to other chains.
-                </p>
-            </header>
-
-            <!-- Page Section -->
             <section class="px-2 lg:px-10 mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <button
                     class="p-5 bg-green-700 rounded-xl border-4 border-green-500 text-xl text-gray-100 font-bold"
@@ -88,34 +81,35 @@
 
 <script>
 /* Import components. */
-// import Header from '@/components/Header'
+import Header from '@/components/PageHeader'
 
 export default {
     components: {
-        // Header,
+        Header,
     },
     data: () => {
         return {
-            //
+            title: null,
+            description: null,
         }
     },
     methods: {
         loadBitcoinCash() {
-            window.open('https://tbch.googol.cash/')
+            alert('coming soon..')
         },
 
         loadSmartBCH() {
-            window.open('http://34.92.246.27:8080/faucet')
+            alert('coming soon..')
         },
 
         loadEthereum() {
-            window.open('https://faucet.dimensions.network/') // Ropsten
+            alert('coming soon..')
 
             // window.open('https://ethdrop.dev/') // Kovan
         },
 
         loadBinance() {
-            window.open('https://testnet.binance.org/faucet-smart')
+            alert('coming soon..')
         },
 
         toggleBCH() {
@@ -136,6 +130,10 @@ export default {
         // if (!session) {
         //     return
         // }
+
+        this.title = `Testnet Bridges`
+
+        this.description = `Move your tokens <span class="text-gray-100 font-medium">quickly and easily</span> between Smart Bitcoin, Binance Smart Chain and Ethereum.`
     },
     mounted: function () {
         //
