@@ -119,12 +119,13 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="javascript://" class="focus:outline-none">
+                                        <router-link to="/smartbch/contracts" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Mainnet Explorer
-                                        </a>
+                                            Notable Contracts
+                                        </router-link>
                                     </h3>
+
                                     <p class="mt-2 text-sm text-gray-500">
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
                                     </p>
@@ -149,11 +150,11 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="javascript://" class="focus:outline-none">
+                                        <router-link to="/snippets/sol" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Testnet Faucet
-                                        </a>
+                                            Solidity Code Snippets
+                                        </router-link>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.

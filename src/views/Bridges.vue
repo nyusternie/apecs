@@ -5,16 +5,12 @@
                 <h1 class="text-4xl font-bold text-gray-500">Testnet Bridges</h1>
 
                 <p class="max-w-lg text-gray-500 p-2 mt-5">
-                    Simply select your preferred crypto from the available faucets below, enter your <strong>"Testnet" Account / Address</strong> and click send.
-
-                    <span class="block text-xl font-bold mt-1">
-                        SIMPLE!
-                    </span>
+                    Our bridge interface will allow you to quickly and easily move your tokens back and forth to other chains.
                 </p>
             </header>
 
             <!-- Page Section -->
-            <section class="px-2 lg:px-10 mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <section class="px-2 lg:px-10 mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <button
                     class="p-5 bg-green-700 rounded-xl border-4 border-green-500 text-xl text-gray-100 font-bold"
                     @click="loadBitcoinCash"
@@ -84,13 +80,6 @@
                         <span class="text-left mt-1 ml-2 text-base">tBSC</span>
                     </div>
                 </button>
-            </section>
-
-            <section class="p-3 lg:p-10">
-                Our faucets drip every 10 seconds.
-                You can register your account in our queue.
-                Max queue size is currently 50.
-                Serving from account 0xcDA0D6...43FE7C (balance 515 tBCH).
             </section>
 
         </div>

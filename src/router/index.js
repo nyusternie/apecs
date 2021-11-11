@@ -77,6 +77,19 @@ const routes = [
     },
 
     {
+        path: '/snippets',
+        component: () => import(/* webpackChunkName: "news" */ '@/views/Snippets'),
+    },
+    {
+        path: '/snippets/:type',
+        component: () => import(/* webpackChunkName: "news" */ '@/views/Snippets'),
+    },
+    {
+        path: '/snippets/:type/:slug',
+        component: () => import(/* webpackChunkName: "news" */ '@/views/Snippets'),
+    },
+
+    {
         path: '/workspaces',
         component: () => import(/* webpackChunkName: "workspaces" */ '@/views/Workspaces'),
     },
