@@ -91,10 +91,10 @@
 
         <!-- Static sidebar for desktop -->
         <main class="hidden lg:block lg:flex-shrink-0">
-            <div class="flex flex-col border-r border-gray-200 pt-0 pb-0 bg-gray-100">
+            <div class="flex flex-col border-r border-gray-200">
 
-                <router-link to="/" class="brand-link">
-                    <div class="flex flex-row justify-between pr-3 border-b-4 border-gray-300 rounded-xl">
+                <router-link to="/" class="brand-link bg-gray-50 border-b-4 border-gray-300 rounded-b-3xl overflow-hidden">
+                    <div class="flex flex-row justify-between pr-3">
                         <img
                             src="@/assets/img/icon.png"
                             alt="DevOps Icon"

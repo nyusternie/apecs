@@ -107,1043 +107,167 @@
             </div>
         </section>
 
-        <!-- Comparison table -->
-        <!-- <div class="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"> -->
-        <div class="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-0">
-            <!-- xs to lg -->
-            <div class="space-y-24 lg:hidden">
-                <section>
-                    <div class="px-4 mb-8">
-                        <h2 class="text-lg leading-6 font-medium text-gray-900">Basic</h2>
-
-                        <p class="mt-4">
-                            <span class="text-4xl font-extrabold text-gray-900">$9</span>
-                            <span class="text-base font-medium text-gray-500">/mo</span>
-                        </p>
-
-                        <p class="mt-4 text-sm text-gray-500">Quis suspendisse ut fermentum neque vivamus non tellus.</p>
-
-                        <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Basic</a>
+        <!-- This example requires Tailwind CSS v2.0+ -->
+        <section class="bg-indigo-800">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                        Trusted by developers from over 80 planets
+                    </h2>
+                    <p class="mt-3 text-xl text-indigo-200 sm:mt-4">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repellat laudantium.
+                    </p>
+                </div>
+                <dl class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
+                    <div class="flex flex-col">
+                        <dt class="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">
+                            Pepperoni
+                        </dt>
+                        <dd class="order-1 text-5xl font-extrabold text-white">
+                            100%
+                        </dd>
                     </div>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Features
-                        </caption>
-
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
-                                    Molestie lobortis massa
-                                </th>
-
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
-                                    Molestie lobortis massa
-                                </th>
-
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Tellus pulvinar sit dictum.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Convallis.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Reporting
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Adipiscing.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Eget risus integer.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Gravida leo urna velit.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Elementum ut dapibus mi feugiat cras nisl.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Support
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Sit dignissim.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Congue at nibh et.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Volutpat feugiat mattis.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Tristique pellentesque ornare diam sapien.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="border-t border-gray-200 px-4 pt-5">
-                        <a href="javascript://" class="block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Basic</a>
+                    <div class="flex flex-col mt-10 sm:mt-0">
+                        <dt class="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">
+                            Delivery
+                        </dt>
+                        <dd class="order-1 text-5xl font-extrabold text-white">
+                            24/7
+                        </dd>
                     </div>
-                </section>
-
-                <section>
-                    <div class="px-4 mb-8">
-                        <h2 class="text-lg leading-6 font-medium text-gray-900">Essential</h2>
-                        <p class="mt-4">
-                            <span class="text-4xl font-extrabold text-gray-900">$29</span>
-                            <span class="text-base font-medium text-gray-500">/mo</span>
-                        </p>
-                        <p class="mt-4 text-sm text-gray-500">Quis eleifend a tincidunt pellentesque. A tempor in sed.</p>
-                        <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Essential</a>
+                    <div class="flex flex-col mt-10 sm:mt-0">
+                        <dt class="order-2 mt-2 text-lg leading-6 font-medium text-indigo-200">
+                            Calories
+                        </dt>
+                        <dd class="order-1 text-5xl font-extrabold text-white">
+                            100k+
+                        </dd>
                     </div>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Features
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
-                                    Molestie lobortis massa
-                                </th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Urna purus felis.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
-                                    Molestie lobortis massa
-                                </th>
-
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Convallis.</th>
-                                <td class="py-5 pr-4">
-                                    <span class="block text-sm text-gray-700 text-right">Up to 20 users</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Reporting
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Adipiscing.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Eget risus integer.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Gravida leo urna velit.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Elementum ut dapibus mi feugiat cras nisl.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Support
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Sit dignissim.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Congue at nibh et.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Volutpat feugiat mattis.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Tristique pellentesque ornare diam sapien.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/minus -->
-                                    <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">No</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="border-t border-gray-200 px-4 pt-5">
-                        <a href="javascript://" class="block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Essential</a>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="px-4 mb-8">
-                        <h2 class="text-lg leading-6 font-medium text-gray-900">Premium</h2>
-                        <p class="mt-4">
-                            <span class="text-4xl font-extrabold text-gray-900">$59</span>
-                            <span class="text-base font-medium text-gray-500">/mo</span>
-                        </p>
-                        <p class="mt-4 text-sm text-gray-500">Orci volutpat ut sed sed neque, dui eget. Quis tristique non.</p>
-                        <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Premium</a>
-                    </div>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Features
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
-                                    Molestie lobortis massa
-                                </th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Urna purus felis.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Tellus pulvinar sit dictum.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Convallis.</th>
-                                <td class="py-5 pr-4">
-                                    <span class="block text-sm text-gray-700 text-right">Up to 50 users</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Reporting
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Adipiscing.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Eget risus integer.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Gravida leo urna velit.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Elementum ut dapibus mi feugiat cras nisl.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="w-full">
-                        <caption class="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                            Support
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th class="sr-only" scope="col">Feature</th>
-                                <th class="sr-only" scope="col">Included</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Sit dignissim.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Congue at nibh et.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Volutpat feugiat mattis.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-
-                            <tr class="border-t border-gray-200">
-                                <th class="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">Tristique pellentesque ornare diam sapien.</th>
-                                <td class="py-5 pr-4">
-                                    <!-- Heroicon name: solid/check -->
-                                    <svg class="ml-auto h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span class="sr-only">Yes</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="border-t border-gray-200 px-4 pt-5">
-                        <a href="javascript://" class="block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Premium</a>
-                    </div>
-                </section>
+                </dl>
             </div>
+        </section>
 
-            <!-- lg+ -->
-            <div class="hidden lg:block">
-                <table class="w-full h-px table-fixed">
-                    <caption class="sr-only">
-                        Pricing plan comparison
-                    </caption>
-                    <thead>
-                        <tr>
-                            <th class="pb-4 pl-6 pr-6 text-sm font-medium text-gray-900 text-left" scope="col">
-                                <span class="sr-only">Feature by</span>
-                                <span>CHOOSE YOUR PATH</span>
-                            </th>
+        <section class="bg-white">
+            <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+                <div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
+                    <div class="space-y-5 sm:space-y-4">
+                        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                            Featured Audits
+                        </h2>
 
-                            <th class="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left" scope="col">
-                                FOR MY FOSS PROJECT OR APPLICATION
-                            </th>
+                        <p class="text-xl text-gray-500">
+                            Nulla quam felis, enim faucibus proin velit, ornare id pretium. Augue ultrices sed arcu condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum cras.
+                        </p>
+                    </div>
 
-                            <th class="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left" scope="col">
-                                FOR A PUBLIC UTILITY / COMMON GOOD
-                            </th>
+                    <div class="lg:col-span-2">
+                        <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
 
-                            <th class="w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left" scope="col">
-                                FOR A COMMERCIAL APPLICATION
-                            </th>
-                        </tr>
-                    </thead>
+                            <li>
+                                <div class="space-y-4">
+                                    <div class="aspect-w-3 aspect-h-2">
+                                        <img
+                                            class="object-cover shadow-lg rounded-lg"
+                                            src="https://i.imgur.com/yTk4ZJk.jpg"
+                                            alt=""
+                                        />
+                                    </div>
 
-                    <tbody class="border-t border-gray-200 divide-y divide-gray-200">
-                        <tr>
-                            <th class="py-8 pl-6 pr-6 align-top text-sm font-medium text-gray-900 text-left" scope="row">
-                                PRICING
-                            </th>
+                                    <div class="text-lg leading-6 font-medium space-y-1">
+                                        <h3>Token Bridge</h3>
+                                        <a href="https://tokenbridge.cash" target="_blank" class="text-blue-500 hover:underline">https://tokenbridge.cash</a>
+                                    </div>
 
-                            <td class="h-full py-8 px-6 align-top">
-                                <div class="h-full flex flex-col justify-between">
-                                    <div>
-                                        <p>
-                                            <span class="text-4xl font-extrabold text-gray-900">FREE</span>
-                                            <!-- <span class="text-base font-medium text-gray-500"> as in beer</span> -->
-                                        </p>
-
-                                        <p class="mt-4 text-sm text-gray-500">
-                                            Self-service solution for teams that need for a low-budget security solution.
+                                    <div class="text-lg">
+                                        <p class="text-gray-500">
+                                            Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.
                                         </p>
                                     </div>
 
-                                    <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-green-500 to-green-600 border border-transparent rounded-md shadow py-4 text-2xl font-semibold text-white text-center hover:to-green-700">
-                                        GET STARTED
-                                    </a>
+                                    <ul role="list" class="flex space-x-5">
+                                        <li>
+                                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                                <span class="sr-only">Twitter</span>
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                    <path
+                                                        d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                                <span class="sr-only">LinkedIn</span>
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                                                        clip-rule="evenodd"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </td>
+                            </li>
 
-                            <td class="h-full py-8 px-6 align-top">
-                                <div class="h-full flex flex-col justify-between">
-                                    <div>
-                                        <p>
-                                            <span class="text-4xl font-extrabold text-gray-900">FREE</span>
-                                            <!-- <span class="text-base font-medium text-gray-500"> as in beer</span> -->
-                                        </p>
+                            <li>
+                                <div class="space-y-4">
+                                    <div class="aspect-w-3 aspect-h-2">
+                                        <img
+                                            class="object-cover shadow-lg rounded-lg"
+                                            src="https://i.imgur.com/esAhHHN.png"
+                                            alt=""
+                                        />
+                                    </div>
 
-                                        <p class="mt-4 text-sm text-gray-500">
-                                            FOSS projects that offer a "public good" for the crypto community.
+                                    <div class="text-lg leading-6 font-medium space-y-1">
+                                        <h3>Anyhedge</h3>
+                                        <a href="https://anyhedge.com/" target="_blank" class="text-blue-500 hover:underline">https://anyhedge.com/</a>
+                                    </div>
+
+                                    <div class="text-lg">
+                                        <p class="text-gray-500">
+                                            AnyHedge allows you to take leveraged long positions or hedge your fiat value. Permissionless, non-custodial, and on-chain. Want to give it a spin? AnyHedge is the technology that powers BCH Bull. It lets you take BCH long positions with up to 10x leverage against a variety of assets.
                                         </p>
                                     </div>
 
-                                    <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-green-500 to-green-600 border border-transparent rounded-md shadow py-4 text-2xl font-semibold text-white text-center hover:to-green-700">
-                                        GET STARTED
-                                    </a>
+                                    <ul role="list" class="flex space-x-5">
+                                        <li>
+                                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                                <span class="sr-only">Twitter</span>
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                    <path
+                                                        d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                                <span class="sr-only">LinkedIn</span>
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                                                        clip-rule="evenodd"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </td>
+                            </li>
 
-                            <td class="h-full py-8 px-6 align-top">
-                                <div class="h-full flex flex-col justify-between">
-                                    <div>
-                                        <p>
-                                            <span class="text-4xl font-extrabold text-gray-900">Contact Us</span>
-                                            <!-- <span class="text-base font-medium text-gray-500">/mo</span> -->
-                                        </p>
-
-                                        <p class="mt-4 text-sm text-gray-500">
-                                            Full-service security service suite, performed by trained professionals.
-                                        </p>
-                                    </div>
-
-                                    <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-blue-400 to-blue-500 border border-transparent rounded-md shadow py-4 text-2xl font-semibold text-white text-center hover:to-blue-800">
-                                        CONTACT US
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-3 pl-6 bg-gray-50 text-sm font-medium text-gray-900 text-left" colspan="4" scope="colgroup">Features</th>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">
-                                Smart contract security analysis
-                            </th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">
-                                Smart contract verification
-                            </th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">
-                                Custom audit URL
-                            </th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Convallis.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <span class="block text-sm text-gray-700">Up to 20 users</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <span class="block text-sm text-gray-700">Up to 50 users</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-3 pl-6 bg-gray-50 text-sm font-medium text-gray-900 text-left" colspan="4" scope="colgroup">Reporting</th>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Adipiscing.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Eget risus integer.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Gravida leo urna velit.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Elementum ut dapibus mi feugiat cras nisl.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-3 pl-6 bg-gray-50 text-sm font-medium text-gray-900 text-left" colspan="4" scope="colgroup">Support</th>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Sit dignissim.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Congue at nibh et.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Volutpat feugiat mattis.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th class="py-5 pl-6 pr-6 text-sm font-normal text-gray-500 text-left" scope="row">Tristique pellentesque ornare diam sapien.</th>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Basic</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/minus -->
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Not included in Essential</span>
-                            </td>
-
-                            <td class="py-5 px-6">
-                                <!-- Heroicon name: solid/check -->
-                                <svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                <span class="sr-only">Included in Premium</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr class="border-t border-gray-200">
-                            <th class="sr-only" scope="row">Choose your plan</th>
-
-                            <td class="pt-5 px-6">
-                                <a href="javascript://" class="block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Basic</a>
-                            </td>
-
-                            <td class="pt-5 px-6">
-                                <a href="javascript://" class="block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Essential</a>
-                            </td>
-
-                            <td class="pt-5 px-6">
-                                <a href="javascript://" class="block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Premium</a>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
+                            <!-- More people... -->
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- Logo cloud -->
-        <div class="max-w-7xl mx-auto border-t border-gray-200 py-12 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div class="hidden max-w-7xl mx-auto border-t border-gray-200 py-12 px-4 sm:px-6 lg:py-20 lg:px-8">
             <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
                 <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
                     <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />

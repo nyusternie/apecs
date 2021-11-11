@@ -3,24 +3,73 @@
         <!-- Page Section -->
         <section class="max-w-5xl mx-auto mt-10">
 
-            <h1 class="text-5xl font-bold">Audit Center</h1>
+            <h1 class="text-5xl font-bold">
+                {{name}} Smart Audit
+            </h1>
 
-            <p class="p-10">
-                Independent security assessment of a project codebase, typically requested and paid-for by the project team.
+            <div class="mt-5 p-3 bg-gray-200 border-2 border-gray-300 rounded-xl">
+                <h1 class="text-lg font-medium text-gray-400">DISCLAIMER</h1>
+
+                <p class="mt-3 text-sm text-gray-500">
+                    The audit makes no statements or warrantees about utility of the code, safety of the code, suitability of the business model, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status.
+                </p>
+
+                <p class="mt-3 text-xs text-gray-500 font-medium">
+                    THE AUDIT DOCUMENTATION IS FOR DISCUSSION PURPOSES ONLY
+                </p>
+            </div>
+
+        </section>
+
+        <section class="max-w-5xl mx-auto mt-10">
+            <h1 class="text-2xl font-medium">
+                SYNOPSIS
+            </h1>
+
+            <p class="mt-5">
+                The focus of this review was to ensure the following properties:
             </p>
 
-            <p class="p-10">
-                detects and describes (in a report) security issues with underlying vulnerabilities, severity/difficulty, potential exploit scenarios and recommended fixes
+            <p class="mt-5">
+                Security: identifying security related issues within each contract and within the system of contracts.
             </p>
 
-            <p class="p-10">
-                provides subjective insights into code quality, documentation and testing.
+            <p class="mt-5">
+                Sound Architecture: evaluation of the architecture of this system through the lens of established smart contract best practices and general software best practices.
             </p>
 
-            <p class="p-10">
-                Independent security assessment of a project codebase, typically requested and paid-for by the project team.
+            <p class="mt-5">
+                Code Correctness and Quality: a full review of the contract source code. The primary areas of focus include:
             </p>
 
+            Correctness (does it do was it is intended to do)
+            Readability (how easily it can be read and understood)
+            Sections of code with high complexity
+            Improving scalability
+            Quantity and quality of test coverage
+            Severity of Findings
+            Critical
+            Critical issues are directly exploitable bugs or security vulnerabilities.
+
+            Left unaddressed these issues are highly likely or guaranteed to cause major problems or potentially a full failure in the operations of the contract.
+
+            Major
+            Major issues will be things like bugs or security vulnerabilities. These issues may not be directly exploitable, or may require a certain condition to arise in order to be exploited.
+
+            Left unaddressed these issues are highly likely to cause problems with the operation of the contract or lead to a situation which allows the system to be exploited in some way.
+
+            Medium
+            Medium issues are generally objective in nature but do not represent actual bugs or security problems.
+
+            These issues should be addressed unless there is a clear reason not to.
+
+            Minor
+            Minor issues are generally subjective in nature, or potentially deal with topics like "best practices" or "readability". Minor issues in general will not indicate an actual problem or bug in code.
+
+            The maintainers should use their own judgement as to whether addressing these issues improves the codebase.
+
+            Summary
+            Brief summary of audit.
         </section>
 
         <section v-if="id" class="max-w-5xl mx-auto mt-10">
