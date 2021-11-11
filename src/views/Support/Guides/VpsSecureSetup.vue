@@ -1,76 +1,32 @@
 <template>
-    <main>
-        <Navbar class="hidden" />
+    <main class="p-10">
 
-        <!-- Page Section -->
-        <section class="p-10">
-            <div class="container-fluid">
+        <h3 class="text-2xl font-medium">
+            update.sh
+        </h3>
 
-                <div class="row">
-                    <div class="col-md-6">
+        <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+            <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt update && apt upgrade -y && apt-get autoremove -y</textarea>
+        </div>
 
-                        <div class="card">
-                            <div class="card-body">
+        <h3 class="mt-10 text-2xl font-medium">
+            Recommended modules
+        </h3>
 
-                                <h3>update.sh</h3>
+        <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+            <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install -y apt-transport-https autoconf build-essential ca-certificates curl git gnupg2 libtool make net-tools software-properties-common vim</textarea>
+        </div>
 
-                                <code>
-                                    apt update && apt upgrade -y && apt-get autoremove -y
-                                </code>
-
-                                <hr />
-
-                                <h3>Recommended modules</h3>
-
-                                <code>
-                                    apt install -y apt-transport-https autoconf build-essential ca-certificates curl git gnupg2 libtool make net-tools software-properties-common vim
-                                </code>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fas fa-info-circle mr-1"></i>
-                                    VPS Quick Setup (Debian)
-                                </h3>
-                            </div>
-
-                            <div class="card-body">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Description lists</dt>
-                                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
-                                    <dt class="col-sm-4">Euismod</dt>
-                                    <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                    <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
-                                    <dt class="col-sm-4">Malesuada porta</dt>
-                                    <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
-                                    <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
-                                    <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-                                        sit amet risus.
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
     </main>
 </template>
 
 <script>
 /* Import components. */
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 export default {
     components: {
-        Navbar,
+        // Navbar,
     },
     data: () => {
         return {

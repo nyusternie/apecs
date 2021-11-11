@@ -41,86 +41,86 @@ const routes = [
         component: () => import(/* webpackChunkName: "studios" */ '@/views/Workspaces/Studios'),
     },
 
-    /* Labs */
+    /* Sandbox */
     {
-        path: '/labs',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs'),
+        path: '/sandbox',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox'),
     },
     {
-        path: '/labs/auth',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Auth'),
+        path: '/sandbox/auth',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Auth'),
     },
     {
-        path: '/labs/bitdb',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/BitDB'),
+        path: '/sandbox/bitdb',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/BitDB'),
     },
     {
-        path: '/labs/cashfusion',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CashFusion'),
+        path: '/sandbox/cashfusion',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/CashFusion'),
     },
     {
-        path: '/labs/cashscript',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CashScript'),
+        path: '/sandbox/cashscript',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/CashScript'),
     },
     {
-        path: '/labs/cashshuffle',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CashShuffle'),
+        path: '/sandbox/cashshuffle',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/CashShuffle'),
     },
     {
-        path: '/labs/couchdb',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/CouchDB'),
+        path: '/sandbox/couchdb',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/CouchDB'),
     },
     {
-        path: '/labs/crypto',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Crypto'),
+        path: '/sandbox/crypto',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Crypto'),
     },
     {
-        path: '/labs/decode',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Decode'),
+        path: '/sandbox/decode',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Decode'),
     },
     {
-        path: '/labs/elasticsearch',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Elasticsearch'),
+        path: '/sandbox/elasticsearch',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Elasticsearch'),
     },
     {
-        path: '/labs/events',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Events'),
+        path: '/sandbox/events',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Events'),
     },
     {
-        path: '/labs/hardware',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Hardware'),
+        path: '/sandbox/hardware',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Hardware'),
     },
     {
-        path: '/labs/hashing',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Hashing'),
+        path: '/sandbox/hashing',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Hashing'),
     },
     {
-        path: '/labs/libp2p',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Libp2p'),
+        path: '/sandbox/libp2p',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Libp2p'),
     },
     {
-        path: '/labs/messaging',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Messaging'),
+        path: '/sandbox/messaging',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Messaging'),
     },
     {
-        path: '/labs/query',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Query'),
+        path: '/sandbox/query',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Query'),
     },
     {
-        path: '/labs/slpdb',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/SLPDB'),
+        path: '/sandbox/slpdb',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/SLPDB'),
     },
     {
-        path: '/labs/tx',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Transaction'),
+        path: '/sandbox/tx',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Transaction'),
     },
     {
-        path: '/labs/u2f',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/U2F'),
+        path: '/sandbox/u2f',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/U2F'),
     },
     {
-        path: '/labs/wallet',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Labs/Wallet'),
+        path: '/sandbox/wallet',
+        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Wallet'),
     },
 ]
 

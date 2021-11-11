@@ -289,8 +289,8 @@ export default {
                 return 'Code Editor'
             case 'graphics-studio':
                 return 'Graphics Studio'
-            case 'labs':
-                return 'Lab Experiments'
+            case 'sandbox':
+                return 'Sandbox'
 
             /* Support */
             case 'buidling':

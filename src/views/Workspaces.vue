@@ -5,8 +5,8 @@
                 Editors
             </router-link>
 
-            <router-link to="/labs" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
-                Lab Experiments
+            <router-link to="/sandbox" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
+                Sandbox
             </router-link>
 
             <router-link to="/smartbch" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
