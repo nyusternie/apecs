@@ -1,9 +1,26 @@
 /* Initialize routes. */
 const routes = [
+    /* Audit */
+    {
+        path: '/audit',
+        component: () => import(/* webpackChunkName: "audit" */ '@/views/Workspaces/Audit'),
+    },
+    {
+        path: '/audit/pricing',
+        component: () => import(/* webpackChunkName: "audit" */ '@/views/Workspaces/Audit/Pricing'),
+    },
+    {
+        path: '/audit/:id',
+        component: () => import(/* webpackChunkName: "audit" */ '@/views/Workspaces/Audit'),
+    },
+
+    /* Editors */
     {
         path: '/editors',
         component: () => import(/* webpackChunkName: "editors" */ '@/views/Workspaces/Editors'),
     },
+
+    /* SmartBCH */
     {
         path: '/smartbch',
         component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH'),

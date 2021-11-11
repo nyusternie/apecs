@@ -27,15 +27,6 @@ const routes = [
     },
 
     {
-        path: '/audits',
-        component: () => import(/* webpackChunkName: "audits" */ '@/views/Audits'),
-    },
-    {
-        path: '/audits/:id',
-        component: () => import(/* webpackChunkName: "audits" */ '@/views/Audits'),
-    },
-
-    {
         path: '/stats',
         component: () => import(/* webpackChunkName: "stats" */ '@/views/Stats'),
     },
