@@ -6,7 +6,7 @@ const routes = [
         component: () => import(/* webpackChunkName: "audits" */ '@/views/Workspaces/Audits'),
     },
     {
-        path: '/audits/pricing',
+        path: '/audit-pricing',
         component: () => import(/* webpackChunkName: "audits" */ '@/views/Workspaces/Audits/Pricing'),
     },
     {

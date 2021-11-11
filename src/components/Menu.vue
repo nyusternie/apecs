@@ -93,7 +93,7 @@
         <main class="hidden lg:block lg:flex-shrink-0">
             <div class="flex flex-col border-r border-gray-200">
 
-                <router-link to="/" class="brand-link bg-gray-50 border-b-4 border-gray-300 rounded-b-3xl overflow-hidden">
+                <router-link to="/" class="brand-link bg-gradient-to-r from-gray-50 to-gray-200 border-b-4 border-gray-300 rounded-b-3xl overflow-hidden">
                     <div class="flex flex-row justify-between pr-3">
                         <img
                             src="@/assets/img/icon.png"
@@ -189,7 +189,7 @@
                         </div>
                     </div>
 
-                    <div class="mt-0 flex-grow flex flex-col">
+                    <div class="mt-3 flex-grow flex flex-col">
 
                         <nav class="flex-1 px-2 pt-2 space-y-8 bg-white" aria-label="Sidebar">
                             <div class="space-y-1">

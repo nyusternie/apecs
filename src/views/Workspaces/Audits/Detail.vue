@@ -42,33 +42,66 @@
                 Code Correctness and Quality: a full review of the contract source code. The primary areas of focus include:
             </p>
 
-            Correctness (does it do was it is intended to do)
-            Readability (how easily it can be read and understood)
-            Sections of code with high complexity
-            Improving scalability
-            Quantity and quality of test coverage
-            Severity of Findings
-            Critical
+            <p class="mt-5">
+                <ul class="list-disc ml-10 my-5">
+                    <li>
+                        Correctness (does it do was it is intended to do)
+                    </li>
+                    <li>
+                        Readability (how easily it can be read and understood)
+                    </li>
+                    <li>
+                        Sections of code with high complexity
+                    </li>
+                    <li>
+                        Improving scalability
+                    </li>
+                    <li>
+                        Quantity and quality of test coverage
+                    </li>
+                </ul>
+            </p>
+
+            <h1 class="text-2xl font-medium">
+                SEVERITY OF FINDINGS
+            </h1>
+
+            <h3 class="text-xl font-medium">
+                Critical
+            </h3>
+
             Critical issues are directly exploitable bugs or security vulnerabilities.
 
             Left unaddressed these issues are highly likely or guaranteed to cause major problems or potentially a full failure in the operations of the contract.
 
-            Major
+            <h3 class="text-xl font-medium">
+                Major
+            </h3>
+
             Major issues will be things like bugs or security vulnerabilities. These issues may not be directly exploitable, or may require a certain condition to arise in order to be exploited.
 
             Left unaddressed these issues are highly likely to cause problems with the operation of the contract or lead to a situation which allows the system to be exploited in some way.
 
-            Medium
+            <h3 class="text-xl font-medium">
+                Medium
+            </h3>
+
             Medium issues are generally objective in nature but do not represent actual bugs or security problems.
 
             These issues should be addressed unless there is a clear reason not to.
 
-            Minor
+            <h3 class="text-xl font-medium">
+                Minor
+            </h3>
+
             Minor issues are generally subjective in nature, or potentially deal with topics like "best practices" or "readability". Minor issues in general will not indicate an actual problem or bug in code.
 
             The maintainers should use their own judgement as to whether addressing these issues improves the codebase.
 
-            Summary
+            <h1 class="text-2xl font-medium">
+                SUMMARY
+            </h1>
+
             Brief summary of audit.
         </section>
 
@@ -175,7 +208,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-/*  */
-</style>
