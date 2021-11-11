@@ -1,45 +1,115 @@
 <template>
     <main class="bg-white">
-        <header class="bg-indigo-900">
-            <!-- Header section with select menu -->
-            <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl">
-                <div class="px-0 sm:px-4 lg:px-0 lg:flex lg:justify-between lg:items-center">
-                    <div class="max-w-xl">
-                        <h2 class="text-4xl font-extrabold text-gray-100 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                            Smart Audits
-                        </h2>
+        <Header :title="title" :description="description" />
 
-                        <p class="mt-5 text-xl text-indigo-300">
-                            Perform a comprehensive suite of <span class="text-gray-100 font-medium">automated audits</span> on your application's smart contracts and backend services.
-                        </p>
-                    </div>
-
-                    <div class="mt-10 w-full max-w-xs lg:mt-0">
-                        <label for="currency" class="block text-base font-medium text-indigo-300">
-                            CHOOSE YOUR PLATFORM
-                        </label>
-
-                        <div class="mt-1.5 relative">
-                            <select id="currency" name="currency" class="block w-full bg-none bg-indigo-400 bg-opacity-25 border border-transparent text-white focus:ring-white focus:border-white rounded-md">
-                                <option class="bg-gray-900">Binance Smart Chain (BSC)</option>
-                                <option class="bg-gray-900">Ethereum (ETH)</option>
-                                <option class="bg-gray-900" selected>Smart Bitcoin (sBCH)</option>
-                            </select>
-
-                            <div class="pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center">
-                                <!-- Heroicon name: solid/chevron-down -->
-                                <svg class="h-4 w-4 text-indigo-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
+        <section class="relative bg-white pt-16 pb-32 overflow-hidden">
+            <div class="relative">
+                <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                    <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
+                        <div>
+                            <div>
+                                <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
+                                    <!-- Heroicon name: outline/inbox -->
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                                        />
+                                    </svg>
+                                </span>
                             </div>
+                            <div class="mt-6">
+                                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
+                                    Stay on top of customer support
+                                </h2>
+                                <p class="mt-4 text-lg text-gray-500">
+                                    Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui
+                                    tellus ornare pharetra.
+                                </p>
+                                <div class="mt-6">
+                                    <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                                        Get started
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 border-t border-gray-200 pt-6">
+                            <blockquote>
+                                <div>
+                                    <p class="text-base text-gray-500">
+                                        &ldquo;Cras velit quis eros eget rhoncus lacus ultrices sed diam. Sit orci risus aenean curabitur donec aliquet. Mi venenatis in euismod ut.&rdquo;
+                                    </p>
+                                </div>
+                                <footer class="mt-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="flex-shrink-0">
+                                            <img class="h-6 w-6 rounded-full" src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="" />
+                                        </div>
+                                        <div class="text-base font-medium text-gray-700">
+                                            Marcia Hill, Digital Marketing Manager
+                                        </div>
+                                    </div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="mt-12 sm:mt-16 lg:mt-0">
+                        <div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                            <img
+                                class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
+                                alt="Inbox user interface"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+            <div class="mt-24">
+                <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                    <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+                        <div>
+                            <div>
+                                <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
+                                    <!-- Heroicon name: outline/sparkles -->
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="mt-6">
+                                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
+                                    Better understand your customers
+                                </h2>
+                                <p class="mt-4 text-lg text-gray-500">
+                                    Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui
+                                    tellus ornare pharetra.
+                                </p>
+                                <div class="mt-6">
+                                    <a href="#" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                                        Get started
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+                        <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                            <img
+                                class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg"
+                                alt="Customer profile user interface"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Comparison table -->
-        <div class="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <!-- <div class="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"> -->
+        <div class="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-0">
             <!-- xs to lg -->
             <div class="space-y-24 lg:hidden">
                 <section>
@@ -660,7 +730,9 @@
                                         </p>
                                     </div>
 
-                                    <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-orange-500 to-pink-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">Buy Basic</a>
+                                    <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-green-500 to-green-600 border border-transparent rounded-md shadow py-4 text-2xl font-semibold text-white text-center hover:to-green-700">
+                                        GET STARTED
+                                    </a>
                                 </div>
                             </td>
 
@@ -677,7 +749,7 @@
                                         </p>
                                     </div>
 
-                                    <a href="javascript://" class="mt-6 block w-full bg-green-600 border border-transparent rounded-md shadow py-4 text-2xl font-semibold text-white text-center hover:to-pink-600">
+                                    <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-green-500 to-green-600 border border-transparent rounded-md shadow py-4 text-2xl font-semibold text-white text-center hover:to-green-700">
                                         GET STARTED
                                     </a>
                                 </div>
@@ -696,7 +768,7 @@
                                         </p>
                                     </div>
 
-                                    <a href="javascript://" class="mt-6 block w-full bg-gray-500 border border-transparent rounded-md shadow py-2 text-sm font-semibold text-white text-center hover:to-pink-600">
+                                    <a href="javascript://" class="mt-6 block w-full bg-gradient-to-r from-blue-400 to-blue-500 border border-transparent rounded-md shadow py-4 text-2xl font-semibold text-white text-center hover:to-blue-800">
                                         CONTACT US
                                     </a>
                                 </div>
@@ -1139,6 +1211,16 @@
                             </dd>
                         </div>
 
+                        <div class="space-y-2">
+                            <dt class="text-lg leading-6 font-medium text-gray-900">
+                                What happens during automated testing?
+                            </dt>
+
+                            <dd class="text-base text-gray-500">
+                                Simulation of hundreds of thousands of interactions with your smart contract on a test blockchain using a suite of automated test tools to determine if any security vulnerabilities exist.
+                            </dd>
+                        </div>
+
                     </dl>
                 </div>
             </div>
@@ -1189,26 +1271,25 @@
 
 <script>
 /* Import components. */
-// import UnderConstruction from '@/components/UnderConstruction'
+import Header from '@/components/PageHeader'
 
 export default {
     components: {
-        // UnderConstruction,
+        Header,
     },
     data: () => {
         return {
-            //
+            title: null,
+            description: null,
         }
     },
     created: async function () {
-        /* Retrieve session. */
-        // const session = await this.hasSession()
-        //     .catch(err => console.error('Session Error:', err))
+        /* Set page title. */
+        this.title = `Smart Audits`
 
-        /* Validate session. */
-        // if (!session) {
-        //     return
-        // }
+        /* Set page description. */
+        this.description = `Perform a comprehensive suite of <span class="text-gray-100 font-medium">automated audits</span> on your application's smart contracts and backend services.`
+
     },
     mounted: function () {
         //
