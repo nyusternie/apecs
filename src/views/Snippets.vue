@@ -1,14 +1,17 @@
 <template>
     <main class="p-10">
         <h1 class="text-3xl">
-            Solidity Code Snippets
+            Code Snippets
         </h1>
 
-        <h1 class="mt-5 text-3xl font-bold">Math.sol</h1>
+        <h1 class="mt-5 text-3xl font-bold">
+            Math.sol
+            <small class="text-xs text-gray-500">SOLIDITY</small>
+        </h1>
 
-        <p class="mt-3 text-xl font-medium">
+        <div class="mt-3 p-5 font-medium bg-yellow-100 border-4 border-yellow-300 rounded-xl">
             Provides a library for performing various math operations.
-        </p>
+        </div>
 
         <section class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
 <code><pre>

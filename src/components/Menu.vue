@@ -94,7 +94,7 @@
             <div class="flex flex-col border-r border-gray-200 pt-0 pb-0 bg-gray-100">
 
                 <router-link to="/" class="brand-link">
-                    <div class="flex flex-row justify-between pr-3">
+                    <div class="flex flex-row justify-between pr-3 border-b-4 border-gray-300 rounded-xl">
                         <img
                             src="@/assets/img/icon.png"
                             alt="DevOps Icon"
@@ -102,7 +102,7 @@
                         >
 
                         <div class="flex flex-col text-center flex-grow justify-center">
-                            <span class="block text-4xl font-base text-gray-400">CA<span class="text-green-500">$</span>H</span>
+                            <span class="block text-4xl font-base text-gray-400">C <span class="ml-1">A</span> <span class="text-green-500">$</span> H</span>
                             <span class="block text-4xl font-bold text-gray-500">DevOps</span>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
 
                 <!-- <div class="h-0 flex-1 flex flex-col overflow-y-auto"> -->
                     <!-- User account dropdown -->
-                    <div class="px-0 mt-1 relative inline-block text-left">
+                    <div class="hidden px-0 mt-1 relative inline-block text-left">
                         <!-- <div> -->
                             <button
                                 type="button"
@@ -359,7 +359,7 @@
                 <!-- </div> -->
 
                 <footer class='py-3 text-sm bg-gray-100 text-center border-t-2 border-gray-200'>
-                    <span class="block">Cash DevOps is <span class="font-bold">100% FREE</span> as in beer</span>
+                    <span class="block">&bullet; &nbsp; DevOps is <span class="font-bold">100% FREE</span> as in beer &nbsp; &bullet;</span>
 
                     <span class="block mt-2">
                         Latest: <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
