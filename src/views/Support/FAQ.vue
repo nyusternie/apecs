@@ -1,20 +1,27 @@
 <template>
-    <main class="bg-gray-50">
-        <!-- <Header pageId="faq" /> -->
+    <main class="">
+        <Header :title="title" :description="description" />
 
         <div class="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-gray-900">
-                Frequently asked questions
-            </h2>
+
             <div class="mt-8">
                 <dl class="divide-y divide-gray-200">
                     <div class="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">
                         <dt class="text-base font-medium text-gray-900 md:col-span-5">
-                            What&#039;s the best thing about Switzerland?
+                            How do I setup my own Bitcoin testnet?
                         </dt>
+
                         <dd class="mt-2 md:mt-0 md:col-span-7">
                             <p class="text-base text-gray-500">
-                                I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
+                                There are several options available to get started with a local testnet.
+                            </p>
+
+                            <p class="text-base text-gray-500">
+                                PandaCash offers a instant Regtest node for easily testing new applications.
+                            </p>
+
+                            <p class="text-base text-gray-500">
+                                DevOps offers several popular sandboxes (BCH, sBCH, BSC, ETH) in our Workspaces area.
                             </p>
                         </dd>
                     </div>
@@ -24,33 +31,29 @@
             </div>
         </div>
     </main>
-    <!-- <main>
-
-        <section class="content">
-            <div class="container-fluid">
-                <UnderConstruction />
-            </div>
-        </section>
-    </main> -->
 </template>
 
 <script>
 /* Import components. */
-// import Header from '@/components/Header'
-// import UnderConstruction from '@/components/UnderConstruction'
+import Header from '@/components/PageHeader'
 
 export default {
     components: {
-        // Header,
-        // UnderConstruction,
+        Header,
     },
     data: () => {
         return {
-            //
+            title: null,
+            description: null,
         }
     },
     created: async function () {
-        //
+        /* Set page title. */
+        this.title = `Frequently Asked Questions`
+
+        /* Set page description. */
+        this.description = `We know you have lots of questions, so we've collected <span class="text-gray-100 font-medium">TOP DEVS</span> from all over crypto to give you the right answers.`
+
     },
     mounted: function () {
         //

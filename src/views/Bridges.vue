@@ -131,9 +131,12 @@ export default {
         //     return
         // }
 
+        /* Set page title. */
         this.title = `Testnet Bridges`
 
+        /* Set page description. */
         this.description = `Move your tokens <span class="text-gray-100 font-medium">quickly and easily</span> between Smart Bitcoin, Binance Smart Chain and Ethereum.`
+
     },
     mounted: function () {
         //

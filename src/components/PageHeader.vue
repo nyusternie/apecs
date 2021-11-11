@@ -18,6 +18,7 @@
 
                     <div class="mt-1.5 relative">
                         <select id="currency" name="currency" class="block w-full bg-none bg-indigo-400 bg-opacity-25 border border-transparent text-white focus:ring-white focus:border-white rounded-md">
+                            <option class="bg-gray-900">Bitcoin Cash (BCH)</option>
                             <option class="bg-gray-900">Binance Smart Chain (BSC)</option>
                             <option class="bg-gray-900">Ethereum (ETH)</option>
                             <option class="bg-gray-900" selected>Smart Bitcoin (sBCH)</option>
