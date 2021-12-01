@@ -126,7 +126,7 @@ export default {
             throw new Error('No address provided')
         }
 
-        if (this.$route.path.slice(0, 6) === '/tsbch') {
+        if (this.$route.path.slice(0, 6) === '/amber') {
             this.endpoint = 'https://smartbch.devops.cash/testnet'
         } else {
             this.endpoint = 'https://smartbch.devops.cash/mainnet'

@@ -30,7 +30,7 @@ const routes = [
         component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Address'),
     },
     {
-        path: '/tsbch/address/:address',
+        path: '/amber/address/:address',
         component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Address'),
     },
     {
@@ -42,17 +42,27 @@ const routes = [
         component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Transaction'),
     },
     {
-        path: '/tsbch/transaction/:txid',
+        path: '/amber/transaction/:txid',
         component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Transaction'),
     },
     {
-        path: '/tsbch/tx/:txid',
+        path: '/amber/tx/:txid',
         component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Transaction'),
     },
     {
         path: '/smartbch/contracts',
         component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Contracts'),
     },
+    {
+        path: '/smartbch/exchange',
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Exchange'),
+    },
+    {
+        path: '/smartbch/verify',
+        component: () => import(/* webpackChunkName: "smartbch" */ '@/views/Workspaces/SmartBCH/Verify'),
+    },
+
+    /* Studios */
     {
         path: '/studios',
         component: () => import(/* webpackChunkName: "studios" */ '@/views/Workspaces/Studios'),
@@ -131,10 +141,10 @@ const routes = [
         path: '/sandbox/tx',
         component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Transaction'),
     },
-    {
-        path: '/sandbox/u2f',
-        component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/U2F'),
-    },
+    // {
+    //     path: '/sandbox/u2f',
+    //     component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/U2F'),
+    // },
     {
         path: '/sandbox/wallet',
         component: () => import(/* webpackChunkName: "labs" */ '@/views/Workspaces/Sandbox/Wallet'),

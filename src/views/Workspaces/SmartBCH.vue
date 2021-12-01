@@ -185,11 +185,11 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="javascript://" class="focus:outline-none">
+                                        <router-link to="/smartbch/exchange" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Exchange
-                                        </a>
+                                        </router-link>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
@@ -215,14 +215,14 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <a href="javascript://" class="focus:outline-none">
+                                        <router-link to="/smartbch/verify" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
-                                            Reports
-                                        </a>
+                                            Contract Verification
+                                        </router-link>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
-                                        Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
+                                        Quickly and easily verify your smart contracts are deployed with the proper bytecode.
                                     </p>
                                 </div>
                                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
@@ -345,7 +345,10 @@ export default {
                 .Web3Provider(window.ethereum, 'any')
 
             /* Prompt user for account connections. */
-            // await provider.send('eth_requestAccounts', [])
+            await provider
+                .send('eth_requestAccounts', [])
+                .catch(err => console.error(err))
+
             // await provider.send('wallet_watchAsset', {
             //     type: 'ERC20',
             //     options: {
@@ -355,6 +358,7 @@ export default {
             //         image: 'https://url.here',
             //     },
             // })
+            // .catch(err => console.error(err))
 
             /* Set signer. */
             const signer = provider.getSigner()
