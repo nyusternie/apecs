@@ -114,8 +114,6 @@ export default new VueRouter({
         }
     },
     mode: process.env.BASE_URL === '/' ? 'history': 'hash',
-    // mode: 'hash',
-    // mode: 'history',
     base: process.env.BASE_URL,
     linkActiveClass: 'active', // TODO: We should localize this to Navbar's scope.
     routes,
