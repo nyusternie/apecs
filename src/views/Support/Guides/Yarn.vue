@@ -1,84 +1,54 @@
 <template>
-    <main>
-        <Navbar class="hidden" />
+    <main class="p-10">
 
-        <!-- Page Section -->
-        <section class="p-10">
-            <div class="container-fluid">
+        <h3 class="text-2xl font-medium">
+            Add the public key
+        </h3>
 
-                <div class="row">
-                    <div class="col-md-6">
+        <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+            <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">
+                curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+            </textarea>
+        </div>
 
-                        <div class="card">
-                            <div class="card-body">
+        <h3 class="mt-10 text-2xl font-medium">
+            Add the new source
+        </h3>
 
-                                <code>
-                                    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-                                </code>
+        <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+            <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">
+                echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+            </textarea>
+        </div>
 
-                                <hr />
+        <h3 class="mt-10 text-2xl font-medium">
+            Update the repository
+        </h3>
 
-                                <code>
-                                    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-                                </code>
+        <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+            <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">
+                apt update
+            </textarea>
+        </div>
 
-                                <hr />
+        <h3 class="mt-10 text-2xl font-medium">
+            Install Yarn
+        </h3>
 
-                                <code>
-                                    apt update
-                                </code>
+        <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+            <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">
+                apt install yarn
+            </textarea>
+        </div>
 
-                                <hr />
-
-                                <code>
-                                    apt install yarn
-                                </code>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fas fa-info-circle mr-1"></i>
-                                    Yarn Guide
-                                </h3>
-                            </div>
-
-                            <div class="card-body">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Description lists</dt>
-                                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
-                                    <dt class="col-sm-4">Euismod</dt>
-                                    <dd class="col-sm-8">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                    <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd>
-                                    <dt class="col-sm-4">Malesuada porta</dt>
-                                    <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
-                                    <dt class="col-sm-4">Felis euismod semper eget lacinia</dt>
-                                    <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-                                        sit amet risus.
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
     </main>
+
 </template>
 
 <script>
-/* Import components. */
-import Navbar from './Navbar'
-
 export default {
     components: {
-        Navbar,
+        //
     },
     data: () => {
         return {

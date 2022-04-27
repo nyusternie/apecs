@@ -42,11 +42,6 @@ const routes = [
     },
 
     {
-        path: '/bridges',
-        component: () => import(/* webpackChunkName: "bridges" */ '@/views/Bridges'),
-    },
-
-    {
         path: '/discuss',
         component: () => import(/* webpackChunkName: "discuss" */ '@/views/Discus'),
     },

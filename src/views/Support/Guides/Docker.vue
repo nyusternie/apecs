@@ -4,7 +4,9 @@
 
         <div class="grid grid-cols-5 gap-4 h-full overflow-hidden pb-20 bg-red-500">
             <section class="col-span-3 p-3 h-full overflow-y-scroll bg-purple-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p class="text-xl">
+                    Installing Docker to a Debian/Ubuntu machine is quick and easy.
+                </p>
 
                 <div class="my-3 flex justify-between border-2 border-gray-500 p-3 rounded-xl bg-white">
                     <span>
@@ -13,6 +15,7 @@
 
                     <svg class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
                 </div>
+
 
 Nulla facilisi cras fermentum odio eu feugiat pretium. In dictum non consectetur a erat. At lectus urna duis convallis convallis tellus. A condimentum vitae sapien pellentesque habitant. Viverra nam libero justo laoreet. Sed id semper risus in hendrerit gravida rutrum quisque. Ullamcorper dignissim cras tincidunt lobortis feugiat. Amet cursus sit amet dictum sit amet. Donec adipiscing tristique risus nec feugiat in fermentum posuere. Tincidunt dui ut ornare lectus sit amet est placerat in. Bibendum ut tristique et egestas quis ipsum. Ultrices neque ornare aenean euismod elementum. Consequat mauris nunc congue nisi vitae suscipit tellus mauris. Nunc scelerisque viverra mauris in aliquam sem fringilla. Et malesuada fames ac turpis egestas integer eget. Tristique nulla aliquet enim tortor at auctor urna.
 
