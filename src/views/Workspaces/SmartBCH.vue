@@ -512,7 +512,8 @@ export default {
 
             /* Make RPC request. */
             const response = await superagent
-                .post('https://smartbch.devops.cash/mainnet')
+                // .post('https://smartbch.devops.cash/mainnet')
+                .post('https://smartbch.fountainhead.cash/mainnet')
                 .set('Content-Type', 'application/json')
                 .send(request)
                 .catch(err => console.error(err))

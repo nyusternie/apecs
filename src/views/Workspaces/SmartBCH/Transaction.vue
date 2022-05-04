@@ -261,7 +261,8 @@ export default {
             /* Make RPC request. */
             const response = await superagent
                 // .post('https://smartbch.devops.cash/mainnet')
-                .post('https://smartbch.devops.cash/testnet')
+                .post('https://smartbch.fountainhead.cash/mainnet')
+                // .post('https://smartbch.devops.cash/testnet')
                 .set('Content-Type', 'application/json')
                 .send(request)
                 .catch(err => console.error(err))
@@ -331,7 +332,8 @@ export default {
             /* Make RPC request. */
             const response = await superagent
                 // .post('https://smartbch.devops.cash/mainnet')
-                .post('https://smartbch.devops.cash/testnet')
+                .post('https://smartbch.fountainhead.cash/mainnet')
+                // .post('https://smartbch.devops.cash/testnet')
                 .set('Content-Type', 'application/json')
                 .send(request)
                 .catch(err => console.error(err))

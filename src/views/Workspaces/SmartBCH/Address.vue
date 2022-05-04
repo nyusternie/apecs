@@ -129,7 +129,8 @@ export default {
         if (this.$route.path.slice(0, 6) === '/amber') {
             this.endpoint = 'https://smartbch.devops.cash/testnet'
         } else {
-            this.endpoint = 'https://smartbch.devops.cash/mainnet'
+            // this.endpoint = 'https://smartbch.devops.cash/mainnet'
+            this.endpoint = 'https://smartbch.fountainhead.cash/mainnet'
         }
 
         /* Set transaction id. */
