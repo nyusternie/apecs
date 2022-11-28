@@ -400,7 +400,7 @@
 
 <script>
 /* Initialize vuex. */
-import { mapState } from 'vuex'
+// import { mapState } from 'vuex'
 
 /* Import modules. */
 import superagent from 'superagent'
@@ -409,8 +409,8 @@ import superagent from 'superagent'
 // import Header from '@/components/Header'
 
 /* Import (local) components. */
-import { Links } from '@/components/Projects'
-import Pinned from './Projects/Pinned'
+// import { Links } from '@/components/Projects'
+// import Pinned from './Projects/Pinned'
 
 export default {
     components: {
@@ -425,10 +425,10 @@ export default {
         }
     },
     computed: {
-        ...mapState({
-            /* System */
-            apiUrl: state => state.system.apiUrl,
-        }),
+        // ...mapState({
+        //     /* System */
+        //     apiUrl: state => state.system.apiUrl,
+        // }),
     },
     methods: {
         openProfile(_profileId) {
