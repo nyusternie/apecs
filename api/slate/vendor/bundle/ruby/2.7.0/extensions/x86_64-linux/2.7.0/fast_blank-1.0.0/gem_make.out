@@ -1,0 +1,15 @@
+current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/fast_blank-1.0.0/ext/fast_blank
+/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20210903-366785-ak3mha.rb extconf.rb
+creating Makefile
+
+current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR=" clean
+
+current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR="
+compiling fast_blank.c
+linking shared-object fast_blank.so
+
+current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fast_blank.so ./.gem.20210903-366785-1t0gef
