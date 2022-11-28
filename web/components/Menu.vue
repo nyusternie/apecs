@@ -1,5 +1,5 @@
 <template>
-    <main class="overflow-x-hidden overflow-y-scroll">
+    <main class="w-80 h-screen overflow-x-hidden overflow-y-scroll">
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
         <div v-if="showMobileMenu" class="fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
@@ -384,7 +384,8 @@ export default {
         this.showMobileMenu = false
         this.showWorkspacesMenu = false
 
-        this.version = require('../../package.json').version
+        // this.version = require('../package.json').version
+        this.version = this.$config.clientVersion
     },
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <main class="relative h-screen flex bg-white overflow-y-hidden">
-        <Menu class="hidden lg:block w-80" v-if="showMenu" />
+        <!-- <Menu class="hidden lg:block w-80" v-if="showMenu" /> -->
 
         <div class="bg-gray-100 w-full">
             <Header @toggleMenu="toggleMenu" />
@@ -14,7 +14,7 @@
 
 <script>
 /* Import components. */
-import Menu from '@/components/Menu'
+// import Menu from '@/components/Menu'
 import Header from '@/components/Header'
 // import Navbar from '@/components/Navbar'
 // import Sidebar from '@/components/Sidebar'
@@ -22,7 +22,7 @@ import Header from '@/components/Header'
 
 export default {
     components: {
-        Menu,
+        // Menu,
         Header,
         // Navbar,
         // Sidebar,
