@@ -1,7 +1,5 @@
 <template>
     <main>
-        <SupportGuidesNavbar class="hidden" />
-
         <div class="flex flex-row gap-4 h-full overflow-hidden pb-20 bg-red-500">
             <section class="col-span-3 p-3 h-full overflow-y-scroll bg-gray-200">
                 <router-link to="/guides/docker" class="block mt-5 p-3 border-4 border-gray-400 rounded-xl">

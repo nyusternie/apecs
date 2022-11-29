@@ -5,9 +5,9 @@
         <section class="h-screen bg-gradient-to-r from-gray-50 to-gray-200">
             <SiteHeader />
 
-            <main id="content-win" class="overflow-x-hidden overflow-y-scroll">
+            <div id="content-win">
                 <slot />
-            </main>
+            </div>
         </section>
     </main>
 </template>
@@ -31,7 +31,7 @@ main::-webkit-scrollbar-thumb, section::-webkit-scrollbar-thumb {
 
 <!-- Matomo -->
 <script>
-if (typeof process === 'undefined' || process.browser) {
+if (typeof process === 'undefined' || process.client) {
     var _paq = window._paq = window._paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(['trackPageView']);
