@@ -3,7 +3,7 @@
         <Menu class="w-80 h-screen flex-none overflow-x-hidden overflow-y-scroll" />
 
         <section class="h-screen bg-gradient-to-r from-gray-50 to-gray-200">
-            <Header />
+            <SiteHeader />
 
             <main id="content-win" class="overflow-x-hidden overflow-y-scroll">
                 <slot />

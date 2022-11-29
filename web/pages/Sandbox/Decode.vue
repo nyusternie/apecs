@@ -69,24 +69,32 @@
 
             </div>
         </section>
+
+        <section class="mt-5">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quasi magnam! Qui deleniti, nulla ipsam voluptatum, non quis ut libero at ipsum delectus, placeat perspiciatis. Atque repellat id earum dolorem?
+            </p>
+        </section>
     </main>
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-// import Navbar from './Navbar'
+definePageMeta({ layout: 'sandbox' })
 
 export default {
-    components: {
-        // Header,
-        // Navbar,
-    },
-    data: () => {
-        return {
-            base64: null,
-        }
-    },
+    data: () => ({
+        base64: null,
+    }),
+    head: () => ({
+        title: 'Decode — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: 'Perform various decoding operations.'
+            }
+        ]
+    }),
     computed: {
         base64Decoded() {
             if (this.base64) {

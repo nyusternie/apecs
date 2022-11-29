@@ -43,7 +43,7 @@ export default {
         //
     }),
     head: () => ({
-        title: 'Blank — Nexa Rocks!',
+        title: 'Blank — Cash DevOps',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

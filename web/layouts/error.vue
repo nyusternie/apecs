@@ -5,9 +5,9 @@
 
         <NuxtLink to="/">Home page</NuxtLink>
     </main>
-  </template>
+</template>
 
-  <script>
+<script>
 export default {
     props: ['error'],
     layout: 'error' // you can set a custom layout for the error page

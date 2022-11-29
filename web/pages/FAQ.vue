@@ -37,6 +37,16 @@ export default {
         title: null,
         description: null,
     }),
+    head: () => ({
+        title: 'FAQ — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: 'TBD..'
+            }
+        ]
+    }),
     created: function () {
         /* Set page title. */
         this.title = `Frequently Asked Questions`

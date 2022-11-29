@@ -357,9 +357,9 @@
                     <span class="block">&bullet; &nbsp; DevOps is <span class="font-bold">100% FREE</span> as in beer &nbsp; &bullet;</span>
 
                     <span class="block mt-2">
-                        Latest: <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
+                        Latest: <a href="https://github.com/avasdao/devops" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
                         &nbsp; &bullet; &nbsp;
-                        (<a href="https://gitlab.com/bchplease/devops.cash/-/releases" target="_blank" class="text-red-500 font-bold">other releases</a>)
+                        (<a href="https://github.com/avasdao/devops/-/releases" target="_blank" class="text-red-500 font-bold">other releases</a>)
                     </span>
                 </footer>
 
