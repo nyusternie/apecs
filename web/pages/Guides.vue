@@ -1,8 +1,8 @@
 <template>
     <main>
-        <Navbar class="hidden" />
+        <SupportGuidesNavbar class="hidden" />
 
-        <div class="grid grid-cols-5 gap-4 h-full overflow-hidden pb-20 bg-red-500">
+        <div class="flex flex-row gap-4 h-full overflow-hidden pb-20 bg-red-500">
             <section class="col-span-3 p-3 h-full overflow-y-scroll bg-gray-200">
                 <router-link to="/guides/docker" class="block mt-5 p-3 border-4 border-gray-400 rounded-xl">
                     <div class="flex items-center text-3xl font-bold">
@@ -94,7 +94,7 @@
 
             </section>
 
-            <section class="col-span-2 p-3 bg-yellow-400">
+            <section class="p-3 bg-yellow-400">
                 <div class="flex items-center">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
 
@@ -128,13 +128,7 @@
 </template>
 
 <script>
-/* Import components. */
-import Navbar from './Guides/Navbar'
-
 export default {
-    components: {
-        Navbar,
-    },
     data: () => {
         return {
             //
@@ -146,11 +140,11 @@ export default {
     methods: {
         //
     },
-    created: async function () {
+    created: function () {
         //
     },
     mounted: function () {
-
+        //
     },
 }
 </script>

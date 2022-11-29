@@ -40,6 +40,16 @@ export default {
             showMenu: null,
         }
     },
+    head: () => ({
+        title: 'Cash DevOps — HQ for Crypto Builders',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `A FOSS Development Operations Center for crypto's Cash builders.`
+            }
+        ]
+    }),
     methods: {
         toggleMenu() {
             this.showMenu = !this.showMenu

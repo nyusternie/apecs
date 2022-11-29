@@ -1,11 +1,13 @@
 <template>
-    <main class="w-screen flex flex-row bg-green-400">
-        <Menu />
+    <main class="w-screen flex flex-row bg-pink-500">
+        <Menu class="w-80 h-screen flex-none overflow-x-hidden overflow-y-scroll" />
 
-        <section>
+        <section class="h-screen">
             <Header />
 
-            <slot id="content-win" class="overflow-x-hidden overflow-y-scroll h-full" />
+            <main id="content-win" class="overflow-x-hidden overflow-y-scroll">
+                <slot />
+            </main>
         </section>
     </main>
 </template>
