@@ -19,7 +19,6 @@
     "ethers": "5.7.2",
     "moment": "2.29.4",
     "numeral": "2.0.6",
-    "nuxt-matomo": "1.2.4",
     "superagent": "8.0.3",
     "uuid": "9.0.0"
   },

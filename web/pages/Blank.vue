@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 
 export default {
     // middleware: 'magic.auth',
@@ -53,9 +53,9 @@ export default {
         ]
     }),
     computed: {
-        ...mapGetters({
-            // panelIsShowing: 'system/getPanelState'
-        })
+        // ...mapGetters({
+        //     // panelIsShowing: 'system/getPanelState'
+        // })
     },
     created: function () {
         //

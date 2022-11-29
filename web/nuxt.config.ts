@@ -4,7 +4,6 @@ import pkg from './package.json'
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
-        ['nuxt-matomo', { matomoUrl: '//matomo.avasdao.org/', siteId: 7 }],
     ],
     publicRuntimeConfig: {
         clientVersion: pkg.version,
