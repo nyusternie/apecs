@@ -1,7 +1,5 @@
 <template>
     <main class="">
-        <Header :title="title" :description="description" />
-
         <div class="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
 
             <div class="mt-8">
@@ -34,20 +32,12 @@
 </template>
 
 <script>
-/* Import components. */
-import Header from '@/components/PageHeader'
-
 export default {
-    components: {
-        Header,
-    },
-    data: () => {
-        return {
-            title: null,
-            description: null,
-        }
-    },
-    created: async function () {
+    data: () => ({
+        title: null,
+        description: null,
+    }),
+    created: function () {
         /* Set page title. */
         this.title = `Frequently Asked Questions`
 
@@ -60,7 +50,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-/*  */
-</style>

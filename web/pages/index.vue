@@ -7,20 +7,6 @@
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-
-/* Import (local) components. */
-// import Calendar from '@/components/dashboard/Calendar'
-// import Featured from '@/components/dashboard/Featured'
-// import Feeds from '@/components/dashboard/Feeds'
-// import Goals from '@/components/dashboard/Goals'
-// import Highlights from '@/components/dashboard/Highlights'
-// import Newcomers from '@/components/dashboard/Newcomers'
-// import Todo from '@/components/dashboard/Todo'
-// import Trends from '@/components/dashboard/Trends'
-// import Updates from '@/components/dashboard/Updates'
-
 export default {
     components: {
         // Header,

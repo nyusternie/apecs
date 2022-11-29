@@ -93,7 +93,7 @@
         <main class="hidden lg:block lg:flex-shrink-0">
             <div class="flex flex-col border-r border-gray-200">
 
-                <router-link to="/" class="brand-link bg-gradient-to-r from-gray-50 to-gray-200 border-b-4 border-gray-300 rounded-b-3xl overflow-hidden">
+                <NuxtLink to="/" class="brand-link bg-gradient-to-r from-gray-50 to-gray-200 border-b-4 border-gray-300 rounded-b-3xl overflow-hidden">
                     <div class="flex flex-row justify-between pr-3">
                         <img
                             src="@/assets/img/icon.png"
@@ -106,7 +106,7 @@
                             <span class="block text-4xl font-bold text-gray-500">DevOps</span>
                         </div>
                     </div>
-                </router-link>
+                </NuxtLink>
 
                 <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex" v-if="account">
                     <div class="avatar" v-if="account.emoji">
@@ -194,15 +194,15 @@
                         <nav class="flex-1 px-2 pt-2 space-y-8 bg-white" aria-label="Sidebar">
                             <div class="space-y-1">
                                 <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                                <router-link to="/" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <NuxtLink to="/" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <svg class="text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                                     Dashboard
-                                </router-link>
+                                </NuxtLink>
 
-                                <router-link to="/projects" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <NuxtLink to="/projects" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                                     Projects
-                                </router-link>
+                                </NuxtLink>
 
                                 <div class="space-y-1">
                                     <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
@@ -224,17 +224,17 @@
                                     </button>
 
                                     <div v-if="showDesktopMenu" class="space-y-1" id="sub-menu-1">
-                                        <router-link to="/newsfeed" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <NuxtLink to="/newsfeed" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             Newsfeed
-                                        </router-link>
+                                        </NuxtLink>
 
-                                        <router-link to="/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <NuxtLink to="/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             Notebook
-                                        </router-link>
+                                        </NuxtLink>
 
-                                        <router-link to="/file-mgr" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <NuxtLink to="/file-mgr" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             File Manager
-                                        </router-link>
+                                        </NuxtLink>
 
                                         <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             open my desktop..
@@ -262,31 +262,31 @@
                                     </button>
 
                                     <div v-if="showWorkspacesMenu" class="space-y-1" id="sub-menu-1">
-                                        <router-link to="/sandbox" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <NuxtLink to="/sandbox" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             <div>Sandbox</div>
                                             <div class="float-right badge badge-danger">New</div>
-                                        </router-link>
+                                        </NuxtLink>
 
-                                        <router-link to="/smartbch" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <NuxtLink to="/smartbch" class="group w-full flex justify-between items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             Smart Bitcoin
                                             <div class="float-right badge badge-danger">New</div>
-                                        </router-link>
+                                        </NuxtLink>
 
-                                        <router-link to="/workspaces" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <NuxtLink to="/workspaces" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             more workspaces..
-                                        </router-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
 
-                                <router-link to="/stats" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <NuxtLink to="/stats" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
                                     Statistics
-                                </router-link>
+                                </NuxtLink>
 
-                                <router-link to="/faucets" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <NuxtLink to="/faucets" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
                                     Faucets
-                                </router-link>
+                                </NuxtLink>
 
                             </div>
 
@@ -296,29 +296,29 @@
                                 </h3>
 
                                 <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                    <router-link to="/dapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <NuxtLink to="/dapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
                                             15 Min DApps
                                         </span>
-                                    </router-link>
+                                    </NuxtLink>
 
-                                    <router-link to="/guides" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <NuxtLink to="/guides" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
                                             Guides &amp; Tutorials
                                         </span>
-                                    </router-link>
+                                    </NuxtLink>
 
-                                    <router-link to="/snippets" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <NuxtLink to="/snippets" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
                                             Code Snippets
                                         </span>
-                                    </router-link>
+                                    </NuxtLink>
 
-                                    <router-link to="/faq" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <NuxtLink to="/faq" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
                                             FAQ
                                         </span>
-                                    </router-link>
+                                    </NuxtLink>
 
                                     <a href="https://docs.devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
@@ -340,9 +340,9 @@
                                         </span>
                                     </a>
 
-                                    <a href="https://gitlab.com/bchplease/devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <a href="https://github.com/avasdao/devops" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            Fork us on GitLab
+                                            Fork us on GitHub
                                         </span>
                                     </a>
 
