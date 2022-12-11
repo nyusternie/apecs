@@ -193,7 +193,7 @@
                 </router-link>
 
                 <!-- Transaction -->
-                <router-link to="/sandbox/tx" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/transaction" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Transaction
                     </h1>

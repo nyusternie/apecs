@@ -67,6 +67,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-info-circle mr-1"></i>
+                                    <font-awesome-icon icon="fa-solid fa-user-secret" />
                                     Decoding Tools
                                 </h3>
                             </div>

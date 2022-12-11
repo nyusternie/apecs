@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="bg-yellow-200">
         <div class="form-group">
             <label>Decode Raw Transaction</label>
             <textarea
@@ -73,14 +73,15 @@ export default {
     },
     data: () => {
         return {
-            rawTxHex: '020000000141f7f072c1cba4a6b50266f1c574b391166590da4d7fb10c2e61e80e69bf9d15000000006441c374bfb607aef669ebad0ecdc13c0cdb71e5e0cd97b40631a5f11dcedf428634a486ab3aefdfc651dc3ee040307d7fabe4a70c9586efab9348828f48624c2adcc12102130221d09ef7d2fdba9db903246a8e69bed0125ab4e44dc5a6dac66b87d13b2affffffff019e1d0000000000001976a91430a8161ef13bb7fccea6283159e47553f8a576e888ac00000000',
+            // rawTxHex: '020000000141f7f072c1cba4a6b50266f1c574b391166590da4d7fb10c2e61e80e69bf9d15000000006441c374bfb607aef669ebad0ecdc13c0cdb71e5e0cd97b40631a5f11dcedf428634a486ab3aefdfc651dc3ee040307d7fabe4a70c9586efab9348828f48624c2adcc12102130221d09ef7d2fdba9db903246a8e69bed0125ab4e44dc5a6dac66b87d13b2affffffff019e1d0000000000001976a91430a8161ef13bb7fccea6283159e47553f8a576e888ac00000000',
+            rawTxHex: null,
         }
     },
     computed: {
         txVersion() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx version. */
-                const txVersion = this.rawTxHex.slice(0, 8)
+                const txVersion = 'a'//this.rawTxHex.slice(0, 8)
 
                 /* Return tx version. */
                 return txVersion
@@ -91,9 +92,9 @@ export default {
         },
 
         txInputCount() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx input count. */
-                const txInputCount = this.rawTxHex.slice(8, 10)
+                const txInputCount = 'b'//this.rawTxHex.slice(8, 10)
 
                 /* Return tx input count. */
                 return txInputCount
@@ -104,9 +105,9 @@ export default {
         },
 
         txId() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx id. */
-                const txId = this.rawTxHex.slice(10, 74)
+                const txId = 'c'//this.rawTxHex.slice(10, 74)
 
                 /* Reverse endianness. */
                 const reversed = this.reverseBytes(txId)
@@ -120,9 +121,9 @@ export default {
         },
 
         txOutpointIndex() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txOutpointIndex = this.rawTxHex.slice(74, 82)
+                const txOutpointIndex = 'd'//this.rawTxHex.slice(74, 82)
 
                 /* Return tx input count. */
                 return txOutpointIndex
@@ -133,9 +134,9 @@ export default {
         },
 
         txInputScriptBytes() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txInputScriptBytes = this.rawTxHex.slice(82, 84)
+                const txInputScriptBytes = 'e'//this.rawTxHex.slice(82, 84)
 
                 /* Return tx input count. */
                 return txInputScriptBytes
@@ -146,10 +147,10 @@ export default {
         },
 
         txSignature() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
                 // FIXME: Calculate the txInputScriptBytes (length).
-                const txSignature = this.rawTxHex.slice(84, 284)
+                const txSignature = 'f'//this.rawTxHex.slice(84, 284)
 
                 /* Return tx input count. */
                 return txSignature
@@ -160,9 +161,9 @@ export default {
         },
 
         txSequence() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txSequence = this.rawTxHex.slice(284, 292)
+                const txSequence = 'g'//this.rawTxHex.slice(284, 292)
 
                 /* Return tx input count. */
                 return txSequence
@@ -173,9 +174,9 @@ export default {
         },
 
         txOutputCount() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txOutputCount = this.rawTxHex.slice(292, 294)
+                const txOutputCount = 'h'//this.rawTxHex.slice(292, 294)
 
                 /* Return tx input count. */
                 return txOutputCount
@@ -186,9 +187,9 @@ export default {
         },
 
         txValue() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txValue = this.rawTxHex.slice(294, 310)
+                const txValue = 'i'//this.rawTxHex.slice(294, 310)
 
                 /* Reverse endianness. */
                 const reversed = this.reverseBytes(txValue)
@@ -202,9 +203,9 @@ export default {
         },
 
         txOutputScriptBytes() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txOutputScriptBytes = this.rawTxHex.slice(310, 312)
+                const txOutputScriptBytes = 'j'//this.rawTxHex.slice(310, 312)
 
                 /* Return tx input count. */
                 return txOutputScriptBytes
@@ -215,9 +216,9 @@ export default {
         },
 
         txPubKeyScript() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txPubKeyScript = this.rawTxHex.slice(312, 362)
+                const txPubKeyScript = 'k'//this.rawTxHex.slice(312, 362)
 
                 /* Return tx input count. */
                 return txPubKeyScript
@@ -228,9 +229,9 @@ export default {
         },
 
         txLockTime() {
-            if (this.rawTxHex !== '') {
+            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
                 /* Parse tx outpoint index. */
-                const txLockTime = this.rawTxHex.slice(362, 370)
+                const txLockTime = 'l'//this.rawTxHex.slice(362, 370)
 
                 /* Return tx input count. */
                 return txLockTime
@@ -243,9 +244,20 @@ export default {
     },
     methods: {
         reverseBytes(_bytes) {
+            // console.log('BYTES', _bytes)
+
+            if (!Array.isArray(_bytes)) {
+                return _bytes
+            }
+
+            if (typeof _bytes === 'undefined' || !_bytes || _bytes.length === 0) {
+                return _bytes
+            }
+
             /* Reverse bytes. */
             // source: https://stackoverflow.com/a/29017642/514914
             return _bytes.match(/[a-fA-F0-9]{2}/g).reverse().join('')
+            // return _bytes
         },
 
     },

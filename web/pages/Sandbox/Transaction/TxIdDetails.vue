@@ -74,7 +74,7 @@
 
 <script>
 /* Import modules. */
-import { BITBOX } from 'bitbox-sdk'
+// import { BITBOX } from 'bitbox-sdk'
 // import numeral from 'numeral'
 
 export default {
@@ -233,44 +233,44 @@ export default {
         initBitbox() {
             console.info('Initializing BITBOX..')
 
-            try {
-                /* Initialize BITBOX. */
-                this.bitbox = new BITBOX()
-            } catch (err) {
-                console.error(err)
-            }
+            // try {
+            //     /* Initialize BITBOX. */
+            //     this.bitbox = new BITBOX()
+            // } catch (err) {
+            //     console.error(err)
+            // }
         },
 
         /**
          * Update Price
          */
-        async updatePrice() {
-            try {
-                const current = await this.bitbox.Price.current('usd')
-                console.log('CURRENT PRICE', current)
+        // async updatePrice() {
+        //     try {
+        //         const current = await this.bitbox.Price.current('usd')
+        //         console.log('CURRENT PRICE', current)
 
-                this.usd = current
-            } catch (err) {
-                console.error(err)
-            }
-        },
+        //         this.usd = current
+        //     } catch (err) {
+        //         console.error(err)
+        //     }
+        // },
 
         /**
          * Update Transaction Details
          */
-        async updateTxDetails() {
-            if (this.txId !== '') {
-                /* Retrieve transaction details. */
-                const details = await this.bitbox.Transaction
-                    .details(this.txId)
+        // async updateTxDetails() {
+        //     if (this.txId !== '') {
+        //         /* Retrieve transaction details. */
+        //         const details = await this.bitbox.Transaction
+        //             .details(this.txId)
 
-                /* Update (transaction) details. */
-                this.txDetails = details
-            } else {
-                /* Return null. */
-                return null
-            }
-        },
+        //         /* Update (transaction) details. */
+        //         this.txDetails = details
+        //     } else {
+        //         /* Return null. */
+        //         return null
+        //     }
+        // },
 
         // reverseBytes(_bytes) {
         //     /* Reverse bytes. */
@@ -281,13 +281,13 @@ export default {
     },
     created: async function () {
         /* Initialize BITBOX. */
-        this.initBitbox()
+        // this.initBitbox()
 
         /* Update USD. */
-        this.updatePrice()
+        // this.updatePrice()
 
         /* Update (transaction) details. */
-        this.updateTxDetails()
+        // this.updateTxDetails()
 
     },
     mounted: function () {
