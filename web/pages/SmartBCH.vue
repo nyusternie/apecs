@@ -17,7 +17,7 @@
                                         <div class="flex-shrink-0">
                                             <img
                                                 class="mx-auto h-20 w-20 rounded-full"
-                                                :src="require('@/assets/img/logos/smartbch.png')"
+                                                src="~/assets/img/logos/smartbch.png"
                                                 alt=""
                                             />
                                         </div>
