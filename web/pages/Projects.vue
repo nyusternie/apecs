@@ -265,7 +265,7 @@
                                         <span class="badge badge-warning">Started</span>
                                     </td>
                                     <td class="project-actions text-right">
-                                        <Links />
+                                        <ProjectsLinks />
                                     </td>
                                 </tr>
                                 <tr>
@@ -304,7 +304,7 @@
                                         <span class="badge badge-success">BUIDLing</span>
                                     </td>
                                     <td class="project-actions text-right">
-                                        <Links />
+                                        <ProjectsLinks />
                                     </td>
                                 </tr>
                                 <tr>
@@ -340,7 +340,7 @@
                                         <span class="badge badge-success">BUIDLing</span>
                                     </td>
                                     <td class="project-actions text-right">
-                                        <Links />
+                                        <ProjectsLinks />
                                     </td>
                                 </tr>
 
@@ -383,7 +383,7 @@
                                         <span class="badge badge-danger">Planning</span>
                                     </td>
                                     <td class="project-actions text-right">
-                                        <Links />
+                                        <ProjectsLinks />
                                     </td>
                                 </tr>
 
@@ -405,18 +405,11 @@
 /* Import modules. */
 import superagent from 'superagent'
 
-/* Import components. */
-// import Header from '@/components/Header'
-
 /* Import (local) components. */
-// import { Links } from '@/components/Projects'
-// import Pinned from './Projects/Pinned'
+import Pinned from './Projects/Pinned'
 
 export default {
     components: {
-        // Header,
-
-        Links,
         Pinned,
     },
     data: () => {
