@@ -1,6 +1,6 @@
 {
   "name": "cash-devops",
-  "version": "22.11.29",
+  "version": "22.12.11",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
   "description": "Cash DevOps is the premier platform for first-time Crypto builders to advanced Decentralized Finance (DeFi) engineers.",
@@ -13,7 +13,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "bitbox-sdk": "8.11.2",
     "bitcore-lib-cash": "8.25.40",
     "ethereum-blockies-base64": "1.0.2",
     "ethers": "5.7.2",
