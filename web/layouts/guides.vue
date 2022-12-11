@@ -5,7 +5,7 @@
                 <div class="px-0 sm:px-4 lg:px-0 lg:flex lg:justify-between lg:items-start">
                     <slot name="intro" />
 
-                    <slot name="tldr" />
+                    <slot name="links" />
                 </div>
             </div>
         </header>
