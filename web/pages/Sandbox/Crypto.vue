@@ -1,21 +1,11 @@
 <template>
-    <main>
+    <main class="h-full">
         <UnderConstruction />
     </main>
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-// import Navbar from './Navbar'
-import UnderConstruction from '@/components/UnderConstruction'
-
 export default {
-    components: {
-        // Header,
-        // Navbar,
-        UnderConstruction,
-    },
     data: () => {
         return {
             //

@@ -8,13 +8,7 @@
 </template>
 
 <script>
-/* Import components. */
-import UnderConstruction from '@/components/UnderConstruction'
-
 export default {
-    components: {
-        UnderConstruction,
-    },
     data: () => {
         return {
             //
