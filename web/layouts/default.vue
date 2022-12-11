@@ -1,8 +1,8 @@
 <template>
     <main class="w-screen flex flex-row bg-pink-500">
-        <Menu class="w-80 h-screen flex-none overflow-x-hidden overflow-y-scroll" />
+        <Menu class="hidden lg:block w-80 h-screen flex-none overflow-x-hidden overflow-y-scroll" />
 
-        <section class="h-screen bg-gradient-to-r from-gray-50 to-gray-200">
+        <section class="w-full h-screen bg-gradient-to-r from-gray-50 to-gray-200">
             <SiteHeader />
 
             <div id="content-win">
