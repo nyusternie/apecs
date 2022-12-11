@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="events" />
+        <SiteHeader pageId="events" />
 
         <!-- Page Section -->
         <section class="content">

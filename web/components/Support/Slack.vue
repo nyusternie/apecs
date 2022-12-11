@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="slack" />
+        <SiteHeader pageId="slack" />
 
         <!-- Page Section -->
         <section class="content">

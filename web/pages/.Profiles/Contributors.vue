@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="contributors" />
+        <SiteHeader pageId="contributors" />
 
         <!-- Page Section -->
         <section class="content">
@@ -323,18 +323,7 @@
 </template>
 
 <script>
-/* Import components. */
-import Header from '@/components/Header'
-
-/* Import (local) components. */
-// import { Links } from '@/components/Projects'
-
 export default {
-    components: {
-        Header,
-
-        // Links,
-    },
     methods: {
         openProfile(_profileId) {
             this.$router.push(`/profile/${_profileId}`)

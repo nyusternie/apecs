@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="privacy" />
+        <SiteHeader pageId="privacy" />
 
         <!-- Page Section -->
         <section class="content">

@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="profile" />
+        <SiteHeader pageId="profile" />
 
         <!-- Page Section -->
         <section class="content">
@@ -363,18 +363,7 @@
 </template>
 
 <script>
-/* Import components. */
-import Header from '@/components/Header'
-
-/* Import (local) components. */
-// import { Links } from '@/components/Projects'
-
 export default {
-    components: {
-        Header,
-
-        // Links,
-    },
     props: {
         // profileId: Number,
     },

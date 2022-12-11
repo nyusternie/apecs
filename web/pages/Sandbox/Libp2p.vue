@@ -200,19 +200,10 @@
 
 <script>
 /* Import modules. */
-import IPFS from 'ipfs-core'
+// import IPFS from 'ipfs-core'
 import { v4 as uuidv4 } from 'uuid'
 
-/* Import components. */
-// import Header from '@/components/Header'
-// import Navbar from './Navbar'
-
-
 export default {
-    components: {
-        // Header,
-        // Navbar,
-    },
     data: () => {
         return {
             ipfs: null,
@@ -237,7 +228,7 @@ export default {
                 console.log('Setting up instance of IPFS...')
 
                 /* Create new IPFS instance. */
-                this.ipfs = await IPFS.create()
+                // this.ipfs = await IPFS.create()
 
                 // Pass the IPFS instance to the window object. Makes it easy to debug IPFS
                 // issues in the browser console.

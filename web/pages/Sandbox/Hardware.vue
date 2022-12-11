@@ -24,20 +24,12 @@
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-// import Navbar from './Navbar'
-
 // FOR DEVELOPMENT PURPOSES ONLY
 import LedgerTransport from '@ledgerhq/hw-transport-webusb'
 import LedgerBtc from '@ledgerhq/hw-app-btc'
 import LedgerEth from '@ledgerhq/hw-app-eth'
 
 export default {
-    components: {
-        // Header,
-        // Navbar,
-    },
     data: () => {
         return {
             ledgerAddress: null,

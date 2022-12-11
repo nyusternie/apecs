@@ -67,13 +67,7 @@
 /* Import modules. */
 import superagent from 'superagent'
 
-/* Import components. */
-// import Header from '@/components/Header'
-
 export default {
-    components: {
-        // Header,
-    },
     data: () => {
         return {
             bitdb: null,

@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="blockchains" />
+        <SiteHeader pageId="blockchains" />
 
         <!-- Page Section -->
         <section class="content">

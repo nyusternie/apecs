@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="markets" />
+        <SiteHeader pageId="markets" />
 
         <!-- Page Section -->
         <section class="content">

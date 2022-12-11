@@ -1,6 +1,6 @@
 <template>
     <main class="bg-white">
-        <Header :title="title" :description="description" />
+        <SiteHeader :title="title" :description="description" />
 
         <section class="relative bg-white pt-16 pb-32 overflow-hidden">
             <div class="relative">
@@ -285,16 +285,11 @@
 </template>
 
 <script>
-/* Import components. */
-import Header from '@/components/PageHeader'
-
 /* Import (local) components. */
 import Featured from './Audits/Featured'
 
 export default {
     components: {
-        Header,
-
         Featured,
     },
     data: () => {

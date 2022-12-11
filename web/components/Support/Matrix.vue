@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="babel" />
+        <SiteHeader pageId="babel" />
 
         <!-- Page Section -->
         <section class="content">

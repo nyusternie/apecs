@@ -1,6 +1,6 @@
 <template>
     <main class="bg-green-400 w-screen">
-        <Header pageId="dashboard" />
+        <SiteHeader pageId="dashboard" />
 
         <div class="lg:hidden m-5 text-gray-700 text-sm border-2 border-pink-500 bg-pink-100 rounded-3xl p-3">
             <h1 class="text-xl font-extrabold">NOTICE</h1>
@@ -523,34 +523,7 @@
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-
-/* Import (local) components. */
-// import { Calendar } from '@/components/Dashboard'
-// import { Featured } from '@/components/Dashboard'
-// import { Feeds } from '@/components/Dashboard'
-// import { Goals } from '@/components/Dashboard'
-// import { Highlights } from '@/components/Dashboard'
-// import { Newcomers } from '@/components/Dashboard'
-// import { Todo } from '@/components/Dashboard'
-// import { Trends } from '@/components/Dashboard'
-// import { Updates } from '@/components/Dashboard'
-
 export default {
-    components: {
-        // Header,
-
-        // Calendar,
-        // Featured,
-        // Feeds,
-        // Goals,
-        // Highlights,
-        // Newcomers,
-        // Todo,
-        // Trends,
-        // Updates,
-    },
     mounted: function () {
         //
     }

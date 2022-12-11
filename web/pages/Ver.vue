@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- Header -->
-        <Header pageId="ver" />
+        <SiteHeader pageId="ver" />
 
         <!-- Page Section -->
         <section class="content">
@@ -37,13 +37,7 @@
 </template>
 
 <script>
-/* Import components. */
-import Header from '@/components/Header'
-
 export default {
-    components: {
-        Header,
-    },
     data: () => {
         return {
             //

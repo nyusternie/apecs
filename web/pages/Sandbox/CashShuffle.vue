@@ -160,15 +160,7 @@ import { BITBOX } from 'bitbox-sdk'
 import numeral from 'numeral'
 import superagent from 'superagent'
 
-/* Import components. */
-// import Header from '@/components/Header'
-// import Navbar from './Navbar'
-
 export default {
-    components: {
-        // Header,
-        // Navbar,
-    },
     data: () => {
         return {
             bitbox: null,

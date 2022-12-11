@@ -79,15 +79,7 @@
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-// import Navbar from './Navbar'
-
 export default {
-    components: {
-        // Header,
-        // Navbar,
-    },
     data: () => {
         return {
             //

@@ -120,15 +120,7 @@
 </template>
 
 <script>
-/* Import components. */
-// import Header from '@/components/Header'
-// import UnderConstruction from '@/components/UnderConstruction'
-
 export default {
-    components: {
-        // Header,
-        // UnderConstruction,
-    },
     data: () => {
         return {
             //

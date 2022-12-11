@@ -1,6 +1,6 @@
 <template>
     <main class="bg-white">
-        <Header :title="title" :description="description" />
+        <SiteHeader :title="title" :description="description" />
 
         <!-- Comparison table -->
         <!-- <div class="max-w-2xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"> -->
@@ -1104,13 +1104,7 @@
 </template>
 
 <script>
-/* Import components. */
-import Header from '@/components/PageHeader'
-
 export default {
-    components: {
-        Header,
-    },
     data: () => {
         return {
             title: null,
