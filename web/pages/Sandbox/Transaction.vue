@@ -146,12 +146,12 @@
 
 <script>
 import DecodeRawTx from './Transaction/DecodeRawTx'
-// import TxIdDetails from './Transaction/TxIdDetails'
+import TxIdDetails from './Transaction/TxIdDetails'
 
 export default {
     components: {
         DecodeRawTx,
-        // TxIdDetails,
+        TxIdDetails,
     },
     data: () => ({
         //

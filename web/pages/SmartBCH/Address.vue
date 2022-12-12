@@ -15,7 +15,7 @@
 /* global BigInt */
 
 /* Import modules. */
-import Nito from 'nitojs'
+// import Nito from 'nitojs'
 import numeral from 'numeral'
 import superagent from 'superagent'
 

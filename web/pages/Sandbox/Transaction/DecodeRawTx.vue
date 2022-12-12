@@ -1,24 +1,36 @@
+<script setup>
+import { ref } from 'vue'
+
+const rawTxHex = ref(null)
+</script>
+
 <template>
     <main class="bg-yellow-200">
         <div class="form-group">
             <label>Decode Raw Transaction</label>
             <textarea
-                class="form-control"
+                class="block border-4 border-indigo-500 rounded-lg"
                 rows="3"
                 placeholder="Paste raw hex code here"
                 v-model="rawTxHex"
             ></textarea>
+
+            <button class="mt-3 block border-2 border-indigo-500 rounded-lg" @click="runTest">
+                Run Test
+            </button>
         </div>
 
-        <dl class="row">
-            <dt v-if="txVersion" class="col-sm-4">Version</dt>
-            <dd v-if="txVersion" class="col-sm-8">{{txVersion}}</dd>
-            <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                <small class="text-muted">
-                    Version numbers can be ...
-                </small>
-            </dd>
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Version</h2>
 
+            <h3>[ {{txVersion}} ]</h3>
+
+            <small class="text-muted">
+                Version numbers can be ...
+            </small>
+        </section>
+
+        <dl class="row">
             <dt v-if="txInputCount" class="col-sm-4">Input Count</dt>
             <dd v-if="txInputCount" class="col-sm-8">{{txInputCount}}</dd>
 
@@ -71,24 +83,33 @@ export default {
     components: {
         //
     },
-    data: () => {
-        return {
-            // rawTxHex: '020000000141f7f072c1cba4a6b50266f1c574b391166590da4d7fb10c2e61e80e69bf9d15000000006441c374bfb607aef669ebad0ecdc13c0cdb71e5e0cd97b40631a5f11dcedf428634a486ab3aefdfc651dc3ee040307d7fabe4a70c9586efab9348828f48624c2adcc12102130221d09ef7d2fdba9db903246a8e69bed0125ab4e44dc5a6dac66b87d13b2affffffff019e1d0000000000001976a91430a8161ef13bb7fccea6283159e47553f8a576e888ac00000000',
-            rawTxHex: null,
-        }
-    },
+    // data: () => ({
+    //     // rawTxHex: '020000000141f7f072c1cba4a6b50266f1c574b391166590da4d7fb10c2e61e80e69bf9d15000000006441c374bfb607aef669ebad0ecdc13c0cdb71e5e0cd97b40631a5f11dcedf428634a486ab3aefdfc651dc3ee040307d7fabe4a70c9586efab9348828f48624c2adcc12102130221d09ef7d2fdba9db903246a8e69bed0125ab4e44dc5a6dac66b87d13b2affffffff019e1d0000000000001976a91430a8161ef13bb7fccea6283159e47553f8a576e888ac00000000',
+    //     rawTxHex: null,
+    // }),
     computed: {
         txVersion() {
-            if (typeof this.rawTxHex !== 'undefined' && this.rawTxHex !== '') {
-                /* Parse tx version. */
-                const txVersion = 'a'//this.rawTxHex.slice(0, 8)
-
-                /* Return tx version. */
-                return txVersion
-            } else {
+            /* Validate hex value. */
+            if (
+                typeof this.rawTxHex === 'undefined' ||
+                this.rawTxHex === null ||
+                this.rawTxHex === ''
+            ) {
                 /* Return null. */
                 return null
             }
+
+            /* Validate hex length. */
+            if (this.rawTxHex.length >= 8) {
+                /* Parse tx version. */
+                const txVersion = this.rawTxHex.slice(0, 8)
+
+                /* Return tx version. */
+                return txVersion
+            }
+
+            /* Return null. */
+            return null
         },
 
         txInputCount() {
@@ -260,6 +281,12 @@ export default {
             // return _bytes
         },
 
+        runTest() {
+            console.log('run test', this.rawTxHex)
+
+            // this.txVersion = 'hi there'
+        },
+
     },
     created: async function () {
         //
@@ -269,7 +296,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-/*  */
-</style>

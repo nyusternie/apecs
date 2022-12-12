@@ -44,7 +44,7 @@
 
 <script>
 /* Import modules. */
-import Nito from 'nitojs'
+// import Nito from 'nitojs'
 // import superagent from 'superagent'
 
 /* Import components. */
