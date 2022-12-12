@@ -1,7 +1,7 @@
 <template>
     <NuxtLayout name="sandbox">
         <template #intro>
-            <div class="max-w-xl">
+            <main class="max-w-xl">
                 <h2 class="text-4xl font-extrabold text-gray-100 sm:text-5xl sm:tracking-tight lg:text-6xl">
                     Transaction
                 </h2>
@@ -9,11 +9,11 @@
                 <p class="mt-5 text-xl text-indigo-300">
                     Perform a comprehensive suite of <span class="text-gray-100 font-medium">automated audits</span> on your application's transactions.
                 </p>
-            </div>
+            </main>
         </template>
 
         <template #options>
-            <div class="mt-10 w-full max-w-xs lg:mt-0">
+            <main class="mt-10 w-full max-w-xs lg:mt-0">
                 <label for="currency" class="block text-base font-medium text-indigo-300 uppercase">
                     Choose Your Platform
                 </label>
@@ -32,13 +32,12 @@
                         </svg>
                     </div>
                 </div>
-            </div>
+            </main>
         </template>
 
         <!-- Page Section -->
         <template #main>
-            <main class="flex justify-center">
-                <!-- Page Section -->
+            <main class="flex justify-center bg-pink-500">
                 <section class="max-w-5xl grid grid-cols-5 gap-5 py-10">
                     <!-- This example requires Tailwind CSS v2.0+ -->
                     <div class="col-span-5 relative z-0 inline-flex shadow-sm rounded-md">

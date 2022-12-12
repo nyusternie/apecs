@@ -1,21 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-
-// const count = ref(0)
-const showDesktopMenu = ref(false)
-const showMobileMenu = ref(false)
-const showWorkspacesMenu = ref(false)
-
-// const version = require('../package.json').version
-// const version = ref(this.$config.clientVersion)
-
-
-function toggleWorkspacesMenu () {
-    console.log('toggle workspaces menu')
-}
-
-</script>
-
 <template>
     <main class="">
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
@@ -263,14 +245,15 @@ function toggleWorkspacesMenu () {
                                 <div class="space-y-1">
                                     <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
                                     <button
+                                        type="button"
                                         class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                         aria-controls="sub-menu-1"
                                         aria-expanded="false"
-                                        @click="toggleWorkspacesMenu"
+                                        @click="showWorkspacesMenu = !showWorkspacesMenu"
                                     >
                                         <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                                         <span class="flex-1">
-                                            Workspaces 1
+                                            Workspaces
                                         </span>
                                         <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
                                         <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
@@ -313,9 +296,9 @@ function toggleWorkspacesMenu () {
                                 </h3>
 
                                 <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                    <NuxtLink to="/dapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <NuxtLink to="/snippets" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            15 Min DApps
+                                            Code Snippets
                                         </span>
                                     </NuxtLink>
 
@@ -325,9 +308,9 @@ function toggleWorkspacesMenu () {
                                         </span>
                                     </NuxtLink>
 
-                                    <NuxtLink to="/snippets" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <NuxtLink to="/dapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            Code Snippets
+                                            15 Min dApps
                                         </span>
                                     </NuxtLink>
 
@@ -386,20 +369,20 @@ function toggleWorkspacesMenu () {
 </template>
 
 <script>
-// export default {
-//     data: () => ({
-//         showDesktopMenu: null,
-//         showMobileMenu: null,
-//         showWorkspacesMenu: null,
-//         version: null,
-//     }),
-//     created: function () {
-//         this.showDesktopMenu = false
-//         this.showMobileMenu = false
-//         this.showWorkspacesMenu = false
+export default {
+    data: () => ({
+        showDesktopMenu: null,
+        showMobileMenu: null,
+        showWorkspacesMenu: null,
+        version: null,
+    }),
+    created: function () {
+        this.showDesktopMenu = false
+        this.showMobileMenu = false
+        this.showWorkspacesMenu = false
 
-//         // this.version = require('../package.json').version
-//         this.version = this.$config.clientVersion
-//     },
-// }
+        // this.version = require('../package.json').version
+        this.version = this.$config.clientVersion
+    },
+}
 </script>

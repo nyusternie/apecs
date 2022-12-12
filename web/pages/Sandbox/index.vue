@@ -6,6 +6,17 @@
 
             <div class="col-span-3 grid grid-cols-3 pb-10">
 
+                <!-- Address -->
+                <router-link to="/sandbox/address" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Address
+                    </h1>
+
+                    <div class="">
+                        Create addresses from user-defined scripts.
+                    </div>
+                </router-link>
+
                 <!-- Authentication -->
                 <router-link to="/sandbox/auth" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
