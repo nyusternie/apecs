@@ -69,11 +69,11 @@
                     </button>
                 </div>
 
-                <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
-                    <button class="text-2xl font-bold text-gray-400 text-center">
+                <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4 group">
+                    <button class="text-2xl font-bold text-gray-400 text-center group-hover:text-indigo-400" @click="openNetworkMenu">
                         {{displayPrice}}
 
-                        <span class="block text-sm text-gray-300">
+                        <span class="block text-sm text-gray-300 group-hover:text-gray-400">
                             BCH/USD
                         </span>
                     </button>
@@ -325,6 +325,22 @@ export default {
             console.log('TOGGLE MENU')
             this.$emit('toggleMenu')
         },
+
+        openNetworkMenu() {
+            alert(`Choose a supported network:
+    - Bitcoin Cash (BCH)
+    - Bitcoin Lightning (BTC)
+    - Dash (DASH)
+    - eCash (XEC)
+    - Ethereum (ETH)
+    - Litecoin (LTC)
+    - Monero (XMR)
+    - Nexa (NEX)
+    - Polygon (MATIC)
+    - Tron (TRX)
+    - Zcash (ZEC)
+`)
+        }
 
     },
     created: function () {
