@@ -1,16 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
-const rawTxHex = ref(null)
+// const rawTxHex = ref(null)
+const rawTxHex = ref('02000000012db9e967da7f57989d01e2d7b33491f2c007a216177cdb001e13e6fb8a4cdff90000000000ffffffff0140420f00000000001976a9143453e86c368be96a88742a29003dd29ab9a5d03288ac00000000')
 </script>
 
 <template>
-    <main class="w-full bg-yellow-200">
-        <h1 class="text-3xl font-medium">Decode Raw Transaction</h1>
-
+    <main class="flex flex-col space-y-5">
         <textarea
-            class="block border-4 border-indigo-500 rounded-lg"
-            rows="3"
+            class="w-full h-32 block border-4 border-yellow-400 bg-yellow-50 text-yellow-900 rounded-lg"
             placeholder="Paste raw hex code here"
             v-model="rawTxHex"
         ></textarea>
@@ -25,51 +23,75 @@ const rawTxHex = ref(null)
             </small>
         </section>
 
-        <dl class="row">
-            <dt v-if="txInputCount" class="col-sm-4">Input Count</dt>
-            <dd v-if="txInputCount" class="col-sm-8">{{txInputCount}}</dd>
+        <section v-if="txInputCount">
+            <h2 class="text-2xl font-medium">Input Count</h2>
 
-            <dt v-if="txId" class="col-sm-4">Transaction Id</dt>
-            <dd v-if="txId" class="col-sm-8"><a :href="'https://explorer.bitcoin.com/bch/tx/' + txId" target="_blank">{{txId}}</a></dd>
-            <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                <small class="text-muted">
-                    NOTE: Endianness has been reversed.
-                </small>
-            </dd>
+            <h3>[ {{txInputCount}} ]</h3>
 
-            <dt v-if="txOutpointIndex" class="col-sm-4">Outpoint Index</dt>
-            <dd v-if="txOutpointIndex" class="col-sm-8">{{txOutpointIndex}}</dd>
+            <small class="text-muted">
+                Transaction Id
+                <a :href="'https://explorer.bitcoin.com/bch/tx/' + txId" target="_blank">{{txId}}</a>
+            </small>
 
-            <dt v-if="txInputScriptBytes" class="col-sm-4">Script Bytes</dt>
-            <dd v-if="txInputScriptBytes" class="col-sm-8">{{txInputScriptBytes}}</dd>
+            <small class="text-muted">
+                NOTE: Endianness has been reversed.
+            </small>
+        </section>
 
-            <dt v-if="txSignature" class="col-sm-4">Signature</dt>
-            <dd v-if="txSignature" class="col-sm-8">{{txSignature}}</dd>
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Outpoint Index</h2>
 
-            <dt v-if="txSequence" class="col-sm-4">Sequence</dt>
-            <dd v-if="txSequence" class="col-sm-8">{{txSequence}}</dd>
+            <h3>[ {{txOutpointIndex}} ]</h3>
+        </section>
 
-            <dt v-if="txOutputCount" class="col-sm-4">Output Count</dt>
-            <dd v-if="txOutputCount" class="col-sm-8">{{txOutputCount}}</dd>
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Script Bytes</h2>
 
-            <dt v-if="txValue" class="col-sm-4">Value</dt>
-            <dd v-if="txValue" class="col-sm-8">{{txValue}}</dd>
-            <dd v-if="txVersion" class="col-sm-8 offset-sm-4">
-                <small class="text-muted">
-                    NOTE: Endianness has been reversed.
-                </small>
-            </dd>
+            <h3>[ {{txInputScriptBytes}} ]</h3>
+        </section>
 
-            <dt v-if="txOutputScriptBytes" class="col-sm-4">Script Bytes</dt>
-            <dd v-if="txOutputScriptBytes" class="col-sm-8">{{txOutputScriptBytes}}</dd>
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Signature</h2>
 
-            <dt v-if="txPubKeyScript" class="col-sm-4">PubKey Script</dt>
-            <dd v-if="txPubKeyScript" class="col-sm-8">{{txPubKeyScript}}</dd>
+            <h3>[ {{txSignature}} ]</h3>
+        </section>
 
-            <dt v-if="txLockTime" class="col-sm-4">Lock Time</dt>
-            <dd v-if="txLockTime" class="col-sm-8">{{txLockTime}}</dd>
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Sequence</h2>
 
-        </dl>
+            <h3>[ {{txSequence}} ]</h3>
+        </section>
+
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Output Count</h2>
+
+            <h3>[ {{txOutputCount}} ]</h3>
+        </section>
+
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Value</h2>
+
+            <h3>[ {{txValue}} ]</h3>
+        </section>
+
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Script Bytes</h2>
+
+            <h3>[ {{txOutputScriptBytes}} ]</h3>
+        </section>
+
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">PubKey Script</h2>
+
+            <h3>[ {{txPubKeyScript}} ]</h3>
+        </section>
+
+        <section v-if="txVersion">
+            <h2 class="text-2xl font-medium">Lock Time</h2>
+
+            <h3>[ {{txLockTime}} ]</h3>
+        </section>
+
     </main>
 </template>
 

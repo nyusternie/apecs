@@ -37,9 +37,8 @@
 
         <!-- Page Section -->
         <template #main>
-            <main class="flex justify-center bg-pink-500">
-                <section class="max-w-5xl grid grid-cols-5 gap-5 py-10">
-                    <!-- This example requires Tailwind CSS v2.0+ -->
+            <main class="p-3 flex grid grid-cols-5 gap-5">
+
                     <div class="col-span-5 relative z-0 inline-flex shadow-sm rounded-md">
                         <button
                             type="button"
@@ -82,19 +81,15 @@
                         </button>
                     </div>
 
-                    <div class="col-span-3 overflow-x-scroll">
-                        <div class="tab-pane active" id="txIdDetails">
-                            <TxIdDetails />
-                        </div>
+                    <section class="col-span-3">
+                        <button @click="withdraw" class="my-5 px-3 py-2 bg-yellow-200 border-2 border-yellow-400 rounded-lg">
+                            Test Withdraw
+                        </button>
 
-                        <div class="tab-pane" id="decodeRawTx">
-                            <DecodeRawTx />
-                        </div>
+                        <!-- <TxIdDetails /> -->
 
-                        <div class="tab-pane" id="advanced">
-                            <em>coming soonish'</em>
-                        </div>
-                    </div>
+                        <DecodeRawTx />
+                    </section>
 
                     <aside class="block col-span-2">
                         <div class="sticky p-5 top-10 bg-pink-300 border-4 border-pink-500 rounded-xl">
@@ -137,15 +132,44 @@
                         </div>
                     </aside>
 
-                </section>
             </main>
         </template>
     </NuxtLayout>
 </template>
 
 <script>
+/* Import modules. */
+import { ethers } from 'ethers'
+
+import {
+    base58AddressToLockingBytecode,
+    bigIntToBinUint64LE,
+    binToHex,
+    cashAddressToLockingBytecode,
+    CashAddressType,
+    createTransactionContextCommon,
+    decodeBase58Address,
+    decodeCashAddress,
+    decodePrivateKeyWif,
+    // encodeBase58Address,
+    encodeDataPush,
+    encodeCashAddress,
+    encodePrivateKeyWif,
+    encodeTransaction,
+    flattenBinArray,
+    generateSigningSerializationBCH,
+    hexToBin,
+    instantiateSha256,
+    instantiateSecp256k1,
+    instantiateRipemd160,
+} from '@bitauth/libauth'
+
+import getUnspentOutputs from '../../libs/getUnspentOutputs'
+
 import DecodeRawTx from './Transaction/DecodeRawTx'
 import TxIdDetails from './Transaction/TxIdDetails'
+
+const TEST_ADDRESS = 'bitcoincash:qpt22est5myutdpdazx4n9gre7v8h9s06gm5x9ya85'
 
 export default {
     components: {
@@ -169,7 +193,82 @@ export default {
         //
     },
     methods: {
-        //
+        async withdraw () {
+            /* Set (BIP39) seed phrase. */
+            const seed = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
+
+            /* Instantiate Libauth crypto interfaces. */
+            const secp256k1 = await instantiateSecp256k1()
+            const sha256 = await instantiateSha256()
+            const ripemd160 = await instantiateRipemd160()
+
+            /* Generate signature hash and entropy. */
+            const signatureHash = ethers.utils.id(seed)
+            // const signatureEntropy = ethers.BigNumber.from(signatureHash)
+
+            /* Generate private key entropy using Hop Wallet Prime. */
+            const privateKeyEntropy = ethers.BigNumber.from(signatureHash)
+            // const privateKeyEntropy = signatureEntropy
+            //     .mod(this.$store.state.HOP_WALLET_PRIME)
+
+            /* Format the private key to binary. */
+            // NOTE: Start at position 2 to omit the 0x prefix added by toHexString.
+            const privateKey = hexToBin(
+                privateKeyEntropy.toHexString().substring(2))
+            console.log('PRIVATE KEY', privateKey)
+            console.log('PRIVATE KEY (hex)', binToHex(privateKey))
+
+            // Derive the corresponding public key.
+            const publicKey = secp256k1.derivePublicKeyCompressed(privateKey)
+            console.log('PUBLIC KEY', publicKey)
+            console.log('PUBLIC KEY (hex)', binToHex(publicKey))
+
+            /* Hash the public key hash according to the P2PKH scheme. */
+            const publicKeyHash = ripemd160.hash(sha256.hash(publicKey))
+
+            /* Encode the public key hash into a P2PKH cash address. */
+            const cashAddress = encodeCashAddress(
+                'bitcoincash', CashAddressType.P2PKH, publicKeyHash)
+            console.log('CASH ADDRESS', cashAddress)
+
+            // Encode Private Key WIF.
+            const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
+            console.log('PRIVATE KEY (WIF):', privateKeyWIF)
+
+
+            // Fetch all unspent transaction outputs for the temporary in-browser wallet.
+            const unspentOutputs = await getUnspentOutputs(cashAddress)
+            console.log('UNSPENT OUTPUTS', unspentOutputs)
+
+            // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
+            // const transactionTemplate = await this.createCashBridgeTransaction(
+            //     privateKeyWIF,
+            //     unspentOutputs,
+            //     BRIDGE_ADDRESS,
+            //     this.sBchAddress, // TODO: Add support for Web3 (injected) wallet.
+            //     0,
+            // )
+
+            /* Set miner fee. */
+            // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
+            // const minerFee = Math.floor(1.1 * transactionTemplate.byteLength)
+            // console.log('MINER FEE', minerFee)
+
+            // If there's funds and it matches our expectation, forward it to the bridge.
+            // const bridgeTransaction = await this.createCashBridgeTransaction(
+            //     privateKeyWIF,
+            //     unspentOutputs,
+            //     BRIDGE_ADDRESS,
+            //     this.sBchAddress, // TODO: Add support for Web3 (injected) wallet.
+            //     minerFee,
+            // )
+            // console.log('BRIDGE TRANSACTION', bridgeTransaction)
+            // console.log('BRIDGE TRANSACTION (hex)', binToHex(bridgeTransaction))
+
+            // Broadcast transaction
+            // this.broadcast(binToHex(bridgeTransaction))
+        },
+
     },
     created: async function () {
         //
