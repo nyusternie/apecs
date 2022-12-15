@@ -55,7 +55,7 @@ const unlockP2PKHInput = async (
     )
 
     // Add the unlocking script to the input.
-    const signedInput = { ...input, unlockingBytecode }
+    const signedInput = { ...input, unlockingBytecode } // NOTE: Here we update the unlocking script.
 
     // Return the signed input.
     return signedInput

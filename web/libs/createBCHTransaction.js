@@ -13,7 +13,7 @@ import createValueOutput from './createValueOutput'
  *
  * @param privateKeyWIF    {string}                      Private Key in WIF format.
  * @param unspentOutputs   {AddressListUnspentResponse}  List of Unspent Outputs to use.
- * @param bridgeAddress    {string}                      Cash Receiving Address of Bridge.
+ * @param receiverAddress  {string}                    Cash receiving address.
  * @param minerFeeSatoshis {number}                      The satoshis to pay as miner fee (deducted from value output).
  *
  * @returns {Uint8Array} The transaction binary.
@@ -21,12 +21,12 @@ import createValueOutput from './createValueOutput'
 const createBCHTransaction = async (
     privateKeyWIF,
     unspentOutputs,
-    bridgeAddress,
+    receiverAddress,
     minerFeeSatoshis,
 ) => {
     // Make sure the Bridge Address is a valid Cash Address.
-    // if (!await isValidCashAddress(bridgeAddress)) {
-    //     throw new Error(`Invalid Cash Bridge Address given (${bridgeAddress}).`)
+    // if (!await isValidCashAddress(receiverAddress)) {
+    //     throw new Error(`Invalid Cash Bridge Address given (${receiverAddress}).`)
     // }
 
     // Calculate the total balance of the unspent outputs.
@@ -42,7 +42,7 @@ const createBCHTransaction = async (
     // Add the value output (note that miner fee is deducted from output value).
     outputs
         .push(
-            await createValueOutput(bridgeAddress, unspentSatoshis - minerFeeSatoshis)
+            await createValueOutput(receiverAddress, unspentSatoshis - minerFeeSatoshis)
         )
 
     // Create the initial transaction to estimate miner fee.

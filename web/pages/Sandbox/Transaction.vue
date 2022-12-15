@@ -153,13 +153,14 @@ import {
 } from '@bitauth/libauth'
 
 import broadcast from '../../libs/broadcast'
+import cashaddr from '../../libs/cashaddr'
 import createBCHTransaction from '../../libs/createBCHTransaction'
 import getUnspentOutputs from '../../libs/getUnspentOutputs'
 
 import DecodeRawTx from './Transaction/DecodeRawTx'
 import TxIdDetails from './Transaction/TxIdDetails'
 
-const TEST_ADDRESS = 'bitcoincash:qpt22est5myutdpdazx4n9gre7v8h9s06gm5x9ya85'
+const TEST_ADDRESS = 'bitcoincash:qz4ae49sckad73mascc0vpmzh5tzdfg5sv7tcgqhkn'
 
 export default {
     components: {
@@ -215,11 +216,16 @@ export default {
 
             /* Hash the public key hash according to the P2PKH scheme. */
             const publicKeyHash = ripemd160.hash(sha256.hash(publicKey))
+            console.log('PUBLIC KEY HASH', publicKeyHash)
 
             /* Encode the public key hash into a P2PKH cash address. */
             const cashAddress = encodeCashAddress(
                 'bitcoincash', CashAddressType.P2PKH, publicKeyHash)
             console.log('CASH ADDRESS', cashAddress)
+
+            /* Encode the public key hash into a P2PKH nexa address. */
+            const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
+            console.log('NEXA ADDRESS', nexaAddress)
 
             // Encode Private Key WIF.
             const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
@@ -229,6 +235,10 @@ export default {
             // Fetch all unspent transaction outputs for the temporary in-browser wallet.
             const unspentOutputs = await getUnspentOutputs(cashAddress)
             console.log('UNSPENT OUTPUTS', unspentOutputs)
+
+            if (unspentOutputs.length === 0) {
+                return console.error('There are NO unspent outputs available.')
+            }
 
             // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
             const transactionTemplate = await createBCHTransaction(
@@ -241,7 +251,7 @@ export default {
             /* Set miner fee. */
             // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
             const minerFee = Math.floor(1.1 * transactionTemplate.byteLength)
-            console.log('MINER FEE', minerFee)
+            console.info(`Calculated mining fee: [ ${minerFee} ] sats`) // eslint-disable-line no-console
 
             // If there's funds and it matches our expectation, forward it to the bridge.
             const bridgeTransaction = await createBCHTransaction(
@@ -250,11 +260,11 @@ export default {
                 TEST_ADDRESS,
                 minerFee,
             )
-            console.log('BRIDGE TRANSACTION', bridgeTransaction)
-            console.log('BRIDGE TRANSACTION (hex)', binToHex(bridgeTransaction))
+            console.log('TRANSACTION', bridgeTransaction)
+            console.log('TRANSACTION (hex)', binToHex(bridgeTransaction))
 
             // Broadcast transaction
-            broadcast(binToHex(bridgeTransaction))
+            // broadcast(binToHex(bridgeTransaction))
         },
 
     },

@@ -18,7 +18,11 @@ import unlockP2PKHInput from './unlockP2PKHInput'
  */
 const createTransaction = async (privateKeyWIF, unspentOutputs, outputs) => {
     // Parse the private key wif into the keypair and address.
-    const [ privateKey, publicKey, returnAddress ] = await parseWIF(privateKeyWIF)
+    const [
+        privateKey,
+        publicKey,
+        returnAddress
+    ] = await parseWIF(privateKeyWIF)
 
     // Convert all coins to the Libauth Input format (unsigned)
     const inputs = [ ...unspentOutputs ].map(createUnsignedInput)
@@ -30,6 +34,7 @@ const createTransaction = async (privateKeyWIF, unspentOutputs, outputs) => {
         outputs,
         locktime: 0,
     }
+    console.log('UNSIGNED TRANSACTION', JSON.parse(JSON.stringify(transaction)))
 
     // Sign all inputs and add the generated unlocking scripts to the transaction.
     // eslint-disable-next-line require-atomic-updates
@@ -45,6 +50,7 @@ const createTransaction = async (privateKeyWIF, unspentOutputs, outputs) => {
             )
         )
     )
+    console.log('SIGNED TRANSACTION', transaction)
 
     // Hex encode the built transaction.
     const encodedTransaction = encodeTransaction(transaction)
