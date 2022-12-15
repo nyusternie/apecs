@@ -164,6 +164,7 @@ import {
     instantiateRipemd160,
 } from '@bitauth/libauth'
 
+import createTransaction from '../../libs/createTransaction'
 import getUnspentOutputs from '../../libs/getUnspentOutputs'
 
 import DecodeRawTx from './Transaction/DecodeRawTx'
@@ -241,13 +242,12 @@ export default {
             console.log('UNSPENT OUTPUTS', unspentOutputs)
 
             // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
-            // const transactionTemplate = await this.createCashBridgeTransaction(
-            //     privateKeyWIF,
-            //     unspentOutputs,
-            //     BRIDGE_ADDRESS,
-            //     this.sBchAddress, // TODO: Add support for Web3 (injected) wallet.
-            //     0,
-            // )
+            const transactionTemplate = await createTransaction(
+                privateKeyWIF,
+                unspentOutputs,
+                TEST_ADDRESS,
+                0,
+            )
 
             /* Set miner fee. */
             // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
@@ -255,7 +255,7 @@ export default {
             // console.log('MINER FEE', minerFee)
 
             // If there's funds and it matches our expectation, forward it to the bridge.
-            // const bridgeTransaction = await this.createCashBridgeTransaction(
+            // const bridgeTransaction = await this.createTransaction(
             //     privateKeyWIF,
             //     unspentOutputs,
             //     BRIDGE_ADDRESS,
