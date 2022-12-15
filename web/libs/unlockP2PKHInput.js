@@ -1,6 +1,7 @@
 /* Import modules. */
 import {
     encodeDataPush,
+    flattenBinArray,
     hexToBin,
 } from '@bitauth/libauth'
 

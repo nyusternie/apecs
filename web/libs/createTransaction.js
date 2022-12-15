@@ -1,4 +1,6 @@
 /* Import modules. */
+import { encodeTransaction } from '@bitauth/libauth'
+
 import createUnsignedInput from './createUnsignedInput'
 import parseWIF from './parseWIF'
 import unlockP2PKHInput from './unlockP2PKHInput'

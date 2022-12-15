@@ -142,29 +142,17 @@
 import { ethers } from 'ethers'
 
 import {
-    base58AddressToLockingBytecode,
-    bigIntToBinUint64LE,
     binToHex,
-    cashAddressToLockingBytecode,
     CashAddressType,
-    createTransactionContextCommon,
-    decodeBase58Address,
-    decodeCashAddress,
-    decodePrivateKeyWif,
-    // encodeBase58Address,
-    encodeDataPush,
     encodeCashAddress,
     encodePrivateKeyWif,
-    encodeTransaction,
-    flattenBinArray,
-    generateSigningSerializationBCH,
     hexToBin,
     instantiateSha256,
     instantiateSecp256k1,
     instantiateRipemd160,
 } from '@bitauth/libauth'
 
-import createTransaction from '../../libs/createTransaction'
+import createBCHTransaction from '../../libs/createBCHTransaction'
 import getUnspentOutputs from '../../libs/getUnspentOutputs'
 
 import DecodeRawTx from './Transaction/DecodeRawTx'
@@ -242,7 +230,7 @@ export default {
             console.log('UNSPENT OUTPUTS', unspentOutputs)
 
             // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
-            const transactionTemplate = await createTransaction(
+            const transactionTemplate = await createBCHTransaction(
                 privateKeyWIF,
                 unspentOutputs,
                 TEST_ADDRESS,
