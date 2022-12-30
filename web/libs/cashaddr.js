@@ -7,7 +7,7 @@
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
 
-'use strict';
+'use strict'
 
 import base32 from './base32'
 import bigInt from 'big-integer'
@@ -15,8 +15,6 @@ import convertBits from './convertBits'
 
 import { validate } from './validation'
 import { ValidationError } from './validation'
-
-// var validate = validation.validate
 
 /**
  * Encoding and decoding of the bech32 address format for Nexa. <br />
@@ -35,16 +33,22 @@ import { ValidationError } from './validation'
  * @returns {string}
  * @throws {ValidationError}
  */
-function encode(prefix, type, hash) {
-  validate(typeof prefix === 'string' && isValidPrefix(prefix), 'Invalid prefix: ' + prefix + '.');
-  validate(typeof type === 'string', 'Invalid type: ' + type + '.');
-  validate(hash instanceof Uint8Array, 'Invalid hash: ' + hash + '.');
-  var prefixData = concat(prefixToUint5Array(prefix), new Uint8Array(1));
-  var versionByte = getTypeBits(type) + getHashSizeBits(hash);
-  var payloadData = toUint5Array(concat(new Uint8Array([versionByte]), hash));
-  var checksumData = concat(concat(prefixData, payloadData), new Uint8Array(8));
-  var payload = concat(payloadData, checksumToUint5Array(polymod(checksumData)));
-  return prefix + ':' + base32.encode(payload);
+export function encode (prefix, type, hash) {
+    validate(typeof prefix === 'string' && isValidPrefix(prefix), 'Invalid prefix: ' + prefix + '.')
+    validate(typeof type === 'string', 'Invalid type: ' + type + '.')
+    validate(hash instanceof Uint8Array, 'Invalid hash: ' + hash + '.')
+
+    const prefixData = concat(prefixToUint5Array(prefix), new Uint8Array(1))
+
+    const versionByte = getTypeBits(type) + getHashSizeBits(hash)
+
+    const payloadData = toUint5Array(concat(new Uint8Array([versionByte]), hash))
+
+    const checksumData = concat(concat(prefixData, payloadData), new Uint8Array(8))
+
+    const payload = concat(payloadData, checksumToUint5Array(polymod(checksumData)))
+
+    return prefix + ':' + base32.encode(payload)
 }
 
 /**
@@ -55,23 +59,34 @@ function encode(prefix, type, hash) {
  * @returns {object}
  * @throws {ValidationError}
  */
-function decode(address) {
-  validate(typeof address === 'string' && hasSingleCase(address), 'Invalid address: ' + address + '.');
-  var pieces = address.toLowerCase().split(':');
-  validate(pieces.length === 2, 'Missing prefix: ' + address + '.');
-  var prefix = pieces[0];
-  var payload = base32.decode(pieces[1]);
-  validate(validChecksum(prefix, payload), 'Invalid checksum: ' + address + '.');
-  var payloadData = fromUint5Array(payload.subarray(0, -8));
-  var versionByte = payloadData[0];
-  var hash = payloadData.subarray(1);
-  // no length limits in nexa: validate(getHashSize(versionByte) === hash.length * 8, 'Invalid hash size: ' + address + '.');
-  var type = getType(versionByte);
-  return {
-    prefix: prefix,
-    type: type,
-    hash: hash,
-  };
+export function decode (address) {
+    validate(typeof address === 'string' && hasSingleCase(address), 'Invalid address: ' + address + '.')
+
+    var pieces = address.toLowerCase().split(':')
+
+    validate(pieces.length === 2, 'Missing prefix: ' + address + '.');
+
+    var prefix = pieces[0];
+
+    var payload = base32.decode(pieces[1]);
+
+    validate(validChecksum(prefix, payload), 'Invalid checksum: ' + address + '.');
+
+    var payloadData = fromUint5Array(payload.subarray(0, -8));
+
+    var versionByte = payloadData[0];
+
+    var hash = payloadData.subarray(1);
+
+    // no length limits in nexa: validate(getHashSize(versionByte) === hash.length * 8, 'Invalid hash size: ' + address + '.');
+
+    var type = getType(versionByte);
+
+    return {
+        prefix: prefix,
+        type: type,
+        hash: hash,
+    }
 }
 
 /**
@@ -285,8 +300,9 @@ function hasSingleCase(string) {
   return string === string.toLowerCase() || string === string.toUpperCase();
 }
 
+/* Export module. */
 export default {
-  encode: encode,
-  decode: decode,
-  ValidationError: ValidationError,
-};
+    encode: encode,
+    decode: decode,
+    ValidationError: ValidationError,
+}

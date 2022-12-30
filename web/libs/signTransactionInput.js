@@ -1,5 +1,6 @@
 /* Import modules. */
 import {
+    binToHex,
     instantiateSecp256k1,
     instantiateSha256,
 } from '@bitauth/libauth'
@@ -36,20 +37,27 @@ const signTransactionInput = async (
         coveredBytecodeBin,
         hashtype
     )
+    console.log('COVERED BYTECODE BIN', coveredBytecodeBin)
+    console.log('HASH TYPE', hashtype)
+    console.log('SIGNING SERIALIZATION', binToHex(signingSerialization))
 
     // Generate the "sighash" by taking the double SHA256 of the signing serialization.
     const sha256 = await instantiateSha256()
 
     const sighash = sha256.hash(sha256.hash(signingSerialization))
+    console.log('SIGNATURE HASH', binToHex(sighash))
 
     // Instantiate the Secp256k1 interface.
     const secp256k1 = await instantiateSecp256k1()
 
     // Generate a signature over the "sighash" using the passed private key.
     const signatureBin = secp256k1.signMessageHashSchnorr(privateKeyBin, sighash)
+    console.log('PRIVATE KEY', binToHex(privateKeyBin))
+    console.log('SCHNORR SIGNATURE', binToHex(signatureBin))
 
     // Append the hashtype to the signature to turn it into a valid transaction signature.
     const transactionSignature = Uint8Array.from([ ...signatureBin, hashtype ])
+    console.log('TRANSACTION SIGNATURE', binToHex(transactionSignature))
 
     return transactionSignature
 }

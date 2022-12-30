@@ -225,7 +225,7 @@ export default {
 
             /* Encode the public key hash into a P2PKH nexa address. */
             const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
-            console.log('NEXA ADDRESS', nexaAddress)
+            console.log('NEXA ADDRESS       ', nexaAddress)
 
             // Encode Private Key WIF.
             const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')

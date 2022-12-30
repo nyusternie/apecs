@@ -1,5 +1,8 @@
 /* Import modules. */
-import { encodeTransaction } from '@bitauth/libauth'
+import {
+    binToHex,
+    encodeTransaction,
+} from '@bitauth/libauth'
 
 import createUnsignedInput from './createUnsignedInput'
 import parseWIF from './parseWIF'
@@ -35,6 +38,8 @@ const createTransaction = async (privateKeyWIF, unspentOutputs, outputs) => {
         locktime: 0,
     }
     console.log('UNSIGNED TRANSACTION', JSON.parse(JSON.stringify(transaction)))
+    console.log('UNSIGNED TRANSACTION (encoded):', encodeTransaction(transaction))
+    console.log('UNSIGNED TRANSACTION (encoded) (hex):', binToHex(encodeTransaction(transaction)))
 
     // Sign all inputs and add the generated unlocking scripts to the transaction.
     // eslint-disable-next-line require-atomic-updates
