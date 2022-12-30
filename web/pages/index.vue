@@ -1,26 +1,19 @@
 <template>
-    <main class="flex flex-row">
-        <section>
-            what should be put here??
-        </section>
+    <main class="p-3 grid grid-cols-1 lg:grid-cols-2 gap-4 bg-yellow-200">
+        <DashboardCalendar class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardFeatured class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardFeeds class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardGoals class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardHighlights class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardNewcomers class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardTodo class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardTrends class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <DashboardUpdates class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
     </main>
 </template>
 
 <script>
 export default {
-    components: {
-        // Header,
-
-        // Calendar,
-        // Featured,
-        // Feeds,
-        // Goals,
-        // Highlights,
-        // Newcomers,
-        // Todo,
-        // Trends,
-        // Updates,
-    },
     data: () => {
         return {
             showMenu: null,
@@ -49,7 +42,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-/*  */
-</style>

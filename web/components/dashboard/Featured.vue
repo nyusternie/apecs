@@ -17,17 +17,15 @@
         <div class="card-body p-0">
             <ul class="products-list product-list-in-card pl-2 pr-2">
                 <li class="item" v-for="feature of featured" v-bind:key="feature.url">
-                    <div class="product-img">
-                        <img :src="feature.imageurl" alt="Product Image" class="img-size-50 img-rounded">
-                    </div>
+                    <img :src="feature.imageurl" alt="Product Image" class="w-64 rounded-lg border-4 border-yellow-400">
 
-                    <div class="product-info">
+                    <div class="">
                         <a :href="feature.url" target="_blank" class="product-title">
                             {{feature.title}}
                             <span class="badge badge-secondary float-right">{{feature.specs}}</span>
                         </a>
 
-                        <span class="product-description">
+                        <span class="">
                             {{feature.description}}
                         </span>
                     </div>
@@ -92,14 +90,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-.product-description {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    height: 3em;
-    overflow: hidden;
-    text-overflow: inherit;
-    white-space: normal;
-}
-</style>

@@ -2,7 +2,7 @@
     <main class="w-screen flex flex-row bg-pink-500">
         <Menu class="hidden lg:block w-80 h-screen flex-none overflow-x-hidden overflow-y-scroll" />
 
-        <section class="w-full h-screen bg-gradient-to-r from-gray-50 to-gray-200">
+        <section class="w-full h-screen bg-gradient-to-r from-gray-50 to-gray-200 overflow-x-hidden">
             <SiteHeader />
 
             <div id="content-win">
