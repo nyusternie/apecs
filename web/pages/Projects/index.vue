@@ -9,19 +9,19 @@
             </div>
             <ul role="list" class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
                 <li>
-                    <a href="#" class="group flex items-center justify-between px-4 py-4 hover:bg-gray-50 sm:px-6">
+                    <NuxtLink to="/projects/nexa" class="group flex items-center justify-between px-4 py-4 hover:bg-gray-50 sm:px-6">
                         <span class="flex items-center truncate space-x-3">
                             <span class="w-2.5 h-2.5 flex-shrink-0 rounded-full bg-pink-600" aria-hidden="true"></span>
                             <span class="font-medium truncate text-sm leading-6">
-                                GraphQL API
-                                <span class="truncate font-normal text-gray-500">in Engineering</span>
+                                Wally Dice
+                                <span class="truncate font-normal text-gray-500">in Nexa</span>
                             </span>
                         </span>
                         <!-- Heroicon name: solid/chevron-right -->
                         <svg class="ml-4 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
-                    </a>
+                    </NuxtLink>
                 </li>
 
                 <!-- More projects... -->
@@ -37,26 +37,30 @@
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 <span class="lg:pl-2">Project</span>
                             </th>
+
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Members
                             </th>
-                            <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+
+                            <th class="hidden md:table-cell px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
                                 Last updated
                             </th>
+
                             <th class="pr-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
                         </tr>
                     </thead>
+
                     <tbody class="bg-white divide-y divide-gray-100">
-                        <tr>
+                        <tr v-for="project of projects" :key="project.id">
                             <td class="px-6 py-3 max-w-0 w-full whitespace-nowrap text-sm font-medium text-gray-900">
                                 <div class="flex items-center space-x-3 lg:pl-2">
                                     <div class="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-pink-600" aria-hidden="true"></div>
-                                    <a href="#" class="truncate hover:text-gray-600">
+                                    <NuxtLink to="/projects/nexa" class="truncate hover:text-gray-600">
                                         <span>
-                                            GraphQL API
-                                            <span class="text-gray-500 font-normal">in Engineering</span>
+                                            {{ project.title }}
+                                            <span class="text-gray-500 font-normal text-xs">in {{ project.blockchain }}</span>
                                         </span>
-                                    </a>
+                                    </NuxtLink>
                                 </div>
                             </td>
                             <td class="px-6 py-3 text-sm text-gray-500 font-medium">
@@ -90,9 +94,12 @@
                                     <span class="flex-shrink-0 text-xs leading-5 font-medium">+8</span>
                                 </div>
                             </td>
+
                             <td class="hidden md:table-cell px-6 py-3 whitespace-nowrap text-sm text-gray-500 text-right">
-                                March 17, 2020
+                                <!-- January 1, 2023 -->
+                                {{ lastUpdated(project.updatedAt) }}
                             </td>
+
                             <td class="pr-6">
                                 <div class="relative flex justify-end items-center">
                                     <button
@@ -128,7 +135,7 @@
                                     >
                                         <div class="py-1" role="none">
                                             <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                            <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-0">
+                                            <a href="javascript://" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-0">
                                                 <!-- Heroicon name: solid/pencil-alt -->
                                                 <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
@@ -136,7 +143,7 @@
                                                 </svg>
                                                 Edit
                                             </a>
-                                            <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-1">
+                                            <a href="javascript://" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-1">
                                                 <!-- Heroicon name: solid/duplicate -->
                                                 <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z" />
@@ -144,7 +151,7 @@
                                                 </svg>
                                                 Duplicate
                                             </a>
-                                            <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-2">
+                                            <a href="javascript://" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-2">
                                                 <!-- Heroicon name: solid/user-add -->
                                                 <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
@@ -153,7 +160,7 @@
                                             </a>
                                         </div>
                                         <div class="py-1" role="none">
-                                            <a href="#" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-3">
+                                            <a href="javascript://" class="text-gray-700 group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="project-options-menu-0-item-3">
                                                 <!-- Heroicon name: solid/trash -->
                                                 <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path
@@ -403,10 +410,11 @@
 // import { mapState } from 'vuex'
 
 /* Import modules. */
+import moment from 'moment'
 // import superagent from 'superagent'
 
 /* Import (local) components. */
-import Pinned from './Projects/Pinned'
+import Pinned from './Pinned'
 
 export default {
     components: {
@@ -415,6 +423,17 @@ export default {
     data: () => {
         return {
             projects: null
+        }
+    },
+    head() {
+        return {
+            title: 'Projects — Cash DevOps',
+            // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+            meta: [{
+                hid: 'description',
+                name: 'description',
+                content: 'My custom description'
+            }]
         }
     },
     computed: {
@@ -431,8 +450,30 @@ export default {
         openProject(_projectId) {
             this.$router.push(`/p/${_projectId}`)
         },
+
+        lastUpdated(_timestamp) {
+            return moment.unix(_timestamp).fromNow()
+        }
     },
     created: async function () {
+        this.projects = []
+
+        this.projects.push({
+            id: '56f0ab0d-8e26-4c11-a582-fd5210344db4',
+            title: 'Wally Dice',
+            blockchain: 'Nexa',
+            createdAt: 1672565691,
+            updatedAt: 1672565691
+        })
+
+        this.projects.push({
+            id: '58848682-e4df-4a3b-a1a8-3d8086b2330c',
+            title: 'Use Cash',
+            blockchain: 'Bitcoin Cash',
+            createdAt: 1672565712,
+            updatedAt: 1672565712
+        })
+
         // superagent
         //     .get(this.apiUrl + '/projects')
         //     .set('accept', 'json')
