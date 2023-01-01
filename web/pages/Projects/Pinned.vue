@@ -236,7 +236,7 @@
 export default {
     data: () => {
         return {
-            projectId: null,
+            projectid: null,
             projectTitle: null,
         }
     },
@@ -245,14 +245,10 @@ export default {
     },
     mounted: function () {
         /* Set project id. */
-        this.projectId = this.$route.params.projectId
+        this.projectid = this.$route.params.projectid
 
         /* Set project title. */
         this.projectTitle = 'Cash DevOps'
     },
 }
 </script>
-
-<style scoped>
-/*  */
-</style>

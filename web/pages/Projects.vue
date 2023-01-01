@@ -403,7 +403,7 @@
 // import { mapState } from 'vuex'
 
 /* Import modules. */
-import superagent from 'superagent'
+// import superagent from 'superagent'
 
 /* Import (local) components. */
 import Pinned from './Projects/Pinned'
@@ -433,32 +433,26 @@ export default {
         },
     },
     created: async function () {
-        superagent
-            .get(this.apiUrl + '/projects')
-            .set('accept', 'json')
-            .end((err, res) => {
-                if (err) {
-                    return console.error('API ERROR:', err)
-                }
+        // superagent
+        //     .get(this.apiUrl + '/projects')
+        //     .set('accept', 'json')
+        //     .end((err, res) => {
+        //         if (err) {
+        //             return console.error('API ERROR:', err)
+        //         }
 
-                // console.log('API RESPONSE', res)
+        //         // console.log('API RESPONSE', res)
 
-                /* Set projects. */
-                const projects = res.body
-                console.log('PROJECTS', projects)
+        //         /* Set projects. */
+        //         const projects = res.body
+        //         console.log('PROJECTS', projects)
 
-                /* Set projects. */
-                this.projects = projects
-            })
+        //         /* Set projects. */
+        //         this.projects = projects
+        //     })
     },
     mounted: function () {
         //
     }
 }
 </script>
-
-<style scoped>
-tbody tr {
-    cursor: pointer;
-}
-</style>
