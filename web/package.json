@@ -3,7 +3,7 @@
   "version": "22.12.11",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
-  "description": "Cash DevOps is the premier platform for first-time Crypto builders to advanced Decentralized Finance (DeFi) engineers.",
+  "description": "APECS is the premier platform for first-time Crypto builders to advanced Decentralized Finance (DeFi) engineers.",
   "repository": "git@github.com:avasdao/devops.git",
   "scripts": {
     "build": "nuxt build",

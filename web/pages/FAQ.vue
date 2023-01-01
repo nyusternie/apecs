@@ -19,7 +19,7 @@
                             </p>
 
                             <p class="text-base text-gray-500">
-                                DevOps offers several popular sandboxes (BCH, sBCH, BSC, ETH) in our Workspaces area.
+                                APECS offers several popular sandboxes (BCH, sBCH, BSC, ETH) in our Workspaces area.
                             </p>
                         </dd>
                     </div>
@@ -38,7 +38,7 @@ export default {
         description: null,
     }),
     head: () => ({
-        title: 'FAQ — Cash DevOps',
+        title: 'FAQ — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

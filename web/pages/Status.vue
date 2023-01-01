@@ -13,7 +13,7 @@
 
             <div class="col-span-3 text-sm text-gray-600 px-10">
                 <span class="block text-base font-bold">IMPORTANT NOTE: </span>
-                <span class="block">Every DevOps RPC &amp; REST endpoint is rate-limited. </span>
+                <span class="block">Every APECS RPC &amp; REST endpoint is rate-limited. </span>
                 Plan accordingly when developing your apps and releasing to production.
             </div>
 

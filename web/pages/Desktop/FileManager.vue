@@ -12,7 +12,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'File Manager — Cash DevOps',
+        title: 'File Manager — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

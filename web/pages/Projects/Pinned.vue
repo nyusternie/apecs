@@ -248,7 +248,7 @@ export default {
         this.projectid = this.$route.params.projectid
 
         /* Set project title. */
-        this.projectTitle = 'Cash DevOps'
+        this.projectTitle = 'APECS'
     },
 }
 </script>

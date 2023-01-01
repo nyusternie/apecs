@@ -12,7 +12,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Newsfeed — Cash DevOps',
+        title: 'Newsfeed — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

@@ -10,7 +10,7 @@
                         </h2>
 
                         <p class="mt-5 text-xl text-indigo-300">
-                            Perform a comprehensive suite of <span class="text-gray-100 font-medium">automated audits</span> on your application's smart contracts and backend services.
+                            Browse &amp; search our extensive library of <span class="text-gray-100 font-medium">fully-audited, drop-in functions</span> to use in your Crypto projects.
                         </p>
                     </div>
 
@@ -38,7 +38,7 @@
             </div>
         </header>
 
-        <section class="my-10 max-w-5xl mx-auto">
+        <section class="py-10 max-w-5xl mx-auto">
             <h1 class="text-3xl">
                 Code Snippets
             </h1>
@@ -49,7 +49,7 @@
             </h1>
 
             <div class="mt-3 p-5 font-medium bg-yellow-100 border-4 border-yellow-300 rounded-xl">
-                Provides a library for performing various math operations.
+                A library for performing various math operations.
             </div>
 
 <pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl"><code>
@@ -62,7 +62,8 @@ library Math {
         z = x &lt; y ? x : y;
     }
 
-    // babylonian method (https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method)
+    // babylonian method
+    // (see: https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method)
     function sqrt(uint y) internal pure returns (uint z) {
         if (y > 3) {
             z = y;
@@ -90,7 +91,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Code Snippets — Cash DevOps',
+        title: 'Code Snippets — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

@@ -128,6 +128,7 @@
 
                     <button
                         class="flex-none ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase"
+                        @click="connect"
                     >
                         Get Connected
                     </button>
@@ -307,9 +308,7 @@ export default {
 
             if (body.price) {
                 this.usd = body.price
-
             }
-
         },
 
         /**
@@ -340,6 +339,17 @@ export default {
     - Tron (TRX)
     - Zcash (ZEC)
 `)
+        },
+
+        connect() {
+            alert(`Choose a blockchain to manage your on-chain data:
+    1. Avalanche
+    2. Binance
+    3. Ethereum
+    4. Nexaverse
+    5. Polygon
+    6. Smart Bitcoin
+    7. Tron`)
         }
 
     },

@@ -12,7 +12,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Notebook — Cash DevOps',
+        title: 'Notebook — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

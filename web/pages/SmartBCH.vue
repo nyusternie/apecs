@@ -301,7 +301,7 @@ export default {
         Txs,
     },
     head: () => ({
-        title: 'Smart Bitcoin — Cash DevOps',
+        title: 'Smart Bitcoin — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work
@@ -421,7 +421,7 @@ export default {
 
             // All properties on a domain are optional
             // const domain = {
-            //     name: 'Cash DevOps',
+            //     name: 'APECS',
             //     version: '1',
             //     chainId: 0x2711,
             //     // verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC'

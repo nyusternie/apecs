@@ -35,7 +35,7 @@
         <!-- Page Section -->
         <section class="mt-10 w-full max-w-5xl grid grid-cols-3 gap-5 py-10 bg-blue-300 p-10 rounded-xl border-8 border-blue-500">
             <h1 class="text-3xl font-bold col-span-3">
-                DevOps
+                APECS
             </h1>
 
             <div class="flex justify-center">

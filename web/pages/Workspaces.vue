@@ -31,7 +31,7 @@ export default {
         // UnderConstruction,
     },
     head: () => ({
-        title: 'Workspaces — Cash DevOps',
+        title: 'Workspaces — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

@@ -63,7 +63,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Statistics — Cash DevOps',
+        title: 'Statistics — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

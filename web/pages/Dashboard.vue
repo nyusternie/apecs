@@ -6,7 +6,7 @@
             <h1 class="text-xl font-extrabold">NOTICE</h1>
 
             <p class="mt-2">
-                Please visit <span class="font-bold text-red-800">https://DevOps.cash</span> from a <span class="font-bold">Desktop</span> computer to enable the full developer experience.
+                Please visit <span class="font-bold text-red-800">https://APECS.cash</span> from a <span class="font-bold">Desktop</span> computer to enable the full developer experience.
             </p>
 
             <p class="mt-2">

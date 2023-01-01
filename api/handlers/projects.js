@@ -32,7 +32,7 @@ const projects = async function (req, res) {
 
 
     // const allProjects = [{
-    //     title: 'DevOps',
+    //     title: 'APECS',
     //     version: 'v20.2.12'
     // }]
 

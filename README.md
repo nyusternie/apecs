@@ -1,21 +1,21 @@
-# Cash DevOps
+# APECS — A Peer-to-Peer Electronic Cash System
 
-![Cash DevOps Poster](/web/public/poster.jpg?1581239745)
+![APECS Poster](/web/public/poster.jpg?1581239745)
 
 [![Build Status](https://travis-ci.com/modenero/devops.cash.svg?branch=master)](https://travis-ci.com/modenero/devops.cash)
 [![Greenkeeper badge](https://badges.greenkeeper.io/modenero/devops.cash.svg)](https://greenkeeper.io/)
 
 
-DevOps provides the Crypto community with its own platform to support developers, by supporting the effortless BUIDLing of services on top of BCH.
+APECS provides the Crypto community with its own platform to support developers, by supporting the effortless BUIDLing of services on top of BCH.
 
 __It's time we ALL come together to BU!DL BCH! and #MakeBitcoinCashAgain__
 
-> Cash DevOps will __always be 100% FREE__ for use by the Crypto community;  
+> APECS will __always be 100% FREE__ for use by the Crypto community;  
 as well as any others that wishes to BUIDL on top of BCH.
 
-# Publishing your project(s) on DevOps
+# Publishing your project(s) on APECS
 
-Anyone can manage their personal and/or team projects on DevOps. However, in order to __PUBLISH,__ it is required that project use open source software licenses compatible with other projects in the Crypto ecosystem for __ALL__ client-side _(user-facing)_ source code.
+Anyone can manage their personal and/or team projects on APECS. However, in order to __PUBLISH,__ it is required that project use open source software licenses compatible with other projects in the Crypto ecosystem for __ALL__ client-side _(user-facing)_ source code.
 
 ### What is client-side?
 

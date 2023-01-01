@@ -159,7 +159,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Testnet Faucets — Cash DevOps',
+        title: 'Testnet Faucets — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

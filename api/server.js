@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
     /* Initialize headers. */
     res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Headers', 'content-type') // superagent "case-sensitive" bug??
-    // res.header('Access-Control-Allow-Headers', 'X-DevOps-Address, X-DevOps-Signature')
+    // res.header('Access-Control-Allow-Headers', 'X-APECS-Address, X-APECS-Signature')
 
     /* Move to next process. */
     next()
@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 
 // TODO: Replace with a "static" site.
 app.get('/', (req, res) => {
-    res.end('<h1>Welcome to the DevOps.cash API</h1>')
+    res.end('<h1>Welcome to the APECS.cash API</h1>')
 })
 
 /*******************************************************************************

@@ -4,7 +4,7 @@ import installBadger from '@/libs/installBadger'
 /* Initialize donation address. */
 // const donationAddress = 'bitcoincash:pp8skudq3x5hzw8ew7vzsw8tn4k8wxsqsv0lt0mf3g' // EatBCH VE
 // const donationAddress = 'bitcoincash:qrz4zlgjsqu0gu9xaayrrrlrttyv85xxzslp43veu6' // Causes Cash
-const donationAddress = 'bitcoincash:qrlsrw8qyrce75pp654rx9s8hftgywkxwv89uwafs3' // Cash DevOps
+const donationAddress = 'bitcoincash:qrlsrw8qyrce75pp654rx9s8hftgywkxwv89uwafs3' // APECS
 
 /* Initialize donation amount. */
 const donationAmount = 5000 // FIXME: Auto-calculate to $0.01

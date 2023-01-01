@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Cash DevOps Documenation',
+  title: 'APECS Documenation',
   tagline: 'Everything you need to BUIDL',
   url: 'https://docs.devops.cash',
   baseUrl: '/',
@@ -51,7 +51,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Cash DevOps',
+        title: 'APECS',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',

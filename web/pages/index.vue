@@ -20,7 +20,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Cash DevOps — HQ for Crypto Builders',
+        title: 'APECS — HQ for Crypto Builders',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

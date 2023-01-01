@@ -97,13 +97,13 @@
                     <div class="flex flex-row justify-between pr-3">
                         <img
                             src="@/assets/img/icon.png"
-                            alt="DevOps Icon"
+                            alt="APECS Icon"
                             class="w-16 m-5"
                         >
 
                         <div class="flex flex-col text-center flex-grow justify-center">
                             <span class="block text-4xl font-base text-gray-400">C <span class="ml-1">A</span> <span class="text-green-500">$</span> H</span>
-                            <span class="block text-4xl font-bold text-gray-500">DevOps</span>
+                            <span class="block text-4xl font-bold text-gray-500">APECS</span>
                         </div>
                     </div>
                 </NuxtLink>
@@ -141,7 +141,7 @@
                                         />
                                         <span class="flex-1 flex flex-col min-w-0">
                                             <span class="text-gray-900 text-sm font-medium truncate">Incognito <small>[ Sign in ]</small></span>
-                                            <span class="text-gray-500 text-sm truncate"><small class="donate">[ donate $0.01 to DevOps ]</small></span>
+                                            <span class="text-gray-500 text-sm truncate"><small class="donate">[ donate $0.01 to APECS ]</small></span>
                                         </span>
                                     </span>
                                     <!-- Heroicon name: solid/selector -->
@@ -334,9 +334,9 @@
                                 </h3>
 
                                 <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                    <a href="https://www.reddit.com/r/CashDevOps/" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <a href="https://www.reddit.com/r/CashAPECS/" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            r/CashDevOps
+                                            r/CashAPECS
                                         </span>
                                     </a>
 
@@ -354,7 +354,7 @@
                 <!-- </div> -->
 
                 <footer class='py-3 text-sm bg-gray-100 text-center border-t-2 border-gray-200'>
-                    <span class="block">&bullet; &nbsp; DevOps is <span class="font-bold">100% FREE</span> as in beer &nbsp; &bullet;</span>
+                    <span class="block">&bullet; &nbsp; APECS is <span class="font-bold">100% FREE</span> as in beer &nbsp; &bullet;</span>
 
                     <span class="block mt-2">
                         Latest: <a href="https://github.com/avasdao/devops" target="_blank" class="text-red-500 font-bold">v{{version}}</a>

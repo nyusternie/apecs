@@ -2,7 +2,7 @@
 
 _Last updated: February 13, 2020_
 
-The goal for __[Cash DevOps](https://nito.cash/)__ is to support the Bitcoin Cash developer community with its own platform, designed for the effortless BUIDLing of services on top of BCH.
+The goal for __[APECS](https://nito.cash/)__ is to support the Bitcoin Cash developer community with its own platform, designed for the effortless BUIDLing of services on top of BCH.
 
 ### Underway
 
