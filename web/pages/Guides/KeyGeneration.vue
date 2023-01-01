@@ -1,6 +1,6 @@
 <template>
     <main>
-        <Navbar class="hidden" />
+        <!-- <Navbar class="hidden" /> -->
 
         <div class="grid grid-cols-5 gap-4 h-full overflow-hidden pb-20 bg-red-500">
             <section class="col-span-3 p-3 h-full overflow-y-scroll bg-purple-500">
@@ -100,12 +100,12 @@
 
 <script>
 /* Import components. */
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 export default {
-    components: {
-        Navbar,
-    },
+    // components: {
+    //     Navbar,
+    // },
     data: () => {
         return {
             //
