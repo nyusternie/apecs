@@ -335,9 +335,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-tbody tr {
-    cursor: pointer;
-}
-</style>

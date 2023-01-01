@@ -1,5 +1,5 @@
 <template>
-    <aside class="control-sidebar control-sidebar-dark">
+    <aside class="p-3 control-sidebar control-sidebar-dark">
         <!-- Control sidebar content goes here -->
         Cool sidebar coming soon
     </aside>
@@ -10,9 +10,3 @@ export default {
     //
 }
 </script>
-
-<style scoped>
-aside {
-    padding: 15px;
-}
-</style>

@@ -310,9 +310,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-aside {
-    /* height: 500px; */
-}
-</style>

@@ -169,6 +169,5 @@ export default {
     text-overflow: ellipsis;
 
     margin-bottom: -10px;
-    /* padding-bottom: 0px; */
 }
 </style>
