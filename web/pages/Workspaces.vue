@@ -30,6 +30,16 @@ export default {
     components: {
         // UnderConstruction,
     },
+    head: () => ({
+        title: 'Workspaces — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `Workspaces`
+            }
+        ]
+    }),
     data: () => {
         return {
             //

@@ -300,6 +300,16 @@ export default {
         Blocks,
         Txs,
     },
+    head: () => ({
+        title: 'Smart Bitcoin — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `Smart Bitcoin`
+            }
+        ]
+    }),
     data: () => {
         return {
             account: null,

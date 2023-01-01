@@ -43,7 +43,7 @@ export default {
             {
                 hid: 'description', // `vmid` for it as it will not work
                 name: 'description',
-                content: 'TBD..'
+                content: 'Frequently Asked Questions'
             }
         ]
     }),

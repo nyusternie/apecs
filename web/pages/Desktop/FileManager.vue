@@ -11,6 +11,16 @@ export default {
             //
         }
     },
+    head: () => ({
+        title: 'File Manager — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `File Manager`
+            }
+        ]
+    }),
     created: async function () {
         /* Retrieve session. */
         // const session = await this.hasSession()

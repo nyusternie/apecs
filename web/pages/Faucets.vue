@@ -158,6 +158,16 @@ export default {
             //
         }
     },
+    head: () => ({
+        title: 'Testnet Faucets — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `Testnet Faucets`
+            }
+        ]
+    }),
     methods: {
         loadBitcoinCash() {
             window.open('https://tbch.googol.cash/')

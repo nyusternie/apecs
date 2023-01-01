@@ -425,17 +425,16 @@ export default {
             projects: null
         }
     },
-    head() {
-        return {
-            title: 'Projects — Cash DevOps',
-            // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-            meta: [{
-                hid: 'description',
+    head: () => ({
+        title: 'Projects — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
                 name: 'description',
-                content: 'My custom description'
-            }]
-        }
-    },
+                content: `Projects`
+            }
+        ]
+    }),
     computed: {
         // ...mapState({
         //     /* System */

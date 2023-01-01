@@ -122,6 +122,16 @@ export default {
             //
         }
     },
+    head: () => ({
+        title: 'Unstoppable Apps — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `Unstoppable Apps`
+            }
+        ]
+    }),
     created: async function () {
         //
     },

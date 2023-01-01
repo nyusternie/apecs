@@ -296,6 +296,16 @@ export default {
             //
         }
     },
+    head: () => ({
+        title: 'Sandbox — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `Sandbox`
+            }
+        ]
+    }),
     computed: {
         //
     },

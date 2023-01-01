@@ -132,6 +132,16 @@ export default {
             //
         }
     },
+    head: () => ({
+        title: 'Guides & Tutorials — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `Guides & Tutorials`
+            }
+        ]
+    }),
     computed: {
         //
     },

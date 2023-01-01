@@ -11,6 +11,16 @@ export default {
             //
         }
     },
+    head: () => ({
+        title: 'Notebook — Cash DevOps',
+        meta: [
+            {
+                hid: 'description', // `vmid` for it as it will not work
+                name: 'description',
+                content: `Notebook`
+            }
+        ]
+    }),
     created: async function () {
         /* Retrieve session. */
         // const session = await this.hasSession()
