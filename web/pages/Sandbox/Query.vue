@@ -96,7 +96,7 @@
 
 <script>
 /* Import modules. */
-import EventSource from 'eventsource'
+// import EventSource from 'eventsource'
 
 export default {
     data: () => {
@@ -150,31 +150,31 @@ export default {
         // this.endpoint = 'https://flipstarter.devops.cash/events'
 
         /* Initialize socket connection. */
-        const bitsocket = new EventSource(this.endpoint)
+        // const bitsocket = new EventSource(this.endpoint)
 
         /* Handle socket opening. */
-        bitsocket.onopen = () => {
-            this.output = 'We have started listening...'
-        }
+        // bitsocket.onopen = () => {
+        //     this.output = 'We have started listening...'
+        // }
 
         /* Handle socket closing. */
-        bitsocket.onclose = () => {
-            this.output = 'We have stopped listening.'
-        }
+        // bitsocket.onclose = () => {
+        //     this.output = 'We have stopped listening.'
+        // }
 
         /* Handle socket messages. */
-        bitsocket.onmessage = (e) => {
-            try {
-                /* Parse JSON data. */
-                const data = JSON.parse(e.data)
-                console.log('DATA', data)
+        // bitsocket.onmessage = (e) => {
+        //     try {
+        //         /* Parse JSON data. */
+        //         const data = JSON.parse(e.data)
+        //         console.log('DATA', data)
 
-                /* Update output/display. */
-                this.output = JSON.stringify(data, null, 2)
-            } catch (err) {
-                console.error(err)
-            }
-        }
+        //         /* Update output/display. */
+        //         this.output = JSON.stringify(data, null, 2)
+        //     } catch (err) {
+        //         console.error(err)
+        //     }
+        // }
     },
 }
 </script>
