@@ -90,6 +90,7 @@
 
                 <figure>
                     <img class="w-full h-96 rounded-xl border-4 border-rose-500 object-cover shadow-lg" src="https://i.ibb.co/9gXvxjB/image.png" alt="" />
+                    <!-- <img class="w-full h-96 rounded-xl border-4 border-rose-500 object-cover shadow-lg" src="https://i.ibb.co/vz9d83Y/image.png" alt="" /> -->
                     <figcaption>Publish your Unstoppable App to traditional App Stores as well</figcaption>
                 </figure>
 
