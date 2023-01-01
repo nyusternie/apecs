@@ -310,7 +310,7 @@
 
                                     <NuxtLink to="/dapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            15 Min dApps
+                                            Unstoppable Apps
                                         </span>
                                     </NuxtLink>
 
