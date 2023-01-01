@@ -73,17 +73,12 @@
 </template>
 
 <script>
-/* Import modules. */
-// import { BITBOX } from 'bitbox-sdk'
-// import numeral from 'numeral'
-
 export default {
     components: {
         //
     },
     data: () => {
         return {
-            bitbox: null,
             usd: 0,
 
             txId: 'ec062a26ef5577fb35458bb8055a785676c8ce23f360c38de150e203c29f7abc',
@@ -228,20 +223,6 @@ export default {
     },
     methods: {
         /**
-         * Initialize BITBOX
-         */
-        initBitbox() {
-            console.info('Initializing BITBOX..')
-
-            // try {
-            //     /* Initialize BITBOX. */
-            //     this.bitbox = new BITBOX()
-            // } catch (err) {
-            //     console.error(err)
-            // }
-        },
-
-        /**
          * Update Price
          */
         // async updatePrice() {
@@ -280,9 +261,6 @@ export default {
 
     },
     created: async function () {
-        /* Initialize BITBOX. */
-        // this.initBitbox()
-
         /* Update USD. */
         // this.updatePrice()
 

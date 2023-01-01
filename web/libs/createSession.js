@@ -1,12 +1,6 @@
-/* Import modules. */
-import { BITBOX } from 'bitbox-sdk'
-
 /* Import libraries. */
 import CashID from 'cashid'
 import moment from 'moment'
-
-/* Initialize BITBOX. */
-const bitbox = new BITBOX()
 
 /* Import modules. */
 import installBadger from '@/libs/installBadger'
@@ -72,7 +66,7 @@ const getSessionId = () => {
             // console.log('CASHID REQUEST BUFFER', cidBuf)
 
             /* Set CashID (authorization) hash. */
-            const authHash = bitbox.Crypto.sha256(cidBuf).toString('hex')
+            // const authHash = bitbox.Crypto.sha256(cidBuf).toString('hex')
             // console.log('CASHID AUTH HASH', authHash)
 
             /* Initialize signature function. */

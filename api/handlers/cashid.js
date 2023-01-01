@@ -1,4 +1,3 @@
-const BITBOX = require('bitbox-sdk').BITBOX
 const CashID = require('cashid')
 const PouchDB = require('pouchdb')
 const uuidv4 = require('uuid/v4')
@@ -7,9 +6,6 @@ const moment = require('moment')
 
 /* Initialize slack. */
 const slack = require('./slack')
-
-/* Initialize BITBOX. */
-const bitbox = new BITBOX()
 
 /* Initialize CashID. */
 // const cashid = new CashID()
@@ -194,16 +190,16 @@ const projects = async function (req, res) {
         // console.log('CASHID REQUEST BUFFER', cidBuf)
 
         /* Set CashID (authorization) hash. */
-        const authHash = bitbox.Crypto.sha256(cidBuf).toString('hex')
+        // const authHash = bitbox.Crypto.sha256(cidBuf).toString('hex')
         // console.log('CASHID AUTH HASH', authHash)
 
         /* Initialize cash account(s). */
         let cashAccounts = []
 
-        const reverseLookup = await bitbox.CashAccounts
-            .reverseLookup(address)
-            .catch(err => console.error('REVERSE LOOKUP ERROR:', err))
-        console.log('REVERSE LOOKUP', reverseLookup)
+        // const reverseLookup = await bitbox.CashAccounts
+        //     .reverseLookup(address)
+        //     .catch(err => console.error('REVERSE LOOKUP ERROR:', err))
+        // console.log('REVERSE LOOKUP', reverseLookup)
 
         /* Validate lookup. */
         if (reverseLookup && reverseLookup.results) {
