@@ -327,33 +327,17 @@
 
                                     <a href="https://docs.apecs.dev" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            Docs
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="space-y-1">
-                                <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="projects-headline">
-                                    Featured Links
-                                </h3>
-
-                                <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                    <a href="https://www.reddit.com/r/CashAPECS/" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                        <span class="truncate">
-                                            r/CashAPECS
+                                            Read the Docs
                                         </span>
                                     </a>
 
                                     <a href="https://github.com/nyusternie/apecs" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            Fork it on GitHub
+                                            View the Source
                                         </span>
                                     </a>
-
                                 </div>
                             </div>
-
                         </nav>
                     </div>
                 <!-- </div> -->
