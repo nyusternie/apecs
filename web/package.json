@@ -3,7 +3,7 @@
   "version": "23.1.1",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
-  "description": "APECS is the premier platform for first-time Crypto builders to advanced Decentralized Finance (DeFi) engineers.",
+  "description": "An uncensorable, multi-chain platform for P2P electronic cash Builders to do what they need to do.",
   "repository": "git@github.com:nyusternie/apecs.git",
   "scripts": {
     "build": "nuxt build",

@@ -25,7 +25,7 @@ export default {
             {
                 hid: 'description', // `vmid` for it as it will not work
                 name: 'description',
-                content: `A FOSS Development Operations Center for crypto's Cash builders.`
+                content: `An uncensorable, multi-chain platform for P2P electronic cash Builders to do what they need to do.`
             }
         ]
     }),
