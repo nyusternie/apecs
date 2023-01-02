@@ -102,8 +102,13 @@
                         >
 
                         <div class="flex flex-col text-center flex-grow justify-center">
-                            <span class="block text-4xl font-base text-gray-400">C <span class="ml-1">A</span> <span class="text-green-500">$</span> H</span>
-                            <span class="block text-4xl font-bold text-gray-500">APECS</span>
+                            <span class="block text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-900">
+                                APECS
+                            </span>
+
+                            <span class="text-[0.6em] text-purple-600">
+                                A Peer-to-Peer Electronic Cash System
+                            </span>
                         </div>
                     </div>
                 </NuxtLink>
