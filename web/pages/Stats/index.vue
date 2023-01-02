@@ -1,5 +1,14 @@
 <template>
-    <main class="flex justify-center">
+    <main class="p-5 flex flex-col">
+
+        <div class="bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
+            <h1 class="text-2xl text-gray-200">CHECK OUR API STATUS &amp; HISTORY</h1>
+
+            <a class="text-2xl text-gray-200 font-bold" href="https://status.apecs.dev" target="_blank">
+                https://status.apecs.dev
+            </a>
+        </div>
+
         <!-- Page Section -->
         <section class="grid grid-cols-3 gap-10 py-10">
 
