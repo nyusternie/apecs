@@ -1,10 +1,10 @@
 {
-  "name": "cash-devops",
-  "version": "22.12.11",
+  "name": "apecs-web",
+  "version": "23.1.1",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
   "description": "APECS is the premier platform for first-time Crypto builders to advanced Decentralized Finance (DeFi) engineers.",
-  "repository": "git@github.com:avasdao/devops.git",
+  "repository": "git@github.com:nyusternie/apecs.git",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

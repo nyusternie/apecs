@@ -1,9 +1,9 @@
 {
-  "name": "devops-api",
-  "version": "21.11.15",
+  "name": "apecs-api",
+  "version": "23.1.1",
   "license": "MIT",
   "description": "APECS API",
-  "author": "Ava's DAO <support@avasdao.org>",
+  "author": "Shomari <nyusternie@protonmail.com>",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

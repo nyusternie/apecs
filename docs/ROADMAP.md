@@ -11,9 +11,9 @@ The goal for __[APECS](https://nito.cash/)__ is to support the Bitcoin Cash deve
 ### Planned
 
 - [ ] Create your own project.
-- [ ] rest.devops.cash API.
-- [ ] ws.devops.cash WebSocket.
-- [ ] git.devops.cash GitLab repository.
+- [ ] rest.apecs.dev API.
+- [ ] ws.apecs.dev WebSocket.
+- [ ] git.apecs.dev GitLab repository.
 
 ### Complete
 

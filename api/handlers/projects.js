@@ -6,7 +6,7 @@ const PouchDB = require('pouchdb')
 const dbAuth = process.env.DB_AUTH
 
 /* Initialize database. */
-const db = new PouchDB(`http://devops:${dbAuth}@localhost:5984/projects`)
+const db = new PouchDB(`http://apecs:${dbAuth}@localhost:5984/projects`)
 
 /**
  * Projects

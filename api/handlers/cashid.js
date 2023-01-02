@@ -9,7 +9,7 @@ const slack = require('./slack')
 
 /* Initialize CashID. */
 // const cashid = new CashID()
-const cashid = new CashID('api.devops.cash', '/v1/cashid')
+const cashid = new CashID('api.apecs.dev', '/v1/cashid')
 
 /* Add Mango queries to PouchDB. */
 PouchDB.plugin(require('pouchdb-find'))
@@ -17,7 +17,7 @@ PouchDB.plugin(require('pouchdb-find'))
 /* Initialize databases. */
 const dbProfiles = new PouchDB('http://api:password@localhost:5984/profiles')
 const dbDetails = new PouchDB('http://api:password@localhost:5984/profiles_details')
-const dbSessions = new PouchDB('http://api:password@localhost:5984/devops_sessions')
+const dbSessions = new PouchDB('http://api:password@localhost:5984/apecs_sessions')
 
 /**
  * Add New Profile
@@ -253,7 +253,7 @@ const projects = async function (req, res) {
         console.log('VALIDATION FAILED!')
 
         // FIXME: Parse the actual status code
-        // `Request domain  api.devops.cash is invalid, this service uses auth.cashid.org, statuscode:131`
+        // `Request domain  api.apecs.dev is invalid, this service uses auth.cashid.org, statuscode:131`
 
         /* Set status code. */
         // res.status(131)

@@ -6,8 +6,8 @@
             <div class="col-span-3 bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
                 <h1 class="text-2xl text-gray-200">CHECK OUR API STATUS &amp; HISTORY</h1>
 
-                <a class="text-2xl text-gray-200 font-bold" href="https://status.devops.cash" target="_blank">
-                    https://status.devops.cash
+                <a class="text-2xl text-gray-200 font-bold" href="https://status.apecs.dev" target="_blank">
+                    https://status.apecs.dev
                 </a>
             </div>
 
@@ -22,8 +22,8 @@
                     FULCRUM
                 </h1>
 
-                <a href="http://fulcrum.devops.cash" target= '_blank' class="flex justify-center items-center mt-3">
-                    fulcrum.devops.cash
+                <a href="http://fulcrum.apecs.dev" target= '_blank' class="flex justify-center items-center mt-3">
+                    fulcrum.apecs.dev
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
 
@@ -34,7 +34,7 @@
             </div>
 
             <div class="bg-pink-500 rounded-xl p-5 border-4 border-pink-700">
-                <h1 class="text-3xl font-bold text-center text-gray-200">BITDB<small>.devops.cash</small></h1>
+                <h1 class="text-3xl font-bold text-center text-gray-200">BITDB<small>.apecs.dev</small></h1>
 
                 <div class="color-palette-set">
                     <span class="block">Confirmed: {{bitdb.confirmed}}</span>
@@ -75,7 +75,7 @@ export default {
     },
     methods: {
         async init() {
-            const ENDPOINT = 'https://bitdb.devops.cash/q/ewogICJ2IjogMywKICAicSI6IHsKICAgICJmaW5kIjoge30sCiAgICAibGltaXQiOiAxMAogIH0KfQ=='
+            const ENDPOINT = 'https://bitdb.apecs.dev/q/ewogICJ2IjogMywKICAicSI6IHsKICAgICJmaW5kIjoge30sCiAgICAibGltaXQiOiAxMAogIH0KfQ=='
 
             const response = await superagent.get(ENDPOINT)
                 .catch(err => console.error(err))

@@ -15,7 +15,7 @@
                 </p>
 
                 <code class="p-3">
-                    bash -c "$(wget -O - https://apt.devops.cash/ver.sh)"
+                    bash -c "$(wget -O - https://apt.apecs.dev/ver.sh)"
                 </code>
 
                 <p class="mt-3">
@@ -23,7 +23,7 @@
                 </p>
 
                 <code class="p-3">
-                    wget https://apt.devops.cash/ver.sh
+                    wget https://apt.apecs.dev/ver.sh
                 </code>
                 <br /><code class="p-3">
                     chmod +x ver.sh

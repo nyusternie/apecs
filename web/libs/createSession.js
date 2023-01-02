@@ -37,7 +37,7 @@ const getSessionId = () => {
 
             /* Initialize CashId. */
             // const cashid = new CashID()
-            const cashid = new CashID('api.devops.cash', '/v1/cashid')
+            const cashid = new CashID('api.apecs.dev', '/v1/cashid')
 
             /* Set action. */
             const action = 'Sign in'

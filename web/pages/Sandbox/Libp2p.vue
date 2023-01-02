@@ -26,8 +26,8 @@
                                     <!-- /.card-body -->
 
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" value="relay.devops.cash" checked>
-                                        <label for="customCheckbox1" class="custom-control-label">relay.devops.cash</label>
+                                        <input class="custom-control-input" type="checkbox" value="relay.apecs.dev" checked>
+                                        <label for="customCheckbox1" class="custom-control-label">relay.apecs.dev</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input class="custom-control-input" type="checkbox" value="wss.fullstack.cash">
@@ -39,7 +39,7 @@
                                             <div class="form-group">
                                                 <label>Chat Room</label>
                                                 <select multiple class="form-control">
-                                                    <option value="4cc225a23cdb830b6978b55e76f4b7966ec08c30a74d1d203fb57e23ebcdcccd">#lobby:devops.cash</option>
+                                                    <option value="4cc225a23cdb830b6978b55e76f4b7966ec08c30a74d1d203fb57e23ebcdcccd">#lobby:apecs.dev</option>
                                                     <option value="customPubsubRoom123">customPubsubRoom123</option>
                                                 </select>
                                             </div>
@@ -49,7 +49,7 @@
                                             <div class="form-group">
                                                 <label>Peers</label>
                                                 <select multiple class="form-control">
-                                                    <option value="QmPTaa3Azg269K8UeKhTdj1cmkWPZ5hcLGHFp6r3sqCXnB">messenger.devops.cash</option>
+                                                    <option value="QmPTaa3Azg269K8UeKhTdj1cmkWPZ5hcLGHFp6r3sqCXnB">messenger.apecs.dev</option>
                                                     <option value="QmaUW4oCVPUFLRqeSjvhHwGFJHGWrYWLBEt7WxnexDm3Xa">chat.fullstackcash.nl</option>
                                                     <option value="QmZD1c7sNgFdF7DgG9kFFnjfMCJKpUzFkpeaj4wv7NfhWB">localhost browser (test only)</option>
                                                     <option value="QmNvgo499ZUVKV61ZtU8jAYx5ZUEn6eJn4b1LAGtM6nftS">localhost node.js (test only)</option>
@@ -392,22 +392,22 @@ export default {
 
         // Run the node.js app first and get it's IPFS ID.
         // this.nodeid = 'QmNvgo499ZUVKV61ZtU8jAYx5ZUEn6eJn4b1LAGtM6nftS' // localhost
-        this.nodeid = 'QmaZidHAzv6fc2XT2dpHULnKS9rZhzq8KDu4jr2hCe9LVR' // messenger.devops.cash
+        this.nodeid = 'QmaZidHAzv6fc2XT2dpHULnKS9rZhzq8KDu4jr2hCe9LVR' // messenger.apecs.dev
         // this.nodeid = 'QmQpV2FcL8swjYuarqBWGAvgBBp98JiTYymhSBvktUujK4' // incognito
 
         // Pubsub channel that nodes will use to coordinate.
-        this.roomName = '4cc225a23cdb830b6978b55e76f4b7966ec08c30a74d1d203fb57e23ebcdcccd' // #lobby:devops.cash
+        this.roomName = '4cc225a23cdb830b6978b55e76f4b7966ec08c30a74d1d203fb57e23ebcdcccd' // #lobby:apecs.dev
 
         // Known IPFS nodes to connect to for bootstrapping.
         this.bootstrapNodes = [
             // {
-            //   name: 'relay.devops.cash',
-            //   multiaddr: `/dns4/relay.devops.cash/tcp/443/wss/p2p/QmarVJPsEf8KahYQamALpmpnTbkB4Az2HMDnwopyJjJYzS`,
+            //   name: 'relay.apecs.dev',
+            //   multiaddr: `/dns4/relay.apecs.dev/tcp/443/wss/p2p/QmarVJPsEf8KahYQamALpmpnTbkB4Az2HMDnwopyJjJYzS`,
             //   hasConnected: false
             // }
             {
-              name: 'relay.devops.cash',
-              multiaddr: `/dns4/relay.devops.cash/tcp/443/wss/p2p/12D3KooWRpNvnBDVQ5NVwjxPuj7EY5u42kmFQaP8y5jYfcCpCGSW`,
+              name: 'relay.apecs.dev',
+              multiaddr: `/dns4/relay.apecs.dev/tcp/443/wss/p2p/12D3KooWRpNvnBDVQ5NVwjxPuj7EY5u42kmFQaP8y5jYfcCpCGSW`,
               hasConnected: false
             }
             // {

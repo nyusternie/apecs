@@ -7,7 +7,7 @@ const PouchDB = require('pouchdb')
 // PouchDB.plugin(require('pouchdb-find'))
 
 /* Initialize database. */
-const db = new PouchDB('http://api:password@localhost:5984/devops_sessions')
+const db = new PouchDB('http://api:password@localhost:5984/apecs_sessions')
 
 /**
  * Projects

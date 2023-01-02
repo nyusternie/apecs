@@ -2,8 +2,8 @@
 
 ![APECS Poster](/web/public/poster.jpg?1581239745)
 
-[![Build Status](https://travis-ci.com/modenero/devops.cash.svg?branch=master)](https://travis-ci.com/modenero/devops.cash)
-[![Greenkeeper badge](https://badges.greenkeeper.io/modenero/devops.cash.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/modenero/apecs.dev.svg?branch=master)](https://travis-ci.com/modenero/apecs.dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/modenero/apecs.dev.svg)](https://greenkeeper.io/)
 
 
 APECS provides the Crypto community with its own platform to support developers, by supporting the effortless BUIDLing of services on top of BCH.

@@ -1,11 +1,11 @@
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
 /usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20210903-366785-ie2qge.rb extconf.rb
 creating Makefile
 
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
 make "DESTDIR=" clean
 
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
 make "DESTDIR="
 compiling autolink.c
 compiling buffer.c
@@ -33,6 +33,6 @@ compiling rc_render.c
 compiling stack.c
 linking shared-object redcarpet.so
 
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/redcarpet-3.5.1/ext/redcarpet
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 redcarpet.so ./.gem.20210903-366785-1r72dcj

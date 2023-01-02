@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'APECS Documenation',
   tagline: 'Everything you need to BUIDL',
-  url: 'https://docs.devops.cash',
+  url: 'https://docs.apecs.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

@@ -62,7 +62,7 @@ export default {
             /* Initialize provider. */
             this.provider = new ethers
                 .providers
-                .JsonRpcProvider('https://smartbch.devops.cash/testnet')
+                .JsonRpcProvider('https://smartbch.apecs.dev/testnet')
 
             const contract = new ethers
                 .Contract(this.contractAddress, this.abi, this.provider)

@@ -5,7 +5,7 @@
 
             <div class="bg-rose-200 rounded-xl p-5 border-4 border-rose-400">
                 <h1 class="text-2xl font-bold text-center text-rose-700">
-                    FULCRUM<small>.devops.cash</small>
+                    FULCRUM<small>.apecs.dev</small>
                 </h1>
 
                 <div class="flex gap-2 items-center">
@@ -21,7 +21,7 @@
 
             <div class="bg-rose-200 rounded-xl p-5 border-4 border-rose-400">
                 <h1 class="text-2xl font-bold text-center text-rose-700">
-                    ROSTRUM<small>.devops.cash</small>
+                    ROSTRUM<small>.apecs.dev</small>
                 </h1>
 
                 <div class="flex gap-2 items-center">

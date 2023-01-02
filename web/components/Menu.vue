@@ -320,7 +320,7 @@
                                         </span>
                                     </NuxtLink>
 
-                                    <a href="https://docs.devops.cash" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <a href="https://docs.apecs.dev" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
                                             Docs
                                         </span>
@@ -340,9 +340,9 @@
                                         </span>
                                     </a>
 
-                                    <a href="https://github.com/avasdao/devops" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <a href="https://github.com/nyusternie/apecs" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
-                                            Fork us on GitHub
+                                            Fork it on GitHub
                                         </span>
                                     </a>
 
@@ -357,9 +357,9 @@
                     <span class="block">&bullet; &nbsp; APECS is <span class="font-bold">100% FREE</span> as in beer &nbsp; &bullet;</span>
 
                     <span class="block mt-2">
-                        Latest: <a href="https://github.com/avasdao/devops" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
+                        Latest: <a href="https://github.com/nyusternie/apecs" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
                         &nbsp; &bullet; &nbsp;
-                        (<a href="https://github.com/avasdao/devops/-/releases" target="_blank" class="text-red-500 font-bold">other releases</a>)
+                        (<a href="https://github.com/nyusternie/apecs/-/releases" target="_blank" class="text-red-500 font-bold">other releases</a>)
                     </span>
                 </footer>
 

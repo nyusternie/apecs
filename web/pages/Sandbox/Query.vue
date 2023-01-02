@@ -143,11 +143,11 @@ export default {
         console.log('Base64 query:', this.b64query)
 
         // this.endpoint = 'https://bitsocket.bch.sx/s/' + this.b64query
-        // this.endpoint = 'https://bitsocket.devops.cash/s/' + this.b64query
+        // this.endpoint = 'https://bitsocket.apecs.dev/s/' + this.b64query
         // this.endpoint = 'https://slpsocket.fountainhead.cash/s/' + this.b64query
-        // this.endpoint = 'https://slpsocket.devops.cash/s/' + this.b64query
+        // this.endpoint = 'https://slpsocket.apecs.dev/s/' + this.b64query
         this.endpoint = 'https://flipstarter.satoshisangels.com/events'
-        // this.endpoint = 'https://flipstarter.devops.cash/events'
+        // this.endpoint = 'https://flipstarter.apecs.dev/events'
 
         /* Initialize socket connection. */
         // const bitsocket = new EventSource(this.endpoint)

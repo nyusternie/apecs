@@ -1,11 +1,11 @@
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 /usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20210903-366785-zkpcyy.rb extconf.rb
 creating Makefile
 
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" clean
 
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR="
 compiling ./libsass/src/memory/allocator.cpp
 compiling ./libsass/src/ast.cpp
@@ -75,6 +75,6 @@ compiling ./libsass/src/util_string.cpp
 compiling ./libsass/src/values.cpp
 linking shared-object sassc/libsass.so
 
-current directory: /Workspace/bchplease/api.devops.cash/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Workspace/bchplease/api.apecs.dev/slate/vendor/bundle/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 libsass.so ./.gem.20210903-366785-1lbfav5/sassc

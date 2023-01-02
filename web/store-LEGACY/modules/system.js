@@ -7,7 +7,7 @@ const state = {
     notification: null,
 
     /* Initialize API Endpoint (constant). */
-    apiUrl: 'https://api.devops.cash/v1',
+    apiUrl: 'https://api.apecs.dev/v1',
 }
 
 /* Getters. */

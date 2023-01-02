@@ -119,9 +119,9 @@ export default {
         }
 
         if (this.$route.path.slice(0, 6) === '/amber') {
-            this.endpoint = 'https://smartbch.devops.cash/testnet'
+            this.endpoint = 'https://smartbch.apecs.dev/testnet'
         } else {
-            // this.endpoint = 'https://smartbch.devops.cash/mainnet'
+            // this.endpoint = 'https://smartbch.apecs.dev/mainnet'
             this.endpoint = 'https://smartbch.fountainhead.cash/mainnet'
         }
 

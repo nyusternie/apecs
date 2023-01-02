@@ -224,7 +224,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr @click="openProject('devops-cash-62b422f9')">
+                                <tr @click="openProject('apecs-dev-62b422f9')">
                                     <td>
                                         1
                                     </td>
