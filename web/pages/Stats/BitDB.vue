@@ -18,15 +18,15 @@
                 <span>global stat #3</span>
             </div>
 
-            <router-link to="/labs/bitdb" class="block mt-3 text-center text-lg text-gray-100 font-medium font-block bg-yellow-500 p-3 border-2 border-yellow-700 rounded-xl">
+            <router-link to="/stats" class="block mt-3 text-center text-lg text-gray-100 font-medium font-block bg-yellow-500 p-3 border-2 border-yellow-700 rounded-xl">
                 Go to BitDB Labs
             </router-link>
 
-            <router-link to="/labs/bitdb" class="block mt-3 text-center text-lg text-gray-100 font-medium font-block bg-yellow-500 p-3 border-2 border-yellow-700 rounded-xl">
+            <router-link to="/stats" class="block mt-3 text-center text-lg text-gray-100 font-medium font-block bg-yellow-500 p-3 border-2 border-yellow-700 rounded-xl">
                 Go to BitDB Labs
             </router-link>
 
-            <router-link to="/labs/bitdb" class="block mt-3 text-center text-lg text-gray-100 font-medium font-block bg-yellow-500 p-3 border-2 border-yellow-700 rounded-xl">
+            <router-link to="/stats" class="block mt-3 text-center text-lg text-gray-100 font-medium font-block bg-yellow-500 p-3 border-2 border-yellow-700 rounded-xl">
                 Go to BitDB Labs
             </router-link>
 

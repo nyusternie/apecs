@@ -1,21 +1,21 @@
 <template>
     <main>
         <section class="grid grid-cols-3 gap-10 p-10">
-            <router-link to="/editors" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
+            <NuxtLink to="/editors" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
                 Editors
-            </router-link>
+            </NuxtLink>
 
-            <router-link to="/sandbox" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
+            <NuxtLink to="/sandbox" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
                 Sandbox
-            </router-link>
+            </NuxtLink>
 
-            <router-link to="/smartbch" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
+            <NuxtLink to="/smartbch" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
                 Smart Bitcoin
-            </router-link>
+            </NuxtLink>
 
-            <router-link to="/studios" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
+            <NuxtLink to="/studios" class="w-full bg-pink-300 p-5 flex justify-center rounded-xl">
                 Studios
-            </router-link>
+            </NuxtLink>
 
         </section>
 
