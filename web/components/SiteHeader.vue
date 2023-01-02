@@ -69,9 +69,11 @@
                     </button>
                 </div>
 
-                <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4 group">
-                    <button class="text-2xl font-bold text-gray-400 text-center group-hover:text-indigo-400" @click="openNetworkMenu">
-                        {{displayPrice}}
+                <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
+                    <button class="text-2xl font-bold text-gray-400 text-center group" @click="openNetworkMenu">
+                        <span class="group-hover:text-indigo-400">
+                            {{displayPrice}}
+                        </span>
 
                         <span class="block text-sm text-gray-300 group-hover:text-gray-400">
                             BCH/USD
@@ -346,7 +348,7 @@ export default {
     1. Avalanche
     2. Binance
     3. Ethereum
-    4. Nexaverse
+    4. Nexa
     5. Polygon
     6. Smart Bitcoin
     7. Tron`)
