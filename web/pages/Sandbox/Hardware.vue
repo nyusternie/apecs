@@ -25,9 +25,10 @@
 
 <script>
 // FOR DEVELOPMENT PURPOSES ONLY
-import LedgerTransport from '@ledgerhq/hw-transport-webusb'
-import LedgerBtc from '@ledgerhq/hw-app-btc'
-import LedgerEth from '@ledgerhq/hw-app-eth'
+// import '@ethersproject/shims'
+// import LedgerTransport from '@ledgerhq/hw-transport-webusb'
+// import LedgerBtc from '@ledgerhq/hw-app-btc'
+// import LedgerEth from '@ledgerhq/hw-app-eth'
 
 export default {
     data: () => {
