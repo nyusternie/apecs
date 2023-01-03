@@ -292,8 +292,8 @@ import numeral from 'numeral'
 import superagent from 'superagent'
 
 /* Import components. */
-import Blocks from './SmartBCH/Blocks'
-import Txs from './SmartBCH/Txs'
+import Blocks from './Blocks'
+import Txs from './Txs'
 
 export default {
     components: {

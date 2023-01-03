@@ -348,7 +348,7 @@ export default {
     1. Avalanche
     2. Binance
     3. Ethereum
-    4. Nexa
+    4. Nexaverse
     5. Polygon
     6. Smart Bitcoin
     7. Tron`)
