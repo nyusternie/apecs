@@ -7,7 +7,7 @@
             <div class="col-span-3 grid grid-cols-3 pb-10">
 
                 <!-- Address -->
-                <router-link to="/sandbox/address" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/address" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Address
                     </h1>
@@ -18,7 +18,7 @@
                 </router-link>
 
                 <!-- Authentication -->
-                <router-link to="/sandbox/auth" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/auth" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Authentication
                     </h1>
@@ -29,7 +29,7 @@
                 </router-link>
 
                 <!-- BitDB -->
-                <router-link to="/sandbox/bitdb" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/bitdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         BitDB
                     </h1>
@@ -41,7 +41,7 @@
                 </router-link>
 
                 <!-- CashFusion -->
-                <router-link to="/sandbox/cashfusion" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/cashfusion" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashFusion
                     </h1>
@@ -56,7 +56,7 @@
                 </router-link>
 
                 <!-- CashScript -->
-                <router-link to="/sandbox/cashscript" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/cashscript" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashScript
                     </h1>
@@ -67,7 +67,7 @@
                 </router-link>
 
                 <!-- CashFusion -->
-                <router-link to="/sandbox/cashshuffle" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/cashshuffle" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashShuffle
                     </h1>
@@ -82,7 +82,7 @@
                 </router-link>
 
                 <!-- CouchDB -->
-                <router-link to="/sandbox/couchdb" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/couchdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CouchDB
                     </h1>
@@ -93,7 +93,7 @@
                 </router-link>
 
                 <!-- Cryptography -->
-                <router-link to="/sandbox/crypto" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/crypto" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Cryptography
                     </h1>
@@ -104,7 +104,7 @@
                 </router-link>
 
                 <!-- Decode -->
-                <router-link to="/sandbox/decode" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/decode" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Decode
                     </h1>
@@ -115,7 +115,7 @@
                 </router-link>
 
                 <!-- Elasticsearch -->
-                <router-link to="/sandbox/elasticsearch" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/elasticsearch" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Elasticsearch
                     </h1>
@@ -126,7 +126,7 @@
                 </router-link>
 
                 <!-- Events -->
-                <router-link to="/sandbox/events" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/events" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Events
                     </h1>
@@ -137,7 +137,7 @@
                 </router-link>
 
                 <!-- Hardware -->
-                <router-link to="/sandbox/hardware" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/hardware" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Hardware
                     </h1>
@@ -148,7 +148,7 @@
                 </router-link>
 
                 <!-- Hashing -->
-                <router-link to="/sandbox/hashing" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/hashing" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Hashing
                     </h1>
@@ -159,7 +159,7 @@
                 </router-link>
 
                 <!-- Libp2p -->
-                <router-link to="/sandbox/libp2p" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/libp2p" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Libp2p
                     </h1>
@@ -170,7 +170,7 @@
                 </router-link>
 
                 <!-- Messaging -->
-                <router-link to="/sandbox/messaging" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/messaging" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Messaging
                     </h1>
@@ -181,7 +181,7 @@
                 </router-link>
 
                 <!-- Query -->
-                <router-link to="/sandbox/query" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/query" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Query
                     </h1>
@@ -192,7 +192,7 @@
                 </router-link>
 
                 <!-- SLPDB -->
-                <router-link to="/sandbox/slpdb" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/slpdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         SLPDB
                     </h1>
@@ -204,7 +204,7 @@
                 </router-link>
 
                 <!-- Transaction -->
-                <router-link to="/sandbox/transaction" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/transaction" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Transaction
                     </h1>
@@ -215,7 +215,7 @@
                 </router-link>
 
                 <!-- Wallet -->
-                <router-link to="/sandbox/u2f" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/u2f" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Universal 2-Factor Authentication
                     </h1>
@@ -226,7 +226,7 @@
                 </router-link>
 
                 <!-- Wallet -->
-                <router-link to="/sandbox/wallet" class="col-span-3 p-3 mb-5 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <router-link to="/sandbox/wallet" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Wallet
                     </h1>
@@ -239,10 +239,10 @@
             </div>
 
             <aside class="block col-span-2">
-                <div class="sticky p-5 top-10 bg-pink-300 border-4 border-pink-500 rounded-xl">
+                <div class="sticky p-5 top-10 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <div class="flex items-center">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-widivh="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h1 class="text-2xl ml-2">Sandbox Guide</h1>
+                        <h1 class="text-2xl ml-2">The Sandbox Guide</h1>
                     </div>
 
                     <div class="mt-3">

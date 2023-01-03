@@ -7,6 +7,12 @@
                 </h2>
             </NuxtLink>
 
+            <NuxtLink to="/bsc" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
+                <h2 class="text-3xl font-medium">
+                    Binance
+                </h2>
+            </NuxtLink>
+
             <NuxtLink to="/btc" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
                 <h2 class="text-3xl font-medium">
                     Bitcoin
@@ -25,15 +31,15 @@
                 </h2>
             </NuxtLink>
 
-            <NuxtLink to="/editors" class="w-full bg-rose-300 border-4 border-rose-500 p-5 flex justify-center rounded-xl shadow">
-                <h2 class="text-3xl font-medium">
-                    Editors
-                </h2>
-            </NuxtLink>
-
             <NuxtLink to="/eth" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
                 <h2 class="text-3xl font-medium">
                     Ethereum
+                </h2>
+            </NuxtLink>
+
+            <NuxtLink to="/monero" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
+                <h2 class="text-3xl font-medium">
+                    Monero
                 </h2>
             </NuxtLink>
 
@@ -49,21 +55,15 @@
                 </h2>
             </NuxtLink>
 
-            <NuxtLink to="/sandbox" class="w-full bg-rose-300 border-4 border-rose-500 p-5 flex justify-center rounded-xl shadow">
-                <h2 class="text-3xl font-medium">
-                    Sandbox
-                </h2>
-            </NuxtLink>
-
             <NuxtLink to="/sbch" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
                 <h2 class="text-3xl font-medium">
                     Smart Bitcoin
                 </h2>
             </NuxtLink>
 
-            <NuxtLink to="/studios" class="w-full bg-rose-300 border-4 border-rose-500 p-5 flex justify-center rounded-xl shadow">
+            <NuxtLink to="/rune" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
                 <h2 class="text-3xl font-medium">
-                    Studios
+                    THORChain
                 </h2>
             </NuxtLink>
 
@@ -72,27 +72,20 @@
                     Tron
                 </h2>
             </NuxtLink>
-
         </section>
 
     </main>
 </template>
 
 <script>
-/* Import components. */
-// import UnderConstruction from '@/components/UnderConstruction'
-
 export default {
-    components: {
-        // UnderConstruction,
-    },
     head: () => ({
         title: 'Workspaces — APECS',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work
                 name: 'description',
-                content: `Workspaces`
+                content: `Browse all of the Workspaces of our supported blockchains.`
             }
         ]
     }),
