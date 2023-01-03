@@ -115,7 +115,8 @@ export default {
     },
     created: async function () {
         if (!this.$route.params || !this.$route.params.address) {
-            throw new Error('No address provided')
+            // throw new Error('No address provided')
+            return // DO NOT THROW (due to SSR)
         }
 
         if (this.$route.path.slice(0, 6) === '/amber') {

@@ -367,7 +367,8 @@ export default {
     },
     created: async function () {
         if (!this.$route.params || !this.$route.params.txid) {
-            throw new Error('No transaction provided')
+            // throw new Error('No transaction provided')
+            return // DO NOT THROW (due to SSR)
         }
 
         /* Initialize raw data. */

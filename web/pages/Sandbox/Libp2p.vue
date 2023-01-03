@@ -382,7 +382,7 @@ export default {
         this.debugLog = []
 
         // const IPFS = require('ipfs-core')
-        console.log('IPFS', IPFS)
+        // console.log('IPFS', IPFS)
 
         // const ipfs = await IPFS.create()
         // console.log('ipfs', ipfs)
@@ -418,7 +418,7 @@ export default {
         ]
 
         /* Start IPFS. */
-        await this.startIpfs()
+        // await this.startIpfs()
 
     },
     mounted: function () {

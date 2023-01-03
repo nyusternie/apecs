@@ -355,6 +355,12 @@
                                             View the Source
                                         </span>
                                     </a>
+
+                                    <a href="/bitcoin.pdf" target="_blank" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <span class="truncate">
+                                            Read the Whitepaper
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
                         </nav>
