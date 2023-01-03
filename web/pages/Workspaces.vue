@@ -37,6 +37,12 @@
                 </h2>
             </NuxtLink>
 
+            <NuxtLink to="/fil" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
+                <h2 class="text-3xl font-medium">
+                    Filecoin
+                </h2>
+            </NuxtLink>
+
             <NuxtLink to="/monero" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
                 <h2 class="text-3xl font-medium">
                     Monero
@@ -46,6 +52,12 @@
             <NuxtLink to="/nexa" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
                 <h2 class="text-3xl font-medium">
                     Nexa
+                </h2>
+            </NuxtLink>
+
+            <NuxtLink to="/xnexa" class="w-full bg-indigo-300 border-4 border-indigo-500 p-5 flex justify-center rounded-xl shadow">
+                <h2 class="text-3xl font-medium">
+                    Nexaverse
                 </h2>
             </NuxtLink>
 
