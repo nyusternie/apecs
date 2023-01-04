@@ -20,7 +20,7 @@ export default {
         description: null,
     }),
     head: () => ({
-        title: 'Sponsors — APECS',
+        title: 'Sponsors — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

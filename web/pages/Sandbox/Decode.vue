@@ -115,7 +115,7 @@ export default {
         base64: null,
     }),
     head: () => ({
-        title: 'Decode — APECS',
+        title: 'Decode — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

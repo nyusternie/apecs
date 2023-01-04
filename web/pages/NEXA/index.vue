@@ -301,7 +301,7 @@ export default {
         Txs,
     },
     head: () => ({
-        title: 'Nexa — APECS',
+        title: 'Nexa — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

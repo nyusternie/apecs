@@ -123,7 +123,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Unstoppable Apps — APECS',
+        title: 'Unstoppable Apps — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

@@ -301,7 +301,7 @@ export default {
         Txs,
     },
     head: () => ({
-        title: 'Bitcoin Cash — APECS',
+        title: 'Bitcoin Cash — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

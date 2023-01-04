@@ -104,6 +104,7 @@
                         <div class="flex flex-col text-center flex-grow justify-center">
                             <span class="block text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-900">
                                 APECS
+                                <span class="-ml-3 text-[0.3em] text-purple-400 font-normal">.dev</span>
                             </span>
 
                             <span class="text-[0.6em] text-purple-600">

@@ -301,7 +301,7 @@ export default {
         Txs,
     },
     head: () => ({
-        title: 'Monero — APECS',
+        title: 'Monero — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

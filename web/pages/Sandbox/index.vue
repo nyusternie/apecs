@@ -6,7 +6,6 @@
 
             <div class="col-span-3 grid grid-cols-3 pb-10">
 
-                <!-- Address -->
                 <router-link to="/sandbox/address" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Address
@@ -17,7 +16,6 @@
                     </div>
                 </router-link>
 
-                <!-- Authentication -->
                 <router-link to="/sandbox/auth" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Authentication
@@ -28,7 +26,6 @@
                     </div>
                 </router-link>
 
-                <!-- BitDB -->
                 <router-link to="/sandbox/bitdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         BitDB
@@ -40,7 +37,6 @@
                     </div>
                 </router-link>
 
-                <!-- CashFusion -->
                 <router-link to="/sandbox/cashfusion" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashFusion
@@ -55,7 +51,6 @@
                     </div>
                 </router-link>
 
-                <!-- CashScript -->
                 <router-link to="/sandbox/cashscript" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashScript
@@ -66,7 +61,6 @@
                     </div>
                 </router-link>
 
-                <!-- CashFusion -->
                 <router-link to="/sandbox/cashshuffle" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashShuffle
@@ -81,7 +75,6 @@
                     </div>
                 </router-link>
 
-                <!-- CouchDB -->
                 <router-link to="/sandbox/couchdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CouchDB
@@ -92,7 +85,6 @@
                     </div>
                 </router-link>
 
-                <!-- Cryptography -->
                 <router-link to="/sandbox/crypto" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Cryptography
@@ -103,7 +95,6 @@
                     </div>
                 </router-link>
 
-                <!-- Decode -->
                 <router-link to="/sandbox/decode" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Decode
@@ -114,7 +105,6 @@
                     </div>
                 </router-link>
 
-                <!-- Elasticsearch -->
                 <router-link to="/sandbox/elasticsearch" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Elasticsearch
@@ -125,7 +115,6 @@
                     </div>
                 </router-link>
 
-                <!-- Events -->
                 <router-link to="/sandbox/events" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Events
@@ -136,7 +125,6 @@
                     </div>
                 </router-link>
 
-                <!-- Hardware -->
                 <router-link to="/sandbox/hardware" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Hardware
@@ -147,7 +135,6 @@
                     </div>
                 </router-link>
 
-                <!-- Hashing -->
                 <router-link to="/sandbox/hashing" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Hashing
@@ -158,7 +145,6 @@
                     </div>
                 </router-link>
 
-                <!-- Libp2p -->
                 <router-link to="/sandbox/libp2p" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Libp2p
@@ -169,7 +155,6 @@
                     </div>
                 </router-link>
 
-                <!-- Messaging -->
                 <router-link to="/sandbox/messaging" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Messaging
@@ -180,7 +165,16 @@
                     </div>
                 </router-link>
 
-                <!-- Query -->
+                <router-link to="/sandbox/nexad" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Nexa Daemon
+                    </h1>
+
+                    <div class="">
+                        Issue commands to your local `nexad` instance using JSON-RPC.
+                    </div>
+                </router-link>
+
                 <router-link to="/sandbox/query" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Query
@@ -191,7 +185,6 @@
                     </div>
                 </router-link>
 
-                <!-- SLPDB -->
                 <router-link to="/sandbox/slpdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         SLPDB
@@ -203,7 +196,6 @@
                     </div>
                 </router-link>
 
-                <!-- Transaction -->
                 <router-link to="/sandbox/transaction" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Transaction
@@ -214,7 +206,6 @@
                     </div>
                 </router-link>
 
-                <!-- Wallet -->
                 <router-link to="/sandbox/u2f" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Universal 2-Factor Authentication
@@ -225,7 +216,6 @@
                     </div>
                 </router-link>
 
-                <!-- Wallet -->
                 <router-link to="/sandbox/wallet" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Wallet
@@ -241,38 +231,48 @@
             <aside class="block col-span-2">
                 <div class="sticky p-5 top-10 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <div class="flex items-center">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-widivh="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h1 class="text-2xl ml-2">The Sandbox Guide</h1>
+                        <svg class="w-8 h-8 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+                        <h1 class="ml-2 text-3xl text-gray-100 font-medium">
+                            The Sandbox
+                        </h1>
                     </div>
 
                     <div class="mt-3">
-                        <div class="mb-0">
-                            Sandbox is a workspace for developers to safely build and test their latest blockchain ideas.
-                        </div>
+                        <p class="text-indigo-900">
+                            The Sandbox is a "safe" workspace for developers to Plan, Build and Test their newest Crypto ideas.
+                        </p>
 
-                        <div class="mt-0 mb-3">
-                            <small class="text-red-500">
-                                <strong>Ready to go LIVE?</strong> Switch from Testnet to Mainnet and go for it!
+                        <button class="my-2 py-1 px-3 flex w-full justify-center bg-indigo-600 border-2 border-indigo-800 rounded-lg shadow hover:bg-indigo-700">
+                            <small class="text-gray-100">
+                                <span class="block font-bold">Ready to go LIVE?</span>
+                                Switch from Testnet to Mainnet and go for it!
                             </small>
-                        </div>
+                        </button>
 
-                        <div class="grid grid-cols-3">
-                            <div class="col-span-1">Prototype</div>
-                            <div class="col-span-2">
+                        <div class="mt-7 grid grid-cols-3 gap-5">
+                            <div class="col-span-1 text-gray-100 font-medium">
+                                Prototype
+                            </div>
+
+                            <div class="col-span-2 text-indigo-900 text-sm">
                                 Build new functions and test your ideas.
                             </div>
 
-                            <div class="col-span-1">Collaborate</div>
-                            <div class="col-span-2">
-                                Send your experiments to other developers to critique and comment.
+                            <div class="col-span-1 text-gray-100 font-medium">
+                                Collaborate
                             </div>
 
-                            <div class="col-span-1">Deploy</div>
-                            <div class="col-span-2">
-                                When you're ready to deploy your experiemnt.
-                                Integration with GitHub and GitLab makes it a sinch.
+                            <div class="col-span-2 text-indigo-900 text-sm">
+                                Share your experiments with other developers to review and comment.
                             </div>
 
+                            <div class="col-span-1 text-gray-100 font-medium">
+                                Deploy
+                            </div>
+
+                            <div class="col-span-2 text-indigo-900 text-sm">
+                                After you've completed your experiment; our integrations with GitHub and GitLab will make publishing quick and easy.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Sandbox — APECS',
+        title: 'Sandbox — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work

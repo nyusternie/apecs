@@ -2,14 +2,18 @@
     <main class="py-8 overflow-x-hidden">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <header class="px-2 lg:px-10 mt-5 w-full">
-                <h1 class="text-4xl font-bold text-gray-500">Testnet Faucets</h1>
+                <h1 class="text-4xl font-bold text-gray-500">
+                    Testnet Faucets
+                </h1>
 
-                <p class="max-w-lg text-gray-500 p-2 mt-5">
-                    Simply select your preferred crypto from the available faucets below, enter your <strong>"Testnet" Account / Address</strong> and click send.
+                <p class="max-w-xl text-gray-500 p-2 mt-5">
+                    Simply select your preferred crypto from the available faucets below, enter your <strong class="text-rose-500">"Testnet" Address</strong> and click:
 
-                    <span class="block text-xl font-bold mt-1">
-                        SIMPLE!
+                    <span class="my-2 block text-2xl text-indigo-500 font-bold">
+                        START MINING
                     </span>
+
+                    These faucets drip coins every 30 seconds...
                 </p>
             </header>
 
@@ -138,15 +142,6 @@
 
             </section>
 
-            <section class="p-3 lg:p-10">
-                <ul class="pl-10 list-disc">
-                    <li>Our faucets drip every 10 seconds.</li>
-                    <li>You can register your account in our queue.</li>
-                    <li>Max queue size is currently 50.</li>
-                    <li>Serving from account 0xcDA0D6...43FE7C (balance 515 tBCH).</li>
-                </ul>
-            </section>
-
         </div>
     </main>
 </template>
@@ -159,7 +154,7 @@ export default {
         }
     },
     head: () => ({
-        title: 'Testnet Faucets — APECS',
+        title: 'Testnet Faucets — APECS Dev',
         meta: [
             {
                 hid: 'description', // `vmid` for it as it will not work
