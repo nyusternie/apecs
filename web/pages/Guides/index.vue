@@ -6,7 +6,7 @@
 
             <div class="col-span-3 grid grid-cols-3 pb-10">
 
-                <router-link to="/guides/docker" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                <NuxtLink to="/guides/docker" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Docker
                     </h1>
@@ -14,9 +14,9 @@
                     <div class="">
                         Easy setup for Docker
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/guides/key-generation" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                <NuxtLink to="/guides/key-generation" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Key Generation
                     </h1>
@@ -28,9 +28,9 @@
                     <span class="block text-sm ml-8">
                         <strong>NOTE:</strong> Secure your key(s) with a strong password.
                     </span>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/guides/nvm" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                <NuxtLink to="/guides/nvm" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Node Version Manager (NVM)
                     </h1>
@@ -38,9 +38,9 @@
                     <div class="">
                         NVM makes manager your node versions quick and easy.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/guides/veracrypt" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                <NuxtLink to="/guides/veracrypt" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         VeraCrypt
                     </h1>
@@ -48,9 +48,9 @@
                     <div class="">
                         Setup a secure container to store secure data on a non-secure hardware device (eg. DigitalOcean droplet).
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/guides/vps-secure-setup" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                <NuxtLink to="/guides/vps-secure-setup" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         VPS Secure Setup
                     </h1>
@@ -58,9 +58,9 @@
                     <div class="">
                         A complete step-by-setup walkthrough for setting up a new "Secure" Debian v9/10 virtual private server.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/guides/yarn" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                <NuxtLink to="/guides/yarn" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Yarn
                     </h1>
@@ -68,7 +68,7 @@
                     <div class="">
                         Setup Yarn package manager.
                     </div>
-                </router-link>
+                </NuxtLink>
 
             </div>
 

@@ -75,9 +75,9 @@
 
         <div v-if="contractAddress" class="w-max mt-5 p-3 border-2 bg-pink-100 border-pink-300 rounded-xl">
             <span class="block text-gray-500 font-bold text-sm">CONTRACT ADDRESS</span>
-            <router-link :to="'/sbch/address/' + contractAddress" class="text-2xl text-blue-500 font-medium hover:underline">
+            <NuxtLink :to="'/sbch/address/' + contractAddress" class="text-2xl text-blue-500 font-medium hover:underline">
                 {{contractAddress}}
-            </router-link>
+            </NuxtLink>
         </div>
 
         <div class="w-max mt-5 p-3 border-2 bg-pink-100 border-pink-300 rounded-xl">

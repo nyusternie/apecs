@@ -5,6 +5,27 @@
             Nexa Daemon
         </h1>
 
+        <section class="my-3">
+<h2>Get wallet info</h2>
+<code><pre>
+nexa-cli getwalletinfo
+</pre></code>
+        </section>
+
+        <section class="my-3">
+<h2>List unspent UTXOs</h2>
+<code><pre>
+nexa-cli listunspent
+</pre></code>
+        </section>
+
+        <section class="my-3">
+<h2>List unspent UTXOs</h2>
+<code><pre>
+nexa-cli listunspent
+</pre></code>
+        </section>
+
         <!-- Page Section -->
         <section class="w-full h-full flex">
 
@@ -35,7 +56,7 @@
 <script>
 /* Import modules. */
 // import Nito from 'nitojs'
-// import superagent from 'superagent'
+import superagent from 'superagent'
 
 /* Import components. */
 // import UnderConstruction from '@/components/UnderConstruction'
@@ -113,6 +134,72 @@ n/a
             `
         },
 
+        /**
+         * Remote Procedure Call (RPC)
+         *
+         * @param {String} _method
+         * @param {Object} _params
+         * @returns
+         */
+         async rpc(_method, _params) {
+            let endpoint
+            let error
+            let response
+
+            try {
+                /* Set endpoint. */
+                endpoint = `http://user:password@127.0.0.1:7227`
+
+                /* Build package. */
+                const pkg = {
+                    "jsonrpc": "2.0",
+                    "id": "core",
+                    "method": _method,
+                    "params": _params,
+                }
+
+                /* Request Elasticsearch query. */
+                response = await superagent
+                    .post(endpoint)
+                    .set('accept', 'json')
+                    .send(pkg)
+                    .catch(_err => {
+                        console.error(_err)
+
+                        if (_err && _err.response && _err.response.text) {
+                            error = JSON.parse(_err.response.text)
+                        } else if (_err && _err.response) {
+                            error = _err.response
+                        } else {
+                            error = _err
+                        }
+                    })
+
+                /* Validate error. */
+                if (error) {
+                    return error
+                }
+
+                /* Validate response. */
+                if (!response) {
+                    return null
+                }
+                // console.log('\nRPC CALL (response):', response)
+
+                /* Validate response. */
+                if (response.body && response.body.result) {
+                    return response.body.result
+                } else if (response.text) {
+                    return response.text
+                } else {
+                    return null
+                }
+
+            } catch (err) {
+                return err
+            }
+        },
+
     },
     created: async function () {
         this.requests = []
@@ -127,6 +214,9 @@ n/a
             }
         }
         this.requests.push(request)
+
+        // const rpc = await this.rpc('getwalletinfo', '')
+        // console.log('RPC (getwalletinfo):', rpc)
 
     },
     mounted: function () {

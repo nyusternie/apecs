@@ -19,6 +19,41 @@
 
             <!-- Page Section -->
             <section class="px-2 lg:px-10 mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+                <button
+                    class="p-5 bg-rose-500 rounded-xl border-4 border-rose-300 text-xl text-yellow-100 font-bold"
+                    @click="loadAvalanche"
+                >
+                    <h1 class="text-4xl">Avalanche</h1>
+
+                    <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
+                        <span class="text-right text-rose-200 text-xs mt-1 mr-2 uppercase">Blockchain</span>
+                        <span class="text-left mt-1 ml-2 text-base">
+                            Fuji
+                        </span>
+
+                        <span class="text-right text-rose-200 text-xs mt-1 mr-2 uppercase">Asset</span>
+                        <span class="text-left mt-1 ml-2 text-base">tAVAX</span>
+                    </div>
+                </button>
+
+                <button
+                    class="p-5 bg-yellow-500 rounded-xl border-4 border-yellow-300 text-xl text-yellow-100 font-bold"
+                    @click="loadBinance"
+                >
+                    <h1 class="text-4xl">Binance</h1>
+
+                    <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
+                        <span class="text-right text-yellow-900 text-xs mt-1 mr-2 uppercase">Blockchain</span>
+                        <span class="text-left mt-1 ml-2 text-base">
+                            SmartChain
+                        </span>
+
+                        <span class="text-right text-yellow-900 text-xs mt-1 mr-2 uppercase">Asset</span>
+                        <span class="text-left mt-1 ml-2 text-base">tBSC</span>
+                    </div>
+                </button>
+
                 <button
                     class="p-5 bg-green-700 rounded-xl border-4 border-green-500 text-xl text-gray-100 font-bold"
                     @click="loadBitcoinCash"
@@ -34,23 +69,6 @@
 
                         <span class="text-right text-green-300 text-xs mt-1 mr-2 uppercase">Asset</span>
                         <span class="text-left mt-1 ml-2 text-base">tBCH</span>
-                    </div>
-                </button>
-
-                <button
-                    class="p-5 bg-yellow-600 rounded-xl border-4 border-yellow-400 text-xl text-yellow-100 font-bold"
-                    @click="loadNexa"
-                >
-                    <h1 class="text-4xl">Nexa</h1>
-
-                    <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
-                        <span class="text-right text-yellow-200 text-xs mt-1 mr-2 uppercase">Blockchain</span>
-                        <span class="text-left mt-1 ml-2 text-base">
-                            Nexa
-                        </span>
-
-                        <span class="text-right text-yellow-200 text-xs mt-1 mr-2 uppercase">Asset</span>
-                        <span class="text-left mt-1 ml-2 text-base">tNEX</span>
                     </div>
                 </button>
 
@@ -73,36 +91,19 @@
                 </button>
 
                 <button
-                    class="p-5 bg-yellow-500 rounded-xl border-4 border-yellow-300 text-xl text-yellow-100 font-bold"
-                    @click="loadBinance"
+                    class="p-5 bg-yellow-600 rounded-xl border-4 border-yellow-400 text-xl text-yellow-100 font-bold"
+                    @click="loadNexa"
                 >
-                    <h1 class="text-4xl">Binance</h1>
+                    <h1 class="text-4xl">Nexa</h1>
 
                     <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
-                        <span class="text-right text-yellow-900 text-xs mt-1 mr-2 uppercase">Blockchain</span>
+                        <span class="text-right text-yellow-200 text-xs mt-1 mr-2 uppercase">Blockchain</span>
                         <span class="text-left mt-1 ml-2 text-base">
-                            SmartChain
+                            Nexa
                         </span>
 
-                        <span class="text-right text-yellow-900 text-xs mt-1 mr-2 uppercase">Asset</span>
-                        <span class="text-left mt-1 ml-2 text-base">tBSC</span>
-                    </div>
-                </button>
-
-                <button
-                    class="p-5 bg-rose-500 rounded-xl border-4 border-rose-300 text-xl text-yellow-100 font-bold"
-                    @click="loadAvalanche"
-                >
-                    <h1 class="text-4xl">Avalanche</h1>
-
-                    <div class="grid grid-cols-2 text-sm mt-2 flex items-center">
-                        <span class="text-right text-rose-200 text-xs mt-1 mr-2 uppercase">Blockchain</span>
-                        <span class="text-left mt-1 ml-2 text-base">
-                            Fuji
-                        </span>
-
-                        <span class="text-right text-rose-200 text-xs mt-1 mr-2 uppercase">Asset</span>
-                        <span class="text-left mt-1 ml-2 text-base">tAVAX</span>
+                        <span class="text-right text-yellow-200 text-xs mt-1 mr-2 uppercase">Asset</span>
+                        <span class="text-left mt-1 ml-2 text-base">tNEX</span>
                     </div>
                 </button>
 

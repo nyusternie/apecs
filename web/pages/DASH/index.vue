@@ -119,11 +119,11 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <router-link to="/smartbch/contracts" class="focus:outline-none">
+                                        <NuxtLink to="/smartbch/contracts" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Notable Contracts
-                                        </router-link>
+                                        </NuxtLink>
                                     </h3>
 
                                     <p class="mt-2 text-sm text-gray-500">
@@ -150,11 +150,11 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <router-link to="/snippets/sol" class="focus:outline-none">
+                                        <NuxtLink to="/snippets/sol" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Solidity Code Snippets
-                                        </router-link>
+                                        </NuxtLink>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
@@ -185,11 +185,11 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <router-link to="/smartbch/exchange" class="focus:outline-none">
+                                        <NuxtLink to="/smartbch/exchange" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Exchange
-                                        </router-link>
+                                        </NuxtLink>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
@@ -215,11 +215,11 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <router-link to="/smartbch/verify" class="focus:outline-none">
+                                        <NuxtLink to="/smartbch/verify" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Contract Verification
-                                        </router-link>
+                                        </NuxtLink>
                                     </h3>
                                     <p class="mt-2 text-sm text-gray-500">
                                         Quickly and easily verify your smart contracts are deployed with the proper bytecode.

@@ -6,7 +6,7 @@
 
             <div class="col-span-3 grid grid-cols-3 pb-10">
 
-                <router-link to="/sandbox/address" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/address" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Address
                     </h1>
@@ -14,9 +14,9 @@
                     <div class="">
                         Create addresses from user-defined scripts.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/auth" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/auth" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Authentication
                     </h1>
@@ -24,9 +24,9 @@
                     <div class="">
                         Perform user / identity verification using one or more protocols.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/bitdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/bitdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         BitDB
                     </h1>
@@ -35,9 +35,9 @@
                         Bitcoin is the most secure hard disk that will ever exist.
                         BitDB is the memory that lets you make the most out of it.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/cashfusion" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/cashfusion" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashFusion
                     </h1>
@@ -49,9 +49,9 @@
                     <div class="">
                         <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/cashscript" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/cashscript" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashScript
                     </h1>
@@ -59,9 +59,9 @@
                     <div class="">
                         Experiment with Bitcoin Cash smart contracts.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/cashshuffle" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/cashshuffle" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CashShuffle
                     </h1>
@@ -73,9 +73,9 @@
                     <div class="">
                         <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/couchdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/couchdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CouchDB
                     </h1>
@@ -83,9 +83,9 @@
                     <div class="">
                         Perform various CouchDB functions.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/crypto" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/crypto" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Cryptography
                     </h1>
@@ -93,9 +93,9 @@
                     <div class="">
                         Perform various cryptographic functions.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/decode" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/decode" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Decode
                     </h1>
@@ -103,9 +103,9 @@
                     <div class="">
                         Perform various decoding functions.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/elasticsearch" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/elasticsearch" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Elasticsearch
                     </h1>
@@ -113,9 +113,9 @@
                     <div class="">
                         Perform various Elasticsearch functions.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/events" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/events" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Events
                     </h1>
@@ -123,9 +123,9 @@
                     <div class="">
                         Connect with various events, from server-side to ???.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/hardware" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/hardware" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Hardware
                     </h1>
@@ -133,9 +133,9 @@
                     <div class="">
                         Experiment with blockchain hardware devices.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/hashing" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/hashing" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Hashing
                     </h1>
@@ -143,9 +143,9 @@
                     <div class="">
                         Calculate a hash (aka message digest) of data.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/libp2p" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/libp2p" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Libp2p
                     </h1>
@@ -153,9 +153,9 @@
                     <div class="">
                         libp2p is an open source project from the IPFS community.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/messaging" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/messaging" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Messaging
                     </h1>
@@ -163,9 +163,9 @@
                     <div class="">
                         Send and receive messages from one or more on-chain protocols.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/nexad" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/nexad" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Nexa Daemon
                     </h1>
@@ -173,9 +173,9 @@
                     <div class="">
                         Issue commands to your local `nexad` instance using JSON-RPC.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/query" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/query" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Query
                     </h1>
@@ -183,9 +183,9 @@
                     <div class="">
                         Perform queries to the Bitcoin blockchain.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/slpdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/slpdb" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         SLPDB
                     </h1>
@@ -194,9 +194,9 @@
                         The simplest, fastest, and most liberating token system in existence.
                         SLP tokens can easily be created, traded, and managed on the Bitcoin Cash blockchain within seconds; costing the user only fractions of a penny for each transaction.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/transaction" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/transaction" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Transaction
                     </h1>
@@ -204,9 +204,9 @@
                     <div class="">
                         Perform experiments on Bitcoin Cash transactions.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/u2f" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/u2f" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Universal 2-Factor Authentication
                     </h1>
@@ -214,9 +214,9 @@
                     <div class="">
                         Build and experiment with U2F.
                     </div>
-                </router-link>
+                </NuxtLink>
 
-                <router-link to="/sandbox/wallet" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/wallet" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Wallet
                     </h1>
@@ -224,7 +224,7 @@
                     <div class="">
                         Build and experiment with Bitcoin Cash wallets.
                     </div>
-                </router-link>
+                </NuxtLink>
 
             </div>
 
