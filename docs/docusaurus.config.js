@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'APECS Documenation',
+  title: 'APECS Docs',
   tagline: 'Everything you need to BUIDL',
   url: 'https://docs.apecs.dev',
   baseUrl: '/',
@@ -51,9 +51,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'APECS',
+        title: 'APECS Docs',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'APECS Dev Logo',
           src: 'img/logo.svg',
         },
         items: [
