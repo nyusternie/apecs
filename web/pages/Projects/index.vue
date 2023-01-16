@@ -411,7 +411,6 @@
 
 /* Import modules. */
 import moment from 'moment'
-// import superagent from 'superagent'
 
 /* Import (local) components. */
 import Pinned from './Pinned'
@@ -473,7 +472,7 @@ export default {
             updatedAt: 1672565712
         })
 
-        // superagent
+        // fetch
         //     .get(this.apiUrl + '/projects')
         //     .set('accept', 'json')
         //     .end((err, res) => {

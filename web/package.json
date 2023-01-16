@@ -16,13 +16,8 @@
     "@bitauth/libauth": "1.19.1",
     "@ethersproject/shims": "5.7.0",
     "bitcore-lib-cash": "8.25.40",
-    "ethereum-blockies-base64": "1.0.2",
     "ethers": "5.7.2",
-    "moment": "2.29.4",
-    "nitojs": "https://github.com/nyusternie/nitojs",
-    "numeral": "2.0.6",
-    "superagent": "8.0.3",
-    "uuid": "9.0.0"
+    "nitojs": "https://github.com/nyusternie/nitojs"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "6.2.1",
@@ -35,8 +30,12 @@
     "@ledgerhq/hw-transport-webusb": "6.27.8",
     "@nuxtjs/plausible": "0.2.0",
     "@nuxtjs/tailwindcss": "6.2.0",
+    "ethereum-blockies-base64": "1.0.2",
     "ipfs-core": "0.17.0",
+    "moment": "2.29.4",
     "nuxt": "3.0.0",
-    "postcss-custom-properties": "12.1.11"
+    "postcss-custom-properties": "12.1.11",
+    "numeral": "2.0.6",
+    "uuid": "9.0.0"
   }
 }

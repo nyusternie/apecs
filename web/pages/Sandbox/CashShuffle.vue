@@ -157,7 +157,6 @@
 <script>
 /* Import modules. */
 import numeral from 'numeral'
-import superagent from 'superagent'
 
 export default {
     data: () => {
@@ -272,8 +271,7 @@ export default {
         /* Set server URI. */
         this.serverUri = 'https://shuffle.servo.cash:8080/stats'
 
-        superagent
-            .get(this.serverUri)
+        fetch(this.serverUri)
             .set('accept', 'json')
             .end((err, res) => {
                 if (err) {

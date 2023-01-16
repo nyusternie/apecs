@@ -153,7 +153,6 @@ Approval (owneraddress, spenderaddress, valueuint256)
 /* Import modules. */
 // import Nito from 'nitojs'
 import numeral from 'numeral'
-import superagent from 'superagent'
 
 export default {
     data: () => {
@@ -251,7 +250,7 @@ export default {
             // console.log('REQUEST', request);
 
             /* Make RPC request. */
-            const response = await superagent
+            const response = await fetch
                 // .post('https://smartbch.apecs.dev/mainnet')
                 .post('https://smartbch.fountainhead.cash/mainnet')
                 // .post('https://smartbch.apecs.dev/testnet')
@@ -322,7 +321,7 @@ export default {
             // console.log('REQUEST', request);
 
             /* Make RPC request. */
-            const response = await superagent
+            const response = await fetch
                 // .post('https://smartbch.apecs.dev/mainnet')
                 .post('https://smartbch.fountainhead.cash/mainnet')
                 // .post('https://smartbch.apecs.dev/testnet')

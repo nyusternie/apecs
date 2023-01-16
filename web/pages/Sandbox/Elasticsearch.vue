@@ -35,7 +35,6 @@
 <script>
 /* Import modules. */
 // import Nito from 'nitojs'
-// import superagent from 'superagent'
 
 /* Import components. */
 // import UnderConstruction from '@/components/UnderConstruction'
@@ -87,7 +86,7 @@ export default {
             }
             console.log('REQUEST', request)
 
-            // const response = await superagent.get()
+            // const response = await fetch()
             const response = await Nito.Blockchain.Query.request(request)
                 .catch(err => console.error(err))
 

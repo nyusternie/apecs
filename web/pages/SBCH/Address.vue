@@ -17,7 +17,6 @@
 /* Import modules. */
 // import Nito from 'nitojs'
 import numeral from 'numeral'
-import superagent from 'superagent'
 
 export default {
     data: () => {
@@ -88,7 +87,7 @@ export default {
             console.log('REQUEST', request);
 
             /* Make RPC request. */
-            const response = await superagent
+            const response = await fetch
                 .post(this.endpoint)
                 .set('Content-Type', 'application/json')
                 .send(request)

@@ -289,7 +289,6 @@
 /* Import modules. */
 import { ethers } from 'ethers'
 import numeral from 'numeral'
-import superagent from 'superagent'
 
 /* Import components. */
 import Blocks from './Blocks'
@@ -521,7 +520,7 @@ export default {
             }
 
             /* Make RPC request. */
-            const response = await superagent
+            const response = await fetch
                 // .post('https://smartbch.apecs.dev/mainnet')
                 .post('https://smartbch.fountainhead.cash/mainnet')
                 .set('Content-Type', 'application/json')

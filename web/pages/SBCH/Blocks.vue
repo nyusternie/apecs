@@ -44,7 +44,6 @@
 <script>
 /* Import modules. */
 import numeral from 'numeral'
-import superagent from 'superagent'
 
 /* Set constants. */
 const NUM_BLOCKS_DISPLAYED = 5
@@ -94,7 +93,7 @@ export default {
             }
 
             /* Make RPC request. */
-            const response = await superagent
+            const response = await fetch
                 // .post('https://smartbch.apecs.dev/mainnet')
                 .post('https://smartbch.fountainhead.cash/mainnet')
                 .set('Content-Type', 'application/json')

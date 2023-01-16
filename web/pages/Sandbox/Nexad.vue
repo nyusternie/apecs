@@ -56,7 +56,6 @@ nexa-cli listunspent
 <script>
 /* Import modules. */
 // import Nito from 'nitojs'
-import superagent from 'superagent'
 
 /* Import components. */
 // import UnderConstruction from '@/components/UnderConstruction'
@@ -108,7 +107,7 @@ export default {
             }
             console.log('REQUEST', request)
 
-            // const response = await superagent.get()
+            // const response = await fetch()
             const response = await Nito.Blockchain.Query.request(request)
                 .catch(err => console.error(err))
 
@@ -159,7 +158,7 @@ n/a
                 }
 
                 /* Request Elasticsearch query. */
-                response = await superagent
+                response = await fetch
                     .post(endpoint)
                     .set('accept', 'json')
                     .send(pkg)

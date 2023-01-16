@@ -211,7 +211,6 @@
 <script>
 /* Import modules. */
 import numeral from 'numeral'
-import superagent from 'superagent'
 
 export default {
     props: {
@@ -302,10 +301,13 @@ export default {
     },
     methods: {
         async init() {
-            const response = await superagent.get('https://api.telr.io/v1/ticker/quote/BCH')
+            let body
+            let response
+
+            response = await fetch('https://api.telr.io/v1/ticker/quote/BCH')
             // console.log('STATUS RESPONSE', response)
 
-            const body = response.body
+            body = await response.json()
             // console.log('BODY', body)
 
             if (body.price) {

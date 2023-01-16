@@ -1,6 +1,3 @@
-/* Import modules. */
-import superagent from 'superagent'
-
 /* Initialize Session Manager (Plugin). */
 const SessionManager = {}
 
@@ -38,7 +35,7 @@ SessionManager.install = function (_Vue) {
                 // console.log('STORE SESSION ID', sessionId)
 
                 return new Promise((resolve, reject) => {
-                    superagent
+                    fetch
                         .post(apiUrl + '/sessions')
                         .send({ sessionId })
                         .set('accept', 'json')
