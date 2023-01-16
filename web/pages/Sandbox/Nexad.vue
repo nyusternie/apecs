@@ -141,7 +141,7 @@ n/a
          * @param {Object} _params
          * @returns
          */
-         async rpc(_method, _params) {
+        async rpc(_method, _params) {
             let endpoint
             let error
             let response

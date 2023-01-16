@@ -13,3 +13,5 @@ export default {
     layout: 'error' // you can set a custom layout for the error page
 }
 </script>
+
+<script defer data-domain="apecs.dev" src="https://plausible.io/js/script.js"></script>
