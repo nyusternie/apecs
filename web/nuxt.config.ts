@@ -6,6 +6,7 @@ export default defineNuxtConfig({
         '@fortawesome/fontawesome-svg-core/styles.css'
     ],
     modules: [
+        '@nuxtjs/plausible',
         '@nuxtjs/tailwindcss',
     ],
     publicRuntimeConfig: {

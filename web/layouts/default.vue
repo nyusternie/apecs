@@ -28,5 +28,3 @@ main::-webkit-scrollbar-thumb, section::-webkit-scrollbar-thumb {
     height: calc(100% - 70px);
 }
 </style>
-
-<script defer data-domain="apecs.dev" src="https://plausible.io/js/script.js"></script>

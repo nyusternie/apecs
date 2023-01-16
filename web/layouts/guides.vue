@@ -21,5 +21,3 @@
         </section>
     </main>
 </template>
-
-<script defer data-domain="apecs.dev" src="https://plausible.io/js/script.js"></script>
