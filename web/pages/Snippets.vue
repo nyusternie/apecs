@@ -38,22 +38,22 @@
             </div>
         </header>
 
-        <section class="py-10 max-w-5xl mx-auto">
-            <h1 class="text-3xl">
-                Code Snippets
-            </h1>
+        <h1 class="text-3xl">
+            Code Snippets
+        </h1>
 
+        <section class="py-10 max-w-5xl mx-auto">
             <h1 class="mt-5 text-3xl font-bold">
                 Math.sol
-                <small class="text-xs text-gray-500">SOLIDITY</small>
+                <small class="text-xs text-gray-500 uppercase">Solidity</small>
             </h1>
 
-            <div class="mt-3 p-5 font-medium bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+            <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
                 A library for performing various math operations.
             </div>
 
-<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl"><code>
-pragma solidity =0.5.16;
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>pragma solidity =0.5.16;
 
 // a library for performing various math operations
 
@@ -77,6 +77,31 @@ library Math {
         }
     }
 }
+</code></pre>
+        </section>
+
+        <section class="py-10 max-w-5xl mx-auto">
+            <h1 class="mt-5 text-3xl font-bold">
+                Deploy CouchDB
+                <small class="text-xs text-gray-500 uppercase">Infrastructure</small>
+            </h1>
+
+            <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                Deploys a NoSQL database using Docker.
+
+                <small class="block">
+                    NOTE: All database data is stored in the current working folder.
+                </small>
+            </div>
+
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>docker run --rm \
+    --name my-couchdb \
+    -e COUCHDB_USER=admin \
+    -e COUCHDB_PASSWORD=password \
+    -p 5984:5984 \
+    -v $(pwd):/opt/couchdb/data \
+    couchdb:3.3.1
 </code></pre>
         </section>
 
