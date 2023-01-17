@@ -369,7 +369,7 @@
                 <!-- </div> -->
 
                 <footer class='py-3 text-sm bg-gray-100 text-center border-t-2 border-gray-200'>
-                    <span class="block">&bullet; &nbsp; APECS is <span class="font-bold">100% FREE</span> as in beer &nbsp; &bullet;</span>
+                    <span class="block">&bullet; &nbsp; APECS is <NuxtLink to="/donate" class="text-red-500 font-bold">100% FREE</NuxtLink> as in beer &nbsp; &bullet;</span>
 
                     <span class="block mt-2">
                         Latest: <a href="https://github.com/nyusternie/apecs" target="_blank" class="text-red-500 font-bold">v{{version}}</a>
