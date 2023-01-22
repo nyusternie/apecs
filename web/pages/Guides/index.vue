@@ -6,6 +6,16 @@
 
             <div class="col-span-3 grid grid-cols-3 pb-10">
 
+                <NuxtLink to="/guides/couchdb" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        CouchDB
+                    </h1>
+
+                    <div class="">
+                        Get started with CouchDB
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/docker" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Docker
@@ -28,6 +38,16 @@
                     <span class="block text-sm ml-8">
                         <strong>NOTE:</strong> Secure your key(s) with a strong password.
                     </span>
+                </NuxtLink>
+
+                <NuxtLink to="/guides/nginx" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        NGINX
+                    </h1>
+
+                    <div class="">
+                        NGINX is a great reverse proxy for your web-based applications.
+                    </div>
                 </NuxtLink>
 
                 <NuxtLink to="/guides/nvm" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
