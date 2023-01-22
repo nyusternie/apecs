@@ -99,7 +99,8 @@ library Math {
     --name my-couchdb \
     -e COUCHDB_USER=admin \
     -e COUCHDB_PASSWORD=password \
-    -p 5984:5984 \
+    -e COUCHDB_ERLANG_COOKIE=33595219-bc56-43ca-9df6-a9b4145f1e49 \
+    -p 127.0.0.1:5984:5984 \
     -v $(pwd):/opt/couchdb/data \
     couchdb:3.3.1
 </code></pre>
