@@ -1,6 +1,6 @@
 <template>
     <main class="flex w-full h-full justify-center items-center">
-        <div class="w-1/2">
+        <div class="w-full sm:w-1/2">
             <img
                 src="@/assets/under-construction.png"
                 class="rounded-xl ring-4 ring-offset-4 ring-gray-500 shadow"

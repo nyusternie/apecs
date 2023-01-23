@@ -230,8 +230,8 @@
                                     </button>
 
                                     <div v-if="showDesktopMenu" class="space-y-1" id="sub-menu-1">
-                                        <NuxtLink to="/desktop/newsfeed" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            Newsfeed
+                                        <NuxtLink to="/desktop/design" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            Design Studio
                                         </NuxtLink>
 
                                         <NuxtLink to="/desktop/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
