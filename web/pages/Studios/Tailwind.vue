@@ -276,7 +276,11 @@
 
                 <!-- Right column -->
                 <div class="grid grid-cols-1 gap-4">
-                    Tailwind CSS is an open source CSS framework.
+                    <span>
+                        Tailwind CSS is an open source CSS framework.
+                        <a href="https://tailwindcss.com/" target="_blank" class="text-blue-900 font-medium hover:underline">https://tailwindcss.com</a>
+                    </span>
+
                     The main feature of this library is that, unlike other CSS frameworks like Bootstrap, it does not provide a series of predefined classes for elements such as buttons or tables.
                     Instead, it creates a list of "utility" CSS classes that can be used to style each element by mixing and matching.
                 </div>

@@ -53,55 +53,24 @@ chmod +x ./get-docker.sh
 ./get-docker.sh</textarea>
                 </div>
 
-                <hr />
-
-                <h3 class="text-2xl font-medium">
-                    Update your system
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt update</textarea>
-                </div>
-
-                <h3 class="text-2xl font-medium">
-                    Install the certificate
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common</textarea>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-medium">
-                    Add the key
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -</textarea>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-medium">
-                    Add the repository
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"</textarea>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-medium">
-                    Update the system
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt update</textarea>
-                </div>
-
                 <h3 class="mt-10 text-2xl font-medium">
                     Install Docker and Docker Compose
                 </h3>
 
                 <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install docker-ce docker-compose</textarea>
+                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install docker-ce docker-compose</textarea>
                 </div>
+
+                <hr />
+
+                <h3 class="text-2xl font-medium">
+                    Run CouchDB
+                </h3>
+
+                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">docker run -d --restart=always --name &lt;database-name&gt; -v /secure-fs/couchdb:/opt/couchdb/data -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=&lt;password&gt; couchdb:latest</textarea>
+                </div>
+
             </section>
         </template>
 
