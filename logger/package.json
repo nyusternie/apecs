@@ -1,0 +1,9 @@
+{
+  "name": "@apecsjs/logger",
+  "version": "23.1.28",
+  "description": "Remote logging and error analysis.",
+  "main": "index.js",
+  "repository": "https://github.com/nyusternie/apecs",
+  "author": "Shomari",
+  "license": "MIT"
+}
