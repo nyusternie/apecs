@@ -1,6 +1,6 @@
 {
   "name": "apecs-web",
-  "version": "23.1.16",
+  "version": "23.2.9",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
   "description": "An uncensorable, multi-chain platform for P2P electronic cash Builders to do what they need to do.",
@@ -14,12 +14,18 @@
   },
   "dependencies": {
     "@bitauth/libauth": "1.19.1",
-    "@ethersproject/shims": "5.7.0",
     "bitcore-lib-cash": "8.25.40",
     "ethers": "5.7.2",
-    "nitojs": "https://github.com/nyusternie/nitojs"
+    "ethereum-blockies-base64": "1.0.2",
+    "ipfs-core": "0.17.0",
+    "moment": "2.29.4",
+    "nitojs": "https://github.com/nyusternie/nitojs",
+    "numeral": "2.0.6",
+    "nuxt": "3.0.0",
+    "uuid": "9.0.0"
   },
   "devDependencies": {
+    "@ethersproject/shims": "5.7.0",
     "@fortawesome/fontawesome-svg-core": "6.2.1",
     "@fortawesome/free-brands-svg-icons": "6.2.1",
     "@fortawesome/free-regular-svg-icons": "6.2.1",
@@ -30,12 +36,6 @@
     "@ledgerhq/hw-transport-webusb": "6.27.8",
     "@nuxtjs/plausible": "0.2.0",
     "@nuxtjs/tailwindcss": "6.2.0",
-    "ethereum-blockies-base64": "1.0.2",
-    "ipfs-core": "0.17.0",
-    "moment": "2.29.4",
-    "nuxt": "3.0.0",
-    "postcss-custom-properties": "12.1.11",
-    "numeral": "2.0.6",
-    "uuid": "9.0.0"
+    "postcss-custom-properties": "12.1.11"
   }
 }

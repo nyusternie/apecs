@@ -141,18 +141,18 @@ export default {
     },
     mounted: function () {
         /* Set JQuery. */
-        const $ = window.$
+        // const $ = window.$
 
         /* Wait a tick for DOM to initialize. */
-        setTimeout(() => {
-            $('.sparkbar').peity('bar', {
-                width: '100'
-            })
+        // setTimeout(() => {
+        //     $('.sparkbar').peity('bar', {
+        //         width: '100'
+        //     })
 
-            $('.sparkline').peity('line', {
-                width: '100'
-            })
-        }, 10)
+        //     $('.sparkline').peity('line', {
+        //         width: '100'
+        //     })
+        // }, 10)
 
     },
 }

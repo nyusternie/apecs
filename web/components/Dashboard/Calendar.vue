@@ -42,13 +42,13 @@
 export default {
     mounted: function () {
         /* Set JQuery. */
-        const $ = window.$
+        // const $ = window.$
 
         /* Inline calendar. */
-        $('#calendar').datetimepicker({
-            format: 'L',
-            inline: true
-        })
+        // $('#calendar').datetimepicker({
+        //     format: 'L',
+        //     inline: true
+        // })
 
     },
 }
