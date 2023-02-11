@@ -6,12 +6,22 @@ export default defineNuxtConfig({
         '@fortawesome/fontawesome-svg-core/styles.css'
     ],
     modules: [
-        '@pinia/nuxt',
         '@nuxtjs/plausible',
         '@nuxtjs/tailwindcss',
+        '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt',
     ],
-    publicRuntimeConfig: {
-        clientVersion: pkg.version,
+    piniaPersistedstate: {
+        storage: 'localStorage',
+    },
+    runtimeConfig: {
+        // NOTE: The private keys which are only available within server-side.
+        secrets: {},
+
+        // NOTE: Keys within public, will be also exposed to the client-side
+        public: {
+            clientVersion: pkg.version,
+        }
     },
     routeRules: {
         // Static page generated on-demand, revalidates in background
@@ -25,6 +35,7 @@ export default defineNuxtConfig({
 
         // Render these routes with SPA
         '/admin/**': { ssr: false },
+        // '/bch/**': { ssr: false },
         // '/nexa/**': { ssr: true },
 
         // Add cors headers

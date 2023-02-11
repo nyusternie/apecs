@@ -1,9 +1,19 @@
 <script setup>
+import { storeToRefs } from 'pinia'
+
 import { useCounterStore } from '@/stores/counter'
 
 const store = useCounterStore()
 
-console.log('STORE NAME', store.name)
+const {
+    count: myCount,
+    doubleCount: nextCounter
+} = storeToRefs(store)
+
+const tryCounter = () => {
+    console.log('increment')
+    store.increment()
+}
 </script>
 
 <template>
@@ -49,8 +59,8 @@ console.log('STORE NAME', store.name)
                                             Test MetaMask
                                         </a>
 
-                                        <a @click="testSigning" href="javascript://" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                                            Test Signing
+                                        <a @click="tryCounter" href="javascript://" class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            Try Counter
                                         </a>
                                     </div>
                                 </div>
@@ -64,12 +74,12 @@ console.log('STORE NAME', store.name)
 
                                 <div class="px-6 py-5 text-sm font-medium text-center">
                                     <span class="block text-gray-600">Last Block Validator</span>
-                                    <span class="block text-gray-900">n/a</span>
+                                    <span class="block text-gray-900">{{myCount}}</span>
                                 </div>
 
                                 <div class="px-6 py-5 text-sm font-medium text-center">
                                     <span class="block text-gray-600">Next Difficulty Adjustment</span>
-                                    <span class="block text-gray-900">n/a</span>
+                                    <span class="block text-gray-900">{{nextCounter}}</span>
                                 </div>
                             </div>
 
