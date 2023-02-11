@@ -14,14 +14,15 @@
   },
   "dependencies": {
     "@bitauth/libauth": "1.19.1",
-    "bitcore-lib-cash": "8.25.40",
-    "ethers": "5.7.2",
+    "bitcore-lib-cash": "8.25.46",
     "ethereum-blockies-base64": "1.0.2",
+    "ethers": "5.7.2",
     "ipfs-core": "0.17.0",
     "moment": "2.29.4",
     "nitojs": "https://github.com/nyusternie/nitojs",
     "numeral": "2.0.6",
     "nuxt": "3.0.0",
+    "pinia": "2.0.30",
     "uuid": "9.0.0"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@ledgerhq/hw-transport-webusb": "6.27.8",
     "@nuxtjs/plausible": "0.2.0",
     "@nuxtjs/tailwindcss": "6.2.0",
+    "@pinia/nuxt": "0.4.6",
     "postcss-custom-properties": "12.1.11"
   }
 }

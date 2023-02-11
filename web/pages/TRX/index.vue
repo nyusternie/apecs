@@ -554,7 +554,7 @@ export default {
         this.account = 'no account connected'
 
         /* Start initialization. */
-        this.init()
+        // this.init()
     },
     mounted: function () {
         //

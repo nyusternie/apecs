@@ -1,3 +1,11 @@
+<script setup>
+import { useCounterStore } from '@/stores/counter'
+
+const store = useCounterStore()
+
+console.log('STORE NAME', store.name)
+</script>
+
 <template>
     <!-- <main class="relative min-h-screen bg-gray-100"> -->
     <main class="py-8 overflow-x-hidden overflow-y-hidden bg-green-400">
@@ -554,7 +562,7 @@ export default {
         this.account = 'no account connected'
 
         /* Start initialization. */
-        this.init()
+        // this.init()
     },
     mounted: function () {
         //

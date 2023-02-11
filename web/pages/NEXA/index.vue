@@ -1,16 +1,21 @@
 <template>
     <!-- <main class="relative min-h-screen bg-gray-100"> -->
     <main class="py-8 overflow-x-hidden overflow-y-hidden bg-green-400">
+
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <h1 class="sr-only">Profile</h1>
+
             <!-- Main 3 column grid -->
             <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
+
                 <!-- Left column -->
                 <div class="grid grid-cols-1 gap-4 lg:col-span-2">
+
                     <!-- Welcome panel -->
                     <section aria-labelledby="profile-overview-title">
                         <div class="rounded-lg bg-white overflow-hidden shadow">
                             <h2 class="sr-only" id="profile-overview-title">Profile Overview</h2>
+
                             <div class="bg-white p-6">
                                 <div class="sm:flex sm:items-center sm:justify-between">
                                     <div class="sm:flex sm:space-x-5">
@@ -21,6 +26,7 @@
                                                 alt=""
                                             />
                                         </div>
+
                                         <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
                                             <p class="text-sm font-medium text-gray-600">
                                                 Connected to Mainnet
@@ -68,6 +74,10 @@
                         </div>
                     </section>
 
+                    <section class="bg-gradient-to-r from-yellow-100 to-yellow-200 border-2 border-yellow-500 rounded-xl shadow-md">
+                        <pre v-html="debugCode" class="px-5 py-3 text-yellow-900" />
+                    </section>
+
                     <!-- Actions panel -->
                     <section aria-labelledby="quick-links-title">
                         <div class="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px">
@@ -82,6 +92,7 @@
                                         </svg>
                                     </span>
                                 </div>
+
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
                                         <a href="javascript://" class="focus:outline-none">
@@ -94,6 +105,7 @@
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
                                     </p>
                                 </div>
+
                                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                         <path
@@ -117,6 +129,7 @@
                                         </svg>
                                     </span>
                                 </div>
+
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
                                         <NuxtLink to="/smartbch/contracts" class="focus:outline-none">
@@ -130,6 +143,7 @@
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
                                     </p>
                                 </div>
+
                                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                         <path
@@ -148,6 +162,7 @@
                                         </svg>
                                     </span>
                                 </div>
+
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
                                         <NuxtLink to="/snippets/sol" class="focus:outline-none">
@@ -160,6 +175,7 @@
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
                                     </p>
                                 </div>
+
                                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                         <path
@@ -183,6 +199,7 @@
                                         </svg>
                                     </span>
                                 </div>
+
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
                                         <NuxtLink to="/smartbch/exchange" class="focus:outline-none">
@@ -195,6 +212,7 @@
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
                                     </p>
                                 </div>
+
                                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                         <path
@@ -213,6 +231,7 @@
                                         </svg>
                                     </span>
                                 </div>
+
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
                                         <NuxtLink to="/smartbch/verify" class="focus:outline-none">
@@ -225,6 +244,7 @@
                                         Quickly and easily verify your smart contracts are deployed with the proper bytecode.
                                     </p>
                                 </div>
+
                                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                         <path
@@ -250,6 +270,7 @@
                                         </svg>
                                     </span>
                                 </div>
+
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
                                         <a href="javascript://" class="focus:outline-none">
@@ -262,6 +283,7 @@
                                         Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis et quo et molestiae.
                                     </p>
                                 </div>
+
                                 <span class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true">
                                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                         <path
@@ -290,6 +312,10 @@
 import { ethers } from 'ethers'
 import numeral from 'numeral'
 
+// import Bitcore from 'bitcore-lib-cash'
+// import Bitcore from 'bitcore-lib-nexa'
+// import * as HDPrivateKey from 'bitcore-lib-cash/lib/hdprivatekey'
+
 /* Import components. */
 import Blocks from './Blocks'
 import Txs from './Txs'
@@ -314,6 +340,8 @@ export default {
             account: null,
             blockHeight: null,
             blocks: null,
+
+            debugCode: null,
         }
     },
     computed: {
@@ -548,13 +576,18 @@ export default {
     created: async function () {
         /* Initialize block height. */
         // NOTE: Use hex format.
-        this.blockHeight = '0x0'
+        // this.blockHeight = '0x0'
 
         /* Initialize (connected) account. */
-        this.account = 'no account connected'
+        // this.account = 'no account connected'
 
         /* Start initialization. */
-        this.init()
+        // this.init()
+
+        // this.debugCode = '// place debugging code here'
+
+        // this.debugCode = Bitcore.Opcode.OP_EQUALVERIFY
+        // console.log('HDPrivateKey', HDPrivateKey)
     },
     mounted: function () {
         //
