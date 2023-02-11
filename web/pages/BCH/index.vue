@@ -11,7 +11,6 @@ const {
 } = storeToRefs(store)
 
 const tryCounter = () => {
-    console.log('increment')
     store.increment()
 }
 </script>
