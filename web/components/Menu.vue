@@ -321,7 +321,7 @@
                                 </h3>
 
                                 <div class="space-y-1" role="group" aria-labelledby="projects-headline">
-                                    <NuxtLink to="/dapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <NuxtLink to="/uapps" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         <span class="truncate">
                                             Unstoppable Apps
                                         </span>
