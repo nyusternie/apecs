@@ -2,6 +2,16 @@ import pkg from './package.json'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    app: {
+        head: {
+            charset: 'utf-8',
+            viewport: 'initial-scale=1',
+            title: 'APECS — Crypto Creators HQ',
+            meta: [
+                { name: 'description', content: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.' }
+            ],
+        }
+    },
     css: [
         '@fortawesome/fontawesome-svg-core/styles.css'
     ],
@@ -12,7 +22,7 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
     ],
     piniaPersistedstate: {
-        storage: 'localStorage',
+        storage: 'localStorage', // NOTE: Default is cookies.
     },
     runtimeConfig: {
         // NOTE: The private keys which are only available within server-side.
@@ -21,7 +31,7 @@ export default defineNuxtConfig({
         // NOTE: Keys within public, will be also exposed to the client-side
         public: {
             clientVersion: pkg.version,
-        }
+        },
     },
     routeRules: {
         // Static page generated on-demand, revalidates in background

@@ -1,18 +1,33 @@
+<script setup>
+/* Import modules. */
+import { ref } from 'vue'
+
+/* Configure meta tags. */
+useHead({
+    title: 'Blank — APECS Dev',
+    meta: [
+        { name: 'description', content: 'TBD..' }
+    ],
+})
+
+/* Initialize (reactive) variables. */
+const var1 = ref(0)
+
+</script>
+
 <template>
     <main class="min-h-full">
-        <SiteHeaderView />
-
         <section class="mt-8 pb-8">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                 <h1 class="sr-only">
                     Blank
                 </h1>
 
-                <!-- Main 3 column grid -->
+                <!-- Main content area -->
                 <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
                     <section class="p-5 flex flex-col col-span-2 space-y-4 bg-yellow-50 border-2 border-yellow-200 rounded-lg shadow">
                         <h1 class="text-4xl font-bold text-yellow-900">
-                            Blank
+                            Blank {{var1}}
                         </h1>
 
                         <p class="text-yellow-900">
@@ -20,51 +35,12 @@
                         </p>
                     </section>
 
-                    <!-- Right column -->
+                    <!-- Aside -->
                     <div class="grid grid-cols-1 gap-4">
-                        <PayoutsBlock />
-
-                        <BlockRewardsPanel />
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
                 </div>
             </div>
         </section>
-
-        <FooterView />
     </main>
 </template>
-
-<script>
-// import { mapGetters } from 'vuex'
-
-export default {
-    // middleware: 'magic.auth',
-    data: () => ({
-        //
-    }),
-    head: () => ({
-        title: 'Blank — APECS Dev',
-        meta: [
-            {
-                hid: 'description', // `vmid` for it as it will not work
-                name: 'description',
-                content: 'TBD..'
-            }
-        ]
-    }),
-    computed: {
-        // ...mapGetters({
-        //     // panelIsShowing: 'system/getPanelState'
-        // })
-    },
-    created: function () {
-        //
-    },
-    mounted: function () {
-        //
-    },
-    methods: {
-        //
-    }
-}
-</script>
