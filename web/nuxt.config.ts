@@ -1,7 +1,8 @@
+/* Import package info. */
 import pkg from './package.json'
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    /* Application Settings */
     app: {
         head: {
             charset: 'utf-8',
@@ -12,18 +13,26 @@ export default defineNuxtConfig({
             ],
         }
     },
+
+    /* Style Sheets */
     css: [
         '@fortawesome/fontawesome-svg-core/styles.css'
     ],
+
+    /* Modules */
     modules: [
         '@nuxtjs/plausible',
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
         '@pinia-plugin-persistedstate/nuxt',
     ],
+
+    /* Pinia Storage */
     piniaPersistedstate: {
         storage: 'localStorage', // NOTE: Default is cookies.
     },
+
+    /* Runtime Configuration */
     runtimeConfig: {
         // NOTE: The private keys which are only available within server-side.
         secrets: {},
@@ -33,6 +42,8 @@ export default defineNuxtConfig({
             clientVersion: pkg.version,
         },
     },
+
+    /* Routing Rules */
     routeRules: {
         // Static page generated on-demand, revalidates in background
         // '/blog/**': { swr: true },
@@ -55,6 +66,8 @@ export default defineNuxtConfig({
         // '/old-page': { redirect: '/new-page' },
         // '/old-page2': { redirect: { to: '/new-page', statusCode: 302 } }
     },
+
+    /* Vite Configuration */
     vite: {
         server: {
             fs: {

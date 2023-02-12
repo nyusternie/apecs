@@ -1,3 +1,16 @@
+<script setup lang="ts">
+useHead({
+    title: 'APECS — Crypto Creators HQ',
+    ogTitle: 'APECS — Crypto Creators HQ',
+
+    description: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
+    ogDescription: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
+
+    ogImage: 'https://apecs.dev/poster.jpg',
+    twitterCard: 'summary_large_image',
+})
+</script>
+
 <template>
     <main class="w-screen flex flex-row bg-pink-500">
         <Menu class="hidden lg:block w-80 h-screen flex-none overflow-x-hidden overflow-y-scroll" />

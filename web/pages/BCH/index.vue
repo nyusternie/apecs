@@ -1,4 +1,12 @@
-<script setup>
+<script setup lang="ts">
+/* Configure meta tags. */
+useHead({
+    title: 'Bitcoin Cash — APECS Dev',
+    meta: [
+        { name: 'description', content: 'Bitcoin Cash toolkit.' }
+    ],
+})
+
 import { storeToRefs } from 'pinia'
 
 import { useCounterStore } from '@/stores/counter'
@@ -302,7 +310,7 @@ const tryCounter = () => {
     </main>
 </template>
 
-<script>
+<script lang="ts">
 /* Import modules. */
 import { ethers } from 'ethers'
 import numeral from 'numeral'

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 /* Import modules. */
 import { ref } from 'vue'
 
@@ -13,6 +13,7 @@ useHead({
 /* Initialize (reactive) variables. */
 const var1 = ref(0)
 
+// TBD...
 </script>
 
 <template>

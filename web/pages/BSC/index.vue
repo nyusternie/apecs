@@ -1,3 +1,13 @@
+<script setup lang="ts">
+/* Configure meta tags. */
+useHead({
+    title: 'BNB Smart Chain — APECS Dev',
+    meta: [
+        { name: 'description', content: 'BNB Smart Chain toolkit.' }
+    ],
+})
+</script>
+
 <template>
     <!-- <main class="relative min-h-screen bg-gray-100"> -->
     <main class="py-8 overflow-x-hidden overflow-y-hidden bg-green-400">
@@ -27,7 +37,7 @@
                                             </p>
 
                                             <p class="text-xl font-bold text-gray-900 sm:text-2xl">
-                                                Binance
+                                                BNB Smart Chain
                                             </p>
 
                                             <p class="text-sm font-medium text-gray-600">
@@ -285,7 +295,7 @@
     </main>
 </template>
 
-<script>
+<script lang="ts">
 /* Import modules. */
 import { ethers } from 'ethers'
 import numeral from 'numeral'

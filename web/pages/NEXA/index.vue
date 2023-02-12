@@ -1,3 +1,13 @@
+<script setup lang="ts">
+/* Configure meta tags. */
+useHead({
+    title: 'Nexa — APECS Dev',
+    meta: [
+        { name: 'description', content: 'Nexa toolkit.' }
+    ],
+})
+</script>
+
 <template>
     <!-- <main class="relative min-h-screen bg-gray-100"> -->
     <main class="py-8 overflow-x-hidden overflow-y-hidden bg-green-400">
@@ -307,7 +317,7 @@
     </main>
 </template>
 
-<script>
+<script lang="ts">
 /* Import modules. */
 import { ethers } from 'ethers'
 import numeral from 'numeral'

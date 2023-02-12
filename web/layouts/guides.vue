@@ -1,3 +1,16 @@
+<script setup lang="ts">
+useHead({
+    title: 'Guides — APECS Dev',
+    ogTitle: 'Guides — APECS Dev',
+
+    description: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
+    ogDescription: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
+
+    ogImage: 'https://apecs.dev/poster.jpg',
+    twitterCard: 'summary_large_image',
+})
+</script>
+
 <template>
     <main class="h-full overflow-x-hidden overflow-y-scroll">
         <header class="bg-gradient-to-r from-indigo-900 to-indigo-700 border-b-4 border-indigo-500">
