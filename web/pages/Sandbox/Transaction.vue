@@ -1,3 +1,118 @@
+<script setup lang="ts">
+import {
+    binToHex,
+    CashAddressType,
+    encodeCashAddress,
+    encodePrivateKeyWif,
+    hexToBin,
+    instantiateSha256,
+    instantiateSecp256k1,
+    instantiateRipemd160,
+} from '@bitauth/libauth'
+
+import broadcast from '../../libs/broadcast.js'
+import cashaddr from '../../libs/cashaddr.js'
+import createBCHTransaction from '../../libs/createBCHTransaction.js'
+import getUnspentOutputs from '../../libs/getUnspentOutputs.js'
+
+import DecodeRawTx from './Transaction/DecodeRawTx.vue'
+import TxIdDetails from './Transaction/TxIdDetails.vue'
+
+const TEST_ADDRESS = 'bitcoincash:qz4ae49sckad73mascc0vpmzh5tzdfg5sv7tcgqhkn'
+
+/* Configure meta tags. */
+useHead({
+    title: 'Transaction Sandbox — APECS Dev',
+    meta: [
+        { name: 'description', content: 'Build various transactions.' }
+    ],
+})
+
+
+const withdraw = async () => {
+    /* Set (BIP39) seed phrase. */
+    const seed = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
+
+    /* Instantiate Libauth crypto interfaces. */
+    const secp256k1 = await instantiateSecp256k1()
+    const sha256 = await instantiateSha256()
+    const ripemd160 = await instantiateRipemd160()
+
+    /* Generate signature hash and entropy. */
+    const signatureHash = ethers.utils.id(seed)
+    // const signatureEntropy = ethers.BigNumber.from(signatureHash)
+
+    /* Generate private key entropy using Hop Wallet Prime. */
+    const privateKeyEntropy = ethers.BigNumber.from(signatureHash)
+    // const privateKeyEntropy = signatureEntropy
+    //     .mod(this.$store.state.HOP_WALLET_PRIME)
+
+    /* Format the private key to binary. */
+    // NOTE: Start at position 2 to omit the 0x prefix added by toHexString.
+    const privateKey = hexToBin(
+        privateKeyEntropy.toHexString().substring(2))
+    console.log('PRIVATE KEY', privateKey)
+    console.log('PRIVATE KEY (hex)', binToHex(privateKey))
+
+    // Derive the corresponding public key.
+    const publicKey = secp256k1.derivePublicKeyCompressed(privateKey)
+    console.log('PUBLIC KEY', publicKey)
+    console.log('PUBLIC KEY (hex)', binToHex(publicKey))
+
+    /* Hash the public key hash according to the P2PKH scheme. */
+    const publicKeyHash = ripemd160.hash(sha256.hash(publicKey))
+    console.log('PUBLIC KEY HASH', publicKeyHash)
+
+    /* Encode the public key hash into a P2PKH cash address. */
+    const cashAddress = encodeCashAddress(
+        'bitcoincash', CashAddressType.P2PKH, publicKeyHash)
+    console.log('CASH ADDRESS', cashAddress)
+
+    /* Encode the public key hash into a P2PKH nexa address. */
+    const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
+    console.log('NEXA ADDRESS       ', nexaAddress)
+
+    // Encode Private Key WIF.
+    const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
+    console.log('PRIVATE KEY (WIF):', privateKeyWIF)
+
+
+    // Fetch all unspent transaction outputs for the temporary in-browser wallet.
+    const unspentOutputs = await getUnspentOutputs(cashAddress)
+    console.log('UNSPENT OUTPUTS', unspentOutputs)
+
+    if (unspentOutputs.length === 0) {
+        return console.error('There are NO unspent outputs available.')
+    }
+
+    // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
+    const transactionTemplate = await createBCHTransaction(
+        privateKeyWIF,
+        unspentOutputs,
+        TEST_ADDRESS,
+        0,
+    )
+
+    /* Set miner fee. */
+    // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
+    const minerFee = Math.floor(1.1 * transactionTemplate.byteLength)
+    console.info(`Calculated mining fee: [ ${minerFee} ] sats`) // eslint-disable-line no-console
+
+    // If there's funds and it matches our expectation, forward it to the bridge.
+    const bridgeTransaction = await createBCHTransaction(
+        privateKeyWIF,
+        unspentOutputs,
+        TEST_ADDRESS,
+        minerFee,
+    )
+    console.log('TRANSACTION', bridgeTransaction)
+    console.log('TRANSACTION (hex)', binToHex(bridgeTransaction))
+
+    // Broadcast transaction
+    // broadcast(binToHex(bridgeTransaction))
+}
+</script>
+
 <template>
     <NuxtLayout name="sandbox">
         <template #intro>
@@ -136,143 +251,3 @@
         </template>
     </NuxtLayout>
 </template>
-
-<script>
-/* Import modules. */
-import { ethers } from 'ethers'
-
-import {
-    binToHex,
-    CashAddressType,
-    encodeCashAddress,
-    encodePrivateKeyWif,
-    hexToBin,
-    instantiateSha256,
-    instantiateSecp256k1,
-    instantiateRipemd160,
-} from '@bitauth/libauth'
-
-import broadcast from '../../libs/broadcast'
-import cashaddr from '../../libs/cashaddr'
-import createBCHTransaction from '../../libs/createBCHTransaction'
-import getUnspentOutputs from '../../libs/getUnspentOutputs'
-
-import DecodeRawTx from './Transaction/DecodeRawTx'
-import TxIdDetails from './Transaction/TxIdDetails'
-
-const TEST_ADDRESS = 'bitcoincash:qz4ae49sckad73mascc0vpmzh5tzdfg5sv7tcgqhkn'
-
-export default {
-    components: {
-        DecodeRawTx,
-        TxIdDetails,
-    },
-    data: () => ({
-        //
-    }),
-    head: () => ({
-        title: 'Transaction — APECS Dev',
-        meta: [
-            {
-                hid: 'description', // `vmid` for it as it will not work
-                name: 'description',
-                content: 'Perform various transaction operations.'
-            }
-        ]
-    }),
-    computed: {
-        //
-    },
-    methods: {
-        async withdraw () {
-            /* Set (BIP39) seed phrase. */
-            const seed = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
-
-            /* Instantiate Libauth crypto interfaces. */
-            const secp256k1 = await instantiateSecp256k1()
-            const sha256 = await instantiateSha256()
-            const ripemd160 = await instantiateRipemd160()
-
-            /* Generate signature hash and entropy. */
-            const signatureHash = ethers.utils.id(seed)
-            // const signatureEntropy = ethers.BigNumber.from(signatureHash)
-
-            /* Generate private key entropy using Hop Wallet Prime. */
-            const privateKeyEntropy = ethers.BigNumber.from(signatureHash)
-            // const privateKeyEntropy = signatureEntropy
-            //     .mod(this.$store.state.HOP_WALLET_PRIME)
-
-            /* Format the private key to binary. */
-            // NOTE: Start at position 2 to omit the 0x prefix added by toHexString.
-            const privateKey = hexToBin(
-                privateKeyEntropy.toHexString().substring(2))
-            console.log('PRIVATE KEY', privateKey)
-            console.log('PRIVATE KEY (hex)', binToHex(privateKey))
-
-            // Derive the corresponding public key.
-            const publicKey = secp256k1.derivePublicKeyCompressed(privateKey)
-            console.log('PUBLIC KEY', publicKey)
-            console.log('PUBLIC KEY (hex)', binToHex(publicKey))
-
-            /* Hash the public key hash according to the P2PKH scheme. */
-            const publicKeyHash = ripemd160.hash(sha256.hash(publicKey))
-            console.log('PUBLIC KEY HASH', publicKeyHash)
-
-            /* Encode the public key hash into a P2PKH cash address. */
-            const cashAddress = encodeCashAddress(
-                'bitcoincash', CashAddressType.P2PKH, publicKeyHash)
-            console.log('CASH ADDRESS', cashAddress)
-
-            /* Encode the public key hash into a P2PKH nexa address. */
-            const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
-            console.log('NEXA ADDRESS       ', nexaAddress)
-
-            // Encode Private Key WIF.
-            const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
-            console.log('PRIVATE KEY (WIF):', privateKeyWIF)
-
-
-            // Fetch all unspent transaction outputs for the temporary in-browser wallet.
-            const unspentOutputs = await getUnspentOutputs(cashAddress)
-            console.log('UNSPENT OUTPUTS', unspentOutputs)
-
-            if (unspentOutputs.length === 0) {
-                return console.error('There are NO unspent outputs available.')
-            }
-
-            // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
-            const transactionTemplate = await createBCHTransaction(
-                privateKeyWIF,
-                unspentOutputs,
-                TEST_ADDRESS,
-                0,
-            )
-
-            /* Set miner fee. */
-            // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
-            const minerFee = Math.floor(1.1 * transactionTemplate.byteLength)
-            console.info(`Calculated mining fee: [ ${minerFee} ] sats`) // eslint-disable-line no-console
-
-            // If there's funds and it matches our expectation, forward it to the bridge.
-            const bridgeTransaction = await createBCHTransaction(
-                privateKeyWIF,
-                unspentOutputs,
-                TEST_ADDRESS,
-                minerFee,
-            )
-            console.log('TRANSACTION', bridgeTransaction)
-            console.log('TRANSACTION (hex)', binToHex(bridgeTransaction))
-
-            // Broadcast transaction
-            // broadcast(binToHex(bridgeTransaction))
-        },
-
-    },
-    created: async function () {
-        //
-    },
-    mounted: function () {
-        //
-    },
-}
-</script>

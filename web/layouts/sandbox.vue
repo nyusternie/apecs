@@ -1,13 +1,13 @@
 <script setup lang="ts">
 useHead({
-    title: 'Sandbox — APECS Dev',
-    ogTitle: 'Sandbox — APECS Dev',
+    // title: 'Sandbox — APECS Dev',
+    // ogTitle: 'Sandbox — APECS Dev',
 
-    description: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
-    ogDescription: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
+    // description: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
+    // ogDescription: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
 
-    ogImage: 'https://apecs.dev/poster.jpg',
-    twitterCard: 'summary_large_image',
+    // ogImage: 'https://apecs.dev/poster.jpg',
+    // twitterCard: 'summary_large_image',
 })
 </script>
 

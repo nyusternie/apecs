@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { useCounterStore } from '@/stores/counter'
+
 /* Configure meta tags. */
 useHead({
     title: 'Bitcoin Cash — APECS Dev',
@@ -6,10 +9,6 @@ useHead({
         { name: 'description', content: 'Bitcoin Cash toolkit.' }
     ],
 })
-
-import { storeToRefs } from 'pinia'
-
-import { useCounterStore } from '@/stores/counter'
 
 const store = useCounterStore()
 
