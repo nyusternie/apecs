@@ -162,6 +162,8 @@ function getTypeBits(type) {
   switch (type) {
   case 'P2PKH':
     return 0;
+  case 'SCRIPT':
+    return 1<<3;
   case 'TEMPLATE':
     return 19<<3;
   case 'GROUP':
@@ -184,6 +186,8 @@ function getType(versionByte) {
   switch (versionByte & 248) {
   case 0:
     return 'P2PKH';
+  case 1<<3:
+    return 'SCRIPT';
   case 19<<3:
     return 'TEMPLATE';
   case 11<<3:
