@@ -4,7 +4,7 @@ import { ref } from 'vue'
 /**
  * Reverse Bytes
  *
- * Reverses the order (endiness) of the hex string.
+ * Reverses the order (endianness) of the hex string.
  *
  * @param {String} _bytes A (hex) string.
  */

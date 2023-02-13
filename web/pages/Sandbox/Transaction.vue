@@ -10,6 +10,8 @@ import {
     instantiateRipemd160,
 } from '@bitauth/libauth'
 
+import { ethers } from 'ethers'
+
 import broadcast from '../../libs/broadcast.js'
 import cashaddr from '../../libs/cashaddr.js'
 import createBCHTransaction from '../../libs/createBCHTransaction.js'
@@ -31,16 +33,26 @@ useHead({
 
 const withdraw = async () => {
     /* Set (BIP39) seed phrase. */
-    const seed = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
+    const mnemonic = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
+    console.log('MNEMONIC', mnemonic)
+
+    const isValidMnemonic = ethers.utils.isValidMnemonic(mnemonic)
+    // console.log('IS VALID MNEMONIC', isValidMnemonic)
+
+    const seed = ethers.utils.mnemonicToSeed(mnemonic)
+    console.log('SEED', seed)
+
+    /* Generate signature hash and entropy. */
+    const signatureHash = ethers.utils.id(seed)
+    // console.log('SIGNATURE HASH', signatureHash)
+
+    const signatureEntropy = ethers.BigNumber.from(signatureHash)
+    // console.log('SIGNATURE ENTROPY', signatureEntropy)
 
     /* Instantiate Libauth crypto interfaces. */
     const secp256k1 = await instantiateSecp256k1()
     const sha256 = await instantiateSha256()
     const ripemd160 = await instantiateRipemd160()
-
-    /* Generate signature hash and entropy. */
-    const signatureHash = ethers.utils.id(seed)
-    // const signatureEntropy = ethers.BigNumber.from(signatureHash)
 
     /* Generate private key entropy using Hop Wallet Prime. */
     const privateKeyEntropy = ethers.BigNumber.from(signatureHash)
@@ -51,12 +63,12 @@ const withdraw = async () => {
     // NOTE: Start at position 2 to omit the 0x prefix added by toHexString.
     const privateKey = hexToBin(
         privateKeyEntropy.toHexString().substring(2))
-    console.log('PRIVATE KEY', privateKey)
+    // console.log('PRIVATE KEY', privateKey)
     console.log('PRIVATE KEY (hex)', binToHex(privateKey))
 
     // Derive the corresponding public key.
     const publicKey = secp256k1.derivePublicKeyCompressed(privateKey)
-    console.log('PUBLIC KEY', publicKey)
+    // console.log('PUBLIC KEY', publicKey)
     console.log('PUBLIC KEY (hex)', binToHex(publicKey))
 
     /* Hash the public key hash according to the P2PKH scheme. */
@@ -69,13 +81,18 @@ const withdraw = async () => {
     console.log('CASH ADDRESS', cashAddress)
 
     /* Encode the public key hash into a P2PKH nexa address. */
-    const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
-    console.log('NEXA ADDRESS       ', nexaAddress)
+    // const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
+    const nexaAddress = cashaddr.encode('nexa', 'TEMPLATE', publicKeyHash)
+    console.log('NEXA ADDRESS 1', nexaAddress)
+
+    const nexaAddress2 = encodeCashAddress(
+        'nexa', CashAddressType.P2PKH, publicKeyHash)
+    console.log('NEXA ADDRESS 2', nexaAddress2)
 
     // Encode Private Key WIF.
     const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
     console.log('PRIVATE KEY (WIF):', privateKeyWIF)
-
+return
 
     // Fetch all unspent transaction outputs for the temporary in-browser wallet.
     const unspentOutputs = await getUnspentOutputs(cashAddress)
@@ -201,9 +218,9 @@ const withdraw = async () => {
                             Test Withdraw
                         </button>
 
-                        <!-- <TxIdDetails /> -->
+                        <TxIdDetails />
 
-                        <DecodeRawTx />
+                        <!-- <DecodeRawTx /> -->
                     </section>
 
                     <aside class="block col-span-2">

@@ -32,7 +32,7 @@ useHead({
                                         <div class="flex-shrink-0">
                                             <img
                                                 class="mx-auto h-20 w-20 rounded-full"
-                                                src="~/assets/img/logos/smartbch.png"
+                                                src="~/assets/img/logos/SBCH.png"
                                                 alt=""
                                             />
                                         </div>
