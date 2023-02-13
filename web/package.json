@@ -1,6 +1,6 @@
 {
   "name": "apecs-web",
-  "version": "23.2.12",
+  "version": "23.2.13",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
   "description": "An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.",
@@ -19,6 +19,7 @@
     "ethers": "5.7.2",
     "ipfs-core": "0.17.0",
     "moment": "2.29.4",
+    "nexaaddrjs": "1.1.2",
     "nitojs": "https://github.com/nyusternie/nitojs",
     "numeral": "2.0.6",
     "nuxt": "3.0.0",

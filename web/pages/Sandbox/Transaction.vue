@@ -11,6 +11,8 @@ import {
 } from '@bitauth/libauth'
 
 import { ethers } from 'ethers'
+import NexaAddr from 'nexaaddrjs'
+import { OpcodesBTC } from '@bitauth/libauth'
 
 import broadcast from '../../libs/broadcast.js'
 import cashaddr from '../../libs/cashaddr.js'
@@ -30,6 +32,70 @@ useHead({
     ],
 })
 
+function buf2hex(buffer) { // buffer is an ArrayBuffer
+  return [...new Uint8Array(buffer,)]
+      .map(x => x.toString(16).padStart(2, '0'))
+      .join('');
+}
+
+/**
+ * Convert a hex string to an ArrayBuffer.
+ *
+ * @param {string} hexString - hex representation of bytes
+ * @return {ArrayBuffer} - The bytes in an ArrayBuffer.
+ */
+ function hexStringToArrayBuffer(hexString) {
+    // remove the leading 0x
+    hexString = hexString.replace(/^0x/, '');
+
+    // ensure even number of characters
+    if (hexString.length % 2 != 0) {
+        console.log('WARNING: expecting an even number of characters in the hexString');
+    }
+
+    // check for some non-hex characters
+    var bad = hexString.match(/[G-Z\s]/i);
+    if (bad) {
+        console.log('WARNING: found non-hex characters', bad);
+    }
+
+    // split the string into pairs of octets
+    var pairs = hexString.match(/[\dA-F]{2}/gi);
+
+    // convert the octets to integers
+    var integers = pairs.map(function(s) {
+        return parseInt(s, 16);
+    });
+
+    var array = new Uint8Array(integers);
+    // console.log(array);
+
+    return array;
+}
+
+const getAddressScript = (_address: any) => {
+    // return Buffer.from(_address)
+    var addr = NexaAddr.decode(_address);
+    // console.log('GET ADDRESS SCRIPT (hash):', addr.hash)
+    // console.log('GET ADDRESS SCRIPT (hex):', buf2hex(addr.hash))
+    // console.log('GET ADDRESS SCRIPT (unit8):', hexStringToArrayBuffer(buf2hex(addr.hash)))
+    // console.log('GET ADDRESS SCRIPT (hex2):', buf2hex(hexStringToArrayBuffer(buf2hex(addr.hash))))
+    return addr.hash
+    // if (addr.type === 'P2PKH') {
+    //     return Bitcore.Script.empty()
+    //         .add(OpcodesBTC.OP_DUP)
+    //         .add(OpcodesBTC.OP_HASH160)
+    //         .add(addr.hash)
+    //         .add(OpcodesBTC.OP_EQUALVERIFY)
+    //         .add(OpcodesBTC.OP_CHECKSIG).toBuffer();
+    // }
+
+    // if (addr.type === 'TEMPLATE') {
+    //     return new BufferReader(Buffer.from(addr.hash)).readVarLengthBuffer();
+    // }
+
+    // return "invalid";
+}
 
 const withdraw = async () => {
     /* Set (BIP39) seed phrase. */
@@ -73,7 +139,16 @@ const withdraw = async () => {
 
     /* Hash the public key hash according to the P2PKH scheme. */
     const publicKeyHash = ripemd160.hash(sha256.hash(publicKey))
-    console.log('PUBLIC KEY HASH', publicKeyHash)
+    // console.log('PUBLIC KEY HASH', publicKeyHash)
+    console.log('PUBLIC KEY HASH (hex)', buf2hex(publicKeyHash))
+
+    const myScript = hexStringToArrayBuffer('17005114' + buf2hex(publicKeyHash))
+    console.log('PUBLIC KEY HASH (template)', typeof myScript, myScript)
+    console.log('PUBLIC KEY HASH (hex template)', buf2hex(myScript))
+
+    const other = getAddressScript('nexa:nqtsq5g5afy0ggk2wp05n6w0760wy766m8s072tkx79t63xl')
+    console.log('OTHER', typeof other, other)
+    console.log('OTHER (hex)', buf2hex(other))
 
     /* Encode the public key hash into a P2PKH cash address. */
     const cashAddress = encodeCashAddress(
@@ -88,6 +163,11 @@ const withdraw = async () => {
     const nexaAddress2 = encodeCashAddress(
         'nexa', CashAddressType.P2PKH, publicKeyHash)
     console.log('NEXA ADDRESS 2', nexaAddress2)
+
+    const nexaAddress3 = NexaAddr.encode(
+        'nexa', 'TEMPLATE', myScript)
+        // 'nexa', 'TEMPLATE', getAddressScript(publicKeyHash))
+    console.log('NEXA ADDRESS 3', nexaAddress3)
 
     // Encode Private Key WIF.
     const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
