@@ -93,30 +93,31 @@ const withdraw = async () => {
     console.log('CASH ADDRESS', cashAddress)
 
     /* Encode the public key hash into a P2PKH nexa address. */
-    // const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
-    const nexaAddress = cashaddr.encode('nexa', 'TEMPLATE', publicKeyHash)
-    console.log('NEXA ADDRESS 1', nexaAddress)
-
-    const nexaAddress2 = encodeCashAddress(
-        'nexa', CashAddressType.P2PKH, publicKeyHash)
-    console.log('NEXA ADDRESS 2', nexaAddress2)
-
-    const nexaAddress3 = NexaAddr.encode(
+    const nexaAddress = NexaAddr.encode(
         'nexa', 'TEMPLATE', myScript)
-    console.log('NEXA ADDRESS 3', nexaAddress3)
+    console.log('NEXA ADDRESS', nexaAddress)
+
+    // const nexaAddress = cashaddr.encode('nexa', 'P2PKH', publicKeyHash)
+    // const nexaAddress2 = cashaddr.encode('nexa', 'TEMPLATE', publicKeyHash)
+    // console.log('NEXA ADDRESS 2', nexaAddress2)
+
+    // const nexaAddress3 = encodeCashAddress(
+    //     'nexa', CashAddressType.P2PKH, publicKeyHash)
+    // console.log('NEXA ADDRESS 3', nexaAddress3)
 
     // Encode Private Key WIF.
     const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
     console.log('PRIVATE KEY (WIF):', privateKeyWIF)
 
     // Fetch all unspent transaction outputs for the temporary in-browser wallet.
-    const unspentOutputs = await getUnspentOutputs(cashAddress)
+    // const unspentOutputs = await getUnspentOutputs(cashAddress)
+    const unspentOutputs = await getUnspentOutputs(nexaAddress)
     console.log('UNSPENT OUTPUTS', unspentOutputs)
 
     if (unspentOutputs.length === 0) {
         return console.error('There are NO unspent outputs available.')
     }
-
+return
     // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
     const transactionTemplate = await createBCHTransaction(
         privateKeyWIF,
