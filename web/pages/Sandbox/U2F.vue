@@ -966,8 +966,6 @@ export default {
 
 
         (function () {
-          "use strict";
-
           // https://github.com/ashtuchkin/u2f/blob/05c8bc6cc6d1610fd5bf0d9b9324615897dd6d0d/index.js#L62-L77
           function asnLen(buf) {
             if (buf.length < 2 || buf[0] != 0x30)

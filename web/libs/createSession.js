@@ -3,7 +3,7 @@ import CashID from 'cashid'
 import moment from 'moment'
 
 /* Import modules. */
-import installBadger from '@/libs/installBadger'
+import installBadger from './installBadger.js'
 
 /**
  * Get Session Id

@@ -7,8 +7,6 @@
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
 
-'use strict'
-
 import base32 from './base32'
 import bigInt from 'big-integer'
 import convertBits from './convertBits'

@@ -73,30 +73,6 @@ function buf2hex(buffer) { // buffer is an ArrayBuffer
     return array;
 }
 
-const getAddressScript = (_address: any) => {
-    // return Buffer.from(_address)
-    var addr = NexaAddr.decode(_address);
-    // console.log('GET ADDRESS SCRIPT (hash):', addr.hash)
-    // console.log('GET ADDRESS SCRIPT (hex):', buf2hex(addr.hash))
-    // console.log('GET ADDRESS SCRIPT (unit8):', hexStringToArrayBuffer(buf2hex(addr.hash)))
-    // console.log('GET ADDRESS SCRIPT (hex2):', buf2hex(hexStringToArrayBuffer(buf2hex(addr.hash))))
-    return addr.hash
-    // if (addr.type === 'P2PKH') {
-    //     return Bitcore.Script.empty()
-    //         .add(OpcodesBTC.OP_DUP)
-    //         .add(OpcodesBTC.OP_HASH160)
-    //         .add(addr.hash)
-    //         .add(OpcodesBTC.OP_EQUALVERIFY)
-    //         .add(OpcodesBTC.OP_CHECKSIG).toBuffer();
-    // }
-
-    // if (addr.type === 'TEMPLATE') {
-    //     return new BufferReader(Buffer.from(addr.hash)).readVarLengthBuffer();
-    // }
-
-    // return "invalid";
-}
-
 const withdraw = async () => {
     /* Set (BIP39) seed phrase. */
     const mnemonic = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
@@ -140,15 +116,12 @@ const withdraw = async () => {
     /* Hash the public key hash according to the P2PKH scheme. */
     const publicKeyHash = ripemd160.hash(sha256.hash(publicKey))
     // console.log('PUBLIC KEY HASH', publicKeyHash)
-    console.log('PUBLIC KEY HASH (hex)', buf2hex(publicKeyHash))
+    console.log('PUBLIC KEY HASH (buf2hex)', buf2hex(publicKeyHash))
+    console.log('PUBLIC KEY HASH (bin2hex)', binToHex(publicKeyHash))
 
     const myScript = hexStringToArrayBuffer('17005114' + buf2hex(publicKeyHash))
     console.log('PUBLIC KEY HASH (template)', typeof myScript, myScript)
     console.log('PUBLIC KEY HASH (hex template)', buf2hex(myScript))
-
-    const other = getAddressScript('nexa:nqtsq5g5afy0ggk2wp05n6w0760wy766m8s072tkx79t63xl')
-    console.log('OTHER', typeof other, other)
-    console.log('OTHER (hex)', buf2hex(other))
 
     /* Encode the public key hash into a P2PKH cash address. */
     const cashAddress = encodeCashAddress(
@@ -166,18 +139,16 @@ const withdraw = async () => {
 
     const nexaAddress3 = NexaAddr.encode(
         'nexa', 'TEMPLATE', myScript)
-        // 'nexa', 'TEMPLATE', getAddressScript(publicKeyHash))
     console.log('NEXA ADDRESS 3', nexaAddress3)
 
     // Encode Private Key WIF.
     const privateKeyWIF = encodePrivateKeyWif(sha256, privateKey, 'mainnet')
     console.log('PRIVATE KEY (WIF):', privateKeyWIF)
-return
 
     // Fetch all unspent transaction outputs for the temporary in-browser wallet.
     const unspentOutputs = await getUnspentOutputs(cashAddress)
     console.log('UNSPENT OUTPUTS', unspentOutputs)
-
+return
     if (unspentOutputs.length === 0) {
         return console.error('There are NO unspent outputs available.')
     }

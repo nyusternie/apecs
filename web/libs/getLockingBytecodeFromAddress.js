@@ -10,11 +10,11 @@ import {
  *
  * @function
  *
- * @param address {string} Bitcoin Cash address.
+ * @param _address {String} Bitcoin Cash address.
  *
  * @returns {Uint8Array} The locking code for the given address.
  */
-const getLockingBytecodeFromAddress = async (address) => {
+const getLockingBytecodeFromAddress = async (_address) => {
     // Initialize an empty error message, that we can use to display after we exhausted our options.
     let errorMessages = ''
 
@@ -22,15 +22,15 @@ const getLockingBytecodeFromAddress = async (address) => {
         // Add a prefix if necessary.
         let prefix = ''
 
-        if (!address.startsWith('bitcoincash:')) {
+        if (!_address.startsWith('bitcoincash:')) {
             prefix = 'bitcoincash:'
         }
 
-        const lockScriptResult = cashAddressToLockingBytecode(prefix + address)
+        const lockScriptResult = cashAddressToLockingBytecode(prefix + _address)
 
         // Throw an error in case of failure (which we'll catch and ignore).
         if(typeof lockScriptResult === 'string') {
-            throw(new Error(`Cannot decode '${address}' as a cash address: ${lockScriptResult}`))
+            throw(new Error(`Cannot decode '${_address}' as a cash address: ${lockScriptResult}`))
         }
 
         return lockScriptResult.bytecode
@@ -42,11 +42,11 @@ const getLockingBytecodeFromAddress = async (address) => {
     try {
         // Attempt to decode the address as a base58 legacy address.
         const sha256 = await instantiateSha256()
-        const lockScriptResult = base58AddressToLockingBytecode(sha256, address)
+        const lockScriptResult = base58AddressToLockingBytecode(sha256, _address)
 
         // Throw an error in case of failure (which we'll catch and ignore).
         if (typeof lockScriptResult === 'string') {
-            throw(new Error(`Cannot decode '${address}' as a base58 address: ${lockScriptResult}`));
+            throw(new Error(`Cannot decode '${_address}' as a base58 address: ${lockScriptResult}`));
         }
 
         return lockScriptResult.bytecode
@@ -56,7 +56,7 @@ const getLockingBytecodeFromAddress = async (address) => {
     }
 
     // Throw an error, including the the most recent error message in case the address could not be decoded with either address type.
-    throw(new Error(`Failed to decode '${address}': ${errorMessages}`));
+    throw(new Error(`Failed to decode '${_address}': ${errorMessages}`));
 }
 
 /* Export module. */
