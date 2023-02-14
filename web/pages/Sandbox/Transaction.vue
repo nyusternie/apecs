@@ -14,6 +14,8 @@ import { ethers } from 'ethers'
 import NexaAddr from 'nexaaddrjs'
 import { OpcodesBTC } from '@bitauth/libauth'
 
+import { useSystemStore } from '@/stores/system'
+
 import broadcast from '../../libs/broadcast.js'
 import cashaddr from '../../libs/cashaddr.js'
 import createBCHTransaction from '../../libs/createBCHTransaction.js'
@@ -21,8 +23,6 @@ import getUnspentOutputs from '../../libs/getUnspentOutputs.js'
 
 import DecodeRawTx from './Transaction/DecodeRawTx.vue'
 import TxIdDetails from './Transaction/TxIdDetails.vue'
-
-const TEST_ADDRESS = 'bitcoincash:qz4ae49sckad73mascc0vpmzh5tzdfg5sv7tcgqhkn'
 
 /* Configure meta tags. */
 useHead({
@@ -32,9 +32,15 @@ useHead({
     ],
 })
 
+/* Initialize (System) store. */
+const System = useSystemStore()
+
+/**
+ * Withdraw
+ */
 const withdraw = async () => {
     /* Set (BIP39) seed phrase. */
-    const mnemonic = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
+    const mnemonic = System.mnemonic
     console.log('MNEMONIC', mnemonic)
 
     const isValidMnemonic = ethers.utils.isValidMnemonic(mnemonic)
@@ -106,7 +112,7 @@ const withdraw = async () => {
     // Fetch all unspent transaction outputs for the temporary in-browser wallet.
     const unspentOutputs = await getUnspentOutputs(cashAddress)
     console.log('UNSPENT OUTPUTS', unspentOutputs)
-return
+
     if (unspentOutputs.length === 0) {
         return console.error('There are NO unspent outputs available.')
     }
@@ -115,7 +121,7 @@ return
     const transactionTemplate = await createBCHTransaction(
         privateKeyWIF,
         unspentOutputs,
-        TEST_ADDRESS,
+        System.bchTestAddress,
         0,
     )
 
@@ -123,12 +129,12 @@ return
     // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
     const minerFee = Math.floor(1.1 * transactionTemplate.byteLength)
     console.info(`Calculated mining fee: [ ${minerFee} ] sats`) // eslint-disable-line no-console
-
+return
     // If there's funds and it matches our expectation, forward it to the bridge.
     const bridgeTransaction = await createBCHTransaction(
         privateKeyWIF,
         unspentOutputs,
-        TEST_ADDRESS,
+        System.bchTestAddress,
         minerFee,
     )
     console.log('TRANSACTION', bridgeTransaction)

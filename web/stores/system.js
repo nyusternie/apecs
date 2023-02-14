@@ -3,13 +3,26 @@ import { defineStore } from 'pinia'
 /**
  * System Store
  */
-export const useCounterStore = defineStore('system', {
+export const useSystemStore = defineStore('system', {
     state: () => ({
-        error: null,
-        notification: null,
+        /* Error messages holder. */
+        errors: [],
+
+        /* Notification messages holder. */
+        notifications: [],
 
         /* Initialize API Endpoint (constant). */
         apiEndpoint: 'https://api.apecs.dev/v1',
+
+        /* Initialize (lazy dev) mnemonic phrase. */
+        // FIXME: FOR LAZY DEVELOPMENT PURPOSES ONLY
+        mnemonic: 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony',
+
+        /* Initialize (Bitcoin Cash) test address. */
+        // NOTE: HöS on EC
+        bchTestAddress: 'bitcoincash:qqwsfram5cc87k2n26gshjnylg8gdjnauuum5sws3c',
+
+        // TBD
     }),
 
     getters: {
@@ -22,15 +35,15 @@ export const useCounterStore = defineStore('system', {
          */
         _setError (_error) {
             /* Update error message. */
-            this.state.error = _error
+            this.state.errors.push(_error)
         },
 
         /**
          * Set Notification
          */
-        _setNotification (_notification) {
+        _setNotification (_notifications) {
             /* Update notification message. */
-            this.state.notification = _notification
+            this.state.notifications.push(_notification)
         },
 
         setError (_error) {

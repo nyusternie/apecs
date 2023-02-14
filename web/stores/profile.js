@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 /**
  * Profile Store
  */
-export const useCounterStore = defineStore('profile', {
+export const useProfileStore = defineStore('profile', {
     state: () => ({
         /* Initialize session id. */
         sessionId: null,
