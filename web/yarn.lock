@@ -6828,7 +6828,7 @@ netmask@^2.0.2:
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-2.0.2.tgz#8b01a07644065d536383835823bc52004ebac5e7"
   integrity sha512-dBpDMdxv9Irdq66304OLfEmQ9tbNRFnFTuZiLo+bD+r332bBmMJ8GBLXklIXXgxd3+v9+KUnZaUR5PJMa75Gsg==
 
-nexaaddrjs@^1.1.2:
+nexaaddrjs@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/nexaaddrjs/-/nexaaddrjs-1.1.2.tgz#dbd2da7ec205e77579350e2b4ddba946d86ea2b0"
   integrity sha512-BEFN53qDoh3yHmGizw/99xX/7EZPfrFtoO1mtNveZaz1CeL06dtD6RxEdn0KHTGjDCDaRZJOQfVoIOVGYd29AQ==

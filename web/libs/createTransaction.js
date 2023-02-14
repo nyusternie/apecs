@@ -38,7 +38,7 @@ const createTransaction = async (privateKeyWIF, unspentOutputs, outputs) => {
         locktime: 0,
     }
     console.log('UNSIGNED TRANSACTION', JSON.parse(JSON.stringify(transaction)))
-    console.log('UNSIGNED TRANSACTION (encoded):', encodeTransaction(transaction))
+    // console.log('UNSIGNED TRANSACTION (encoded):', encodeTransaction(transaction))
     console.log('UNSIGNED TRANSACTION (encoded) (hex):', binToHex(encodeTransaction(transaction)))
 
     // Sign all inputs and add the generated unlocking scripts to the transaction.

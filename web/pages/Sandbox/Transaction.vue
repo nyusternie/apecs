@@ -129,7 +129,7 @@ const withdraw = async () => {
     // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
     const minerFee = Math.floor(1.1 * transactionTemplate.byteLength)
     console.info(`Calculated mining fee: [ ${minerFee} ] sats`) // eslint-disable-line no-console
-return
+
     // If there's funds and it matches our expectation, forward it to the bridge.
     const bridgeTransaction = await createBCHTransaction(
         privateKeyWIF,
@@ -137,7 +137,7 @@ return
         Profile.bchTestAddress,
         minerFee,
     )
-    console.log('TRANSACTION', bridgeTransaction)
+    // console.log('TRANSACTION', bridgeTransaction)
     console.log('TRANSACTION (hex)', binToHex(bridgeTransaction))
 
     // Broadcast transaction
