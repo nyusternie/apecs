@@ -14,7 +14,7 @@ import { ethers } from 'ethers'
 import NexaAddr from 'nexaaddrjs'
 import { OpcodesBTC } from '@bitauth/libauth'
 
-import { useSystemStore } from '@/stores/system'
+import { useProfileStore } from '@/stores/profile'
 
 import broadcast from '../../libs/broadcast.js'
 import cashaddr from '../../libs/cashaddr.js'
@@ -32,15 +32,15 @@ useHead({
     ],
 })
 
-/* Initialize (System) store. */
-const System = useSystemStore()
+/* Initialize (Profile) store. */
+const Profile = useProfileStore()
 
 /**
  * Withdraw
  */
 const withdraw = async () => {
     /* Set (BIP39) seed phrase. */
-    const mnemonic = System.mnemonic
+    const mnemonic = Profile.mnemonic
     console.log('MNEMONIC', mnemonic)
 
     const isValidMnemonic = ethers.utils.isValidMnemonic(mnemonic)
@@ -121,7 +121,7 @@ const withdraw = async () => {
     const transactionTemplate = await createBCHTransaction(
         privateKeyWIF,
         unspentOutputs,
-        System.bchTestAddress,
+        Profile.bchTestAddress,
         0,
     )
 
@@ -134,7 +134,7 @@ return
     const bridgeTransaction = await createBCHTransaction(
         privateKeyWIF,
         unspentOutputs,
-        System.bchTestAddress,
+        Profile.bchTestAddress,
         minerFee,
     )
     console.log('TRANSACTION', bridgeTransaction)

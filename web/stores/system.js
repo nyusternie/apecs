@@ -14,14 +14,6 @@ export const useSystemStore = defineStore('system', {
         /* Initialize API Endpoint (constant). */
         apiEndpoint: 'https://api.apecs.dev/v1',
 
-        /* Initialize (lazy dev) mnemonic phrase. */
-        // FIXME: FOR LAZY DEVELOPMENT PURPOSES ONLY
-        mnemonic: 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony',
-
-        /* Initialize (Bitcoin Cash) test address. */
-        // NOTE: HöS on EC
-        bchTestAddress: 'bitcoincash:qqwsfram5cc87k2n26gshjnylg8gdjnauuum5sws3c',
-
         // TBD
     }),
 
@@ -66,5 +58,5 @@ export const useSystemStore = defineStore('system', {
             }, 3000)
         },
     },
-    // persist: true,
+    persist: true,
 })

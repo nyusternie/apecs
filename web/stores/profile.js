@@ -6,13 +6,23 @@ import { defineStore } from 'pinia'
 export const useProfileStore = defineStore('profile', {
     state: () => ({
         /* Initialize session id. */
-        sessionId: null,
+        sessionid: null,
 
         /* Initialize session. */
         session: null,
 
+        /* Initialize (lazy dev) mnemonic phrase. */
+        // FIXME: FOR LAZY DEVELOPMENT PURPOSES ONLY
+        mnemonic: 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony',
+
         /* Initialize cash accounts. */
-        cashAccounts: null,
+        cashAccounts: [],
+
+        /* Initialize (Bitcoin Cash) test address. */
+        // NOTE: HöS on EC
+        bchTestAddress: 'bitcoincash:qqwsfram5cc87k2n26gshjnylg8gdjnauuum5sws3c',
+
+        // TBD
     }),
 
     getters: {
@@ -66,5 +76,5 @@ export const useProfileStore = defineStore('profile', {
             _setCashAccounts(_cashAccounts)
         },
     },
-    // persist: true,
+    persist: true,
 })
