@@ -32,47 +32,6 @@ useHead({
     ],
 })
 
-function buf2hex(buffer) { // buffer is an ArrayBuffer
-  return [...new Uint8Array(buffer,)]
-      .map(x => x.toString(16).padStart(2, '0'))
-      .join('');
-}
-
-/**
- * Convert a hex string to an ArrayBuffer.
- *
- * @param {string} hexString - hex representation of bytes
- * @return {ArrayBuffer} - The bytes in an ArrayBuffer.
- */
- function hexStringToArrayBuffer(hexString) {
-    // remove the leading 0x
-    hexString = hexString.replace(/^0x/, '');
-
-    // ensure even number of characters
-    if (hexString.length % 2 != 0) {
-        console.log('WARNING: expecting an even number of characters in the hexString');
-    }
-
-    // check for some non-hex characters
-    var bad = hexString.match(/[G-Z\s]/i);
-    if (bad) {
-        console.log('WARNING: found non-hex characters', bad);
-    }
-
-    // split the string into pairs of octets
-    var pairs = hexString.match(/[\dA-F]{2}/gi);
-
-    // convert the octets to integers
-    var integers = pairs.map(function(s) {
-        return parseInt(s, 16);
-    });
-
-    var array = new Uint8Array(integers);
-    // console.log(array);
-
-    return array;
-}
-
 const withdraw = async () => {
     /* Set (BIP39) seed phrase. */
     const mnemonic = 'bacon mind chronic bean luxury endless ostrich festival bicycle dragon worth balcony' // FOR DEV PURPOSES ONLY
@@ -116,12 +75,11 @@ const withdraw = async () => {
     /* Hash the public key hash according to the P2PKH scheme. */
     const publicKeyHash = ripemd160.hash(sha256.hash(publicKey))
     // console.log('PUBLIC KEY HASH', publicKeyHash)
-    console.log('PUBLIC KEY HASH (buf2hex)', buf2hex(publicKeyHash))
-    console.log('PUBLIC KEY HASH (bin2hex)', binToHex(publicKeyHash))
+    console.log('PUBLIC KEY HASH (hex)', binToHex(publicKeyHash))
 
-    const myScript = hexStringToArrayBuffer('17005114' + buf2hex(publicKeyHash))
-    console.log('PUBLIC KEY HASH (template)', typeof myScript, myScript)
-    console.log('PUBLIC KEY HASH (hex template)', buf2hex(myScript))
+    const myScript = hexToBin('17005114' + binToHex(publicKeyHash))
+    console.log('PUBLIC KEY HASH (template)', myScript)
+    console.log('PUBLIC KEY HASH (hex template)', binToHex(myScript))
 
     /* Encode the public key hash into a P2PKH cash address. */
     const cashAddress = encodeCashAddress(
