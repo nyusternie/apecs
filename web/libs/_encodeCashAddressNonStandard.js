@@ -1,3 +1,5 @@
+import { encodeCashAddressFormat } from './_encodeCashAddressFormat.js'
+import { encodeCashAddressVersionByte } from './_encodeCashAddressVersionByte.js'
 import { formatError } from './_formatError.js'
 import { isValidCashAddressPayloadLength } from './_isValidCashAddressPayloadLength.js'
 

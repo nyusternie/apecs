@@ -1,9 +1,30 @@
 import {
-    decodeBech32,
-    encodeBech32,
-    isBech32CharacterSet,
-    regroupBits,
-  } from './bech32.js';
+  decodeBech32,
+  encodeBech32,
+  isBech32CharacterSet,
+  regroupBits,
+} from './bech32.js';
+
+import { maskCashAddressPrefix } from './_maskCashAddressPrefix.js'
+import { cashAddressPolynomialModulo } from './_cashAddressPolynomialModulo.js'
+import { cashAddressChecksumToUint5Array } from './_cashAddressChecksumToUint5Array.js'
+
+const Constants = {
+  cashAddressTypeBitsShift: 3,
+  base32WordLength: 5,
+  base256WordLength: 8,
+  payloadSeparator: 0,
+  asciiLowerCaseStart: 96,
+  finiteFieldOrder: 32,
+  cashAddressReservedBitMask: 0b10000000,
+  cashAddressTypeBits: 0b1111,
+  cashAddressSizeBits: 0b111,
+  /**
+   * In ASCII, each pair of upper and lower case characters share the same 5 least
+   * significant bits.
+   */
+  asciiCaseInsensitiveBits: 0b11111,
+}
 
 /**
  * Encode a payload as a CashAddress-like string using the CashAddress format.
