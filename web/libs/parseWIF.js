@@ -3,11 +3,13 @@ import {
     binToHex,
     CashAddressType,
     decodePrivateKeyWif,
-    encodeCashAddress,
+    // encodeCashAddress,
     instantiateRipemd160,
     instantiateSecp256k1,
     instantiateSha256,
 } from '@bitauth/libauth'
+
+import { encodeCashAddress } from './_encodeCashAddress'
 
 /**
  * Parse a WIF string into a private key, public key and address.
@@ -25,7 +27,7 @@ const parseWIF = async (wif) => {
     const ripemd160 = await instantiateRipemd160()
 
     // Attempt to decode WIF string into a private key
-    const decodeResult = decodePrivateKeyWif(await instantiateSha256(), wif)
+    const decodeResult = decodePrivateKeyWif(sha256, wif)
 
     // If decodeResult is a string, it represents an error, so we throw it.
     if (typeof decodeResult === 'string') {
@@ -43,6 +45,7 @@ const parseWIF = async (wif) => {
 
     // Encode the public key hash into a P2PKH cash address.
     const address = encodeCashAddress('bitcoincash', CashAddressType.P2PKH, publicKeyHashBin)
+    // TODO: Add support for `nexa` template format.
 
     return [
         binToHex(privateKeyBin),

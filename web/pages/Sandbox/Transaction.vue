@@ -19,6 +19,7 @@ import { useProfileStore } from '@/stores/profile'
 import broadcast from '../../libs/broadcast.js'
 import cashaddr from '../../libs/cashaddr.js'
 import createBCHTransaction from '../../libs/createBCHTransaction.js'
+// import createNEXATransaction from '../../libs/createNEXATransaction.js'
 import getUnspentOutputs from '../../libs/getUnspentOutputs.js'
 
 import DecodeRawTx from './Transaction/DecodeRawTx.vue'
@@ -110,14 +111,14 @@ const withdraw = async () => {
     console.log('PRIVATE KEY (WIF):', privateKeyWIF)
 
     // Fetch all unspent transaction outputs for the temporary in-browser wallet.
-    // const unspentOutputs = await getUnspentOutputs(cashAddress)
-    const unspentOutputs = await getUnspentOutputs(nexaAddress)
+    const unspentOutputs = await getUnspentOutputs(cashAddress)
+    // const unspentOutputs = await getUnspentOutputs(nexaAddress)
     console.log('UNSPENT OUTPUTS', unspentOutputs)
 
     if (unspentOutputs.length === 0) {
         return console.error('There are NO unspent outputs available.')
     }
-return
+
     // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
     const transactionTemplate = await createBCHTransaction(
         privateKeyWIF,
@@ -140,7 +141,7 @@ return
     )
     // console.log('TRANSACTION', bridgeTransaction)
     console.log('TRANSACTION (hex)', binToHex(bridgeTransaction))
-
+return
     // Broadcast transaction
     // broadcast(binToHex(bridgeTransaction))
 }

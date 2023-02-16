@@ -64,13 +64,13 @@ const getNEXAUnspent = async () => {
     let outpointHash = 'e405cfdb6865fbbf6ef6a2328d13b599d57f1736634ce81608375759f7db98ca'
     outpointHash = outpointHash.match(/[a-fA-F0-9]{2}/g).reverse().join('')
 
-    return {
+    return [{
         outpointHash,
         txPos: 0,
         addressScript: '005114ea48f422ca705f49e9cff69ee27b5ad9e0ff2976', // P2PKT
         value: 800,
         // address: 'nexa:nqtsq5g5afy0ggk2wp05n6w0760wy766m8s072tkx79t63xl',
-    }
+    }]
 }
 
 /* Export module. */

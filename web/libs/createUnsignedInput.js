@@ -12,8 +12,8 @@ import { hexToBin } from '@bitauth/libauth'
  */
 const createUnsignedInput = (unspentOutput) => {
     const input = {
-        outpointIndex: unspentOutput.tx_pos,
-        outpointTransactionHash: hexToBin(unspentOutput.tx_hash),
+        outpointIndex: unspentOutput.tx_pos || unspentOutput.txPos,
+        outpointTransactionHash: unspentOutput.tx_hash ? hexToBin(unspentOutput.tx_hash) : hexToBin(unspentOutput.outpointHash),
         unlockingBytecode: new Uint8Array(), // NOTE: This is where the signature and public key will be placed.
         satoshis: unspentOutput.value,
         sequenceNumber: 0,
