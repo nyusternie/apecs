@@ -1,7 +1,7 @@
 /* Import modules. */
 import {
     binToHex,
-    CashAddressType,
+    // CashAddressType,
     decodePrivateKeyWif,
     // encodeCashAddress,
     instantiateRipemd160,
@@ -9,7 +9,8 @@ import {
     instantiateSha256,
 } from '@bitauth/libauth'
 
-import { encodeCashAddress } from './_encodeCashAddress'
+import { CashAddressType } from './_CashAddressType.js'
+import { encodeCashAddress } from './_encodeCashAddress.js'
 
 /**
  * Parse a WIF string into a private key, public key and address.

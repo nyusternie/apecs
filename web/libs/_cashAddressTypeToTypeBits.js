@@ -1,6 +1,6 @@
 export const cashAddressTypeToTypeBits = (_cashAddressType) => {
   console.log('_cashAddressType', _cashAddressType)
-  throw new Error('Stop and analyze...')
+  throw new Error('STOP! What does this do??')
 };
 // export const cashAddressTypeToTypeBits: {
 //   [key in CashAddressType]: CashAddressTypeBits;

@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import {
     binToHex,
-    CashAddressType,
-    encodeCashAddress,
+    // CashAddressType,
+    // encodeCashAddress,
     encodePrivateKeyWif,
     hexToBin,
     instantiateSha256,
     instantiateSecp256k1,
     instantiateRipemd160,
 } from '@bitauth/libauth'
+
+import { CashAddressType } from '@/libs/_CashAddressType.js'
+import { encodeCashAddress } from '@/libs/_encodeCashAddress.js'
 
 import { ethers } from 'ethers'
 import NexaAddr from 'nexaaddrjs'
@@ -141,9 +144,9 @@ const withdraw = async () => {
     )
     // console.log('TRANSACTION', bridgeTransaction)
     console.log('TRANSACTION (hex)', binToHex(bridgeTransaction))
-return
+
     // Broadcast transaction
-    // broadcast(binToHex(bridgeTransaction))
+    broadcast(binToHex(bridgeTransaction))
 }
 </script>
 
