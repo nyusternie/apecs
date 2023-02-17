@@ -22,6 +22,10 @@ export const useProfileStore = defineStore('profile', {
         // NOTE: HöS on EC
         bchTestAddress: 'bitcoincash:qqwsfram5cc87k2n26gshjnylg8gdjnauuum5sws3c',
 
+        /* Initialize (Nexa) test address. */
+        // NOTE: Source built
+        nexaTestAddress: 'nexa:nqtsq5g57qupnngwws0rlvsevggu6zxqc0tmk7d3v5ulpfh6',
+
         // TBD
     }),
 

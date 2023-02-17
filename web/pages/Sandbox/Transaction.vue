@@ -22,7 +22,7 @@ import { useProfileStore } from '@/stores/profile'
 import broadcast from '../../libs/broadcast.js'
 import cashaddr from '../../libs/cashaddr.js'
 import createBCHTransaction from '../../libs/createBCHTransaction.js'
-// import createNEXATransaction from '../../libs/createNEXATransaction.js'
+import createNEXATransaction from '../../libs/createNEXATransaction.js'
 import getUnspentOutputs from '../../libs/getUnspentOutputs.js'
 
 import DecodeRawTx from './Transaction/DecodeRawTx.vue'
@@ -123,7 +123,7 @@ const withdraw = async () => {
     }
 
     // Create a bridge transaction without miner fee to determine the transaction size and therefor the miner fee.
-    const transactionTemplate = await createBCHTransaction(
+    const transactionTemplate = await createNEXATransaction(
         privateKeyWIF,
         unspentOutputs,
         Profile.bchTestAddress,
@@ -136,7 +136,7 @@ const withdraw = async () => {
     console.info(`Calculated mining fee: [ ${minerFee} ] sats`) // eslint-disable-line no-console
 
     // If there's funds and it matches our expectation, forward it to the bridge.
-    const bridgeTransaction = await createBCHTransaction(
+    const bridgeTransaction = await createNEXATransaction(
         privateKeyWIF,
         unspentOutputs,
         Profile.bchTestAddress,

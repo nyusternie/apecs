@@ -1,9 +1,12 @@
 /* Import modules. */
 import {
-    base58AddressToLockingBytecode,
-    cashAddressToLockingBytecode,
+    // base58AddressToLockingBytecode,
+    // cashAddressToLockingBytecode,
     instantiateSha256,
 } from '@bitauth/libauth'
+
+import { base58AddressToLockingBytecode } from './_base58AddressToLockingBytecode.js'
+import { cashAddressToLockingBytecode } from './_cashAddressToLockingBytecode.js'
 
 /**
  * Converts an address to its locking byte-code equivalent.
@@ -22,8 +25,15 @@ const getLockingBytecodeFromAddress = async (_address) => {
         // Add a prefix if necessary.
         let prefix = ''
 
-        if (!_address.startsWith('bitcoincash:')) {
-            prefix = 'bitcoincash:'
+        // Normalize address prefix
+        if (!_address.startsWith('nexa:') && !_address.startsWith('bitcoincash:')) {
+            if (_address.startsWith('qq') || _address.startsWith('qr')) {
+                prefix = 'bitcoincash:'
+            }
+
+            if (_address.startsWith('nq')) {
+                prefix = 'nexa:'
+            }
         }
 
         const lockScriptResult = cashAddressToLockingBytecode(prefix + _address)

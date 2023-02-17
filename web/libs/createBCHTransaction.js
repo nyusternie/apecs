@@ -11,10 +11,10 @@ import createValueOutput from './createValueOutput'
  *
  * @function
  *
- * @param privateKeyWIF    {string}                      Private Key in WIF format.
- * @param unspentOutputs   {AddressListUnspentResponse}  List of Unspent Outputs to use.
- * @param receiverAddress  {string}                    Cash receiving address.
- * @param minerFeeSatoshis {number}                      The satoshis to pay as miner fee (deducted from value output).
+ * @param privateKeyWIF    {string}                     Private Key in WIF format.
+ * @param unspentOutputs   {AddressListUnspentResponse} List of Unspent Outputs to use.
+ * @param receiverAddress  {string}                     Cash receiving address.
+ * @param minerFeeSatoshis {number}                     The satoshis to pay as miner fee (deducted from value output).
  *
  * @returns {Uint8Array} The transaction binary.
  */
