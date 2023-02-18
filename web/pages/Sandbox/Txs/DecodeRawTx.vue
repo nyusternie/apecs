@@ -412,8 +412,6 @@ const txOutputValue = computed(() => {
     bch = satoshis / 100000000.0
 
     if (System.quotes.BCH) {
-        console.log('FOUND BCH (System.quotes.BCH)', System.quotes.BCH)
-        console.log('FOUND BCH (System.quotes.BCH.price)', System.quotes.BCH.price)
         usd = numeral((satoshis / 100000000.0) * System.quotes.BCH.price).format('$0,0.00[00]')
     }
 
@@ -430,19 +428,45 @@ const txOutputValue = computed(() => {
 })
 
 const txOutputScriptBytes = computed(() => {
-    return 'n/a'
+    return null
     /* Validate hex value. */
     if (!chainid) return null
 
-    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        const txOutputScriptBytes = rawTxHex.value.slice(310, 312)
+    let startPos = 0
+    let endPos = 0
+    let value = null
 
-        /* Return tx input count. */
-        return txOutputScriptBytes
-    } else {
-        /* Return null. */
-        return null
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        if (chainid.value === 'BCH') {
+            startPos = txOutputValue.value.endPos
+            endPos = startPos + 2
+
+            const keyBlock = rawTxHex.value.slice(startPos, endPos)
+            console.log('KEY BLOCK', keyBlock)
+
+            const keyLen = parseInt(keyBlock, 16) * 2
+
+            startPos = startPos + 2
+            endPos = startPos + keyLen
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+
+        if (chainid.value === 'NEXA') {
+            startPos = txSequence.value.endPos
+            endPos = startPos + 2
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+    }
+
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        value,
     }
 })
 
@@ -450,15 +474,41 @@ const txPubKeyScript = computed (() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        const txPubKeyScript = rawTxHex.value.slice(-56, -8)
+    let startPos = 0
+    let endPos = 0
+    let value = null
 
-        /* Return tx input count. */
-        return txPubKeyScript
-    } else {
-        /* Return null. */
-        return null
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        if (chainid.value === 'BCH') {
+            startPos = txOutputValue.value.endPos
+            endPos = startPos + 2
+
+            const keyBlock = rawTxHex.value.slice(startPos, endPos)
+            console.log('KEY BLOCK', keyBlock)
+
+            const keyLen = parseInt(keyBlock, 16) * 2
+
+            startPos = startPos + 2
+            endPos = startPos + keyLen
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+
+        if (chainid.value === 'NEXA') {
+            startPos = txSequence.value.endPos
+            endPos = startPos + 2
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+    }
+
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        value,
     }
 })
 
@@ -472,7 +522,7 @@ const txLockTime = computed(() => {
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            startPos = txPubkey.value.endPos
+            startPos = txPubKeyScript.value.endPos
             endPos = startPos + 8
 
             /* Parse tx outpoint index. */
@@ -480,7 +530,7 @@ const txLockTime = computed(() => {
         }
 
         if (chainid.value === 'NEXA') {
-            startPos = txPubkey.value.endPos
+            startPos = txPubKeyScript.value.endPos
             endPos = startPos + 8
 
             /* Parse tx outpoint index. */
@@ -606,7 +656,7 @@ const txLockTime = computed(() => {
                     {{txSignature.abbr}}
                 </small>
 
-                <h3 class="text-xl text-rose-500 font-medium font-mono">
+                <h3 class="text-sm text-rose-500 font-medium font-mono">
                     {{txPubkey.value}}
                 </h3>
             </section>
@@ -706,23 +756,23 @@ const txLockTime = computed(() => {
             </section>
         </section>
 
-        <section v-if="txVersion">
+        <section v-if="txOutputScriptBytes">
             <h2 class="text-2xl font-medium">
                 Script Bytes
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txOutputScriptBytes}}
+                {{txOutputScriptBytes.value}}
             </h3>
         </section>
 
-        <section v-if="txVersion">
+        <section v-if="txPubKeyScript">
             <h2 class="text-2xl font-medium">
                 PubKey Script / Template
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txPubKeyScript}}
+                {{txPubKeyScript.value}}
             </h3>
         </section>
 
