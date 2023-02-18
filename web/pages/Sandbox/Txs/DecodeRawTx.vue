@@ -14,15 +14,15 @@ const System = useSystemStore()
  * @param {String} _bytes A (hex) string.
  */
 const reverseBytes = (_bytes) => {
-    if (!Array.isArray(_bytes)) {
-        // return _bytes
-        // NOTE: We presume this is a HEX string.
-        return _bytes.match(/[a-fA-F0-9]{2}/g).reverse().join('')
-    }
-
     if (typeof _bytes === 'undefined' || !_bytes || _bytes.length === 0) {
         return _bytes
     }
+
+    // if (!Array.isArray(_bytes)) {
+    //     // return _bytes
+    //     // NOTE: We presume this is a HEX string.
+    //     return _bytes.match(/[a-fA-F0-9]{2}/g).reverse().join('')
+    // }
 
     /* Reverse bytes. */
     // source: https://stackoverflow.com/a/29017642/514914
@@ -30,7 +30,9 @@ const reverseBytes = (_bytes) => {
 }
 
 // const rawTxHex = ref(null)
-const rawTxHex = ref('0200000001abadc7de402c7a7b84b7fb2eff5d0c8c94d661d010637a4fb5b8c11c55e6f435000000006441f8c401531747cb2cfb133a37b0817a942cbc72cbe259aec83a5d2ee8d6977a535a2050d4f2dbc53560673fbdfc17f7ef6af14e390964847ed5d4e7a487d29c094121024c750792d20e799f91cad7ebd8e67ae5e6638be213fcec8b4874a010d070db4900000000016e040000000000001976a9141d048fbba6307f595356910bca64fa0e86ca7de788ac00000000') // BCH #1
+// const rawTxHex = ref('0200000001abadc7de402c7a7b84b7fb2eff5d0c8c94d661d010637a4fb5b8c11c55e6f435000000006441f8c401531747cb2cfb133a37b0817a942cbc72cbe259aec83a5d2ee8d6977a535a2050d4f2dbc53560673fbdfc17f7ef6af14e390964847ed5d4e7a487d29c094121024c750792d20e799f91cad7ebd8e67ae5e6638be213fcec8b4874a010d070db4900000000016e040000000000001976a9141d048fbba6307f595356910bca64fa0e86ca7de788ac00000000') // BCH (1 in / 1 out)
+const rawTxHex = ref('0200000002b8d95713b4a6c742f55326b2fa0bbfc7810630f7e293b9e172b67058cdcb3487010000006441bc71d8a42d1f9bf8137bcea2834770d6a1b31c5afdf7f8d4bbbb8815fcca0037b55c7fa78ae1f62e87e3ac953ab9241691ae3f8b09f4edfa402590e64d1451964121024c750792d20e799f91cad7ebd8e67ae5e6638be213fcec8b4874a010d070db490000000080d2fec073c4d7e8b539c1cd8e30a23f9b29b6d7b47e4a3b639401592194e2f50100000064413023ef0bf09b203b105a679aa337de7135c96a2361a52e28bd8981c78f4f238e5f57c995ce9982f1e1d1954f1f9d9fe90e4d5a1c8065b321e3f4bbf38d9835de4121024c750792d20e799f91cad7ebd8e67ae5e6638be213fcec8b4874a010d070db4900000000010c090000000000001976a9141d048fbba6307f595356910bca64fa0e86ca7de788ac00000000') // BCH (2 in / 1 out)
+// const rawTxHex = ref('') // BCH (1 in / 2 out)
 // const rawTxHex = ref('000100c80e241c69107c397ad81730541aba81d0528d14309b2a516f6e415c484c6b9864222103cbe16ecb57d7a173ef5d46692daf38f366e2939b655817335fbfcd8a4edc41c0405e29f9533df564bc308d188e7e12a3f41954e24ba1d7a994c8d0060ea819a70c2af63d74b995f9aace3daf965df314df94b437cb662eff12861e2fd3d6974e1afeffffff39050000000000000101580200000000000017005114aa53676557ac11d41f0c66caade565cac78ca4f8605b0300') // NEXA
 
 const chainid = computed(() => {
@@ -179,34 +181,45 @@ const txOutpoint = computed(() => {
     return reversed
 })
 
-const authBlock = computed(() => {
+const authBlocks = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    let authBlockLength = 0
+    let authBlockLengths = []
 
     if (chainid.value === 'BCH') {
         /* Parse authorization block. */
-        authBlockLength = rawTxHex.value.slice(82, 84)
+        authBlockLengths.push(rawTxHex.value.slice(82, 84))
+        authBlockLengths.push(rawTxHex.value.slice(364, 366))
     }
 
     /* Return authorization block length. */
-    return authBlockLength
+    return authBlockLengths
 })
 
-const sigBlock = computed(() => {
+const sigBlocks = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    let sigBlockLength = 0
+    let sigBlockLengths = []
 
     if (chainid.value === 'BCH') {
         /* Parse signature block. */
-        sigBlockLength = rawTxHex.value.slice(84, 86)
+        sigBlockLengths.push({
+            startPos: 84,
+            endPos: 86,
+            value: rawTxHex.value.slice(84, 86),
+        })
+
+        sigBlockLengths.push({
+            startPos: 366,
+            endPos: 368,
+            value: rawTxHex.value.slice(366, 368),
+        })
     }
 
     /* Return signature block length. */
-    return sigBlockLength
+    return sigBlockLengths
 })
 
 const txInputScriptBytes = computed(() => {
@@ -225,7 +238,7 @@ const txInputScriptBytes = computed(() => {
     }
 })
 
-const txSignature = computed(() => {
+const txSignatures = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
@@ -233,19 +246,31 @@ const txSignature = computed(() => {
     let endPos = 0
     let value = null
 
+    let signatures = []
+
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            const sigLen = parseInt(sigBlock.value, 16) * 2
+            sigBlocks.value.forEach(_block => {
+                const sigLen = parseInt(_block.value, 16) * 2
 
-            startPos = 86
-            endPos = startPos + sigLen
+                startPos = _block.startPos + 2
+                endPos = startPos + sigLen
 
-            /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(startPos, endPos)
+                /* Parse tx outpoint index. */
+                value = rawTxHex.value.slice(startPos, endPos)
+
+                signatures.push({
+                    startPos,
+                    endPos,
+                    tiny: `${value.slice(0, 16)} ... ${value.slice(-16)}`, // for mobile
+                    abbr: `${value.slice(0, 32)} ... ${value.slice(-32)}`, // for desktop
+                    value,
+                })
+            })
         }
 
         if (chainid.value === 'NEXA') {
-            const sigLen = parseInt(sigBlock.value, 16) * 2
+            const sigLen = parseInt(sigBlocks.value, 16) * 2
 
             startPos = 144
             endPos = startPos + sigLen
@@ -256,35 +281,39 @@ const txSignature = computed(() => {
     }
 
     /* Return tx input count. */
-    return {
-        startPos,
-        endPos,
-        tiny: `${value.slice(0, 16)} ... ${value.slice(-16)}`, // for mobile
-        abbr: `${value.slice(0, 32)} ... ${value.slice(-32)}`, // for desktop
-        value,
-    }
+    return signatures
 })
 
-const txPubkey = computed(() => {
+const txPubkeys = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
     let startPos = 0
     let endPos = 0
     let value = null
+
+    let pubkeys = []
     let pubkeyLen = 0
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            pubkeyLen = rawTxHex.value.slice(txSignature.value.endPos, txSignature.value.endPos + 2)
-            // console.log('PUBKEY LEN', pubkeyLen)
+            txSignatures.value.forEach(_sig => {
+                pubkeyLen = rawTxHex.value.slice(_sig.endPos, _sig.endPos + 2)
+                // console.log('PUBKEY LEN', pubkeyLen)
 
-            startPos = txSignature.value.endPos + 2
-            endPos = startPos + (parseInt(pubkeyLen, 16) * 2)
+                startPos = _sig.endPos + 2
+                endPos = startPos + (parseInt(pubkeyLen, 16) * 2)
 
-            /* Parse tx outpoint index. */
-            // FIXME: Calculate the txInputScriptBytes (length).
-            value = rawTxHex.value.slice(startPos, endPos)
+                /* Parse tx outpoint index. */
+                // FIXME: Calculate the txInputScriptBytes (length).
+                value = rawTxHex.value.slice(startPos, endPos)
+
+                pubkeys.push({
+                    startPos,
+                    endPos,
+                    value,
+                })
+            })
         }
 
         if (chainid.value === 'NEXA') {
@@ -299,14 +328,10 @@ const txPubkey = computed(() => {
     }
 
     /* Return tx input count. */
-    return {
-        startPos,
-        endPos,
-        value,
-    }
+    return pubkeys
 })
 
-const txSequence = computed(() => {
+const txSequences = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
@@ -314,17 +339,28 @@ const txSequence = computed(() => {
     let endPos = 0
     let value = null
 
+    let sequences = []
+
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            startPos = txPubkey.value.endPos
-            endPos = startPos + 8
+            txPubkeys.value.forEach(_pubkey => {
+                startPos = _pubkey.endPos
+                endPos = startPos + 8
 
-            /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(startPos, endPos)
+                /* Parse tx outpoint index. */
+                // FIXME: Calculate the txInputScriptBytes (length).
+                value = rawTxHex.value.slice(startPos, endPos)
+
+                sequences.push({
+                    startPos,
+                    endPos,
+                    value,
+                })
+            })
         }
 
         if (chainid.value === 'NEXA') {
-            startPos = txPubkey.value.endPos
+            startPos = txPubkeys.value.endPos
             endPos = startPos + 8
 
             /* Parse tx outpoint index. */
@@ -333,11 +369,7 @@ const txSequence = computed(() => {
     }
 
     /* Return tx input count. */
-    return {
-        startPos,
-        endPos,
-        value,
-    }
+    return sequences
 })
 
 const txOutputCount = computed(() => {
@@ -350,7 +382,7 @@ const txOutputCount = computed(() => {
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            startPos = txSequence.value.endPos
+            startPos = txSequences.value[0].endPos
             endPos = startPos + 2
 
             /* Parse tx outpoint index. */
@@ -454,7 +486,7 @@ const txOutputScriptBytes = computed(() => {
         }
 
         if (chainid.value === 'NEXA') {
-            startPos = txSequence.value.endPos
+            startPos = txSequences.value[0].endPos
             endPos = startPos + 2
 
             /* Parse tx outpoint index. */
@@ -633,33 +665,43 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="authBlock">
+        <section v-if="authBlocks">
             <h2 class="text-2xl font-medium">
-                Authorization Block
+                Authorization Blocks
             </h2>
 
-            <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{authBlock}} <small class="text-xs">[ {{parseInt(authBlock, 16)}} bytes ]</small>
-            </h3>
-
-            <section class="ml-5 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
+            <div v-for="(block, index) of authBlocks" :key="block.value">
                 <h3 class="text-xl text-rose-500 font-medium font-mono">
-                    {{sigBlock}}
-
-                    <small class="text-xs">[ {{parseInt(sigBlock, 16)}} bytes ]</small>
-
-                    <small v-if="sigBlock === '41'" class="ml-2 text-xs">Schnorr Signature</small>
-                    <small v-else class="ml-2 text-xs">ECSDA Signature</small>
+                    {{block}} <small class="text-xs">[ {{parseInt(block, 16)}} bytes ]</small>
                 </h3>
 
-                <small class="text-xs text-rose-500 font-medium font-mono">
-                    {{txSignature.abbr}}
-                </small>
+                <section class="ml-5 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
+                    <h3 class="text-xl text-rose-500 font-medium font-mono">
+                        {{sigBlocks[index].value}}
 
-                <h3 class="text-sm text-rose-500 font-medium font-mono">
-                    {{txPubkey.value}}
-                </h3>
-            </section>
+                        <small class="text-xs">[ {{parseInt(sigBlocks[index].value, 16)}} bytes ]</small>
+
+                        <small v-if="sigBlocks[index].value === '41'" class="ml-2 text-xs">Schnorr Signature</small>
+                        <small v-else class="ml-2 text-xs">ECSDA Signature</small>
+                    </h3>
+
+                    <small class="text-xs text-rose-500 font-medium font-mono">
+                        {{txSignatures[index].abbr}}
+                    </small>
+
+                    <h3 class="text-sm text-rose-500 font-medium font-mono">
+                        {{txPubkeys[index].value}}
+                    </h3>
+
+                    <h3 class="text-sm text-rose-500 font-medium font-mono">
+                        {{txSequences[index].value}}
+
+                        <small class="text-muted text-xs">
+                            (<code class="mx-1 text-rose-500 font-medium">MAXINT - 1??</code>)
+                        </small>
+                    </h3>
+                </section>
+            </div>
         </section>
 
         <section v-if="txVersion">
@@ -678,22 +720,8 @@ const txLockTime = computed(() => {
             </h2>
 
             <h3 class="text-xs text-rose-500 font-medium font-mono">
-                {{txSignature.abbr}}
+                {{txSignatures[0].abbr}}
             </h3>
-        </section>
-
-        <section v-if="txSequence">
-            <h2 class="text-2xl font-medium">
-                Sequence
-            </h2>
-
-            <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txSequence.value}}
-            </h3>
-
-            <small class="text-muted">
-                Value equals <code class="mx-1 text-sm text-rose-500 font-medium">MAXINT - 1</code>
-            </small>
         </section>
 
         <section v-if="txOutputCount">
