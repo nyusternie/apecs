@@ -10,7 +10,9 @@ import { ref } from 'vue'
  */
 const reverseBytes = (_bytes) => {
     if (!Array.isArray(_bytes)) {
-        return _bytes
+        // return _bytes
+        // NOTE: We presume this is a HEX string.
+        return _bytes.match(/[a-fA-F0-9]{2}/g).reverse().join('')
     }
 
     if (typeof _bytes === 'undefined' || !_bytes || _bytes.length === 0) {
@@ -89,87 +91,125 @@ const txVersion = computed(() => {
 
 const txInputCount = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
+
+    let inputCount = null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx input count. */
-        // const txInputCount = rawTxHex.value.slice(8, 10) // BCH
-        const txInputCount = rawTxHex.value.slice(2, 4) // NEXA
+        if (chainid.value === 'BCH') {
+            /* Parse tx input count. */
+            inputCount = rawTxHex.value.slice(8, 10)
+        }
 
-        /* Return tx input count. */
-        return txInputCount
-    } else {
-        /* Return null. */
-        return null
+        if (chainid.value === 'NEXA') {
+            /* Parse tx input count. */
+            inputCount = rawTxHex.value.slice(2, 4)
+        }
+    }
+
+    /* Return tx input count. */
+    return inputCount
+})
+
+const txId = computed(() => {
+    /* Validate hex value. */
+    if (!chainid) return null
+
+    let startPos = 0
+    let endPos = 0
+    let value = null
+
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        /* Parse tx outpoint index. */
+        value = rawTxHex.value.slice(10, 74)
+    }
+
+    console.log('VALUE', value)
+    console.log('VALUE (REV)', reverseBytes(value))
+
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        value,
+        reversed: reverseBytes(value),
     }
 })
 
 const txOutpointIndex = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
+
+    let outpointIndex = null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        const txOutpointIndex = rawTxHex.value.slice(4, 6)
+        if (chainid.value === 'BCH') {
+            /* Parse tx outpoint index. */
+            outpointIndex = rawTxHex.value.slice(74, 82)
+        }
 
-        /* Return tx input count. */
-        return txOutpointIndex
-    } else {
-        /* Return null. */
-        return null
+        if (chainid.value === 'NEXA') {
+            /* Parse tx outpoint index. */
+            outpointIndex = rawTxHex.value.slice(4, 6)
+        }
     }
+
+    /* Return tx input count. */
+    return outpointIndex
 })
 
 const txOutpoint = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid || chainid !== 'NEXA') return null
+
+    let outpoint = null
+    let reversed = null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx id. */
-        const txId = rawTxHex.value.slice(6, 70)
+        outpoint = rawTxHex.value.slice(6, 70)
 
         /* Reverse endianness. */
-        const reversed = reverseBytes(txId)
-
-        /* Return (reversed) tx id. */
-        return reversed
-    } else {
-        /* Return null. */
-        return null
+        reversed = reverseBytes(outpoint)
     }
+
+    /* Return (reversed) tx id. */
+    return reversed
+})
+
+const authBlock = computed(() => {
+    /* Validate hex value. */
+    if (!chainid) return null
+
+    let authBlockLength = 0
+
+    if (chainid.value === 'BCH') {
+        /* Parse authorization block. */
+        authBlockLength = rawTxHex.value.slice(82, 84)
+    }
+
+    /* Return authorization block length. */
+    return authBlockLength
+})
+
+const sigBlock = computed(() => {
+    /* Validate hex value. */
+    if (!chainid) return null
+
+    let sigBlockLength = 0
+
+    if (chainid.value === 'BCH') {
+        /* Parse signature block. */
+        sigBlockLength = rawTxHex.value.slice(84, 86)
+    }
+
+    /* Return signature block length. */
+    return sigBlockLength
 })
 
 const txInputScriptBytes = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx outpoint index. */
@@ -185,38 +225,63 @@ const txInputScriptBytes = computed(() => {
 
 const txSignature = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
+
+    let startPos = 0
+    let endPos = 0
+    let value = null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        // FIXME: Calculate the txInputScriptBytes (length).
-        const txSignature = rawTxHex.value.slice(144, 272)
+        if (chainid.value === 'BCH') {
+            const sigLen = parseInt(sigBlock.value, 16) * 2
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(86, (86 + sigLen))
+        }
 
-        /* Return tx input count. */
-        return txSignature
-    } else {
-        /* Return null. */
-        return null
+        if (chainid.value === 'NEXA') {
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(144, 272)
+        }
     }
+
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        tiny: `${value.slice(0, 16)} ... ${value.slice(-16)}`, // for mobile
+        abbr: `${value.slice(0, 32)} ... ${value.slice(-32)}`, // for desktop
+        value,
+    }
+})
+
+const txPubkey = computed(() => {
+    /* Validate hex value. */
+    if (!chainid) return null
+
+    let pubkey = null
+
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        if (chainid.value === 'BCH') {
+            const sigLen = parseInt(sigBlock.value, 16) * 2
+            /* Parse tx outpoint index. */
+            // FIXME: Calculate the txInputScriptBytes (length).
+            pubkey = rawTxHex.value.slice(86, (86 + sigLen))
+        }
+
+        if (chainid.value === 'NEXA') {
+            /* Parse tx outpoint index. */
+            // FIXME: Calculate the txInputScriptBytes (length).
+            pubkey = rawTxHex.value.slice(144, 272)
+        }
+    }
+
+    /* Return tx input count. */
+    return pubkey
 })
 
 const txSequence = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx outpoint index. */
@@ -232,14 +297,7 @@ const txSequence = computed(() => {
 
 const txValue = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx outpoint index. */
@@ -258,14 +316,7 @@ const txValue = computed(() => {
 
 const txOutputCount = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx outpoint index. */
@@ -282,14 +333,7 @@ const txOutputCount = computed(() => {
 const txOutputScriptBytes = computed(() => {
     return 'n/a'
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx outpoint index. */
@@ -305,14 +349,7 @@ const txOutputScriptBytes = computed(() => {
 
 const txPubKeyScript = computed (() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx outpoint index. */
@@ -328,14 +365,7 @@ const txPubKeyScript = computed (() => {
 
 const txLockTime = computed(() => {
     /* Validate hex value. */
-    if (
-        typeof rawTxHex.value === 'undefined' ||
-        rawTxHex.value === null ||
-        rawTxHex.value === ''
-    ) {
-        /* Return null. */
-        return null
-    }
+    if (!chainid) return null
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         /* Parse tx outpoint index. */
@@ -400,22 +430,25 @@ const txLockTime = computed(() => {
             </h3>
 
             <div v-if="txId">
-                <small class="text-muted">
-                    Transaction Id
-                    <a :href="'https://explorer.bitcoin.com/bch/tx/' + txId" target="_blank" class="font-mono">
-                        {{txId}}
+                <small class="block text-muted">
+                    Transaction ID
+                    <a :href="'https://blockchair.com/bitcoin-cash/transaction/' + txId.reversed" target="_blank" class="block font-mono text-base text-blue-500 font-medium hover:underline">
+                        {{txId.reversed}}
                     </a>
                 </small>
 
-                <small class="text-muted">
+                <small class="block text-xs text-muted italic">
                     NOTE: Endianness has been reversed.
                 </small>
             </div>
         </section>
 
-        <section v-if="txVersion">
-            <h2 class="text-2xl font-medium">
+        <section v-if="txOutpointIndex">
+            <h2 v-if="chainid === 'NEXA'" class="text-2xl font-medium">
                 Outpoint Index
+            </h2>
+            <h2 v-if="chainid === 'BCH'" class="text-2xl font-medium">
+                Vout Index
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
@@ -423,7 +456,7 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="txVersion">
+        <section v-if="txOutpoint">
             <h2 class="text-2xl font-medium">
                 Outpoint
             </h2>
@@ -431,6 +464,31 @@ const txLockTime = computed(() => {
             <h3 class="text-xl text-rose-500 font-medium font-mono">
                 {{txOutpoint}}
             </h3>
+        </section>
+
+        <section v-if="authBlock">
+            <h2 class="text-2xl font-medium">
+                Authorization Block
+            </h2>
+
+            <h3 class="text-xl text-rose-500 font-medium font-mono">
+                {{authBlock}} <small class="text-xs">[ {{parseInt(authBlock, 16)}} bytes ]</small>
+            </h3>
+
+            <section class="ml-5 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
+                <h3 class="text-xl text-rose-500 font-medium font-mono">
+                    {{sigBlock}}
+
+                    <small class="text-xs">[ {{parseInt(sigBlock, 16)}} bytes ]</small>
+
+                    <small v-if="sigBlock === '41'" class="ml-2 text-xs">Schnorr Signature</small>
+                    <small v-else class="ml-2 text-xs">ECSDA Signature</small>
+                </h3>
+
+                <small class="text-xs text-rose-500 font-medium font-mono">
+                    {{txSignature.abbr}}
+                </small>
+            </section>
         </section>
 
         <section v-if="txVersion">
@@ -449,7 +507,7 @@ const txLockTime = computed(() => {
             </h2>
 
             <h3 class="text-xs text-rose-500 font-medium font-mono">
-                {{txSignature}}
+                {{txSignature.abbr}}
             </h3>
         </section>
 
