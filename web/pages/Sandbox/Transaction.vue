@@ -234,13 +234,13 @@ const withdraw = async () => {
                     </div>
 
                     <section class="col-span-3">
-                        <button @click="withdraw" class="my-5 px-3 py-2 bg-yellow-200 border-2 border-yellow-400 rounded-lg">
+                        <button @click="withdraw" class="my-5 px-3 py-2 bg-yellow-200 border-2 border-yellow-400 rounded-lg hover:bg-yellow-300">
                             Test Withdraw
                         </button>
 
-                        <TxIdDetails />
+                        <!-- <TxIdDetails /> -->
 
-                        <!-- <DecodeRawTx /> -->
+                        <DecodeRawTx />
                     </section>
 
                     <aside class="block col-span-2">

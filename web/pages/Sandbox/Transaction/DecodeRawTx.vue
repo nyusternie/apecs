@@ -23,15 +23,10 @@ const reverseBytes = (_bytes) => {
 }
 
 // const rawTxHex = ref(null)
-// const rawTxHex = ref('02000000012db9e967da7f57989d01e2d7b33491f2c007a216177cdb001e13e6fb8a4cdff90000000000ffffffff0140420f00000000001976a9143453e86c368be96a88742a29003dd29ab9a5d03288ac00000000') // BCH
-const rawTxHex = ref('000100c80e241c69107c397ad81730541aba81d0528d14309b2a516f6e415c484c6b9864222103cbe16ecb57d7a173ef5d46692daf38f366e2939b655817335fbfcd8a4edc41c0405e29f9533df564bc308d188e7e12a3f41954e24ba1d7a994c8d0060ea819a70c2af63d74b995f9aace3daf965df314df94b437cb662eff12861e2fd3d6974e1afeffffff39050000000000000101580200000000000017005114aa53676557ac11d41f0c66caade565cac78ca4f8605b0300') // NEXA
+const rawTxHex = ref('0200000001abadc7de402c7a7b84b7fb2eff5d0c8c94d661d010637a4fb5b8c11c55e6f435000000006441f8c401531747cb2cfb133a37b0817a942cbc72cbe259aec83a5d2ee8d6977a535a2050d4f2dbc53560673fbdfc17f7ef6af14e390964847ed5d4e7a487d29c094121024c750792d20e799f91cad7ebd8e67ae5e6638be213fcec8b4874a010d070db4900000000016e040000000000001976a9141d048fbba6307f595356910bca64fa0e86ca7de788ac00000000') // BCH #1
+// const rawTxHex = ref('000100c80e241c69107c397ad81730541aba81d0528d14309b2a516f6e415c484c6b9864222103cbe16ecb57d7a173ef5d46692daf38f366e2939b655817335fbfcd8a4edc41c0405e29f9533df564bc308d188e7e12a3f41954e24ba1d7a994c8d0060ea819a70c2af63d74b995f9aace3daf965df314df94b437cb662eff12861e2fd3d6974e1afeffffff39050000000000000101580200000000000017005114aa53676557ac11d41f0c66caade565cac78ca4f8605b0300') // NEXA
 
-/**
- * Transaction Version (Parser)
- *
- * Will parse the transaction version.
- */
-const txVersion = computed(() => {
+const chainid = computed(() => {
     /* Validate hex value. */
     if (
         typeof rawTxHex.value === 'undefined' ||
@@ -42,18 +37,54 @@ const txVersion = computed(() => {
         return null
     }
 
-    /* Validate hex length. */
-    if (rawTxHex.value.length >= 8) {
-        /* Parse (transaction) version. */
-        // const version = rawTxHex.value.slice(0, 8) // BCH
-        const version = rawTxHex.value.slice(0, 2) // NEXA
-
-        /* Return (transaction) version. */
-        return version
+    /* Test for Bitcoin Cash. */
+    if (rawTxHex.value.slice(0, 8) === '02000000') {
+        return 'BCH'
     }
 
-    /* Return null. */
+    /* Test for Nexa. */
+    if (rawTxHex.value.slice(0, 2) === '00') {
+        return 'NEXA'
+    }
+
     return null
+})
+
+/**
+ * Transaction Version (Parser)
+ *
+ * Will parse the transaction version.
+ */
+const txVersion = computed(() => {
+    /* Validate hex value. */
+    if (
+        typeof rawTxHex.value === 'undefined'
+        || rawTxHex.value === null
+        || rawTxHex.value === ''
+    ) {
+        /* Return null. */
+        return null
+    }
+
+    /* Initialize version. */
+    let version = null
+
+    /* Validate hex length. */
+    // NOTE: Allow up to 4 bytes for version number.
+    if (rawTxHex.value.length >= 8) {
+        if (chainid.value === 'BCH') {
+            /* Parse (transaction) version. */
+            version = rawTxHex.value.slice(0, 8) // BCH
+        }
+
+        if (chainid.value === 'NEXA') {
+            /* Parse (transaction) version. */
+            version = rawTxHex.value.slice(0, 2) // NEXA
+        }
+    }
+
+    /* Return (transaction) version. */
+    return version
 })
 
 const txInputCount = computed(() => {
@@ -321,11 +352,26 @@ const txLockTime = computed(() => {
 
 <template>
     <main class="flex flex-col space-y-5">
+        <div v-if="chainid === 'BCH'" class="">
+            <h2 class="text-3xl text-yellow-700 font-medium">
+                Bitcoin Cash Transaction
+            </h2>
+        </div>
+        <div v-if="chainid === 'NEXA'" class="">
+            <h2 class="text-3xl text-yellow-700 font-medium">
+                Nexa Transaction
+            </h2>
+        </div>
+
         <textarea
-            class="w-full h-32 block border-4 border-yellow-400 bg-yellow-50 text-yellow-900 rounded-lg"
+            class="w-full h-32 px-2 py-1 block border-4 border-yellow-400 bg-yellow-50 text-xs text-yellow-900 rounded-lg"
             placeholder="Paste raw hex code here"
             v-model="rawTxHex"
         ></textarea>
+
+        <button @click="rawTxHex = ''" class="w-fit my-5 px-3 py-2 bg-yellow-200 border-2 border-yellow-400 rounded-lg hover:bg-yellow-300">
+            Clear Data
+        </button>
 
         <section v-if="txVersion">
             <h2 class="text-2xl font-medium">
@@ -336,8 +382,11 @@ const txLockTime = computed(() => {
                 {{txVersion}}
             </h3>
 
-            <small class="text-muted">
-                Version numbers can be ...
+            <small v-if="chainid === 'BCH'" class="text-muted">
+                Version number is the 1st 4 bytes of the transaction data in Big-endian (BE) format.
+            </small>
+            <small v-if="chainid === 'NEXA'" class="text-muted">
+                Version number is the 1st byte of the transaction data.
             </small>
         </section>
 
