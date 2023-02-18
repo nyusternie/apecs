@@ -25,12 +25,12 @@ import createBCHTransaction from '../../libs/createBCHTransaction.js'
 import createNEXATransaction from '../../libs/createNEXATransaction.js'
 import getUnspentOutputs from '../../libs/getUnspentOutputs.js'
 
-import DecodeRawTx from './Transaction/DecodeRawTx.vue'
-import TxIdDetails from './Transaction/TxIdDetails.vue'
+import DecodeRawTx from './Txs/DecodeRawTx.vue'
+import TxIdDetails from './Txs/TxIdDetails.vue'
 
 /* Configure meta tags. */
 useHead({
-    title: 'Transaction Sandbox — APECS Dev',
+    title: 'Transactions Sandbox — APECS Dev',
     meta: [
         { name: 'description', content: 'Build various transactions.' }
     ],
@@ -155,7 +155,7 @@ const withdraw = async () => {
         <template #intro>
             <main class="max-w-xl">
                 <h2 class="text-4xl font-extrabold text-gray-100 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                    Transaction
+                    Transactions
                 </h2>
 
                 <p class="mt-5 text-xl text-indigo-300">

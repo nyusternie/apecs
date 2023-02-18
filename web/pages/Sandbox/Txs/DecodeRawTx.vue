@@ -656,7 +656,7 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="txOutputValue" class="w-fit mt-2 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
+        <section v-if="txOutputValue" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
             <h2 class="text-xl text-yellow-900 font-medium">
                 Output Value
             </h2>
@@ -666,32 +666,36 @@ const txLockTime = computed(() => {
             </h3>
 
             <small class=" text-yellow-700">
-                Output value is a 4 byte number in Big-endian (BE) format.
+                An <span class="font-medium">8-byte (64-bit)</span> number in Big-endian (BE) format.
             </small>
 
-            <section class="w-fit my-1 px-3 py-1 text-yellow-400 bg-yellow-700 border border-yellow-500 rounded">
+            <section class="w-fit my-1 px-3 py-1 text-yellow-400 bg-gradient-to-r from-yellow-800 to-yellow-700 border border-yellow-500 rounded shadow">
                 <div v-if="txOutputValue.satoshis" class="grid grid-cols-2 gap-2">
-                    <span class="text-base text-yellow-100 font-medium text-right">
+                    <span class="font-mono text-yellow-100 font-medium text-right">
                         {{txOutputValue.satoshis}}
                     </span>
 
-                    satoshis
+                    <span class="text-sm">
+                        satoshis
+                    </span>
                 </div>
 
                 <div v-if="txOutputValue.bch" class="grid grid-cols-2 gap-2">
-                    <span class="text-base text-yellow-100 font-medium text-right">
+                    <span class="font-mono text-yellow-100 font-medium text-right">
                         {{txOutputValue.bch}}
                     </span>
 
-                    BCH
+                    <span class="text-sm">
+                        BCH
+                    </span>
                 </div>
 
                 <div v-if="txOutputValue.usd" class="grid grid-cols-2 gap-2">
-                    <span class="text-base text-yellow-100 font-medium text-right">
+                    <span class="font-mono text-yellow-100 font-medium text-right">
                         {{txOutputValue.usd}}
                     </span>
 
-                    <span>
+                    <span class="text-sm">
                         USD
 
                         <small class="text-xs text-yellow-500">
