@@ -14,6 +14,9 @@ export const useSystemStore = defineStore('system', {
         /* Initialize API Endpoint (constant). */
         apiEndpoint: 'https://api.apecs.dev/v1',
 
+        /* Initialize price quotes. */
+        quotes: {},
+
         // TBD
     }),
 

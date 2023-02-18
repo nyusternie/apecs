@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { useSystemStore } from '@/stores/system'
+
+/* Initialize System store. */
+const System = useSystemStore()
+
+let body
+let response
+
+response = await fetch('https://api.telr.io/v1/ticker/quote/BCH')
+// console.log('STATUS RESPONSE', response)
+
+body = await response.json()
+// console.log('BODY', body)
+
+/* Verify body (price) results. */
+if (body && body.price) {
+    /* Set Bitcoin Cash quote. */
+    System.quotes.BCH = body
+}
+
+</script>
+
 <template>
     <!--
     When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars
@@ -208,7 +231,7 @@
     </main>
 </template>
 
-<script>
+<script lang="ts">
 /* Import modules. */
 import numeral from 'numeral'
 

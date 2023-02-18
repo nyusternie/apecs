@@ -1,5 +1,10 @@
 <script setup>
+import numeral from 'numeral'
 import { ref } from 'vue'
+import { useSystemStore } from '@/stores/system'
+
+/* Initialize System store. */
+const System = useSystemStore()
 
 /**
  * Reverse Bytes
@@ -124,9 +129,6 @@ const txId = computed(() => {
         value = rawTxHex.value.slice(10, 74)
     }
 
-    console.log('VALUE', value)
-    console.log('VALUE (REV)', reverseBytes(value))
-
     /* Return tx input count. */
     return {
         startPos,
@@ -234,13 +236,22 @@ const txSignature = computed(() => {
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
             const sigLen = parseInt(sigBlock.value, 16) * 2
+
+            startPos = 86
+            endPos = startPos + sigLen
+
             /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(86, (86 + sigLen))
+            value = rawTxHex.value.slice(startPos, endPos)
         }
 
         if (chainid.value === 'NEXA') {
+            const sigLen = parseInt(sigBlock.value, 16) * 2
+
+            startPos = 144
+            endPos = startPos + sigLen
+
             /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(144, 272)
+            value = rawTxHex.value.slice(startPos, endPos)
         }
     }
 
@@ -258,59 +269,74 @@ const txPubkey = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    let pubkey = null
+    let startPos = 0
+    let endPos = 0
+    let value = null
+    let pubkeyLen = 0
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            const sigLen = parseInt(sigBlock.value, 16) * 2
+            pubkeyLen = rawTxHex.value.slice(txSignature.value.endPos, txSignature.value.endPos + 2)
+            // console.log('PUBKEY LEN', pubkeyLen)
+
+            startPos = txSignature.value.endPos + 2
+            endPos = startPos + (parseInt(pubkeyLen, 16) * 2)
+
             /* Parse tx outpoint index. */
             // FIXME: Calculate the txInputScriptBytes (length).
-            pubkey = rawTxHex.value.slice(86, (86 + sigLen))
+            value = rawTxHex.value.slice(startPos, endPos)
         }
 
         if (chainid.value === 'NEXA') {
+
+            startPos = 144
+            endPos = 272
+
             /* Parse tx outpoint index. */
             // FIXME: Calculate the txInputScriptBytes (length).
-            pubkey = rawTxHex.value.slice(144, 272)
+            value = rawTxHex.value.slice(startPos, endPos)
         }
     }
 
     /* Return tx input count. */
-    return pubkey
+    return {
+        startPos,
+        endPos,
+        value,
+    }
 })
 
 const txSequence = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        const txSequence = rawTxHex.value.slice(272, 280)
+    let startPos = 0
+    let endPos = 0
+    let value = null
 
-        /* Return tx input count. */
-        return txSequence
-    } else {
-        /* Return null. */
-        return null
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        if (chainid.value === 'BCH') {
+            startPos = txPubkey.value.endPos
+            endPos = startPos + 8
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+
+        if (chainid.value === 'NEXA') {
+            startPos = txPubkey.value.endPos
+            endPos = startPos + 8
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
     }
-})
 
-const txValue = computed(() => {
-    /* Validate hex value. */
-    if (!chainid) return null
-
-    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        const txValue = rawTxHex.value.slice(280, 296)
-
-        /* Reverse endianness. */
-        const reversed = reverseBytes(txValue)
-
-        /* Return tx input count. */
-        return reversed
-    } else {
-        /* Return null. */
-        return null
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        value,
     }
 })
 
@@ -318,15 +344,88 @@ const txOutputCount = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        const txOutputCount = rawTxHex.value.slice(296, 298)
+    let startPos = 0
+    let endPos = 0
+    let value = null
 
-        /* Return tx input count. */
-        return txOutputCount
-    } else {
-        /* Return null. */
-        return null
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        if (chainid.value === 'BCH') {
+            startPos = txSequence.value.endPos
+            endPos = startPos + 2
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+
+        if (chainid.value === 'NEXA') {
+            startPos = txSequence.value.endPos
+            endPos = startPos + 2
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+    }
+
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        value,
+    }
+})
+
+const txOutputValue = computed(() => {
+    /* Validate hex value. */
+    if (!chainid) return null
+
+    let startPos = 0
+    let endPos = 0
+    let value = null
+
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        if (chainid.value === 'BCH') {
+            startPos = txOutputCount.value.endPos
+            endPos = startPos + 16
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+
+        if (chainid.value === 'NEXA') {
+            startPos = txOutputCount.value.endPos
+            endPos = startPos + 16
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+    }
+
+    let bch
+    let reversed
+    let satoshis
+    let usd
+
+    reversed = reverseBytes(value)
+
+    satoshis = parseInt(reversed, 16)
+
+    bch = satoshis / 100000000.0
+
+    if (System.quotes.BCH) {
+        console.log('FOUND BCH (System.quotes.BCH)', System.quotes.BCH)
+        console.log('FOUND BCH (System.quotes.BCH.price)', System.quotes.BCH.price)
+        usd = numeral((satoshis / 100000000.0) * System.quotes.BCH.price).format('$0,0.00[00]')
+    }
+
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        value,
+        reversed,
+        satoshis,
+        bch,
+        usd,
     }
 })
 
@@ -367,15 +466,33 @@ const txLockTime = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        /* Parse tx outpoint index. */
-        const txLockTime = rawTxHex.value.slice(-8)
+    let startPos = 0
+    let endPos = 0
+    let value = null
 
-        /* Return tx input count. */
-        return txLockTime
-    } else {
-        /* Return null. */
-        return null
+    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+        if (chainid.value === 'BCH') {
+            startPos = txPubkey.value.endPos
+            endPos = startPos + 8
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+
+        if (chainid.value === 'NEXA') {
+            startPos = txPubkey.value.endPos
+            endPos = startPos + 8
+
+            /* Parse tx outpoint index. */
+            value = rawTxHex.value.slice(startPos, endPos)
+        }
+    }
+
+    /* Return tx input count. */
+    return {
+        startPos,
+        endPos,
+        value,
     }
 })
 </script>
@@ -437,7 +554,7 @@ const txLockTime = computed(() => {
                     </a>
                 </small>
 
-                <small class="block text-xs text-muted italic">
+                <small class="block text-xs italic">
                     NOTE: Endianness has been reversed.
                 </small>
             </div>
@@ -488,6 +605,10 @@ const txLockTime = computed(() => {
                 <small class="text-xs text-rose-500 font-medium font-mono">
                     {{txSignature.abbr}}
                 </small>
+
+                <h3 class="text-xl text-rose-500 font-medium font-mono">
+                    {{txPubkey.value}}
+                </h3>
             </section>
         </section>
 
@@ -511,13 +632,13 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="txVersion">
+        <section v-if="txSequence">
             <h2 class="text-2xl font-medium">
                 Sequence
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txSequence}}
+                {{txSequence.value}}
             </h3>
 
             <small class="text-muted">
@@ -525,24 +646,60 @@ const txLockTime = computed(() => {
             </small>
         </section>
 
-        <section v-if="txVersion">
+        <section v-if="txOutputCount">
             <h2 class="text-2xl font-medium">
                 Output Count
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txOutputCount}}
+                {{txOutputCount.value}}
             </h3>
         </section>
 
-        <section v-if="txVersion">
-            <h2 class="text-2xl font-medium">
-                Input Value
+        <section v-if="txOutputValue" class="w-fit mt-2 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
+            <h2 class="text-xl text-yellow-900 font-medium">
+                Output Value
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txValue}}
+                {{txOutputValue.value}}
             </h3>
+
+            <small class=" text-yellow-700">
+                Output value is a 4 byte number in Big-endian (BE) format.
+            </small>
+
+            <section class="w-fit my-1 px-3 py-1 text-yellow-400 bg-yellow-700 border border-yellow-500 rounded">
+                <div v-if="txOutputValue.satoshis" class="grid grid-cols-2 gap-2">
+                    <span class="text-base text-yellow-100 font-medium text-right">
+                        {{txOutputValue.satoshis}}
+                    </span>
+
+                    satoshis
+                </div>
+
+                <div v-if="txOutputValue.bch" class="grid grid-cols-2 gap-2">
+                    <span class="text-base text-yellow-100 font-medium text-right">
+                        {{txOutputValue.bch}}
+                    </span>
+
+                    BCH
+                </div>
+
+                <div v-if="txOutputValue.usd" class="grid grid-cols-2 gap-2">
+                    <span class="text-base text-yellow-100 font-medium text-right">
+                        {{txOutputValue.usd}}
+                    </span>
+
+                    <span>
+                        USD
+
+                        <small class="text-xs text-yellow-500">
+                            {{numeral(System.quotes.BCH.price).format('$0,0.00')}}
+                        </small>
+                    </span>
+                </div>
+            </section>
         </section>
 
         <section v-if="txVersion">
@@ -565,13 +722,13 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="txVersion">
+        <section v-if="txLockTime">
             <h2 class="text-2xl font-medium">
                 Lock Time
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txLockTime}}
+                {{txLockTime.value}}
             </h3>
         </section>
 

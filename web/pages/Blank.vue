@@ -1,6 +1,7 @@
 <script setup lang="ts">
 /* Import modules. */
 import { ref } from 'vue'
+import { useSystemStore } from '@/stores/system'
 
 /* Configure meta tags. */
 useHead({
@@ -12,6 +13,9 @@ useHead({
 
 /* Initialize (reactive) variables. */
 const var1 = ref(0)
+
+/* Initialize System store. */
+const System = useSystemStore()
 
 // TBD...
 </script>
