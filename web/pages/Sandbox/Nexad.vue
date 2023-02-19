@@ -145,58 +145,58 @@ n/a
             let error
             let response
 
-            try {
-                /* Set endpoint. */
-                endpoint = `http://user:password@127.0.0.1:7227`
+            // try {
+            //     /* Set endpoint. */
+            //     endpoint = `http://user:password@127.0.0.1:7227`
 
-                /* Build package. */
-                const pkg = {
-                    "jsonrpc": "2.0",
-                    "id": "core",
-                    "method": _method,
-                    "params": _params,
-                }
+            //     /* Build package. */
+            //     const pkg = {
+            //         "jsonrpc": "2.0",
+            //         "id": "core",
+            //         "method": _method,
+            //         "params": _params,
+            //     }
 
-                /* Request Elasticsearch query. */
-                response = await fetch
-                    .post(endpoint)
-                    .set('accept', 'json')
-                    .send(pkg)
-                    .catch(_err => {
-                        console.error(_err)
+            //     /* Request Elasticsearch query. */
+            //     response = await fetch
+            //         .post(endpoint)
+            //         .set('accept', 'json')
+            //         .send(pkg)
+            //         .catch(_err => {
+            //             console.error(_err)
 
-                        if (_err && _err.response && _err.response.text) {
-                            error = JSON.parse(_err.response.text)
-                        } else if (_err && _err.response) {
-                            error = _err.response
-                        } else {
-                            error = _err
-                        }
-                    })
+            //             if (_err && _err.response && _err.response.text) {
+            //                 error = JSON.parse(_err.response.text)
+            //             } else if (_err && _err.response) {
+            //                 error = _err.response
+            //             } else {
+            //                 error = _err
+            //             }
+            //         })
 
-                /* Validate error. */
-                if (error) {
-                    return error
-                }
+            //     /* Validate error. */
+            //     if (error) {
+            //         return error
+            //     }
 
-                /* Validate response. */
-                if (!response) {
-                    return null
-                }
-                // console.log('\nRPC CALL (response):', response)
+            //     /* Validate response. */
+            //     if (!response) {
+            //         return null
+            //     }
+            //     // console.log('\nRPC CALL (response):', response)
 
-                /* Validate response. */
-                if (response.body && response.body.result) {
-                    return response.body.result
-                } else if (response.text) {
-                    return response.text
-                } else {
-                    return null
-                }
+            //     /* Validate response. */
+            //     if (response.body && response.body.result) {
+            //         return response.body.result
+            //     } else if (response.text) {
+            //         return response.text
+            //     } else {
+            //         return null
+            //     }
 
-            } catch (err) {
-                return err
-            }
+            // } catch (err) {
+            //     return err
+            // }
         },
 
     },

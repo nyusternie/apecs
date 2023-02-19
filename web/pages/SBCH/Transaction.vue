@@ -249,64 +249,64 @@ export default {
             }
             // console.log('REQUEST', request);
 
-            /* Make RPC request. */
-            const response = await fetch
-                // .post('https://smartbch.apecs.dev/mainnet')
-                .post('https://smartbch.fountainhead.cash/mainnet')
-                // .post('https://smartbch.apecs.dev/testnet')
-                .set('Content-Type', 'application/json')
-                .send(request)
-                .catch(err => console.error(err))
-            // console.log('STATUS RESPONSE', response)
+            // /* Make RPC request. */
+            // const response = await fetch
+            //     // ('https://smartbch.apecs.dev/mainnet')
+            //     ('https://smartbch.fountainhead.cash/mainnet')
+            //     // ('https://smartbch.apecs.dev/testnet')
+            //     .set('Content-Type', 'application/json')
+            //     .send(request)
+            //     .catch(err => console.error(err))
+            // // console.log('STATUS RESPONSE', response)
 
-            /* Validate response. */
-            if (!response) {
-                throw new Error('Request failed to SmartBCH node.')
-            }
+            // /* Validate response. */
+            // if (!response) {
+            //     throw new Error('Request failed to SmartBCH node.')
+            // }
 
-            /* Set body. */
-            const body = response.body
-            console.log('BODY (getTransaction)', body)
+            // /* Set body. */
+            // const body = response.body
+            // console.log('BODY (getTransaction)', body)
 
-            /* Validate body result. */
-            if (body && body.result) {
-                /* Set raw data. */
-                this.rawData += JSON.stringify(body.result, null, 4)
+            // /* Validate body result. */
+            // if (body && body.result) {
+            //     /* Set raw data. */
+            //     this.rawData += JSON.stringify(body.result, null, 4)
 
-                /* Set (transaction) hash. */
-                this.hash = body.result.hash
+            //     /* Set (transaction) hash. */
+            //     this.hash = body.result.hash
 
-                /* Set block hash. */
-                this.blockHash = body.result.blockHash
+            //     /* Set block hash. */
+            //     this.blockHash = body.result.blockHash
 
-                /* Set block number. */
-                this.blockNumber = BigInt(body.result.blockNumber)
+            //     /* Set block number. */
+            //     this.blockNumber = BigInt(body.result.blockNumber)
 
-                /* Set from. */
-                this.from = body.result.from
+            //     /* Set from. */
+            //     this.from = body.result.from
 
-                /* Set to. */
-                this.to = body.result.to
+            //     /* Set to. */
+            //     this.to = body.result.to
 
-                /* Set gas amount (reserved). */
-                this.gasReserved = BigInt(body.result.gas)
+            //     /* Set gas amount (reserved). */
+            //     this.gasReserved = BigInt(body.result.gas)
 
-                /* Set gas price. */
-                this.gasPrice = BigInt(body.result.gasPrice)
+            //     /* Set gas price. */
+            //     this.gasPrice = BigInt(body.result.gasPrice)
 
-                /* Set input. */
-                this.input = body.result.input
+            //     /* Set input. */
+            //     this.input = body.result.input
 
-                /* Set nonce. */
-                this.nonce = BigInt(body.result.nonce)
+            //     /* Set nonce. */
+            //     this.nonce = BigInt(body.result.nonce)
 
-                /* Set (transaction) index. */
-                this.index = BigInt(body.result.transactionIndex)
+            //     /* Set (transaction) index. */
+            //     this.index = BigInt(body.result.transactionIndex)
 
-                /* Set value. */
-                this.value = BigInt(body.result.value ? body.result.value : 0)
+            //     /* Set value. */
+            //     this.value = BigInt(body.result.value ? body.result.value : 0)
 
-            }
+            // }
 
         },
 
@@ -320,46 +320,46 @@ export default {
             }
             // console.log('REQUEST', request);
 
-            /* Make RPC request. */
-            const response = await fetch
-                // .post('https://smartbch.apecs.dev/mainnet')
-                .post('https://smartbch.fountainhead.cash/mainnet')
-                // .post('https://smartbch.apecs.dev/testnet')
-                .set('Content-Type', 'application/json')
-                .send(request)
-                .catch(err => console.error(err))
-            // console.log('STATUS RESPONSE', response)
+            // /* Make RPC request. */
+            // const response = await fetch
+            //     // ('https://smartbch.apecs.dev/mainnet')
+            //     ('https://smartbch.fountainhead.cash/mainnet')
+            //     // ('https://smartbch.apecs.dev/testnet')
+            //     .set('Content-Type', 'application/json')
+            //     .send(request)
+            //     .catch(err => console.error(err))
+            // // console.log('STATUS RESPONSE', response)
 
-            /* Validate response. */
-            if (!response) {
-                throw new Error('Request failed to SmartBCH node.')
-            }
+            // /* Validate response. */
+            // if (!response) {
+            //     throw new Error('Request failed to SmartBCH node.')
+            // }
 
-            /* Set body. */
-            const body = response.body
-            console.log('BODY (getReceipt)', body)
+            // /* Set body. */
+            // const body = response.body
+            // console.log('BODY (getReceipt)', body)
 
-            /* Validate body result. */
-            if (body && body.result) {
-                /* Set raw receipt. */
-                this.rawReceipt += JSON.stringify(body.result, null, 4)
+            // /* Validate body result. */
+            // if (body && body.result) {
+            //     /* Set raw receipt. */
+            //     this.rawReceipt += JSON.stringify(body.result, null, 4)
 
-                /* Set gas used. */
-                this.gasUsed = BigInt(body.result.gasUsed)
+            //     /* Set gas used. */
+            //     this.gasUsed = BigInt(body.result.gasUsed)
 
-                /* Set (cumulative) gas used. */
-                this.cGasUsed = BigInt(body.result.cumulativeGasUsed)
+            //     /* Set (cumulative) gas used. */
+            //     this.cGasUsed = BigInt(body.result.cumulativeGasUsed)
 
-                /* Set (cumulative) gas used. */
-                this.contractAddress = body.result.contractAddress
+            //     /* Set (cumulative) gas used. */
+            //     this.contractAddress = body.result.contractAddress
 
-                /* Set status. */
-                this.status = BigInt(body.result.status)
+            //     /* Set status. */
+            //     this.status = BigInt(body.result.status)
 
-                /* Set logs. */
-                this.logs = body.result.logs
+            //     /* Set logs. */
+            //     this.logs = body.result.logs
 
-            }
+            // }
 
         },
 

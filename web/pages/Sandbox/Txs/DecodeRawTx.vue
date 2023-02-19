@@ -140,16 +140,39 @@ const txId = computed(() => {
     }
 })
 
-const txOutpointIndex = computed(() => {
+const txOutpointIndices = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    let outpointIndex = null
+    let startPos = 0
+    let endPos = 0
+    let value = null
+
+    let outpointIndices = []
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            /* Parse tx outpoint index. */
-            outpointIndex = rawTxHex.value.slice(74, 82)
+            startPos = 74
+            endPos = 82
+            value = rawTxHex.value.slice(startPos, endPos)
+
+            /* Parse authorization block. */
+            outpointIndices.push({
+                startPos,
+                endPos,
+                value,
+            })
+
+            startPos = 356
+            endPos = 364
+            value = rawTxHex.value.slice(startPos, endPos)
+
+            /* Parse authorization block. */
+            outpointIndices.push({
+                startPos,
+                endPos,
+                value,
+            })
         }
 
         if (chainid.value === 'NEXA') {
@@ -159,7 +182,7 @@ const txOutpointIndex = computed(() => {
     }
 
     /* Return tx input count. */
-    return outpointIndex
+    return outpointIndices
 })
 
 const txOutpoint = computed(() => {
@@ -181,23 +204,47 @@ const txOutpoint = computed(() => {
     return reversed
 })
 
-const authBlocks = computed(() => {
+const txAuthBlocks = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
-    let authBlockLengths = []
+    let startPos = 0
+    let endPos = 0
+    let authLen = 0
+
+    let authBlocks = []
 
     if (chainid.value === 'BCH') {
+        startPos = 82
+        endPos = 84
+        authLen = parseInt(rawTxHex.value.slice(startPos, endPos), 16) * 2
+        endPos = startPos + authLen
+
         /* Parse authorization block. */
-        authBlockLengths.push(rawTxHex.value.slice(82, 84))
-        authBlockLengths.push(rawTxHex.value.slice(364, 366))
+        authBlocks.push({
+            startPos,
+            endPos,
+            value: rawTxHex.value.slice(startPos, endPos),
+        })
+
+        startPos = 364
+        endPos = 366
+        authLen = parseInt(rawTxHex.value.slice(startPos, endPos), 16) * 2
+        endPos = startPos + authLen
+
+        authBlocks.push({
+            startPos,
+            endPos,
+            value: rawTxHex.value.slice(startPos, endPos),
+        })
     }
+    console.log('AUTH BLOCKS', authBlocks)
 
     /* Return authorization block length. */
-    return authBlockLengths
+    return authBlocks
 })
 
-const sigBlocks = computed(() => {
+const txSigBlocks = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
@@ -250,7 +297,7 @@ const txSignatures = computed(() => {
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            sigBlocks.value.forEach(_block => {
+            txSigBlocks.value.forEach(_block => {
                 const sigLen = parseInt(_block.value, 16) * 2
 
                 startPos = _block.startPos + 2
@@ -270,7 +317,7 @@ const txSignatures = computed(() => {
         }
 
         if (chainid.value === 'NEXA') {
-            const sigLen = parseInt(sigBlocks.value, 16) * 2
+            const sigLen = parseInt(txSigBlocks.value, 16) * 2
 
             startPos = 144
             endPos = startPos + sigLen
@@ -602,7 +649,7 @@ const txLockTime = computed(() => {
             Clear Data
         </button>
 
-        <section v-if="txVersion">
+        <section v-if="txVersion" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
             <h2 class="text-2xl font-medium">
                 Version
             </h2>
@@ -619,6 +666,22 @@ const txLockTime = computed(() => {
             </small>
         </section>
 
+        <section v-if="txId" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
+            <h2 class="text-2xl font-medium">
+                Transaction ID
+            </h2>
+
+            <small class="block text-muted">
+                <a :href="'https://blockchair.com/bitcoin-cash/transaction/' + txId.reversed" target="_blank" class="block font-mono text-base text-blue-500 font-medium hover:underline">
+                    {{txId.reversed}}
+                </a>
+            </small>
+
+            <small class="block text-xs italic">
+                NOTE: Endianness has been reversed.
+            </small>
+        </section>
+
         <section v-if="txInputCount">
             <h2 class="text-2xl font-medium">
                 Input Count
@@ -628,31 +691,26 @@ const txLockTime = computed(() => {
                 {{txInputCount}}
             </h3>
 
-            <div v-if="txId">
-                <small class="block text-muted">
-                    Transaction ID
-                    <a :href="'https://blockchair.com/bitcoin-cash/transaction/' + txId.reversed" target="_blank" class="block font-mono text-base text-blue-500 font-medium hover:underline">
-                        {{txId.reversed}}
-                    </a>
-                </small>
-
-                <small class="block text-xs italic">
-                    NOTE: Endianness has been reversed.
-                </small>
-            </div>
         </section>
 
-        <section v-if="txOutpointIndex">
-            <h2 v-if="chainid === 'NEXA'" class="text-2xl font-medium">
-                Outpoint Index
-            </h2>
-            <h2 v-if="chainid === 'BCH'" class="text-2xl font-medium">
-                Vout Index
+        <section v-for="(block, index) of txAuthBlocks" :key="block.value" class="px-3 py-3 bg-gradient-to-r from-gray-100 to-gray-200 border-2 border-gray-400 rounded shadow">
+            <h2 class="text-xl text-gray-500 font-medium tracking-widest">
+                Input # {{index + 1}}
             </h2>
 
-            <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txOutpointIndex}}
-            </h3>
+            <section v-if="txOutpointIndices" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
+                <h2 v-if="chainid === 'NEXA'" class="text-2xl font-medium">
+                    Outpoint Index
+                </h2>
+                <h2 v-if="chainid === 'BCH'" class="text-2xl font-medium">
+                    Vout Index
+                </h2>
+
+                <h3 class="text-xl text-rose-500 font-medium font-mono">
+                    {{txOutpointIndices[index].value}}
+                </h3>
+            </section>
+
         </section>
 
         <section v-if="txOutpoint">
@@ -665,29 +723,39 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="authBlocks">
+        <section v-if="txAuthBlocks">
             <h2 class="text-2xl font-medium">
                 Authorization Blocks
             </h2>
 
-            <div v-for="(block, index) of authBlocks" :key="block.value">
-                <h3 class="text-xl text-rose-500 font-medium font-mono">
-                    {{block}} <small class="text-xs">[ {{parseInt(block, 16)}} bytes ]</small>
+            <div v-for="(block, index) of txAuthBlocks" :key="block.value">
+                <h3 class="text-xs text-rose-500 font-medium font-mono">
+                    {{block.value}} <small class="">[ {{block.value.length / 2}} bytes ]</small>
                 </h3>
 
                 <section class="ml-5 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
                     <h3 class="text-xl text-rose-500 font-medium font-mono">
-                        {{sigBlocks[index].value}}
+                        {{txSigBlocks[index].value}}
 
-                        <small class="text-xs">[ {{parseInt(sigBlocks[index].value, 16)}} bytes ]</small>
+                        <small class="text-xs">[ {{parseInt(txSigBlocks[index].value, 16)}} bytes ]</small>
 
-                        <small v-if="sigBlocks[index].value === '41'" class="ml-2 text-xs">Schnorr Signature</small>
+                        <small v-if="txSigBlocks[index].value === '41'" class="ml-2 text-xs">Schnorr Signature</small>
                         <small v-else class="ml-2 text-xs">ECSDA Signature</small>
                     </h3>
 
                     <small class="text-xs text-rose-500 font-medium font-mono">
                         {{txSignatures[index].abbr}}
                     </small>
+
+                    <h3 class="text-sm text-yellow-700 font-medium">
+                        Sig Hash Type ⇒ {{txSignatures[index].value.slice(-2)}}
+                        <small v-if="txSignatures[index].value.slice(-2) === '41'" class="text-xs">
+                            [ ALL | FORKID ]
+                        </small>
+                        <small v-if="txSignatures[index].value.slice(-2) === 'c1'" class="text-xs">
+                            [ ALL | ANYONECANPAY | FORKID ]
+                        </small>
+                    </h3>
 
                     <h3 class="text-sm text-rose-500 font-medium font-mono">
                         {{txPubkeys[index].value}}

@@ -86,28 +86,28 @@ export default {
             }
             console.log('REQUEST', request);
 
-            /* Make RPC request. */
-            const response = await fetch
-                .post(this.endpoint)
-                .set('Content-Type', 'application/json')
-                .send(request)
-                .catch(err => console.error(err))
-            // console.log('STATUS RESPONSE', response)
+            // /* Make RPC request. */
+            // const response = await fetch
+            //     .post(this.endpoint)
+            //     .set('Content-Type', 'application/json')
+            //     .send(request)
+            //     .catch(err => console.error(err))
+            // // console.log('STATUS RESPONSE', response)
 
-            /* Validate response. */
-            if (!response) {
-                throw new Error('Request failed to SmartBCH node.')
-            }
+            // /* Validate response. */
+            // if (!response) {
+            //     throw new Error('Request failed to SmartBCH node.')
+            // }
 
-            /* Set body. */
-            const body = response.body
-            console.log('BODY (getBalance)', body)
+            // /* Set body. */
+            // const body = response.body
+            // console.log('BODY (getBalance)', body)
 
-            /* Validate body result. */
-            if (body && body.result) {
-                /* Set balance. */
-                this.balance = BigInt(body.result)
-            }
+            // /* Validate body result. */
+            // if (body && body.result) {
+            //     /* Set balance. */
+            //     this.balance = BigInt(body.result)
+            // }
 
         },
 

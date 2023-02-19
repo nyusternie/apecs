@@ -512,36 +512,7 @@ export default {
         },
 
         async refresh() {
-            /* Build request. */
-            const request = {
-                id: 0,
-                jsonrpc: '2.0',
-                method: 'eth_blockNumber',
-            }
-
-            /* Make RPC request. */
-            const response = await fetch
-                // .post('https://smartbch.apecs.dev/mainnet')
-                .post('https://smartbch.fountainhead.cash/mainnet')
-                .set('Content-Type', 'application/json')
-                .send(request)
-                .catch(err => console.error(err))
-            // console.log('STATUS RESPONSE', response)
-
-            /* Validate response. */
-            if (!response) {
-                throw new Error('Request failed to SmartBCH node.')
-            }
-
-            /* Set body. */
-            const body = response.body
-            // console.log('BODY (getHeight)', body)
-
-            /* Validate body result. */
-            if (body && body.result) {
-                this.blockHeight = body.result
-            }
-
+            //
         },
 
     },

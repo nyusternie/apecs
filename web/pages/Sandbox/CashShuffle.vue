@@ -271,22 +271,22 @@ export default {
         /* Set server URI. */
         this.serverUri = 'https://shuffle.servo.cash:8080/stats'
 
-        fetch(this.serverUri)
-            .set('accept', 'json')
-            .end((err, res) => {
-                if (err) {
-                    return console.error('API ERROR:', err)
-                }
+        // fetch(this.serverUri)
+        //     .set('accept', 'json')
+        //     .end((err, res) => {
+        //         if (err) {
+        //             return console.error('API ERROR:', err)
+        //         }
 
-                console.log('API RESPONSE', res)
+        //         console.log('API RESPONSE', res)
 
-                /* Set statistics. */
-                const stats = res.body
-                console.log('STATISTICS', stats)
+        //         /* Set statistics. */
+        //         const stats = res.body
+        //         console.log('STATISTICS', stats)
 
-                /* Set statistics. */
-                this.stats = stats
-            })
+        //         /* Set statistics. */
+        //         this.stats = stats
+        //     })
 
     },
     mounted: function () {

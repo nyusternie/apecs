@@ -472,23 +472,6 @@ export default {
             updatedAt: 1672565712
         })
 
-        // fetch
-        //     .get(this.apiUrl + '/projects')
-        //     .set('accept', 'json')
-        //     .end((err, res) => {
-        //         if (err) {
-        //             return console.error('API ERROR:', err)
-        //         }
-
-        //         // console.log('API RESPONSE', res)
-
-        //         /* Set projects. */
-        //         const projects = res.body
-        //         console.log('PROJECTS', projects)
-
-        //         /* Set projects. */
-        //         this.projects = projects
-        //     })
     },
     mounted: function () {
         //
