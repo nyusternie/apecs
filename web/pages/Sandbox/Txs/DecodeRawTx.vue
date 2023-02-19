@@ -467,21 +467,57 @@ const txOutputCount = computed(() => {
     }
 })
 
-const txOutputValue = computed(() => {
+const txOutputValues = computed(() => {
     /* Validate hex value. */
     if (!chainid) return null
 
     let startPos = 0
     let endPos = 0
     let value = null
+    let outputValues = []
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            startPos = txOutputCount.value.endPos
-            endPos = startPos + 16
+            let numOutputs = parseInt(txOutputCount.value.value, 16)
+            // console.log('NUM OUTPUTS', numOutputs)
 
-            /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(startPos, endPos)
+            for (let i = 0; i < numOutputs; i++) {
+                if (startPos === 0) {
+                    startPos = txOutputCount.value.endPos
+                } else {
+                    startPos = endPos + 2 + 50 // FIXME: Add support for P2PKT
+                }
+                endPos = startPos + 16
+
+                /* Parse tx outpoint index. */
+                value = rawTxHex.value.slice(startPos, endPos)
+
+                let bch
+                let reversed
+                let satoshis
+                let usd
+
+                reversed = reverseBytes(value)
+
+                satoshis = parseInt(reversed, 16)
+
+                bch = satoshis / 100000000.0
+
+                if (System.quotes.BCH) {
+                    usd = numeral((satoshis / 100000000.0) * System.quotes.BCH.price).format('$0,0.00[00]')
+                }
+
+                outputValues.push({
+                    startPos,
+                    endPos,
+                    value,
+                    reversed,
+                    satoshis,
+                    bch,
+                    usd,
+                })
+
+            }
         }
 
         if (chainid.value === 'NEXA') {
@@ -493,57 +529,48 @@ const txOutputValue = computed(() => {
         }
     }
 
-    let bch
-    let reversed
-    let satoshis
-    let usd
-
-    reversed = reverseBytes(value)
-
-    satoshis = parseInt(reversed, 16)
-
-    bch = satoshis / 100000000.0
-
-    if (System.quotes.BCH) {
-        usd = numeral((satoshis / 100000000.0) * System.quotes.BCH.price).format('$0,0.00[00]')
-    }
 
     /* Return tx input count. */
-    return {
-        startPos,
-        endPos,
-        value,
-        reversed,
-        satoshis,
-        bch,
-        usd,
-    }
+    return outputValues
 })
 
 const txOutputScriptBytes = computed(() => {
-    return null
     /* Validate hex value. */
     if (!chainid) return null
 
     let startPos = 0
     let endPos = 0
     let value = null
+    let outputScriptBytesLengths = []
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            startPos = txOutputValue.value.endPos
-            endPos = startPos + 2
+            let numOutputs = parseInt(txOutputCount.value.value, 16)
+            console.log('NUM OUTPUTS', numOutputs)
+            console.log('txOutputValues', txOutputValues.value)
 
-            const keyBlock = rawTxHex.value.slice(startPos, endPos)
-            console.log('KEY BLOCK', keyBlock)
+            for (let i = 0; i < numOutputs; i++) {
+                startPos = txOutputValues.value[i].endPos
+                endPos = startPos + 2
 
-            const keyLen = parseInt(keyBlock, 16) * 2
+                const keyBlock = rawTxHex.value.slice(startPos, endPos)
+                console.log('KEY BLOCK', keyBlock)
 
-            startPos = startPos + 2
-            endPos = startPos + keyLen
+                const keyLen = parseInt(keyBlock, 16) * 2
 
-            /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(startPos, endPos)
+                startPos = startPos + 2
+                endPos = startPos + keyLen
+
+                /* Parse tx outpoint index. */
+                value = rawTxHex.value.slice(startPos, endPos)
+
+                outputScriptBytesLengths.push({
+                    len: keyBlock,
+                    startPos,
+                    endPos,
+                    value,
+                })
+            }
         }
 
         if (chainid.value === 'NEXA') {
@@ -556,54 +583,53 @@ const txOutputScriptBytes = computed(() => {
     }
 
     /* Return tx input count. */
-    return {
-        startPos,
-        endPos,
-        value,
-    }
+    return outputScriptBytesLengths
 })
 
-const txPubKeyScript = computed (() => {
-    /* Validate hex value. */
-    if (!chainid) return null
+// const txPubKeyScripts = computed (() => {
+//     /* Validate hex value. */
+//     if (!chainid) return null
 
-    let startPos = 0
-    let endPos = 0
-    let value = null
+//     let startPos = 0
+//     let endPos = 0
+//     let value = null
+//     let pubKeyScripts = []
+// return null
+//     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
+//         if (chainid.value === 'BCH') {
+//             startPos = txOutputValues.value.endPos
+//             endPos = startPos + 2
 
-    if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
-        if (chainid.value === 'BCH') {
-            startPos = txOutputValue.value.endPos
-            endPos = startPos + 2
+//             const keyBlock = rawTxHex.value.slice(startPos, endPos)
+//             console.log('KEY BLOCK', keyBlock)
 
-            const keyBlock = rawTxHex.value.slice(startPos, endPos)
-            console.log('KEY BLOCK', keyBlock)
+//             const keyLen = parseInt(keyBlock, 16) * 2
 
-            const keyLen = parseInt(keyBlock, 16) * 2
+//             startPos = startPos + 2
+//             endPos = startPos + keyLen
 
-            startPos = startPos + 2
-            endPos = startPos + keyLen
+//             /* Parse tx outpoint index. */
+//             value = rawTxHex.value.slice(startPos, endPos)
 
-            /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(startPos, endPos)
-        }
+//             pubKeyScripts.push({
+//                 startPos,
+//                 endPos,
+//                 value,
+//             })
+//         }
 
-        if (chainid.value === 'NEXA') {
-            startPos = txSequence.value.endPos
-            endPos = startPos + 2
+//         if (chainid.value === 'NEXA') {
+//             startPos = txSequence.value.endPos
+//             endPos = startPos + 2
 
-            /* Parse tx outpoint index. */
-            value = rawTxHex.value.slice(startPos, endPos)
-        }
-    }
+//             /* Parse tx outpoint index. */
+//             value = rawTxHex.value.slice(startPos, endPos)
+//         }
+//     }
 
-    /* Return tx input count. */
-    return {
-        startPos,
-        endPos,
-        value,
-    }
-})
+//     /* Return tx input count. */
+//     return pubKeyScripts
+// })
 
 const txLockTime = computed(() => {
     /* Validate hex value. */
@@ -615,7 +641,7 @@ const txLockTime = computed(() => {
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            startPos = txPubKeyScript.value.endPos
+            startPos = txOutputScriptBytes.value[txOutputScriptBytes.value.length - 1].endPos
             endPos = startPos + 8
 
             /* Parse tx outpoint index. */
@@ -623,7 +649,7 @@ const txLockTime = computed(() => {
         }
 
         if (chainid.value === 'NEXA') {
-            startPos = txPubKeyScript.value.endPos
+            startPos = txOutputScriptBytes.value[0].endPos
             endPos = startPos + 8
 
             /* Parse tx outpoint index. */
@@ -686,22 +712,6 @@ const myHandler = (_event) => {
             </small>
         </section>
 
-        <section v-if="txId" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
-            <h2 class="text-2xl font-medium">
-                Transaction ID
-            </h2>
-
-            <small class="block text-muted">
-                <a :href="'https://blockchair.com/bitcoin-cash/transaction/' + txId.reversed" target="_blank" class="block font-mono text-base text-blue-500 font-medium hover:underline">
-                    {{txId.reversed}}
-                </a>
-            </small>
-
-            <small class="block text-xs italic">
-                NOTE: Endianness has been reversed.
-            </small>
-        </section>
-
         <section v-if="txInputCount" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
             <h2 class="text-2xl font-medium">
                 Input Count
@@ -717,6 +727,22 @@ const myHandler = (_event) => {
             <h2 class="text-xl text-gray-500 font-medium tracking-widest">
                 Input # {{index + 1}}
             </h2>
+
+            <section v-if="txId" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
+                <h2 class="text-2xl font-medium">
+                    Unspent Transaction Output ID
+                </h2>
+
+                <small class="block text-muted">
+                    <a :href="'https://blockchair.com/bitcoin-cash/transaction/' + txId.reversed" target="_blank" class="block font-mono text-base text-blue-500 font-medium hover:underline">
+                        {{txId.reversed}}
+                    </a>
+                </small>
+
+                <small class="block text-xs italic">
+                    NOTE: Endianness has been reversed.
+                </small>
+            </section>
 
             <section v-if="txOutpointIndices" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
                 <h2 v-if="chainid === 'NEXA'" class="text-2xl font-medium">
@@ -812,13 +838,13 @@ const myHandler = (_event) => {
             </h3>
         </section>
 
-        <section v-if="txOutputValue" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
+        <section v-for="(output, index) of txOutputValues" :key="output.value" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
             <h2 class="text-xl text-yellow-900 font-medium">
                 Output Value
             </h2>
 
             <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txOutputValue.value}}
+                {{output.value}}
             </h3>
 
             <small class=" text-yellow-700">
@@ -826,9 +852,9 @@ const myHandler = (_event) => {
             </small>
 
             <section class="w-fit my-1 px-3 py-1 text-yellow-400 bg-gradient-to-r from-yellow-800 to-yellow-700 border border-yellow-500 rounded shadow">
-                <div v-if="txOutputValue.satoshis" class="grid grid-cols-2 gap-2">
+                <div v-if="output.satoshis" class="grid grid-cols-2 gap-2">
                     <span class="font-mono text-yellow-100 font-medium text-right">
-                        {{txOutputValue.satoshis}}
+                        {{output.satoshis}}
                     </span>
 
                     <span class="text-sm">
@@ -836,9 +862,9 @@ const myHandler = (_event) => {
                     </span>
                 </div>
 
-                <div v-if="txOutputValue.bch" class="grid grid-cols-2 gap-2">
+                <div v-if="output.bch" class="grid grid-cols-2 gap-2">
                     <span class="font-mono text-yellow-100 font-medium text-right">
-                        {{txOutputValue.bch}}
+                        {{output.bch}}
                     </span>
 
                     <span class="text-sm">
@@ -846,9 +872,9 @@ const myHandler = (_event) => {
                     </span>
                 </div>
 
-                <div v-if="txOutputValue.usd" class="grid grid-cols-2 gap-2">
+                <div v-if="output.usd" class="grid grid-cols-2 gap-2">
                     <span class="font-mono text-yellow-100 font-medium text-right">
-                        {{txOutputValue.usd}}
+                        {{output.usd}}
                     </span>
 
                     <span class="text-sm">
@@ -860,26 +886,27 @@ const myHandler = (_event) => {
                     </span>
                 </div>
             </section>
-        </section>
 
-        <section v-if="txOutputScriptBytes">
-            <h2 class="text-2xl font-medium">
-                Script Bytes
-            </h2>
+            <section v-if="txOutputScriptBytes">
+                <h2 class="text-2xl font-medium">
+                    Script Bytes
+                </h2>
 
-            <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txOutputScriptBytes.value}}
-            </h3>
-        </section>
+                <h3 class="text-xl text-rose-500 font-medium font-mono">
+                    {{txOutputScriptBytes[index].value}}
+                </h3>
+            </section>
 
-        <section v-if="txPubKeyScript">
-            <h2 class="text-2xl font-medium">
-                PubKey Script / Template
-            </h2>
+            <section v-if="txPubKeyScripts">
+                <h2 class="text-2xl font-medium">
+                    PubKey Script / Template
+                </h2>
 
-            <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txPubKeyScript.value}}
-            </h3>
+                <h3 class="text-xl text-rose-500 font-medium font-mono">
+                    {{txPubKeyScripts[index].value}}
+                </h3>
+            </section>
+
         </section>
 
         <section v-if="txLockTime" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
