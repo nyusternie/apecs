@@ -106,7 +106,7 @@ export default {
             //
         }
     },
-    created: async function () {
+    created: function () {
         //
     },
     mounted: function () {
