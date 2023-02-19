@@ -270,6 +270,7 @@ const txSigBlocks = computed(() => {
 })
 
 const txInputScriptBytes = computed(() => {
+    return null
     /* Validate hex value. */
     if (!chainid) return null
 
@@ -429,7 +430,7 @@ const txOutputCount = computed(() => {
 
     if (typeof rawTxHex.value !== 'undefined' && rawTxHex.value !== '') {
         if (chainid.value === 'BCH') {
-            startPos = txSequences.value[0].endPos
+            startPos = txSequences.value[txSequences.value.length - 1].endPos
             endPos = startPos + 2
 
             /* Parse tx outpoint index. */
@@ -624,6 +625,12 @@ const txLockTime = computed(() => {
         value,
     }
 })
+
+
+const myHandler = (_event) => {
+    console.log('HANDLER', _event)
+
+}
 </script>
 
 <template>
@@ -682,7 +689,7 @@ const txLockTime = computed(() => {
             </small>
         </section>
 
-        <section v-if="txInputCount">
+        <section v-if="txInputCount" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
             <h2 class="text-2xl font-medium">
                 Input Count
             </h2>
@@ -693,7 +700,7 @@ const txLockTime = computed(() => {
 
         </section>
 
-        <section v-for="(block, index) of txAuthBlocks" :key="block.value" class="px-3 py-3 bg-gradient-to-r from-gray-100 to-gray-200 border-2 border-gray-400 rounded shadow">
+        <section v-for="(block, index) of txAuthBlocks" :key="block.value" class="ml-10 px-3 py-3 bg-gradient-to-r from-gray-100 to-gray-200 border-2 border-gray-400 rounded shadow">
             <h2 class="text-xl text-gray-500 font-medium tracking-widest">
                 Input # {{index + 1}}
             </h2>
@@ -711,6 +718,65 @@ const txLockTime = computed(() => {
                 </h3>
             </section>
 
+            <section v-if="txAuthBlocks">
+                <h2 class="text-2xl font-medium" @contextmenu.prevent="myHandler($event)">
+                    Authorization Block
+                </h2>
+
+                <div>
+                    <h3 class="text-xs text-rose-500 font-medium font-mono">
+                        {{txAuthBlocks[index].value}} <small class="">[ {{txAuthBlocks[index].value.length / 2}} bytes ]</small>
+                    </h3>
+
+                    <section class="mt-2 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
+                        <h3 class="text-xl text-rose-500 font-medium font-mono">
+                            {{txSigBlocks[index].value}}
+
+                            <small class="text-xs">[ {{parseInt(txSigBlocks[index].value, 16)}} bytes ]</small>
+
+                            <small v-if="txSigBlocks[index].value === '41'" class="ml-2 text-xs">Schnorr Signature</small>
+                            <small v-else class="ml-2 text-xs">ECSDA Signature</small>
+                        </h3>
+
+                        <small class="text-xs text-rose-500 font-medium font-mono">
+                            {{txSignatures[index].abbr}}
+                        </small>
+
+                        <h3 class="text-sm text-yellow-700 font-medium">
+                            Sig Hash Type ⇒ {{txSignatures[index].value.slice(-2)}}
+                            <small v-if="txSignatures[index].value.slice(-2) === '41'" class="text-xs">
+                                [ ALL | FORKID ]
+                            </small>
+                            <small v-if="txSignatures[index].value.slice(-2) === 'c1'" class="text-xs">
+                                [ ALL | ANYONECANPAY | FORKID ]
+                            </small>
+                        </h3>
+
+                        <h3 class="text-sm text-rose-500 font-medium font-mono">
+                            {{txPubkeys[index].value}}
+                        </h3>
+
+                        <h3 class="text-sm text-rose-500 font-medium font-mono">
+                            {{txSequences[index].value}}
+
+                            <small class="text-muted text-xs">
+                                (<code class="mx-1 text-rose-500 font-medium">MAXINT - 1??</code>)
+                            </small>
+                        </h3>
+                    </section>
+                </div>
+            </section>
+
+            <!-- <section v-if="txInputScriptBytes">
+                <h2 class="text-2xl font-medium">
+                    Script Bytes
+                </h2>
+
+                <h3 class="text-xl text-rose-500 font-medium font-mono">
+                    {{txInputScriptBytes.value}}
+                </h3>
+            </section> -->
+
         </section>
 
         <section v-if="txOutpoint">
@@ -723,76 +789,7 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="txAuthBlocks">
-            <h2 class="text-2xl font-medium">
-                Authorization Blocks
-            </h2>
-
-            <div v-for="(block, index) of txAuthBlocks" :key="block.value">
-                <h3 class="text-xs text-rose-500 font-medium font-mono">
-                    {{block.value}} <small class="">[ {{block.value.length / 2}} bytes ]</small>
-                </h3>
-
-                <section class="ml-5 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded">
-                    <h3 class="text-xl text-rose-500 font-medium font-mono">
-                        {{txSigBlocks[index].value}}
-
-                        <small class="text-xs">[ {{parseInt(txSigBlocks[index].value, 16)}} bytes ]</small>
-
-                        <small v-if="txSigBlocks[index].value === '41'" class="ml-2 text-xs">Schnorr Signature</small>
-                        <small v-else class="ml-2 text-xs">ECSDA Signature</small>
-                    </h3>
-
-                    <small class="text-xs text-rose-500 font-medium font-mono">
-                        {{txSignatures[index].abbr}}
-                    </small>
-
-                    <h3 class="text-sm text-yellow-700 font-medium">
-                        Sig Hash Type ⇒ {{txSignatures[index].value.slice(-2)}}
-                        <small v-if="txSignatures[index].value.slice(-2) === '41'" class="text-xs">
-                            [ ALL | FORKID ]
-                        </small>
-                        <small v-if="txSignatures[index].value.slice(-2) === 'c1'" class="text-xs">
-                            [ ALL | ANYONECANPAY | FORKID ]
-                        </small>
-                    </h3>
-
-                    <h3 class="text-sm text-rose-500 font-medium font-mono">
-                        {{txPubkeys[index].value}}
-                    </h3>
-
-                    <h3 class="text-sm text-rose-500 font-medium font-mono">
-                        {{txSequences[index].value}}
-
-                        <small class="text-muted text-xs">
-                            (<code class="mx-1 text-rose-500 font-medium">MAXINT - 1??</code>)
-                        </small>
-                    </h3>
-                </section>
-            </div>
-        </section>
-
-        <section v-if="txVersion">
-            <h2 class="text-2xl font-medium">
-                Script Bytes
-            </h2>
-
-            <h3 class="text-xl text-rose-500 font-medium font-mono">
-                {{txInputScriptBytes}}
-            </h3>
-        </section>
-
-        <section v-if="txVersion">
-            <h2 class="text-2xl font-medium">
-                Signature
-            </h2>
-
-            <h3 class="text-xs text-rose-500 font-medium font-mono">
-                {{txSignatures[0].abbr}}
-            </h3>
-        </section>
-
-        <section v-if="txOutputCount">
+        <section v-if="txOutputCount" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
             <h2 class="text-2xl font-medium">
                 Output Count
             </h2>
@@ -872,7 +869,7 @@ const txLockTime = computed(() => {
             </h3>
         </section>
 
-        <section v-if="txLockTime">
+        <section v-if="txLockTime" class="w-fit mt-2 px-3 py-1 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-500 rounded shadow">
             <h2 class="text-2xl font-medium">
                 Lock Time
             </h2>
