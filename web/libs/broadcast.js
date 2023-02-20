@@ -3,7 +3,7 @@
  *
  * @param {*} transaction
  */
-const broadcast = async (transaction) => {
+const broadcast = async (_rawTx) => {
     const target = 'https://insomnia.fountainhead.cash/v1/tx/broadcast'
     /* Call remote API. */
     const response = await fetch(target, {
@@ -12,7 +12,7 @@ const broadcast = async (transaction) => {
             'Accept': 'application/json',
             'Content-Type': 'text/plain'
         },
-        body: transaction,
+        body: _rawTx,
     })
     .catch(err => {
         console.error(err)
@@ -26,5 +26,24 @@ const broadcast = async (transaction) => {
     console.log('broadcast (body):', body)
 }
 
+const broadcastRostrum = (_rawTx) => {
+    const socket = new WebSocket('wss://electrum.nexa.org:20004')
+    // const socket = new WebSocket('wss://rostrum.apecs.dev:20004')
+
+    /* Handle open connection. */
+    socket.onopen = () => {
+        // console.log('SOCKET OPENDED!')
+        let request
+
+        request = `{"method":"blockchain.transaction.broadcast","params":["${_rawTx}"],"id":"testing"}`
+        socket.send(request + '\n')
+    }
+
+    socket.onmessage = async (msg) => {
+        console.log('MESSAGE (data):', msg.data)
+        socket.close()
+    }
+}
+
 /* Export module. */
-export default broadcast
+export default broadcastRostrum
