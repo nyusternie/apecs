@@ -19,6 +19,9 @@ if (body && body.price) {
     System.quotes.BCH = body
 }
 
+// FIXME FOR DEV PURPOSES ONLY
+System.quotes.NEXA = { price: 0.00001 }
+
 </script>
 
 <template>
