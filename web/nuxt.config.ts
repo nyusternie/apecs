@@ -14,6 +14,19 @@ export default defineNuxtConfig({
         }
     },
 
+    router: {
+        extendRoutes(routes, resolve) {
+            for (const route of routes) {
+                route.path = route.path.toLowerCase()
+                // if (route.path.includes('/about')) {
+                //     route.path = '/my-about-us'
+                // }
+            }
+
+            return routes
+        }
+    },
+
     /* Style Sheets */
     css: [
         '@fortawesome/fontawesome-svg-core/styles.css'

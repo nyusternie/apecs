@@ -66,7 +66,7 @@ const ccAddress = ref(null)
                 <section class="my-5 p-3 w-fit border-4 border-yellow-300 bg-yellow-100 rounded-lg shadow">
                     <h2 class="text-2xl font-medium">Public Key</h2>
 
-                    {{binToHex(publicKey)}}
+                    <!-- {{binToHex(publicKey)}} -->
                 </section>
 
                 <section class="my-5 p-3 w-fit border-4 border-yellow-300 bg-yellow-100 rounded-lg shadow">
@@ -113,8 +113,8 @@ const ccAddress = ref(null)
                                     <dt class="col-sm-4"># of Fusion Pools</dt>
                                     <dd class="col-sm-8">
                                         Up to <strong class="text-info">48</strong> per server
-                                        <br />Lowest: <strong class="text-info">100.00 bits</strong> <small><strong class="text-danger">{{fiat(10000)}}</strong> USD</small>
-                                        <br />Highest: <strong class="text-info">0.82 BCH</strong> <small><strong class="text-danger">{{fiat(82000000)}}</strong> USD</small>
+                                        <!-- <br />Lowest: <strong class="text-info">100.00 bits</strong> <small><strong class="text-danger">{{fiat(10000)}}</strong> USD</small> -->
+                                        <!-- <br />Highest: <strong class="text-info">0.82 BCH</strong> <small><strong class="text-danger">{{fiat(82000000)}}</strong> USD</small> -->
                                     </dd>
                                     <!-- <dd class="col-sm-8 offset-sm-4">Donec id elit non mi porta gravida at eget metus.</dd> -->
 
@@ -145,140 +145,134 @@ const ccAddress = ref(null)
 </template>
 
 <script>
-/* Import modules. */
-import { ethers } from 'ethers'
-import numeral from 'numeral'
-
-import {
-    binToHex,
-    CashAddressType,
-    encodeBase58Address,
-    encodeCashAddress,
-    hexToBin,
-    instantiateSha256,
-    instantiateSecp256k1,
-    instantiateRipemd160,
-} from '@bitauth/libauth'
-
-export default {
-    data: () => {
-        return {
-            // bitbox: null,
-            usd: 0,
-        }
-    },
-    computed: {
-        //
-    },
-    methods: {
-        /**
-         * Update Price
-         */
-        async updatePrice() {
-            try {
-                // const current = await this.bitbox.Price.current('usd')
-                // console.log('CURRENT PRICE', current)
-
-                // this.usd = current
-            } catch (err) {
-                console.error(err)
-            }
-        },
-
-        /**
-         * Satoshis
-         *
-         * Formated with commas.
-         */
-        satoshis(_satoshis) {
-            return numeral(_satoshis).format('0,0')
-        },
-
-        /**
-         * Bitcoin Cash (BCH)
-         *
-         * Calculated from satoshis to BCH value.
-         */
-        bch(_satoshis) {
-            /* Calculate BCH value. */
-            const bchVal = parseFloat(_satoshis / 100000000.0)
-
-            return numeral(bchVal).format('0,0.[0000]')
-        },
-
-        /**
-         * Fiat
-         *
-         * Calculated from satoshis to fiat (USD) value.
-         */
-        fiat(_satoshis) {
-            /* Validate USD price. */
-            if (!this.usd) {
-                return 0.00
-            }
-
-            /* Calculate BCH value. */
-            const bchVal = parseFloat(_satoshis / 100000000.0)
-
-            /* Calculate fiat value. */
-            const fiat = bchVal * parseFloat(this.usd / 100.0)
-
-            /* Return value. */
-            return numeral(fiat).format('$0,0.00[00]')
-        },
-
-        async createAddress () {
-            /* Instantiate Libauth crypto interfaces. */
-            const secp256k1 = await instantiateSecp256k1()
-            const sha256 = await instantiateSha256()
-            const ripemd160 = await instantiateRipemd160()
-
-            const wallet = ethers.Wallet.createRandom()
-            this.seed = wallet.mnemonic.phrase
-            // console.log('SEED', this.seed)
-
-            this.ccAddress = wallet.address
-            // console.log('0x address:', this.ccAddress)
-
-            /* Generate signature hash and entropy. */
-            const signatureHash = ethers.utils.id(this.seed)
-            const signatureEntropy = ethers.BigNumber.from(signatureHash)
-
-            /* Format the private key to binary. */
-            // NOTE: Start at position 2 to omit the 0x prefix added by toHexString.
-            const privateKey = hexToBin('0613f975dadcc86efd95c19311b12a812c4dd34bbec52b9ccf34967f7c326bb3')
-
-            /* Derive the corresponding public key. */
-            this.publicKey = secp256k1.derivePublicKeyCompressed(privateKey)
-            // console.log('Public key', this.publicKey)
-            // console.log('Public key (hex)', binToHex(this.publicKey))
-
-            /* Hash the public key hash according to the P2PKH scheme. */
-            const publicKeyHash = ripemd160.hash(sha256.hash(this.publicKey))
-
-            /* Encode the public key hash into a P2PKH cash address. */
-            this.cashAddress = encodeCashAddress(
-                'bitcoincash', CashAddressType.P2PKH, publicKeyHash)
-            // console.log('Cash address:', this.cashAddress)
-
-            this.legacyAddress = encodeBase58Address(
-                sha256, 'p2pkh', publicKeyHash)
-            // console.log('Legacy address:', this.legacyAddress)
-
-        },
-
-    },
-    created: async function () {
-        /* Update USD. */
-        // this.updatePrice()
-
-        this.createAddress()
-    },
-    mounted: function () {
-        //
-    },
-    beforeDestroy: function () {
-        //
-    },
-}
+// /* Import modules. */
+// import { ethers } from 'ethers'
+// import numeral from 'numeral'
+//
+// import {
+//     binToHex,
+//     CashAddressType,
+//     encodeBase58Address,
+//     encodeCashAddress,
+//     hexToBin,
+//     instantiateSha256,
+//     instantiateSecp256k1,
+//     instantiateRipemd160,
+// } from '@bitauth/libauth'
+//
+// export default {
+//     data: () => {
+//         return {
+//             // bitbox: null,
+//             usd: 0,
+//         }
+//     },
+//     computed: {
+//         //
+//     },
+//     methods: {
+//         /**
+//          * Update Price
+//          */
+//         async updatePrice() {
+//             try {
+//                 // const current = await this.bitbox.Price.current('usd')
+//                 // console.log('CURRENT PRICE', current)
+//
+//                 // this.usd = current
+//             } catch (err) {
+//                 console.error(err)
+//             }
+//         },
+//
+//         /**
+//          * Satoshis
+//          *
+//          * Formated with commas.
+//          */
+//         satoshis(_satoshis) {
+//             return numeral(_satoshis).format('0,0')
+//         },
+//
+//         /**
+//          * Bitcoin Cash (BCH)
+//          *
+//          * Calculated from satoshis to BCH value.
+//          */
+//         bch(_satoshis) {
+//             /* Calculate BCH value. */
+//             const bchVal = parseFloat(_satoshis / 100000000.0)
+//
+//             return numeral(bchVal).format('0,0.[0000]')
+//         },
+//
+//         /**
+//          * Fiat
+//          *
+//          * Calculated from satoshis to fiat (USD) value.
+//          */
+//         fiat(_satoshis) {
+//             /* Validate USD price. */
+//             if (!this.usd) {
+//                 return 0.00
+//             }
+//
+//             /* Calculate BCH value. */
+//             const bchVal = parseFloat(_satoshis / 100000000.0)
+//
+//             /* Calculate fiat value. */
+//             const fiat = bchVal * parseFloat(this.usd / 100.0)
+//
+//             /* Return value. */
+//             return numeral(fiat).format('$0,0.00[00]')
+//         },
+//
+//         async createAddress () {
+//             /* Instantiate Libauth crypto interfaces. */
+//             const secp256k1 = await instantiateSecp256k1()
+//             const sha256 = await instantiateSha256()
+//             const ripemd160 = await instantiateRipemd160()
+//
+//             const wallet = ethers.Wallet.createRandom()
+//             this.seed = wallet.mnemonic.phrase
+//             // console.log('SEED', this.seed)
+//
+//             this.ccAddress = wallet.address
+//             // console.log('0x address:', this.ccAddress)
+//
+//             /* Generate signature hash and entropy. */
+//             const signatureHash = ethers.utils.id(this.seed)
+//             const signatureEntropy = ethers.BigNumber.from(signatureHash)
+//
+//             /* Format the private key to binary. */
+//             // NOTE: Start at position 2 to omit the 0x prefix added by toHexString.
+//             const privateKey = hexToBin('0613f975dadcc86efd95c19311b12a812c4dd34bbec52b9ccf34967f7c326bb3')
+//
+//             /* Derive the corresponding public key. */
+//             this.publicKey = secp256k1.derivePublicKeyCompressed(privateKey)
+//             // console.log('Public key', this.publicKey)
+//             // console.log('Public key (hex)', binToHex(this.publicKey))
+//
+//             /* Hash the public key hash according to the P2PKH scheme. */
+//             const publicKeyHash = ripemd160.hash(sha256.hash(this.publicKey))
+//
+//             /* Encode the public key hash into a P2PKH cash address. */
+//             this.cashAddress = encodeCashAddress(
+//                 'bitcoincash', CashAddressType.P2PKH, publicKeyHash)
+//             // console.log('Cash address:', this.cashAddress)
+//
+//             this.legacyAddress = encodeBase58Address(
+//                 sha256, 'p2pkh', publicKeyHash)
+//             // console.log('Legacy address:', this.legacyAddress)
+//
+//         },
+//
+//     },
+//     created: async function () {
+//         /* Update USD. */
+//         // this.updatePrice()
+//
+//         this.createAddress()
+//     },
+// }
 </script>

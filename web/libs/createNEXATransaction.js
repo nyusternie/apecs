@@ -1,6 +1,6 @@
 /* Import modules. */
-import createTransaction from './createTransaction'
-import createValueOutput from './createValueOutput'
+import createTransaction from './createP2PKTTransaction.js'
+import createValueOutput from './createP2PKTValueOutput.js'
 
 /**
  * Create a Nexa Bridging Transaction.
@@ -24,6 +24,7 @@ const createNEXATransaction = async (
     receiverAddress,
     minerFeeSatoshis,
 ) => {
+    console.error('NEXA TRANSACTION')
     // Make sure the Bridge Address is a valid Nexa Address.
     // if (!await isValidNexaAddress(receiverAddress)) {
     //     throw new Error(`Invalid Nexa Bridge Address given (${receiverAddress}).`)

@@ -114,8 +114,8 @@ const withdraw = async () => {
     console.log('PRIVATE KEY (WIF):', privateKeyWIF)
 
     // Fetch all unspent transaction outputs for the temporary in-browser wallet.
-    const unspentOutputs = await getUnspentOutputs(cashAddress)
-    // const unspentOutputs = await getUnspentOutputs(nexaAddress)
+    // const unspentOutputs = await getUnspentOutputs(cashAddress)
+    const unspentOutputs = await getUnspentOutputs(nexaAddress)
     console.log('UNSPENT OUTPUTS', unspentOutputs)
 
     if (unspentOutputs.length === 0) {
@@ -129,6 +129,7 @@ const withdraw = async () => {
         Profile.bchTestAddress,
         0,
     )
+    return console.log('TRANSACTION (hex)', binToHex(transactionTemplate))
 
     /* Set miner fee. */
     // NOTE: We used 1.1 (an extra 0.1) for added (fee) security.
@@ -146,7 +147,7 @@ const withdraw = async () => {
     console.log('TRANSACTION (hex)', binToHex(bridgeTransaction))
 
     // Broadcast transaction
-    broadcast(binToHex(bridgeTransaction))
+    // broadcast(binToHex(bridgeTransaction))
 }
 </script>
 

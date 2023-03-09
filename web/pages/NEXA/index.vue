@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/* Import modules. */
+import { ref } from 'vue'
+
 /* Configure meta tags. */
 useHead({
     title: 'Nexa — APECS Dev',
@@ -6,11 +9,17 @@ useHead({
         { name: 'description', content: 'Nexa toolkit.' }
     ],
 })
+
+const rostrumSearchVal = ref(null)
+
+const searchRostrum = () => {
+    console.log('Searching for ->', rostrumSearchVal.value)
+}
 </script>
 
 <template>
     <!-- <main class="relative min-h-screen bg-gray-100"> -->
-    <main class="py-8 overflow-x-hidden overflow-y-hidden bg-green-400">
+    <main class="py-8 overflow-x-hidden overflow-y-hidden bg-gradient-to-r from-yellow-600 to-yellow-400">
 
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <h1 class="sr-only">Profile</h1>
@@ -29,10 +38,10 @@ useHead({
                             <div class="bg-white p-6">
                                 <div class="sm:flex sm:items-center sm:justify-between">
                                     <div class="sm:flex sm:space-x-5">
-                                        <div class="flex-shrink-0">
+                                        <div class="p-3 flex-shrink-0 border-2 border-yellow-500 rounded-full shadow-lg">
                                             <img
-                                                class="mx-auto h-20 w-20 rounded-full"
-                                                src="~/assets/img/logos/SBCH.png"
+                                                class="h-20 w-20"
+                                                src="~/assets/img/logos/NEXA.svg"
                                                 alt=""
                                             />
                                         </div>
@@ -82,6 +91,32 @@ useHead({
                             </div>
 
                         </div>
+                    </section>
+
+                    <section class="p-3 flex flex-col gap-4 bg-gradient-to-r from-gray-100 to-gray-300 border-2 border-gray-400 rounded-lg shadow-md">
+                        <h2 class="text-2xl font-medium">
+                            Rostrum Search
+                        </h2>
+
+                        <select class="my-3 px-2 py-2 text-xl text-indigo-50 font-medium bg-gray-700 rounded-lg shadow-md">
+                            <option>Choose a command:</option>
+                            <option>Token</option>
+                        </select>
+
+                        <input
+                            type="text"
+                            class="px-3 py-2 bg-yellow-100 border-2 border-yellow-400 rounded-lg shadow-md"
+                            v-model="rostrumSearchVal"
+                        />
+
+                        <button
+                            @click="searchRostrum"
+                            class="py-2 bg-blue-500 border-2 border-blue-700 rounded-lg shadow-md"
+                        >
+                            <span class="text-xl text-blue-50 font-medium">
+                                Search Rostrum
+                            </span>
+                        </button>
                     </section>
 
                     <section class="bg-gradient-to-r from-yellow-100 to-yellow-200 border-2 border-yellow-500 rounded-xl shadow-md">

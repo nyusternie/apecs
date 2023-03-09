@@ -1,17 +1,19 @@
 import { Opcodes } from './_Opcodes.js'
 
 /**
- * Given the 20-byte {@link hash160} of a compressed public key, return a P2PKH
+ * Given the 20-byte {@link hash160} of a compressed public key, return a P2PKT
  * locking bytecode:
- * `OP_DUP OP_HASH160 OP_PUSHBYTES_20 publicKeyHash OP_EQUALVERIFY OP_CHECKSIG`.
+ * `OP_1 OP_1 publicKeyTemplate`.
  *
- * This method does not validate `publicKeyHash` in any way; inputs of incorrect
+ * This method does not validate `publicKeyTemplate` in any way; inputs of incorrect
  * lengths will produce incorrect results.
  *
- * @param publicKeyHash - the 20-byte hash of the compressed public key
+ * @param publicKeyTemplate - the 20-byte hash of the template
  * @returns
  */
 export const encodeLockingBytecodeP2pkt = (publicKeyTemplate) =>
   Uint8Array.from([
+    Opcodes.OP_0,
+    Opcodes.OP_1,
     ...publicKeyTemplate,
   ]);

@@ -55,10 +55,10 @@ export const useProfileStore = defineStore('profile', {
             /* Validate session. */
             if (_session) {
                 /* Set session id. */
-                this.state.sessionId = _session._id
+                this.state.sessionid = _session._id
             } else {
                 /* Set session id. */
-                this.state.sessionId = null
+                this.state.sessionid = null
             }
         },
 

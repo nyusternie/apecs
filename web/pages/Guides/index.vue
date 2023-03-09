@@ -40,6 +40,16 @@
                     </span>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/mariadb" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        MariaDB
+                    </h1>
+
+                    <div class="">
+                        Get started with MariaDB
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/nginx" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         NGINX
@@ -57,6 +67,16 @@
 
                     <div class="">
                         NVM makes manager your node versions quick and easy.
+                    </div>
+                </NuxtLink>
+
+                <NuxtLink to="/guides/postgresql" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        PostgreSQL
+                    </h1>
+
+                    <div class="">
+                        Get started with PostgreSQL
                     </div>
                 </NuxtLink>
 
