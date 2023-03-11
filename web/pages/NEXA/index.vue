@@ -1,5 +1,6 @@
 <script setup lang="ts">
 /* Import modules. */
+// import EventSource from 'eventsource'
 import { ref } from 'vue'
 
 /* Configure meta tags. */
@@ -12,9 +13,25 @@ useHead({
 
 const rostrumSearchVal = ref(null)
 
+const account = ref(null)
+const blockHeight = ref(null)
+const blocks = ref(null)
+const debugCode = ref(null)
+
+
 const searchRostrum = () => {
     console.log('Searching for ->', rostrumSearchVal.value)
 }
+
+if (process.client) {
+    const es = new EventSource('https://mempool.nexa.sh/stream')
+    console.log('EVENT SOURCE', es)
+    es.onmessage = function (event) {
+        console.log('ES DATA', event.data)
+        debugCode.value = event.data
+    }
+}
+
 </script>
 
 <template>
@@ -380,15 +397,6 @@ export default {
             }
         ]
     }),
-    data: () => {
-        return {
-            account: null,
-            blockHeight: null,
-            blocks: null,
-
-            debugCode: null,
-        }
-    },
     computed: {
         displayBlockHeight() {
             if (!this.blockHeight) {
