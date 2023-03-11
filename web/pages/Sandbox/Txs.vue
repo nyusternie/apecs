@@ -14,7 +14,7 @@ import { CashAddressType } from '@/libs/_CashAddressType.js'
 import { encodeCashAddress } from '@/libs/_encodeCashAddress.js'
 
 import { ethers } from 'ethers'
-import NexaAddr from 'nexaaddrjs'
+import { encodeAddress } from 'nexajs'
 import { OpcodesBTC } from '@bitauth/libauth'
 
 import { useProfileStore } from '@/stores/profile'
@@ -97,7 +97,7 @@ const withdraw = async () => {
     console.log('CASH ADDRESS', cashAddress)
 
     /* Encode the public key hash into a P2PKH nexa address. */
-    const nexaAddress = NexaAddr.encode(
+    const nexaAddress = encodeAddress(
         'nexa', 'TEMPLATE', myScript)
     console.log('NEXA ADDRESS', nexaAddress)
 
