@@ -23,12 +23,22 @@ const searchRostrum = () => {
     console.log('Searching for ->', rostrumSearchVal.value)
 }
 
+// NOTE: Should ONLY be run on the client.
 if (process.client) {
-    const es = new EventSource('https://mempool.nexa.sh/stream')
-    console.log('EVENT SOURCE', es)
+    const es = new EventSource('https://mempool.nexa.sh')
+    // console.log('EVENT SOURCE', es)
+
     es.onmessage = function (event) {
-        console.log('ES DATA', event.data)
-        debugCode.value = event.data
+        // console.log('ES DATA', typeof event.data, event.data)
+
+        try {
+            const formatted = JSON.stringify(
+                JSON.parse(event.data), null, 2)
+
+            debugCode.value = formatted
+        } catch (err) {
+            console.error(err)
+        }
     }
 }
 
@@ -137,7 +147,10 @@ if (process.client) {
                     </section>
 
                     <section class="bg-gradient-to-r from-yellow-100 to-yellow-200 border-2 border-yellow-500 rounded-xl shadow-md">
-                        <pre v-html="debugCode" class="px-5 py-3 text-yellow-900" />
+                        <pre
+                            v-html="debugCode"
+                            class="px-5 py-3 text-yellow-900"
+                        />
                     </section>
 
                     <!-- Actions panel -->
