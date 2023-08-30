@@ -1,8 +1,4 @@
 <script setup lang="ts">
-/* Import modules. */
-// import EventSource from 'eventsource'
-import { ref } from 'vue'
-
 /* Configure meta tags. */
 useHead({
     title: 'Nexa — APECS Dev',

@@ -37,13 +37,7 @@ export default defineNuxtConfig({
         '@nuxtjs/plausible',
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
-        '@pinia-plugin-persistedstate/nuxt',
     ],
-
-    /* Pinia Storage */
-    piniaPersistedstate: {
-        storage: 'localStorage', // NOTE: Default is cookies.
-    },
 
     /* Runtime Configuration */
     runtimeConfig: {

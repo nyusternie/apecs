@@ -80,5 +80,4 @@ export const useProfileStore = defineStore('profile', {
             _setCashAccounts(_cashAccounts)
         },
     },
-    persist: true,
 })

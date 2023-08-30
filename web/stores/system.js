@@ -61,5 +61,4 @@ export const useSystemStore = defineStore('system', {
             }, 3000)
         },
     },
-    persist: true,
 })

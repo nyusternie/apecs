@@ -1,11 +1,11 @@
 <script setup lang="ts">
 /* Import modules. */
-import { ref } from 'vue'
 import { useSystemStore } from '@/stores/system'
+const System = useSystemStore()
 
 /* Configure meta tags. */
 useHead({
-    title: 'Blank — APECS Dev',
+    title: 'Webhook — APECS Dev',
     meta: [
         { name: 'description', content: 'TBD..' }
     ],
@@ -13,9 +13,6 @@ useHead({
 
 /* Initialize (reactive) variables. */
 const var1 = ref(0)
-
-/* Initialize System store. */
-const System = useSystemStore()
 
 // TBD...
 </script>
@@ -25,14 +22,14 @@ const System = useSystemStore()
         <section class="mt-8 pb-8">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                 <h1 class="sr-only">
-                    Blank
+                    Webhook
                 </h1>
 
                 <!-- Main content area -->
                 <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
                     <section class="p-5 flex flex-col col-span-2 space-y-4 bg-yellow-50 border-2 border-yellow-200 rounded-lg shadow">
                         <h1 class="text-4xl font-bold text-yellow-900">
-                            Blank {{var1}}
+                            Webhook {{var1}}
                         </h1>
 
                         <p class="text-yellow-900">

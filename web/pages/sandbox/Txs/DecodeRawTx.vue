@@ -1,9 +1,7 @@
 <script setup>
 import numeral from 'numeral'
-import { ref } from 'vue'
-import { useSystemStore } from '@/stores/system'
 
-/* Initialize System store. */
+import { useSystemStore } from '@/stores/system'
 const System = useSystemStore()
 
 /**

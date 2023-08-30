@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-
 const cashAddress = ref(null)
 const legacyAddress = ref(null)
 const publicKey = ref(null)
