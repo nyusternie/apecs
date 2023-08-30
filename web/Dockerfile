@@ -1,5 +1,4 @@
-### STAGE 1: Build ###
-FROM node:18 as build
+FROM node:18
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
@@ -9,15 +8,8 @@ COPY package.json /usr/src/app/package.json
 RUN yarn install --silent
 
 COPY . /usr/src/app
-RUN yarn run generate
+RUN yarn run build
 
+EXPOSE 3000
 
-### STAGE 2: NGINX ###
-FROM nginx:stable-alpine
-
-#COPY --from=build /usr/src/app/dist /usr/share/nginx/html
-COPY --from=build /usr/src/app/.output/public /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", ".output/server/index.mjs"]

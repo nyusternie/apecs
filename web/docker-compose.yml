@@ -7,7 +7,7 @@ services:
     container_name: apecs
     restart: always
     ports:
-      - '127.0.0.1:3000:80'
+      - '127.0.0.1:3000:3000'
       # - '0.0.0.0:80:3000'     # use without proxy server
     logging: # apply better controls to Docker overlay folder
       driver: 'json-file'
