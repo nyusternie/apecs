@@ -64,6 +64,14 @@ chmod +x ./get-docker.sh
                 </div>
 
                 <h3 class="text-2xl font-medium">
+                    Create the OpenSSL certificates
+                </h3>
+
+                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
+                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">openssl req -newkey rsa:2048 -nodes -keyout server.key -x509 -days 3650 -out server.crt</textarea>
+                </div>
+
+                <h3 class="text-2xl font-medium">
                     Install the certificate
                 </h3>
 
