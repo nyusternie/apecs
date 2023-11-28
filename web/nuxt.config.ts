@@ -39,6 +39,12 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
     ],
 
+    /* Plausible (self-hosted) */
+    plausible: {
+        apiHost: 'https://plausible.hos.im',
+        autoOutboundTracking: true,
+    },
+
     /* Runtime Configuration */
     runtimeConfig: {
         // NOTE: The private keys which are only available within server-side.
