@@ -1,8 +1,4 @@
 <script setup lang="ts">
-/* Import modules. */
-import { useSystemStore } from '@/stores/system'
-const System = useSystemStore()
-
 /* Configure meta tags. */
 useHead({
     title: 'Blank — APECS Dev',
@@ -11,10 +7,22 @@ useHead({
     ],
 })
 
+/* Initialize stores. */
+import { useSystemStore } from '@/stores/system'
+const System = useSystemStore()
+
 /* Initialize (reactive) variables. */
 const var1 = ref(0)
 
-// TBD...
+// onMounted(() => {
+//     console.log('Mounted!')
+//     // Now it's safe to perform setup operations.
+// })
+
+// onBeforeUnmount(() => {
+//     console.log('Before Unmount!')
+//     // Now is the time to perform all cleanup operations.
+// })
 </script>
 
 <template>

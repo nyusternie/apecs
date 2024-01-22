@@ -1,6 +1,6 @@
 {
   "name": "apecs-web",
-  "version": "23.8.30",
+  "version": "24.1.22",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
   "description": "An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.",
@@ -20,7 +20,7 @@
     "helia": "2.0.1",
     "mainnet-js": "1.1.31",
     "moment": "2.29.4",
-    "nexajs": "23.8.21",
+    "nexajs": "23.12.29",
     "numeral": "2.0.6",
     "nuxt": "3.0.0",
     "pinia": "2.0.32",

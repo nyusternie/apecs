@@ -1,4 +1,10 @@
 <script setup lang="ts">
+/* Import modules. */
+import { ethers } from 'ethers'
+import numeral from 'numeral'
+
+import { getTip } from '@nexajs/rostrum'
+
 /* Configure meta tags. */
 useHead({
     title: 'Nexa — APECS Dev',
@@ -30,6 +36,7 @@ if (process.client) {
         try {
             const formatted = JSON.stringify(
                 JSON.parse(event.data), null, 2)
+            console.log('MEMPOOL', formatted)
 
             debugCode.value = formatted
         } catch (err) {
@@ -38,6 +45,18 @@ if (process.client) {
     }
 }
 
+const init = async () => {
+    const tip = await getTip()
+        .catch(err => console.error(err))
+    console.log('TIP', tip)
+
+    /* Set block height. */
+    blockHeight.value = tip.height
+}
+
+onMounted(() => {
+    init()
+})
 </script>
 
 <template>
@@ -379,14 +398,6 @@ if (process.client) {
 </template>
 
 <script lang="ts">
-/* Import modules. */
-import { ethers } from 'ethers'
-import numeral from 'numeral'
-
-// import Bitcore from 'bitcore-lib-cash'
-// import Bitcore from 'bitcore-lib-nexa'
-// import * as HDPrivateKey from 'bitcore-lib-cash/lib/hdprivatekey'
-
 /* Import components. */
 import Blocks from './Blocks'
 import Txs from './Txs'
