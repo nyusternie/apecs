@@ -61,16 +61,6 @@ chmod +x ./get-docker.sh
                     <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install docker-ce docker-compose</textarea>
                 </div>
 
-                <hr />
-
-                <h3 class="text-2xl font-medium">
-                    Run CouchDB
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">docker run -d --restart=always --name &lt;database-name&gt; -v /secure-fs/couchdb:/opt/couchdb/data -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=&lt;password&gt; couchdb:latest</textarea>
-                </div>
-
             </section>
         </template>
 
