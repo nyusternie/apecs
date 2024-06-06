@@ -60,7 +60,7 @@
             </h3>
 
             <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install libpcsclite1 libccid</textarea>
+                <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install libpcsclite1 libccid libusb-1.0-0 pcscd</textarea>
             </div>
 
         </template>
