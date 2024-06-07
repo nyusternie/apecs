@@ -50,6 +50,16 @@
                     </div>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/memory" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Memory
+                    </h1>
+
+                    <div class="">
+                        Manage your server's memory like a PRO!
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/nginx" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         NGINX
