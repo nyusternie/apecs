@@ -49,7 +49,7 @@
 
                 <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
                     <textarea rows="4" class="-mb-2 p-5 w-full border-0 bg-yellow-100">swapon --show
-free -h
+# free -h
 fallocate -l 4G /swapfile
 
 chmod 600 /swapfile
@@ -57,11 +57,12 @@ mkswap /swapfile
 swapon /swapfile
 swapon --show
 
-free -h
+# free -h
 echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
 
-sysctl vm.swappiness=10
-nano /etc/sysctl.conf => vm.swappiness=10</textarea>
+# cat /proc/sys/vm/swappiness
+# sysctl vm.swappiness=10
+echo 'vm.swappiness=10' | tee -a /etc/sysctl.conf</textarea>
                 </div>
 
                 <!-- <ul class="-mt-3 mb-3 pl-10 text-xs text-gray-500 list-disc">
