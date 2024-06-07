@@ -1,10 +1,10 @@
 <script setup lang="ts">
 useHead({
-    title: 'APECS — A Crypto Playground',
+    title: 'APECS — Casually Building Crypto',
     meta: [
         { name: 'description', content: 'A permissionless, multi-chain platform for P2P electronic cash Builders to do wtf they need to do.' }
     ],
-    // ogTitle: 'APECS — A Crypto Playground',
+    // ogTitle: 'APECS — Casually Building Crypto',
 
     // description: 'A permissionless, multi-chain platform for P2P electronic cash Builders to do wtf they need to do.',
     // ogDescription: 'A permissionless, multi-chain platform for P2P electronic cash Builders to do wtf they need to do.',

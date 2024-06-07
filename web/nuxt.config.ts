@@ -7,7 +7,7 @@ export default defineNuxtConfig({
         head: {
             charset: 'utf-8',
             viewport: 'initial-scale=1',
-            title: 'APECS — A Crypto Playground',
+            title: 'APECS — Casually Building Crypto',
             meta: [
                 { name: 'description', content: 'A permissionless, multi-chain platform for P2P electronic cash Builders to do wtf they need to do.' }
             ],
