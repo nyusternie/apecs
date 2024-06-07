@@ -1,13 +1,13 @@
 <script setup lang="ts">
 useHead({
-    title: 'APECS — Crypto Creators HQ',
+    title: 'APECS — A Crypto Playground',
     meta: [
-        { name: 'description', content: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.' }
+        { name: 'description', content: 'A permissionless, multi-chain platform for P2P electronic cash Builders to do wtf they need to do.' }
     ],
-    // ogTitle: 'APECS — Crypto Creators HQ',
+    // ogTitle: 'APECS — A Crypto Playground',
 
-    // description: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
-    // ogDescription: 'An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.',
+    // description: 'A permissionless, multi-chain platform for P2P electronic cash Builders to do wtf they need to do.',
+    // ogDescription: 'A permissionless, multi-chain platform for P2P electronic cash Builders to do wtf they need to do.',
 
     // ogImage: 'https://apecs.dev/poster.jpg',
     // twitterCard: 'summary_large_image',
