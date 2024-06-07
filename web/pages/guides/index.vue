@@ -80,6 +80,16 @@
                     </div>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/rsync" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Rsync
+                    </h1>
+
+                    <div class="">
+                        Copying and synchronizing files and directories remotely as well as locally in Linux/Unix systems.
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/veracrypt" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         VeraCrypt
