@@ -4,9 +4,9 @@
         <DashboardFeatured class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
         <DashboardFeeds class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
         <DashboardGoals class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
-        <DashboardHighlights class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
-        <DashboardNewcomers class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
-        <DashboardTodo class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
+        <!-- <DashboardHighlights class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" /> -->
+        <!-- <DashboardNewcomers class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" /> -->
+        <!-- <DashboardTodo class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" /> -->
         <DashboardTrends class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
         <DashboardUpdates class="p-3 border-4 border-yellow-400 bg-yellow-100 rounded-lg" />
     </main>

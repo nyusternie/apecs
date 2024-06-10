@@ -16,8 +16,8 @@
 
         <div class="card-body p-0">
             <ul class="products-list product-list-in-card pl-2 pr-2">
-                <li class="item" v-for="feature of featured" v-bind:key="feature.url">
-                    <img :src="feature.imageurl" alt="Product Image" class="w-64 rounded-lg border-4 border-yellow-400">
+                <li class="item my-3 flex flex-row gap-4" v-for="feature of featured" v-bind:key="feature.url">
+                    <img :src="feature.imageurl" alt="Product Image" class="w-16 rounded-lg border-4 border-yellow-400">
 
                     <div class="">
                         <a :href="feature.url" target="_blank" class="product-title">

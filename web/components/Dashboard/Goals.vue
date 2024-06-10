@@ -32,17 +32,6 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-8">
-                            <p class="text-center">
-                                <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                            </p>
-
-                            <div class="chart">
-                                <!-- Sales Chart Canvas -->
-                                <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-                                <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                            </div>
-                        </div>
 
                         <div class="col-md-4">
                             <p class="text-center">

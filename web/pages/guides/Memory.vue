@@ -7,7 +7,7 @@
                 </h2>
 
                 <p class="mt-5 text-xl text-indigo-300">
-                    SSH keys are the best security for securing access to your systems.
+                    Manage your server's memory like a PRO!
                 </p>
             </div>
         </template>
