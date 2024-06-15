@@ -1,10 +1,24 @@
 <script setup>
+/* Import modules. */
+import { decodeRemoteAddress } from '@nexajs/rostrum'
+
+const address = ref()
+const output = ref()
+
 const cashAddress = ref(null)
 const legacyAddress = ref(null)
 const publicKey = ref(null)
 const rawTxHex = ref(null)
 const seed = ref(null)
 const ccAddress = ref(null)
+
+const decode = async () => {
+    console.log('ADDRESS', address.value)
+
+    output.value = await decodeRemoteAddress(address.value)
+        .catch(err => console.error(err))
+    console.log('DECODED', output.value)
+}
 </script>
 
 <template>
@@ -54,6 +68,14 @@ const ccAddress = ref(null)
                     placeholder="Paste raw hex code here"
                     v-model="rawTxHex"
                 ></textarea>
+
+                <input v-model="address" placeholder="Enter an address here" />
+
+                <button @click="decode">
+                    DECODE
+                </button>
+
+<pre>{{output}}</pre>
 
                 <section class="my-5 p-3 w-fit border-4 border-yellow-300 bg-yellow-100 rounded-lg shadow">
                     <h2 class="text-2xl font-medium">Private Seed Phrase</h2>
