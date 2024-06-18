@@ -3,7 +3,10 @@
 import { ethers } from 'ethers'
 import numeral from 'numeral'
 
-import { getTip } from '@nexajs/rostrum'
+import {
+    getOutpoint,
+    getTip,
+} from '@nexajs/rostrum'
 
 /* Configure meta tags. */
 useHead({
@@ -14,6 +17,7 @@ useHead({
 })
 
 const rostrumSearchVal = ref(null)
+const searchType = ref(null)
 
 const account = ref(null)
 const blockHeight = ref(null)
@@ -21,8 +25,14 @@ const blocks = ref(null)
 const debugCode = ref(null)
 
 
-const searchRostrum = () => {
-    console.log('Searching for ->', rostrumSearchVal.value)
+const searchRostrum = async () => {
+    console.log('Searching', searchType.value, ' for ->', rostrumSearchVal.value)
+
+    const result = await getOutpoint(rostrumSearchVal.value)
+        .catch(err => console.error(err))
+    console.log('SEARCH RESULT', result)
+
+    debugCode.value = JSON.stringify(result, null, 2)
 }
 
 // NOTE: Should ONLY be run on the client.
@@ -140,9 +150,10 @@ onMounted(() => {
                             Rostrum Search
                         </h2>
 
-                        <select class="my-3 px-2 py-2 text-xl text-indigo-50 font-medium bg-gray-700 rounded-lg shadow-md">
+                        <select v-model="searchType" class="my-3 px-2 py-2 text-xl text-indigo-50 font-medium bg-gray-700 rounded-lg shadow-md">
                             <option>Choose a command:</option>
-                            <option>Token</option>
+                            <option value="outpoint">Outpoint</option>
+                            <option value="token">Token</option>
                         </select>
 
                         <input
