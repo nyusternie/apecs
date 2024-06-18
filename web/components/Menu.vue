@@ -217,44 +217,6 @@
                                         class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                         aria-controls="sub-menu-1"
                                         aria-expanded="false"
-                                        @click="showDesktopMenu = !showDesktopMenu"
-                                    >
-                                        <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                        <span class="flex-1">
-                                            My Desktop
-                                        </span>
-                                        <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
-                                        <svg class="text-gray-300 ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150" viewBox="0 0 20 20" aria-hidden="true">
-                                            <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
-                                        </svg>
-                                    </button>
-
-                                    <div v-if="showDesktopMenu" class="space-y-1" id="sub-menu-1">
-                                        <NuxtLink to="/desktop/design" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            Design Studio
-                                        </NuxtLink>
-
-                                        <NuxtLink to="/desktop/notebook" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            Notebook
-                                        </NuxtLink>
-
-                                        <NuxtLink to="/desktop/filemanager" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            File Manager
-                                        </NuxtLink>
-
-                                        <a href="javascript://" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            open my desktop..
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="space-y-1">
-                                    <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                                    <button
-                                        type="button"
-                                        class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                        aria-controls="sub-menu-1"
-                                        aria-expanded="false"
                                         @click="showWorkspacesMenu = !showWorkspacesMenu"
                                     >
                                         <svg class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
@@ -386,13 +348,11 @@
 <script>
 export default {
     data: () => ({
-        showDesktopMenu: null,
         showMobileMenu: null,
         showWorkspacesMenu: null,
         version: null,
     }),
     created: function () {
-        this.showDesktopMenu = false
         this.showMobileMenu = false
         this.showWorkspacesMenu = false
 
