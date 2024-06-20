@@ -100,6 +100,16 @@
                     </div>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/UFW" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        UFW
+                    </h1>
+
+                    <div class="">
+                        Uncomplicated Firewall (UFW) is a program for managing a netfilter firewall designed to be easy to use
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/veracrypt" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         VeraCrypt
