@@ -3,11 +3,11 @@
         <template #intro>
             <div class="max-w-xl">
                 <h2 class="text-4xl font-extrabold text-gray-100 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                    Uncomplicated Firewall
+                    Android
                 </h2>
 
                 <p class="mt-5 text-xl text-indigo-300">
-                    Uncomplicated Firewall (UFW) is a program for managing a netfilter firewall designed to be easy to use
+                    Some best practices for building Android apps.
                 </p>
             </div>
         </template>
@@ -44,11 +44,17 @@
         <template #main>
             <section class="p-3 h-full bg-gradient-to-r from-gray-50 to-gray-100">
                 <h3 class="text-2xl font-medium">
-                    Allow UFW to web ports
+                    Running the Android Emulator
                 </h3>
 
                 <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">sudo ufw allow proto tcp from any to any port 80,443</textarea>
+                    <textarea rows="6" class="-mb-2 p-5 w-full border-0 bg-yellow-100">
+npx react-native start --reset-cache
+emulator -avd Pixel_5_API_30 -no-snapshot
+npx react-native run-android
+emulator -list-avds
+adb -s emulator-5554 reverse tcp:9090 tcp:9090
+                    </textarea>
                 </div>
             </section>
         </template>

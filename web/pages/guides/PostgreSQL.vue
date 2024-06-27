@@ -98,39 +98,3 @@
         </template>
     </NuxtLayout>
 </template>
-
-<script>
-export default {
-    data: () => ({
-        base64: null,
-    }),
-    head: () => ({
-        title: 'Decode — APECS Dev',
-        meta: [
-            {
-                hid: 'description', // `vmid` for it as it will not work
-                name: 'description',
-                content: 'Perform various decoding operations.'
-            }
-        ]
-    }),
-    computed: {
-        base64Decoded() {
-            if (this.base64) {
-                return atob(this.base64)
-            } else {
-                return null
-            }
-        },
-    },
-    methods: {
-        //
-    },
-    created: async function () {
-        //
-    },
-    mounted: function () {
-        //
-    },
-}
-</script>

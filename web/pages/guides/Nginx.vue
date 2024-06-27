@@ -120,7 +120,6 @@ chmod +x ./get-docker.sh
         </section> -->
     </NuxtLayout>
 </template>
-
 <script>
 export default {
     data: () => ({

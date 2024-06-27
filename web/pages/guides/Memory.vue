@@ -77,25 +77,3 @@ echo 'vm.swappiness=10' | tee -a /etc/sysctl.conf</textarea>
         </template>
     </NuxtLayout>
 </template>
-
-<script>
-export default {
-    data: () => {
-        return {
-            //
-        }
-    },
-    computed: {
-        //
-    },
-    methods: {
-        //
-    },
-    created: async function () {
-        //
-    },
-    mounted: function () {
-        //
-    },
-}
-</script>

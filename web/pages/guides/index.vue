@@ -6,6 +6,16 @@
 
             <div class="col-span-3 grid grid-cols-3 pb-10">
 
+                <NuxtLink to="/guides/android" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Android
+                    </h1>
+
+                    <div class="">
+                        Some best practices for building Android apps.
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/couchdb" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CouchDB

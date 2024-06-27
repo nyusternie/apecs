@@ -78,28 +78,3 @@
         </template>
     </NuxtLayout>
 </template>
-
-<script>
-export default {
-    components: {
-        //
-    },
-    data: () => {
-        return {
-            //
-        }
-    },
-    computed: {
-        //
-    },
-    methods: {
-        //
-    },
-    created: async function () {
-        //
-    },
-    mounted: function () {
-        //
-    },
-}
-</script>
