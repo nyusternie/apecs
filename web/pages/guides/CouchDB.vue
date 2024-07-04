@@ -56,16 +56,28 @@
                     </small>
                 </div>
 
-    <pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
-    <code>docker run --rm \
-        --name my-couchdb \
-        -e COUCHDB_USER=admin \
-        -e COUCHDB_PASSWORD=password \
-        -e COUCHDB_ERLANG_COOKIE=33595219-bc56-43ca-9df6-a9b4145f1e49 \
-        -p 127.0.0.1:5984:5984 \
-        -v $(pwd):/opt/couchdb/data \
-        couchdb:3.3.1
-    </code></pre>
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>docker run --rm \
+    --name my-couchdb \
+    -e COUCHDB_USER=admin \
+    -e COUCHDB_PASSWORD=password \
+    -e COUCHDB_ERLANG_COOKIE=33595219-bc56-43ca-9df6-a9b4145f1e49 \
+    -p 127.0.0.1:5984:5984 \
+    -v $(pwd):/opt/couchdb/data \
+    couchdb:3.3.1
+</code></pre>
+
+                <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    For PRODUCTION deployments, you can make the server run "permanently".
+
+                    <small class="block">
+                        --rm (remove this flag)
+                    </small>
+
+                    <small class="block">
+                        -d --restart unless-stopped (replace with these flags)
+                    </small>
+                </div>
             </section>
 
             <section class="py-10 max-w-5xl mx-auto">
@@ -77,28 +89,26 @@
                     </small>
                 </div>
 
-    <pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
-    <code>version: '3.7'
-
-    services:
-      couchdb:
-        image: couchdb
-        restart: always
-        ports:
-          - '127.0.0.1:5984:5984'
-          - '127.0.0.1:4369:4369'
-          - '127.0.0.1:9100:9100'
-        environment:
-          - COUCHDB_USER=${COUCHDB_USER} # change this to match your system's ENV
-          - COUCHDB_PASSWORD=${COUCHDB_PASSWORD} # change this to match your system's ENV
-        volumes:
-          - ./data:/opt/couchdb/data
-        logging: # apply better controls to Docker overlay folder
-          driver: 'json-file'
-          options:
-            max-file: '5'
-            max-size: '10m'
-    </code></pre>
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>services:
+    couchdb:
+    image: couchdb
+    restart: always
+    ports:
+        - '127.0.0.1:5984:5984'
+        - '127.0.0.1:4369:4369'
+        - '127.0.0.1:9100:9100'
+    environment:
+        - COUCHDB_USER=${COUCHDB_USER} # change this to match your system's ENV
+        - COUCHDB_PASSWORD=${COUCHDB_PASSWORD} # change this to match your system's ENV
+    volumes:
+        - ./data:/opt/couchdb/data
+    logging: # apply better controls to Docker overlay folder
+        driver: 'json-file'
+        options:
+        max-file: '5'
+        max-size: '10m'
+</code></pre>
             </section>
 
         </template>
