@@ -16,6 +16,16 @@
                     </div>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/css" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        CSS
+                    </h1>
+
+                    <div class="">
+                        Some of the most useful CSS tricks to help you in a bind.
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/couchdb" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         CouchDB
