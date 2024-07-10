@@ -91,21 +91,21 @@
 
 <pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
 <code>services:
-    couchdb:
+  couchdb:
     image: couchdb
-    restart: always
+    restart: unless-stopped
     ports:
-        - '127.0.0.1:5984:5984'
-        - '127.0.0.1:4369:4369'
-        - '127.0.0.1:9100:9100'
+      - '127.0.0.1:5984:5984'
+      - '127.0.0.1:4369:4369'
+      - '127.0.0.1:9100:9100'
     environment:
-        - COUCHDB_USER=${COUCHDB_USER} # change this to match your system's ENV
-        - COUCHDB_PASSWORD=${COUCHDB_PASSWORD} # change this to match your system's ENV
+      - COUCHDB_USER=${COUCHDB_USER} # change this to match your system's ENV
+      - COUCHDB_PASSWORD=${COUCHDB_PASSWORD} # change this to match your system's ENV
     volumes:
-        - ./data:/opt/couchdb/data
+      - ./data:/opt/couchdb/data
     logging: # apply better controls to Docker overlay folder
-        driver: 'json-file'
-        options:
+      driver: 'json-file'
+      options:
         max-file: '5'
         max-size: '10m'
 </code></pre>
