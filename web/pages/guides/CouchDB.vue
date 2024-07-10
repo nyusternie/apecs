@@ -93,6 +93,7 @@
 <code>services:
   couchdb:
     image: couchdb
+    container_name: couchdb
     restart: unless-stopped
     ports:
       - '127.0.0.1:5984:5984'
@@ -108,6 +109,9 @@
       options:
         max-file: '5'
         max-size: '10m'
+networks:
+  couchdb-network:
+    driver: bridge
 </code></pre>
             </section>
 
