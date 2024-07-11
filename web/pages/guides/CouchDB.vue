@@ -115,6 +115,23 @@ networks:
 </code></pre>
             </section>
 
+            <section class="py-10 max-w-5xl mx-auto">
+                <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    Add a new user.
+
+                    <small class="block">
+                        NOTE: TBD...
+                    </small>
+                </div>
+
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>curl -X PUT http://localhost:5984/_users/org.couchdb.user:new_username \
+    -H "Accept: application/json" \
+    -H "Content-Type: application/json" \
+    -d '{"name": "new_username", "password": "new_password", "roles": [], "type": "user"}'
+</code></pre>
+            </section>
+
         </template>
     </NuxtLayout>
 </template>

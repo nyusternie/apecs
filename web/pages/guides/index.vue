@@ -46,6 +46,16 @@
                     </div>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/ipfs" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        IPFS
+                    </h1>
+
+                    <div class="">
+                        Best practices when using IPFS.
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/key-generation" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Key Generation
