@@ -32,7 +32,7 @@
                     </h1>
 
                     <div class="">
-                        Get started with CouchDB
+                        Apache CouchDB is an open-source document-oriented NoSQL database, implemented in Erlang.
                     </div>
                 </NuxtLink>
 

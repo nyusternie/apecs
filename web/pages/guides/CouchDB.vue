@@ -6,8 +6,12 @@
                     CouchDB
                 </h2>
 
+                <small class="pl-3 text-xs font-medium text-gray-200 uppercase tracking-widest italic">
+                    Infrastructure
+                </small>
+
                 <p class="mt-5 text-xl text-indigo-300">
-                    Installing CouchDB to a Debian/Ubuntu machine is quick and easy.
+                    Apache CouchDB is an open-source document-oriented NoSQL database, implemented in Erlang.
                 </p>
             </div>
         </template>
@@ -43,15 +47,18 @@
         <!-- Page Section -->
         <template #main>
             <h1 class="mt-5 text-3xl font-bold">
-                Deploy CouchDB
-                <small class="text-xs text-gray-500 uppercase">Infrastructure</small>
+                Setup CouchDB
             </h1>
 
-            <section class="py-10 max-w-5xl mx-auto">
-                <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
-                    Deploys a NoSQL database using Docker.
+            <small class="block pl-3 text-sm font-medium text-rose-500 tracking-widest uppercase">
+                Level: <span class="text-lg">Easy</span>
+            </small>
 
-                    <small class="block">
+            <section class="mt-3 py-5 max-w-5xl mx-auto">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    Deploys a NoSQL database using Docker
+
+                    <small class="block text-sm">
                         NOTE: All database data is stored in the current working folder.
                     </small>
                 </div>
@@ -67,7 +74,7 @@
     couchdb:3.3.1
 </code></pre>
 
-                <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                <div class="mt-3 p-5 font-medium bg-fuchsia-200 border-4 border-fuchsia-300 rounded-xl">
                     For PRODUCTION deployments, you can make the server run "permanently".
 
                     <small class="block">
@@ -80,11 +87,11 @@
                 </div>
             </section>
 
-            <section class="py-10 max-w-5xl mx-auto">
-                <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
-                    Deploys a NoSQL database using Docker.
+            <section class="mt-3 py-5 max-w-5xl mx-auto">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    Deploys a NoSQL database using Docker Compose
 
-                    <small class="block">
+                    <small class="block text-sm">
                         NOTE: All database data is stored in the current working folder.
                     </small>
                 </div>
@@ -115,11 +122,11 @@ networks:
 </code></pre>
             </section>
 
-            <section class="py-10 max-w-5xl mx-auto">
-                <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
-                    Add a new user.
+            <section class="mt-3 py-5 max-w-5xl mx-auto">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    Add a New User
 
-                    <small class="block">
+                    <small class="block text-sm">
                         NOTE: TBD...
                     </small>
                 </div>

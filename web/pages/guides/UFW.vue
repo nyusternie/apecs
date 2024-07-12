@@ -6,6 +6,10 @@
                     Uncomplicated Firewall
                 </h2>
 
+                <small class="pl-3 text-xs font-medium text-gray-200 uppercase tracking-widest italic">
+                    Infrastructure
+                </small>
+
                 <p class="mt-5 text-xl text-indigo-300">
                     Uncomplicated Firewall (UFW) is a program for managing a netfilter firewall designed to be easy to use
                 </p>
@@ -42,15 +46,27 @@
 
         <!-- Page Section -->
         <template #main>
-            <section class="p-3 h-full bg-gradient-to-r from-gray-50 to-gray-100">
-                <h3 class="text-2xl font-medium">
-                    Allow UFW to web ports
-                </h3>
+            <h1 class="mt-5 text-3xl font-bold">
+                Setup a Universal Firewall (UFW)
+            </h1>
 
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">sudo ufw allow proto tcp from any to any port 80,443</textarea>
+            <small class="block pl-3 text-sm font-medium text-rose-500 tracking-widest uppercase">
+                Level: <span class="text-lg">Easy</span>
+            </small>
+
+            <section class="mt-3 py-5 max-w-5xl mx-auto">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    Allow UFW to Web Ports
+
+                    <small class="block text-sm">
+                        NOTE: TBD
+                    </small>
                 </div>
+
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>sudo ufw allow proto tcp from any to any port 80,443</code></pre>
             </section>
+
         </template>
     </NuxtLayout>
 </template>
