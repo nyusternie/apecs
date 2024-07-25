@@ -77,18 +77,18 @@
                 </div>
 
 <pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
-<code>apt install -y
-  apt-transport-https
-  autoconf
-  build-essential
+<code>apt install -y \
+  apt-transport-https \
+  autoconf \
+  build-essential \
   ca-certificates
-  curl
-  git
-  gnupg2
-  libtool
-  make
-  net-tools
-  software-properties-common
+  curl \
+  git \
+  gnupg2 \
+  libtool \
+  make \
+  net-tools \
+  software-properties-common \
   vim
 </code></pre>
             </section>
