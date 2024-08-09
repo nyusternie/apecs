@@ -218,7 +218,7 @@ sudo service ssh restart
 
             <section class="mt-3 py-5 max-w-5xl mx-auto">
                 <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
-                    env
+                    setenv
 
                     <small class="block text-sm">
                         NOTE: TBD
@@ -244,7 +244,7 @@ export COUCHDB_PASSWORD=uuid
                 </div>
 
 <pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
-<code>source env
+<code>source setenv
 
 cd /usr/src/project-name/sub-folder
 git pull --no-rebase
