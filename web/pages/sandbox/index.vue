@@ -37,41 +37,23 @@
                     </div>
                 </NuxtLink>
 
-                <NuxtLink to="/sandbox/cashfusion" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/bitvm" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
-                        CashFusion
+                        BitVM
                     </h1>
 
                     <div class="">
-                        Perform coin anonymity experiments using the CashFusion protocol.
-                    </div>
-
-                    <div class="">
-                        <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
+                        TBD...
                     </div>
                 </NuxtLink>
 
-                <NuxtLink to="/sandbox/cashscript" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/coinjoin" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
-                        CashScript
+                        CoinJoin
                     </h1>
 
                     <div class="">
-                        Experiment with Bitcoin Cash smart contracts.
-                    </div>
-                </NuxtLink>
-
-                <NuxtLink to="/sandbox/cashshuffle" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
-                    <h1 class="text-center text-3xl font-bold">
-                        CashShuffle
-                    </h1>
-
-                    <div class="">
-                        Perform coin anonymity experiments using the CashShuffle protocol.
-                    </div>
-
-                    <div class="">
-                        <small class="text-danger">Please be curtious of others when testing on Mainnet.</small>
+                        Perform coin anonymity experiments using the CashFusion and CashShuffle protocols.
                     </div>
                 </NuxtLink>
 
@@ -216,16 +198,15 @@
                     </div>
                 </NuxtLink>
 
-                <NuxtLink to="/sandbox/wallet" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
+                <NuxtLink to="/sandbox/zk" class="col-span-3 p-3 mb-5 bg-indigo-300 border-4 border-indigo-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
-                        Wallet
+                        Zero Knowledge
                     </h1>
 
                     <div class="">
-                        Build and experiment with Bitcoin Cash wallets.
+                        Build and experiment with Zero Knowledge technologies.
                     </div>
                 </NuxtLink>
-
             </div>
 
             <aside class="block col-span-2">
