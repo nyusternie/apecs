@@ -130,6 +130,16 @@
                     </div>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/releases" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Software Releases
+                    </h1>
+
+                    <div class="">
+                        Best practices for deploying a new software release.
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/UFW" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         UFW
