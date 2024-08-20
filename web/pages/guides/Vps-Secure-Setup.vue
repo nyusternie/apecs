@@ -81,7 +81,7 @@
   apt-transport-https \
   autoconf \
   build-essential \
-  ca-certificates
+  ca-certificates \
   curl \
   git \
   gnupg2 \
