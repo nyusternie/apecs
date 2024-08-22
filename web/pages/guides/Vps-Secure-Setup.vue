@@ -97,8 +97,8 @@
                 <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
                     Disable Password Authentication
 
-                    <small class="block text-sm">
-                        NOTE: You MUST enable SSH login before doing this step.
+                    <small class="mt-2 -mb-2 block text-xl text-red-500 font-bold animate-bounce">
+                        NOTE: You <span class="text-2xl">MUST</span> enable SSH login <span class="text-2xl">BEFORE</span> completing this step.
                     </small>
                 </div>
 

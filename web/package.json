@@ -3,7 +3,7 @@
   "version": "24.8.18",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
-  "description": "An uncensorable, multi-chain platform for P2P electronic cash Creators to do what they need to do.",
+  "description": "An uncensorable, multi-chain platform for P2P electronic cash Developers to do what they need to do.",
   "repository": "git@github.com:nyusternie/apecs.git",
   "scripts": {
     "build": "nuxt build",
