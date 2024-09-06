@@ -34,9 +34,9 @@ export default defineNuxtConfig({
 
     /* Modules */
     modules: [
-        '@nuxtjs/plausible',
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
+        '@nuxtjs/plausible',
     ],
 
     /* Plausible (self-hosted) */
@@ -88,4 +88,7 @@ export default defineNuxtConfig({
             },
         },
     },
+
+    /* Set compatibility date. */
+    compatibilityDate: '2024-08-30',
 })

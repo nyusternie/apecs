@@ -1,6 +1,6 @@
 {
   "name": "apecs-web",
-  "version": "24.8.18",
+  "version": "24.9.5",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
   "description": "An uncensorable, multi-chain platform for P2P electronic cash Developers to do what they need to do.",
@@ -14,16 +14,16 @@
   },
   "dependencies": {
     "@bitauth/libauth": "1.19.1",
+    "@pinia/nuxt": "0.5.4",
     "@psf/bch-js": "6.7.4",
     "ethereum-blockies-base64": "1.0.2",
     "ethers": "5.7.2",
     "helia": "2.0.1",
-    "mainnet-js": "1.1.31",
     "moment": "2.29.4",
-    "nexajs": "24.8.15",
+    "nexajs": "24.8.16",
     "numeral": "2.0.6",
-    "nuxt": "3.7.4",
-    "pinia": "2.0.32",
+    "nuxt": "3.12.4",
+    "pinia": "2.2.2",
     "uuid": "9.0.0"
   },
   "devDependencies": {
@@ -36,9 +36,8 @@
     "@ledgerhq/hw-app-btc": "9.1.0",
     "@ledgerhq/hw-app-eth": "6.30.2",
     "@ledgerhq/hw-transport-webusb": "6.27.8",
+    "@nuxt/ui-templates": "1.3.4",
     "@nuxtjs/plausible": "0.2.0",
-    "@nuxtjs/tailwindcss": "6.2.0",
-    "@pinia/nuxt": "0.4.7",
-    "postcss-custom-properties": "12.1.11"
+    "@nuxtjs/tailwindcss": "6.12.1"
   }
 }

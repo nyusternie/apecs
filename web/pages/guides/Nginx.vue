@@ -42,75 +42,34 @@
 
         <!-- Page Section -->
         <template #main>
-            <section class="p-3 h-full bg-gradient-to-r from-gray-50 to-gray-100">
-                <h3 class="text-2xl font-medium">
-                    Quick Install
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="3" class="-mb-2 p-5 w-full border-0 bg-yellow-100">curl -fsSL https://get.docker.com -o get-docker.sh
-chmod +x ./get-docker.sh
-./get-docker.sh</textarea>
-                </div>
-
-                <hr />
-
-                <h3 class="text-2xl font-medium">
-                    Update your system
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt update</textarea>
-                </div>
-
-                <h3 class="text-2xl font-medium">
+            <section class="py-10 max-w-5xl mx-auto">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
                     Create the OpenSSL certificates
-                </h3>
 
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">openssl req -newkey rsa:2048 -nodes -keyout server.key -x509 -days 3650 -out server.crt</textarea>
+                    <small class="block text-sm">
+                        NOTE: These are self-signed certificates.
+                    </small>
                 </div>
 
-                <h3 class="text-2xl font-medium">
-                    Install the certificate
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="1" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common</textarea>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-medium">
-                    Add the key
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -</textarea>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-medium">
-                    Add the repository
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"</textarea>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-medium">
-                    Update the system
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt update</textarea>
-                </div>
-
-                <h3 class="mt-10 text-2xl font-medium">
-                    Install NGINX and NGINX Compose
-                </h3>
-
-                <div class="my-5 w-3/4 border-4 border-yellow-300 bg-yellow-100 rounded-xl overflow-hidden">
-                    <textarea rows="2" class="-mb-2 p-5 w-full border-0 bg-yellow-100">apt install docker-ce docker-compose</textarea>
-                </div>
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>openssl req -newkey rsa:2048 -nodes -keyout server.key -x509 -days 3650 -out server.crt
+</code></pre>
             </section>
+
+            <section class="py-10 max-w-5xl mx-auto">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    Install Stream module
+
+                    <small class="block text-sm">
+                        NOTE: May already been installed by the distro.
+                    </small>
+                </div>
+
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>apt get install -y libnginx-mod-stream
+</code></pre>
+            </section>
+
         </template>
 
         <!-- <section class="mt-5">
@@ -120,38 +79,3 @@ chmod +x ./get-docker.sh
         </section> -->
     </NuxtLayout>
 </template>
-<script>
-export default {
-    data: () => ({
-        base64: null,
-    }),
-    head: () => ({
-        title: 'Decode — APECS Dev',
-        meta: [
-            {
-                hid: 'description', // `vmid` for it as it will not work
-                name: 'description',
-                content: 'Perform various decoding operations.'
-            }
-        ]
-    }),
-    computed: {
-        base64Decoded() {
-            if (this.base64) {
-                return atob(this.base64)
-            } else {
-                return null
-            }
-        },
-    },
-    methods: {
-        //
-    },
-    created: async function () {
-        //
-    },
-    mounted: function () {
-        //
-    },
-}
-</script>
