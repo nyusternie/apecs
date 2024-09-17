@@ -43,10 +43,10 @@
         <!-- Page Section -->
         <template #main>
             <section class="py-10 max-w-5xl mx-auto">
-                <div class="mt-3 p-5 font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
                     Restricts a paragraph of text to 3-lines.
 
-                    <small class="block">
+                    <small class="block text-sm">
                         NOTE: Text is truncated at the end.
                     </small>
                 </div>
