@@ -6,7 +6,7 @@ import numeral from 'numeral'
 import {
     getOutpoint,
     getTip,
-} from '@nexajs/rostrum'
+} from '@nexajs/provider'
 
 /* Configure meta tags. */
 useHead({

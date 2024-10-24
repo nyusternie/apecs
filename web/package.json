@@ -1,6 +1,6 @@
 {
   "name": "apecs-web",
-  "version": "24.9.5",
+  "version": "24.10.23",
   "license": "MIT",
   "author": "Shomari <nyusternie@protonmail.com>",
   "description": "An uncensorable, multi-chain platform for P2P electronic cash Developers to do what they need to do.",
@@ -17,14 +17,14 @@
     "@pinia/nuxt": "0.5.4",
     "@psf/bch-js": "6.7.4",
     "ethereum-blockies-base64": "1.0.2",
-    "ethers": "5.7.2",
+    "ethers": "6.13.4",
     "helia": "2.0.1",
     "moment": "2.29.4",
-    "nexajs": "24.8.16",
+    "nexajs": "24.10.4",
     "numeral": "2.0.6",
     "nuxt": "3.12.4",
     "pinia": "2.2.2",
-    "uuid": "9.0.0"
+    "uuid": "10.0.0"
   },
   "devDependencies": {
     "@ethersproject/shims": "5.7.0",

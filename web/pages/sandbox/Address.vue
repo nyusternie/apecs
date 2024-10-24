@@ -1,6 +1,6 @@
 <script setup>
 /* Import modules. */
-import { decodeRemoteAddress } from '@nexajs/rostrum'
+import { decodeRemoteAddress } from '@nexajs/provider'
 
 const address = ref()
 const output = ref()
