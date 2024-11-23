@@ -1,8 +1,137 @@
 <script setup lang="ts">
+/* Import modules. */
+import numeral from 'numeral'
+
 import { useSystemStore } from '@/stores/system'
+
+const props = defineProps({
+    pageId: String,
+})
+
+const router = useRouter()
+const emit = defineEmits([ 'toggleMenu' ])
 
 /* Initialize System store. */
 const System = useSystemStore()
+
+const usd = ref(null)
+const showMobileMenu = ref(false)
+
+const displayPrice = computed(() => {
+    if (!usd.value) return '$0.00'
+
+    return numeral(usd.value).format('$0.00')
+})
+
+const title = computed(() => {
+    switch(props.pageId) {
+    case 'dashboard':
+        return 'Dashboard'
+    case 'stats':
+        return 'Bitcoin Statistics'
+    case 'status':
+        return 'Community & Network Status'
+    case 'ver':
+        return 'Ver: Node Virtual Assistant'
+
+    case 'blockchains':
+        return 'Blockchain Insights'
+    case 'discuss':
+        return 'Discuss'
+    case 'events':
+        return 'Event Calendar'
+    case 'markets':
+        return 'Market Insights'
+    case 'privacy':
+        return 'Privacy Insights'
+    case 'news':
+        return 'Headline News'
+
+    /* Desktop */
+    case 'file-mgr':
+        return 'File Manager'
+    case 'notebook':
+        return 'Notebook'
+
+    /* Profiles */
+    case 'contributors':
+        return 'Contributors'
+    case 'profile':
+        return 'Profile'
+
+    /* Projects */
+    case 'projects':
+    case 'project-detail':
+        return 'Projects'
+
+    /* Workspaces */
+    case 'code-editor':
+        return 'Code Editor'
+    case 'graphics-studio':
+        return 'Graphics Studio'
+    case 'sandbox':
+        return 'Sandbox'
+
+    /* Support */
+    case 'buidling':
+        return 'BUIDLing 101'
+    case 'faq':
+        return 'FAQ'
+    case 'guides':
+        return 'Guides & Tutorials'
+    case 'matrix':
+        return 'Matrix'
+    case 'slack':
+        return 'Slack'
+    case 'tickets':
+        return 'Support Tickets'
+
+    default:
+        return 'Unknown Page'
+    }
+})
+
+
+/**
+ * Go To
+ *
+ * Navigates to a page location (in the router).
+ */
+const goTo = (_location) => {
+    router.push(_location)
+}
+
+const toggleMenu = () => {
+    console.log('TOGGLE MENU')
+    emit('toggleMenu')
+}
+
+const openNetworkMenu = () => {
+    alert(`Choose a supported network:
+- Bitcoin Cash (BCH)
+- Bitcoin Lightning (BTC)
+- Dash (DASH)
+- eCash (XEC)
+- Ethereum (ETH)
+- Litecoin (LTC)
+- Monero (XMR)
+- Nexa (NEX)
+- Polygon (MATIC)
+- Tron (TRX)
+- Zcash (ZEC)
+`)
+}
+
+const connect = () => {
+    alert(`Choose a blockchain to manage your on-chain data:
+1. Avalanche
+2. Binance
+3. Ethereum
+4. Nexaverse
+5. Polygon
+6. Smart Bitcoin
+7. Tron`)
+}
 
 const init = async () => {
     let body
@@ -22,9 +151,28 @@ const init = async () => {
 
     // FIXME FOR DEV PURPOSES ONLY
     System.quotes.NEXA = { price: 0.00001 }
+
+
+    // let body
+    //         let response
+
+    //         response = await fetch('https://api.telr.io/v1/ticker/quote/BCH')
+    //         // console.log('STATUS RESPONSE', response)
+
+    //         body = await response.json()
+    //         // console.log('BODY', body)
+
+    //         if (body.price) {
+    //             this.usd = body.price
+    //         }
+
 }
 
 onMounted(() => {
+    usd.value = 0
+
+    showMobileMenu.value = false
+
     // init()
 })
 
@@ -243,166 +391,3 @@ onMounted(() => {
         </nav>
     </main>
 </template>
-
-<script lang="ts">
-/* Import modules. */
-import numeral from 'numeral'
-
-export default {
-    props: {
-        pageId: String
-    },
-    data: () => {
-        return {
-            usd: null,
-
-            showMobileMenu: null,
-        }
-    },
-    computed: {
-        displayPrice: function () {
-            if (!this.usd) return '$0.00'
-
-            return numeral(this.usd).format('$0.00')
-        },
-
-        title: function () {
-            switch(this.pageId) {
-            case 'dashboard':
-                return 'Dashboard'
-            case 'stats':
-                return 'Bitcoin Statistics'
-            case 'status':
-                return 'Community & Network Status'
-            case 'ver':
-                return 'Ver: Node Virtual Assistant'
-
-            case 'blockchains':
-                return 'Blockchain Insights'
-            case 'discuss':
-                return 'Discuss'
-            case 'events':
-                return 'Event Calendar'
-            case 'markets':
-                return 'Market Insights'
-            case 'privacy':
-                return 'Privacy Insights'
-            case 'news':
-                return 'Headline News'
-
-            /* Desktop */
-            case 'file-mgr':
-                return 'File Manager'
-            case 'notebook':
-                return 'Notebook'
-
-            /* Profiles */
-            case 'contributors':
-                return 'Contributors'
-            case 'profile':
-                return 'Profile'
-
-            /* Projects */
-            case 'projects':
-            case 'project-detail':
-                return 'Projects'
-
-            /* Workspaces */
-            case 'code-editor':
-                return 'Code Editor'
-            case 'graphics-studio':
-                return 'Graphics Studio'
-            case 'sandbox':
-                return 'Sandbox'
-
-            /* Support */
-            case 'buidling':
-                return 'BUIDLing 101'
-            case 'faq':
-                return 'FAQ'
-            case 'guides':
-                return 'Guides & Tutorials'
-            case 'matrix':
-                return 'Matrix'
-            case 'slack':
-                return 'Slack'
-            case 'tickets':
-                return 'Support Tickets'
-
-            default:
-                return 'Unknown Page'
-            }
-        },
-
-    },
-    methods: {
-        async init() {
-            let body
-            let response
-
-            response = await fetch('https://api.telr.io/v1/ticker/quote/BCH')
-            // console.log('STATUS RESPONSE', response)
-
-            body = await response.json()
-            // console.log('BODY', body)
-
-            if (body.price) {
-                this.usd = body.price
-            }
-        },
-
-        /**
-         * Go To
-         *
-         * Navigates to a page location (in the router).
-         */
-        goTo(_location) {
-            this.$router.push(_location)
-        },
-
-        toggleMenu() {
-            console.log('TOGGLE MENU')
-            this.$emit('toggleMenu')
-        },
-
-        openNetworkMenu() {
-            alert(`Choose a supported network:
-    - Bitcoin Cash (BCH)
-    - Bitcoin Lightning (BTC)
-    - Dash (DASH)
-    - eCash (XEC)
-    - Ethereum (ETH)
-    - Litecoin (LTC)
-    - Monero (XMR)
-    - Nexa (NEX)
-    - Polygon (MATIC)
-    - Tron (TRX)
-    - Zcash (ZEC)
-`)
-        },
-
-        connect() {
-            alert(`Choose a blockchain to manage your on-chain data:
-    1. Avalanche
-    2. Binance
-    3. Ethereum
-    4. Nexaverse
-    5. Polygon
-    6. Smart Bitcoin
-    7. Tron`)
-        }
-
-    },
-    created: function () {
-        this.usd = 0
-
-        this.showMobileMenu = false
-
-        /* Update USD. */
-        this.init()
-    },
-    mounted: function () {
-        //
-    },
-}
-</script>
