@@ -4,24 +4,34 @@ import { useSystemStore } from '@/stores/system'
 /* Initialize System store. */
 const System = useSystemStore()
 
-let body
-let response
+const init = async () => {
+    let body
+    let response
 
-response = await fetch('https://api.telr.io/v1/ticker/quote/BCH')
-// console.log('STATUS RESPONSE', response)
+    response = await fetch('https://api.telr.io/v1/ticker/quote/BCH')
+    // console.log('STATUS RESPONSE', response)
 
-body = await response.json()
-// console.log('BODY', body)
+    body = await response.json()
+    // console.log('BODY', body)
 
-/* Verify body (price) results. */
-if (body && body.price) {
-    /* Set Bitcoin Cash quote. */
-    System.quotes.BCH = body
+    /* Verify body (price) results. */
+    if (body && body.price) {
+        /* Set Bitcoin Cash quote. */
+        System.quotes.BCH = body
+    }
+
+    // FIXME FOR DEV PURPOSES ONLY
+    System.quotes.NEXA = { price: 0.00001 }
 }
 
-// FIXME FOR DEV PURPOSES ONLY
-System.quotes.NEXA = { price: 0.00001 }
+onMounted(() => {
+    init()
+})
 
+// onBeforeUnmount(() => {
+//     console.log('Before Unmount!')
+//     // Now is the time to perform all cleanup operations.
+// })
 </script>
 
 <template>
