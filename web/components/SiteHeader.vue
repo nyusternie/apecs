@@ -25,7 +25,7 @@ const init = async () => {
 }
 
 onMounted(() => {
-    init()
+    // init()
 })
 
 // onBeforeUnmount(() => {

@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/smartbch/contracts" class="focus:outline-none">
+                                        <NuxtLink to="/" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Notable Contracts
@@ -150,7 +150,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/snippets/sol" class="focus:outline-none">
+                                        <NuxtLink to="/snippets" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Solidity Code Snippets
@@ -185,7 +185,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/smartbch/exchange" class="focus:outline-none">
+                                        <NuxtLink to="/" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Exchange
@@ -215,7 +215,7 @@
                                 </div>
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/smartbch/verify" class="focus:outline-none">
+                                        <NuxtLink to="/" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Contract Verification

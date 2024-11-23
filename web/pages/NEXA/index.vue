@@ -233,7 +233,7 @@ onMounted(() => {
 
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/smartbch/contracts" class="focus:outline-none">
+                                        <NuxtLink to="/" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Notable Contracts
@@ -266,7 +266,7 @@ onMounted(() => {
 
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/snippets/sol" class="focus:outline-none">
+                                        <NuxtLink to="/snippets" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Solidity Code Snippets
@@ -303,7 +303,7 @@ onMounted(() => {
 
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/smartbch/exchange" class="focus:outline-none">
+                                        <NuxtLink to="/" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Exchange
@@ -335,7 +335,7 @@ onMounted(() => {
 
                                 <div class="mt-8">
                                     <h3 class="text-lg font-medium">
-                                        <NuxtLink to="/smartbch/verify" class="focus:outline-none">
+                                        <NuxtLink to="/" class="focus:outline-none">
                                             <!-- Extend touch target to entire panel -->
                                             <span class="absolute inset-0" aria-hidden="true"></span>
                                             Contract Verification
@@ -440,9 +440,9 @@ export default {
     methods: {
         async init() {
 
-            setInterval(() => {
-                this.refresh()
-            }, 1000)
+            // setInterval(() => {
+            //     this.refresh()
+            // }, 1000)
         },
 
         async testMetaMask() {
