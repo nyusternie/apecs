@@ -130,6 +130,16 @@
                     </div>
                 </NuxtLink>
 
+                <NuxtLink to="/guides/rust" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
+                    <h1 class="text-center text-3xl font-bold">
+                        Rust
+                    </h1>
+
+                    <div class="">
+                        Useful snippets for Rust development.
+                    </div>
+                </NuxtLink>
+
                 <NuxtLink to="/guides/releases" class="col-span-3 p-3 mb-5 bg-gray-300 border-4 border-gray-500 rounded-xl">
                     <h1 class="text-center text-3xl font-bold">
                         Software Releases
