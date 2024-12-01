@@ -57,6 +57,33 @@ let sessionid = Uuid::new_v4();
 </code></pre>
 
             </section>
+
+            <section class="py-10 max-w-5xl mx-auto">
+                <div class="p-5 text-2xl font-medium bg-gray-100 border-4 border-gray-300 rounded-xl">
+                    Make a JSON REST request.
+
+                    <small class="block text-sm">
+                        Requires reqwest.
+                        <pre>reqwest = { version = "0.11", features = ["blocking", "json"] }</pre>
+                    </small>
+                </div>
+
+<pre class="mt-5 p-5 bg-yellow-100 border-4 border-yellow-300 rounded-xl">
+<code>use reqwest;
+use std::collections::HashMap;
+
+#[tokio::main]
+pub async fn get() -> Result&lt;HashMap&lt;String, String&gt;, Box&lt;dyn std::error::Error&gt;&gt; {
+    let resp = reqwest::get("https://httpbin.org/ip")
+        .await?
+        .json::&lt;HashMap&lt;String, String&gt;&gt;()
+        .await?;
+    // println!("{:#?}\n", resp);
+
+    Ok(resp)
+}</code></pre>
+
+            </section>
         </template>
     </NuxtLayout>
 </template>
